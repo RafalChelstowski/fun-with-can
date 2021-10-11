@@ -1,10 +1,12 @@
+import { Physics } from '@react-three/cannon';
 import { useContextBridge } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
+import { DefaultXRControllers, Hands, VRCanvas } from '@react-three/xr';
 
 import { OrbitControls } from './common/components/controls/OrbitControls';
 import { Lights } from './common/components/lights/Lights';
 import { Cube } from './features/cube/Cube';
 import { Floor } from './features/floor/Floor';
+import { VrPlayer } from './features/vrplayer/VrPlayer';
 
 export function App(): JSX.Element {
   if (!window.ReactQueryClientContext) {
@@ -15,16 +17,19 @@ export function App(): JSX.Element {
 
   return (
     <main className="w-screen h-screen overflow-hidden">
-      <Canvas>
+      <VRCanvas>
         <ContextBridge>
+          <DefaultXRControllers />
+          <Hands />
           <Lights />
-          <Cube position={[-2, 0, 0]} />
-          <Cube position={[0, 0, 0]} />
-          <Cube position={[2, 0, 0]} />
-          <Floor />
+          <Physics>
+            <Cube position={[0, 2, -0.5]} />
+            <Floor />
+            <VrPlayer />
+          </Physics>
           <OrbitControls />
         </ContextBridge>
-      </Canvas>
+      </VRCanvas>
     </main>
   );
 }

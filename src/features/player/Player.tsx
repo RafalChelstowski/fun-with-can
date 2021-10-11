@@ -5,7 +5,7 @@ import { extend, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
 
-import useControls from '../../common/hooks/useControls';
+import { useControls } from '../../common/hooks/useControls';
 import { useStore } from '../../store/store';
 import { ControlsLock } from '../../types';
 

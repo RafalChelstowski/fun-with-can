@@ -2,7 +2,7 @@
 /* eslint-disable consistent-return */
 import { useEffect, useRef } from 'react';
 
-export default function useEventListener<T>(
+export function useEventListener<T>(
   eventName: string,
   handler: (event: Event & T) => void,
   element = window
