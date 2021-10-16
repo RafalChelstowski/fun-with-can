@@ -24,7 +24,7 @@ export function Player(): JSX.Element {
     useControls();
 
   const [playerRef, playerApi] = useSphere(() => ({
-    args: 0.4,
+    args: [0.4],
     mass: 1,
     type: 'Dynamic',
     position: INITIAL_POSITION,

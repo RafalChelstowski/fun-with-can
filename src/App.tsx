@@ -1,4 +1,4 @@
-import { Physics } from '@react-three/cannon';
+import { Debug, Physics } from '@react-three/cannon';
 import { useContextBridge } from '@react-three/drei';
 import { DefaultXRControllers, Hands, VRCanvas } from '@react-three/xr';
 
@@ -23,9 +23,11 @@ export function App(): JSX.Element {
           <Hands />
           <Lights />
           <Physics>
-            <Cube position={[0, 2, -0.5]} />
-            <Floor />
-            <VrPlayer />
+            <Debug color="black" scale={1.1}>
+              <Cube position={[0, 2, -0.5]} />
+              <Floor />
+              <VrPlayer />
+            </Debug>
           </Physics>
           <OrbitControls />
         </ContextBridge>
