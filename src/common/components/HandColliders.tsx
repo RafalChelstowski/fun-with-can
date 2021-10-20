@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Fragment, useEffect, useMemo, useState } from 'react';
 
-import { useBox, useSphere } from '@react-three/cannon';
+import { useBox } from '@react-three/cannon';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useController } from '@react-three/xr';
 import * as THREE from 'three';
