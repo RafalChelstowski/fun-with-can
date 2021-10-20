@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { KeyboardKeys } from '../../types';
-import useEventListener from './useEventListener';
+import { useEventListener } from './useEventListener';
 
 interface UseControlsHook {
   controlsUp: boolean;
@@ -10,7 +10,7 @@ interface UseControlsHook {
   controlsRight: boolean;
 }
 
-export default function useControls(): UseControlsHook {
+export function useControls(): UseControlsHook {
   const [controlsUp, setControlsUp] = useState(false);
   const [controlsDown, setControlsDown] = useState(false);
   const [controlsLeft, setControlsLeft] = useState(false);
