@@ -134,7 +134,7 @@ export function ControllerColliders(): JSX.Element {
   );
 }
 
-export function HandsReady(): JSX.Element | null {
+export function Colliders(): JSX.Element | null {
   const [ready, setReady] = useState(false);
   const { gl } = useThree();
 
