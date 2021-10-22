@@ -12,7 +12,6 @@ import { Cube } from './features/cube/Cube';
 import { Floor } from './features/floor/Floor';
 import { Rain } from './features/harnasie/Rain';
 import { Kitchen } from './features/kitchen/Kitchen';
-import { Nav } from './features/nav/Nav';
 
 export function App(): JSX.Element {
   if (!window.ReactQueryClientContext) {
@@ -26,7 +25,6 @@ export function App(): JSX.Element {
       <Route path="/">
         <VRCanvas shadows>
           <ContextBridge>
-            <Nav />
             <Lights />
             <Cube position={[0, 2, -1.5]} />
             <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
@@ -42,7 +40,6 @@ export function App(): JSX.Element {
       <Route path="/physics">
         <VRCanvas>
           <ContextBridge>
-            <Nav />
             <Lights />
             <Physics
               gravity={[0, -2, 0]}
@@ -72,7 +69,6 @@ export function App(): JSX.Element {
       <Route path="/kitchen">
         <VRCanvas>
           <ContextBridge>
-            <Nav />
             <Lights />
             <Physics
               gravity={[0, -2, 0]}
