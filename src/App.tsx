@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
 
-import { Physics } from '@react-three/cannon';
+import { Debug, Physics } from '@react-three/cannon';
 import { Sky, useContextBridge } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
 import { DefaultXRControllers, Hands, VRCanvas } from '@react-three/xr';
 import { Route } from 'wouter';
 
@@ -12,6 +13,7 @@ import { Cube } from './features/cube/Cube';
 import { Floor } from './features/floor/Floor';
 import { Rain } from './features/harnasie/Rain';
 import { Kitchen } from './features/kitchen/Kitchen';
+import { Model } from './features/models/001';
 
 export function App(): JSX.Element {
   if (!window.ReactQueryClientContext) {
@@ -49,12 +51,12 @@ export function App(): JSX.Element {
               }}
             >
               <Rain num={50} />
-              {/* <Debug color="black" scale={1.1}> */}
-              <Floor position={[0, 1, 0]} />
-              <Hands />
-              <DefaultXRControllers />
-              <Colliders />
-              {/* </Debug> */}
+              <Debug color="black" scale={1.1}>
+                <Floor position={[0, 1, 0]} />
+                <Hands />
+                <DefaultXRControllers />
+                <Colliders />
+              </Debug>
             </Physics>
             <Sky
               distance={450000}
@@ -87,6 +89,19 @@ export function App(): JSX.Element {
               </Suspense>
               {/* </Debug> */}
             </Physics>
+            <OrbitControls />
+          </ContextBridge>
+        </VRCanvas>
+      </Route>
+      <Route path="/playground">
+        <VRCanvas>
+          <ContextBridge>
+            <Lights />
+            {/* <spotLight castShadow position={[0, 10, 0]} /> */}
+            <DefaultXRControllers />
+            <Suspense fallback={null}>
+              <Model />
+            </Suspense>
             <OrbitControls />
           </ContextBridge>
         </VRCanvas>
