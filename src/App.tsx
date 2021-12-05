@@ -23,7 +23,7 @@ export function App(): JSX.Element {
             <Lights />
             <Suspense fallback={null}>
               <Kitchen />
-              <Environment preset="park" background />
+              {/* <Environment preset="park" background /> */}
             </Suspense>
             <OrbitControls />
             <DefaultXRControllers />
