@@ -13,7 +13,7 @@ export function Lights(): JSX.Element {
     <>
       <ambientLight intensity={1} />
       {/* <hemisphereLight /> */}
-      <directionalLight intensity={3} />
+      {/* <directionalLight intensity={3} /> */}
       {/* <pointLight position={[1, 2, -5]} intensity={1} power={30} decay={2} /> */}
       {/* <spotLight position={[0, 1.7, 0]} intensity={1} power={10} decay={2} /> */}
       {/* <pointLight position={[-1, 1.7, -5]} decay={2} intensity={1} power={50} /> */}

@@ -18,7 +18,7 @@ export function App(): JSX.Element {
   return (
     <main className="w-screen h-screen overflow-hidden">
       <Route path="/">
-        <VRCanvas>
+        <VRCanvas gl={{ antialias: true }}>
           <ContextBridge>
             <Lights />
             <Suspense fallback={null}>
