@@ -1,12 +1,17 @@
 import { Suspense } from 'react';
 
-import { Environment, useContextBridge } from '@react-three/drei';
+import { useContextBridge } from '@react-three/drei';
 import { DefaultXRControllers, VRCanvas } from '@react-three/xr';
 import { Route } from 'wouter';
 
 import { OrbitControls } from './common/components/controls/OrbitControls';
 import { Lights } from './common/components/lights/Lights';
-import Kitchen from './features/kitchen/Kitchen';
+import { EnviromentSetup } from './features/enviroment/EnviromentSetup';
+// import Kitchen from './features/kitchen/Kitchen';
+import { Env } from './features/kitchen/Env';
+import { Glass } from './features/kitchen/Glass';
+import { Things } from './features/kitchen/Things';
+import { Walls } from './features/kitchen/Walls';
 
 export function App(): JSX.Element {
   if (!window.ReactQueryClientContext) {
@@ -21,10 +26,17 @@ export function App(): JSX.Element {
         <VRCanvas gl={{ antialias: true }}>
           <ContextBridge>
             <Lights />
-            <Suspense fallback={null}>
-              <Kitchen />
-              {/* <Environment preset="park" background /> */}
-            </Suspense>
+            <group rotation={[0, -Math.PI / 4.4, 0]}>
+              <Suspense fallback={null}>
+                {/* <Kitchen /> */}
+                <Walls />
+                <Things />
+                <Env />
+                <Glass />
+                <EnviromentSetup />
+              </Suspense>
+            </group>
+
             <OrbitControls />
             <DefaultXRControllers />
           </ContextBridge>
