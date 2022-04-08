@@ -1,3 +1,5 @@
+import { ReactNode, RefObject } from 'react';
+
 import { usePlane } from '@react-three/cannon';
 
 export function Floor(): JSX.Element {
@@ -8,7 +10,7 @@ export function Floor(): JSX.Element {
   }));
 
   return (
-    <mesh ref={ref}>
+    <mesh ref={ref as unknown as RefObject<ReactNode>}>
       <planeBufferGeometry args={[100, 100]} />
       <meshBasicMaterial visible={false} />
     </mesh>

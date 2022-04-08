@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 import { useSphere } from '@react-three/cannon';
 import { extend, useFrame, useThree } from '@react-three/fiber';
@@ -94,7 +94,7 @@ export function Player(): JSX.Element {
   return (
     <>
       <pointerLockControls args={[camera, gl.domElement]} ref={controlsRef} />
-      <mesh ref={ref} />
+      <mesh ref={ref as unknown as React.RefObject<React.ReactNode>} />
     </>
   );
 }

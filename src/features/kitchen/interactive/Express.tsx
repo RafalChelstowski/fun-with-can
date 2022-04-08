@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, RefObject, useEffect, useState } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
 import { Triplet, useBox } from '@react-three/cannon';
@@ -101,7 +101,7 @@ export function Express(): JSX.Element {
   return (
     <group dispose={null}>
       <a.group
-        ref={ref}
+        ref={ref as unknown as RefObject<ReactNode>}
         onClick={(e) => {
           e.stopPropagation();
 
