@@ -6,51 +6,38 @@ import React, { useRef } from 'react';
 
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { GLTF } from 'three-stdlib';
 
 type GLTFResult = GLTF & {
   nodes: {
-    floor001: THREE.Mesh;
-    windowsAndHeaters001: THREE.Mesh;
-    counter_cutter002: THREE.Mesh;
-    floor002: THREE.Mesh;
-    windowsAndHeaters002: THREE.Mesh;
-    counter_cutter003: THREE.Mesh;
-    floor003: THREE.Mesh;
-    counter_cutter004: THREE.Mesh;
-    nonTexturesWall001: THREE.Mesh;
-    nonTexturesWall002: THREE.Mesh;
-    nonTexturesWall: THREE.Mesh;
-    south_wall: THREE.Mesh;
-    concrete_pylons: THREE.Mesh;
-    windowsAndHeaters: THREE.Mesh;
-    wooden_planks_2: THREE.Mesh;
-    wooden_planks: THREE.Mesh;
-    wooden_panels: THREE.Mesh;
-    doors: THREE.Mesh;
-    bricks: THREE.Mesh;
-    wood_windows: THREE.Mesh;
-    floor: THREE.Mesh;
-    chairs: THREE.Mesh;
-    tables: THREE.Mesh;
-    hanginLights: THREE.Mesh;
-    sofa: THREE.Mesh;
-    dresser: THREE.Mesh;
-    windowsAndHeaters003: THREE.Mesh;
-    kitchen: THREE.Mesh;
-    kitchen_utensils: THREE.Mesh;
+    roundTables: THREE.Mesh;
+    heaters: THREE.Mesh;
+    sinks: THREE.Mesh;
     roof_items: THREE.Mesh;
-    wooden_elements: THREE.Mesh;
+    kitchenShelf: THREE.Mesh;
+    microwaves: THREE.Mesh;
+    waterDispencer: THREE.Mesh;
+    toaster: THREE.Mesh;
+    coffeeExpress: THREE.Mesh;
+    grinder: THREE.Mesh;
+    coffeeAccesories: THREE.Mesh;
+    windows: THREE.Mesh;
+    doors: THREE.Mesh;
+    woodenElements: THREE.Mesh;
+    fridge: THREE.Mesh;
+    floorAndRoof: THREE.Mesh;
+    wallsAndBricks: THREE.Mesh;
+    lights: THREE.Mesh;
+    chairs: THREE.Mesh;
+    sofa: THREE.Mesh;
   };
   materials: {
-    floorAndRoofMaterial: THREE.MeshStandardMaterial;
-    darkWallMaterial: THREE.MeshStandardMaterial;
-    wallsMaterial: THREE.MeshStandardMaterial;
-    thingsMaterial: THREE.MeshStandardMaterial;
+    elementsMaterial: THREE.MeshStandardMaterial;
   };
 };
 
-export default function Model({
+export function Kitchen({
   ...props
 }: JSX.IntrinsicElements['group']): JSX.Element {
   const group = useRef<THREE.Group>();
@@ -60,154 +47,19 @@ export default function Model({
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
-        geometry={nodes.floor001.geometry}
-        material={nodes.floor001.material}
-        position={[0, -0.18, 0]}
-      />
-      <mesh
-        geometry={nodes.windowsAndHeaters001.geometry}
-        material={nodes.windowsAndHeaters001.material}
-        position={[-2.93, 1.81, -8.84]}
-      />
-      <mesh
-        geometry={nodes.counter_cutter002.geometry}
-        material={nodes.counter_cutter002.material}
-        position={[2.69, 2.55, -6.1]}
-      />
-      <mesh
-        geometry={nodes.floor002.geometry}
-        material={nodes.floor002.material}
-        position={[-0.15, 0, 9.41]}
-        scale={[1, 1, -1]}
-      />
-      <mesh
-        geometry={nodes.windowsAndHeaters002.geometry}
-        material={nodes.windowsAndHeaters002.material}
-        position={[-2.93, 1.81, 9.27]}
-        scale={[1, 1, -1]}
-      />
-      <mesh
-        geometry={nodes.counter_cutter003.geometry}
-        material={nodes.counter_cutter003.material}
-        position={[2.69, 1.73, 9.24]}
-        scale={[1, 1, -1]}
-      />
-      <mesh
-        geometry={nodes.floor003.geometry}
-        material={materials.floorAndRoofMaterial}
-        position={[0, -0.18, 0]}
-      />
-      <mesh
-        geometry={nodes.counter_cutter004.geometry}
-        material={nodes.counter_cutter004.material}
-        position={[5.62, 1.23, 0.01]}
-        scale={[1, 1, -1]}
-      />
-      <mesh
-        geometry={nodes.nonTexturesWall001.geometry}
-        material={nodes.nonTexturesWall001.material}
-        position={[-3.02, 0.55, -6.54]}
-      />
-      <mesh
-        geometry={nodes.nonTexturesWall002.geometry}
-        material={nodes.nonTexturesWall002.material}
-        position={[-0.12, 1.63, 9.28]}
-        scale={[1, 1, -1]}
-      />
-      <mesh
-        geometry={nodes.nonTexturesWall.geometry}
-        material={materials.darkWallMaterial}
-      />
-      <mesh
-        geometry={nodes.south_wall.geometry}
-        material={nodes.south_wall.material}
-      />
-      <mesh
-        geometry={nodes.concrete_pylons.geometry}
-        material={nodes.concrete_pylons.material}
-        position={[-2.62, 1.64, -5.74]}
-      />
-      <mesh
-        geometry={nodes.windowsAndHeaters.geometry}
-        material={nodes.windowsAndHeaters.material}
-        position={[-2.81, 0.27, 0.89]}
-      />
-      <mesh
-        geometry={nodes.wooden_planks_2.geometry}
-        material={nodes.wooden_planks_2.material}
-        position={[-2.69, 0.97, 4.27]}
-      />
-      <mesh
-        geometry={nodes.wooden_planks.geometry}
-        material={nodes.wooden_planks.material}
-        position={[2.67, 1.41, 4.6]}
-      />
-      <mesh
-        geometry={nodes.wooden_panels.geometry}
-        material={nodes.wooden_panels.material}
-        position={[2.56, 2.73, -2.27]}
-      />
-      <mesh
-        geometry={nodes.doors.geometry}
-        material={nodes.doors.material}
-        position={[2.56, 2.73, -2.27]}
-      />
-      <mesh
-        geometry={nodes.bricks.geometry}
-        material={nodes.bricks.material}
-        position={[-2.62, 1.64, -5.74]}
-      />
-      <mesh
-        geometry={nodes.wood_windows.geometry}
-        material={nodes.wood_windows.material}
+        geometry={nodes.roundTables.geometry}
+        material={nodes.roundTables.material}
         position={[-0.59, 0.67, 0.02]}
         rotation={[0, -1.54, 0]}
       />
       <mesh
-        geometry={nodes.floor.geometry}
-        material={nodes.floor.material}
-        position={[0, -0.18, 0]}
-      />
-      <mesh
-        geometry={nodes.chairs.geometry}
-        material={nodes.chairs.material}
-        position={[-2.28, 0.45, 1.74]}
-        rotation={[1.75, 1.15, -1.77]}
-      />
-      <mesh
-        geometry={nodes.tables.geometry}
-        material={nodes.tables.material}
-        position={[-0.59, 0.67, 0.02]}
-        rotation={[0, -1.54, 0]}
-      />
-      <mesh
-        geometry={nodes.hanginLights.geometry}
-        material={nodes.hanginLights.material}
-        position={[-0.85, 2.89, -3.57]}
-      />
-      <mesh
-        geometry={nodes.sofa.geometry}
-        material={nodes.sofa.material}
-        position={[2.45, 0.65, 0.16]}
-      />
-      <mesh
-        geometry={nodes.dresser.geometry}
-        material={nodes.dresser.material}
-        position={[2.45, 0.65, 0.16]}
-      />
-      <mesh
-        geometry={nodes.windowsAndHeaters003.geometry}
-        material={nodes.windowsAndHeaters003.material}
+        geometry={nodes.heaters.geometry}
+        material={nodes.heaters.material}
         position={[-2.81, 0.27, 0.89]}
       />
       <mesh
-        geometry={nodes.kitchen.geometry}
-        material={nodes.kitchen.material}
-        position={[3.08, 1.48, -4.16]}
-      />
-      <mesh
-        geometry={nodes.kitchen_utensils.geometry}
-        material={nodes.kitchen_utensils.material}
+        geometry={nodes.sinks.geometry}
+        material={nodes.sinks.material}
         position={[0.32, 1.12, -5.61]}
       />
       <mesh
@@ -216,9 +68,85 @@ export default function Model({
         position={[2.56, 2.73, -2.27]}
       />
       <mesh
-        geometry={nodes.wooden_elements.geometry}
-        material={nodes.wooden_elements.material}
-        position={[-2.69, 0.97, 4.27]}
+        geometry={nodes.kitchenShelf.geometry}
+        material={nodes.kitchenShelf.material}
+        position={[3.08, 1.48, -4.16]}
+      />
+      <mesh
+        geometry={nodes.microwaves.geometry}
+        material={nodes.microwaves.material}
+        position={[0.32, 1.12, -5.61]}
+      />
+      <mesh
+        geometry={nodes.waterDispencer.geometry}
+        material={nodes.waterDispencer.material}
+        position={[0.32, 1.12, -5.61]}
+      />
+      <mesh
+        geometry={nodes.toaster.geometry}
+        material={nodes.toaster.material}
+        position={[0.32, 1.12, -5.61]}
+      />
+      <mesh
+        geometry={nodes.coffeeExpress.geometry}
+        material={nodes.coffeeExpress.material}
+        position={[0.32, 1.12, -5.61]}
+      />
+      <mesh
+        geometry={nodes.grinder.geometry}
+        material={nodes.grinder.material}
+        position={[0.32, 1.12, -5.61]}
+      />
+      <mesh
+        geometry={nodes.coffeeAccesories.geometry}
+        material={nodes.coffeeAccesories.material}
+        position={[0.32, 1.12, -5.61]}
+      />
+      <mesh
+        geometry={nodes.windows.geometry}
+        material={nodes.windows.material}
+        position={[-2.81, 0.27, 0.89]}
+      />
+      <mesh
+        geometry={nodes.doors.geometry}
+        material={nodes.doors.material}
+        position={[2.56, 2.73, -2.27]}
+      />
+      <mesh
+        geometry={nodes.woodenElements.geometry}
+        material={nodes.woodenElements.material}
+        position={[-0.59, 0.67, 0.02]}
+        rotation={[0, -1.54, 0]}
+      />
+      <mesh
+        geometry={nodes.fridge.geometry}
+        material={nodes.fridge.material}
+        position={[3.08, 1.48, -4.16]}
+      />
+      <mesh
+        geometry={nodes.floorAndRoof.geometry}
+        material={nodes.floorAndRoof.material}
+        position={[0, -0.18, 0]}
+      />
+      <mesh
+        geometry={nodes.wallsAndBricks.geometry}
+        material={nodes.wallsAndBricks.material}
+      />
+      <mesh
+        geometry={nodes.lights.geometry}
+        material={nodes.lights.material}
+        position={[-1.28, 2.37, 3.13]}
+      />
+      <mesh
+        geometry={nodes.chairs.geometry}
+        material={nodes.chairs.material}
+        position={[-1.52, 0.63, 2.63]}
+        rotation={[1.15, -1.12, 1.11]}
+      />
+      <mesh
+        geometry={nodes.sofa.geometry}
+        material={nodes.sofa.material}
+        position={[-2.25, 0.61, 5.45]}
       />
     </group>
   );

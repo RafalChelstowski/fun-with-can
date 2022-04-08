@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
 
+import { Sky } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 
 export function Lights(): JSX.Element {
@@ -11,9 +12,10 @@ export function Lights(): JSX.Element {
 
   return (
     <>
-      <ambientLight intensity={1} />
-      {/* <hemisphereLight /> */}
-      {/* <pointLight /> */}
+      <ambientLight />
+      <fog attach="fog" color="white" near={5} far={50} />
+      <directionalLight />
+      <Sky />
     </>
   );
 }

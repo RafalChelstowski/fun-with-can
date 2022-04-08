@@ -1,0 +1,3153 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "rpr" : {
+                    "limits" : {
+                        "min_samples" : 32,
+                        "max_samples" : 256
+                    },
+                    "viewport_limits" : {
+                        "min_samples" : 16,
+                        "max_samples" : 32,
+                        "preview_samples" : 16,
+                        "noise_threshold" : 0.05000000074505806
+                    },
+                    "saved_addon_version" : [
+                        3,
+                        3,
+                        15
+                    ],
+                    "viewport_denoiser" : 1,
+                    "viewport_upscale" : 1,
+                    "max_ray_depth" : 8,
+                    "shadow_depth" : 5,
+                    "glossy_depth" : 5,
+                    "refraction_depth" : 5,
+                    "glossy_refraction_depth" : 5,
+                    "texture_compression" : 0,
+                    "use_tile_render" : 0,
+                    "tile_order" : 1,
+                    "use_clamp_radiance" : 0,
+                    "render_mode" : 4,
+                    "diffuse_depth" : 3
+                },
+                "qremesher" : {
+                    "target_count" : 2000,
+                    "symmetry_x" : 0,
+                    "autodetect_hard_edges" : 0,
+                    "symmetry_y" : 0,
+                    "adapt_quad_count" : 0
+                },
+                "automirror" : {
+                    "axis" : 1
+                },
+                "crowd_render" : {
+                    "render_engine" : 0,
+                    "local_node" : {
+                        "name" : "local",
+                        "node_state" : 4,
+                        "node_active" : 1,
+                        "node_uuid" : "local",
+                        "cr_version" : "0_3_1",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpgb5s665q/local_report_data.txt",
+                        "node_A_auto" : 0.0010000000474974513,
+                        "node_render_progress" : 100,
+                        "node_render_active" : 0,
+                        "node_A_manual" : 0.5
+                    },
+                    "use_cloud_rendering" : 0,
+                    "active_load_balance_node" : "DESKTOP-M33K6P1",
+                    "data_is_updated" : 0,
+                    "manual_load_balancer" : 0
+                },
+                "cr_nodes" : [
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "DESKTOP-M33K6P1",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba",
+                        "node_state" : 0,
+                        "node_address" : "192.168.1.17",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - NVIDIA GeForce RTX 2080",
+                                "type" : "OPTIX",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00_OptiX",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPTIX - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - NVIDIA GeForce RTX 2080",
+                                "type" : "CUDA",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpetqzrat9/a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba_report_data.txt",
+                        "node_A_auto" : 1.0,
+                        "reports" : [
+                            {
+                                "time_logged" : 1636636958,
+                                "time_stamp" : "Thu Nov 11 14:22:38 2021",
+                                "message" : "Info: node status updated: syncing...",
+                                "name" : "Info: node status updated: syncing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: repairing...",
+                                "name" : "Info: node status updated: repairing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_Material  ",
+                                "name" : "Warning: MISSING testPattern_Material  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top_Object  ",
+                                "name" : "Warning: MISSING top_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.040_Mesh  ",
+                                "name" : "Warning: MISSING Cube.040_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards_Object  ",
+                                "name" : "Warning: MISSING cupboards_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.041_Mesh  ",
+                                "name" : "Warning: MISSING Cube.041_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top  overhead_Object  ",
+                                "name" : "Warning: MISSING top  overhead_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.067_Mesh  ",
+                                "name" : "Warning: MISSING Cube.067_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards.001_Object  ",
+                                "name" : "Warning: MISSING cupboards.001_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.068_Mesh  ",
+                                "name" : "Warning: MISSING Cube.068_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane_Object  ",
+                                "name" : "Warning: MISSING Plane_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane.004_Mesh  ",
+                                "name" : "Warning: MISSING Plane.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink1_Object  ",
+                                "name" : "Warning: MISSING sink1_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink2_Object  ",
+                                "name" : "Warning: MISSING sink2_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Object  ",
+                                "name" : "Warning: MISSING Cube.075_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.107_Mesh  ",
+                                "name" : "Warning: MISSING Cube.107_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sprinkler_Object  ",
+                                "name" : "Warning: MISSING sprinkler_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Object  ",
+                                "name" : "Warning: MISSING Cube.073_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.010_Mesh  ",
+                                "name" : "Warning: MISSING Cube.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.074_Object  ",
+                                "name" : "Warning: MISSING Cube.074_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.106_Mesh  ",
+                                "name" : "Warning: MISSING Cube.106_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.006_Object  ",
+                                "name" : "Warning: MISSING Cylinder.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.008_Object  ",
+                                "name" : "Warning: MISSING Cylinder.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.009_Object  ",
+                                "name" : "Warning: MISSING Cylinder.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Object  ",
+                                "name" : "Warning: MISSING Cylinder.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Object  ",
+                                "name" : "Warning: MISSING Cylinder.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Object  ",
+                                "name" : "Warning: MISSING Cylinder.014_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Object  ",
+                                "name" : "Warning: MISSING Cylinder.015_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Object  ",
+                                "name" : "Warning: MISSING Cylinder.016_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Object  ",
+                                "name" : "Warning: MISSING Cylinder.017_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Object  ",
+                                "name" : "Warning: MISSING Cylinder.018_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Object  ",
+                                "name" : "Warning: MISSING Cylinder.020_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Object  ",
+                                "name" : "Warning: MISSING Cylinder.022_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.011_Object  ",
+                                "name" : "Warning: MISSING Cylinder.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Object  ",
+                                "name" : "Warning: MISSING Cylinder.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Object  ",
+                                "name" : "Warning: MISSING Cylinder.019_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Object  ",
+                                "name" : "Warning: MISSING Cylinder.021_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.023_Object  ",
+                                "name" : "Warning: MISSING Cylinder.023_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Object  ",
+                                "name" : "Warning: MISSING Cylinder.024_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.025_Object  ",
+                                "name" : "Warning: MISSING Cylinder.025_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Object  ",
+                                "name" : "Warning: MISSING Cylinder.026_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Object  ",
+                                "name" : "Warning: MISSING Cylinder.027_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.115_Mesh  ",
+                                "name" : "Warning: MISSING Cube.115_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Object  ",
+                                "name" : "Warning: MISSING Cylinder.028_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Object  ",
+                                "name" : "Warning: MISSING Cylinder.029_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING bar chair_Object  ",
+                                "name" : "Warning: MISSING bar chair_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.037_Mesh  ",
+                                "name" : "Warning: MISSING Cube.037_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.069_Mesh  ",
+                                "name" : "Warning: MISSING Cube.069_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.070_Mesh  ",
+                                "name" : "Warning: MISSING Cube.070_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.072_Mesh  ",
+                                "name" : "Warning: MISSING Cube.072_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Array_ArrayModifier  ",
+                                "name" : "Warning: MISSING Array_ArrayModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.071_Mesh  ",
+                                "name" : "Warning: MISSING Cube.071_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Mesh  ",
+                                "name" : "Warning: MISSING Cube.073_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Mesh  ",
+                                "name" : "Warning: MISSING Cube.075_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data scale",
+                                "name" : "Warning: Camera Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data location",
+                                "name" : "Warning: Camera Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data rotation_euler",
+                                "name" : "Warning: Camera Incorrect Data rotation_euler",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "name" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data location",
+                                "name" : "Warning: Cylinder.001 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.002 Incorrect Data location",
+                                "name" : "Warning: Cylinder.002 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.069 Incorrect Data scale",
+                                "name" : "Warning: Cube.069 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data scale",
+                                "name" : "Warning: Cube.011 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data location",
+                                "name" : "Warning: Cube.011 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.014 Incorrect Data scale",
+                                "name" : "Warning: Cube.014 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data scale",
+                                "name" : "Warning: Cube.015 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data location",
+                                "name" : "Warning: Cube.015 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data scale",
+                                "name" : "Warning: Cube.016 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data location",
+                                "name" : "Warning: Cube.016 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636961,
+                                "time_stamp" : "Thu Nov 11 14:22:41 2021",
+                                "message" : "Info: node status updated: synced",
+                                "name" : "Info: node status updated: synced",
+                                "level" : 6
+                            }
+                        ],
+                        "compute_device" : 1,
+                        "node_sync_progress" : 0,
+                        "node_render_progress" : 100,
+                        "node_result_progress" : 0,
+                        "node_A_manual" : 1.0,
+                        "node_repair_item" : "Camera"
+                    },
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "Rafas-MacBook-Pro.local",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "4af96e32-13ac-5d0d-8bb5-f9b3411d04d9",
+                        "node_state" : 0
+                    }
+                ],
+                "cr_node_index" : 0,
+                "muv_align_uv_enabled" : 0,
+                "muv_pack_uv_enabled" : 1
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.014",
+            "translation" : [
+                -0.0115414559841156,
+                0.440640389919281,
+                -3.587632656097412
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Cube.019",
+            "translation" : [
+                0.025399476289749146,
+                0.440640389919281,
+                -5.394561290740967
+            ]
+        },
+        {
+            "mesh" : 2,
+            "name" : "Cube.020",
+            "translation" : [
+                2.4329991340637207,
+                0.7494171261787415,
+                0.24730095267295837
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "Cube.021",
+            "translation" : [
+                2.4329991340637207,
+                0.43588683009147644,
+                -0.5747944116592407
+            ]
+        },
+        {
+            "mesh" : 4,
+            "name" : "Cube.022",
+            "translation" : [
+                2.4329991340637207,
+                0.43588683009147644,
+                1.0652289390563965
+            ]
+        },
+        {
+            "mesh" : 5,
+            "name" : "Cube.023",
+            "translation" : [
+                2.453192710876465,
+                0.43248817324638367,
+                0.24625474214553833
+            ]
+        },
+        {
+            "mesh" : 6,
+            "name" : "Cube.024",
+            "translation" : [
+                2.453192710876465,
+                0.21645523607730865,
+                0.24625474214553833
+            ]
+        },
+        {
+            "mesh" : 7,
+            "name" : "Cube.025",
+            "translation" : [
+                -1.284716010093689,
+                1.5000481605529785,
+                -5.538613796234131
+            ]
+        },
+        {
+            "mesh" : 8,
+            "name" : "Cube.026",
+            "translation" : [
+                2.9177961349487305,
+                1.4497900009155273,
+                0.23770081996917725
+            ]
+        },
+        {
+            "mesh" : 9,
+            "name" : "Cube.027",
+            "translation" : [
+                -3.1698784828186035,
+                1.4497900009155273,
+                0.23770081996917725
+            ]
+        },
+        {
+            "mesh" : 10,
+            "name" : "Cube.028",
+            "translation" : [
+                -0.13074763119220734,
+                1.5398879051208496,
+                6.2316107749938965
+            ]
+        },
+        {
+            "mesh" : 11,
+            "name" : "Cube.029",
+            "translation" : [
+                -0.13074763119220734,
+                1.5398879051208496,
+                -5.973098278045654
+            ]
+        },
+        {
+            "mesh" : 12,
+            "name" : "Cube.030",
+            "translation" : [
+                2.3849167823791504,
+                0.18071749806404114,
+                5.008289337158203
+            ]
+        },
+        {
+            "mesh" : 13,
+            "name" : "Cube.031",
+            "translation" : [
+                -2.487090826034546,
+                0.18071749806404114,
+                5.008289337158203
+            ]
+        },
+        {
+            "mesh" : 14,
+            "name" : "Cube.032",
+            "translation" : [
+                0.009038567543029785,
+                0.18071749806404114,
+                5.630373477935791
+            ]
+        },
+        {
+            "mesh" : 15,
+            "name" : "Cube.033",
+            "translation" : [
+                2.610308885574341,
+                0.6874625086784363,
+                4.992569923400879
+            ]
+        },
+        {
+            "mesh" : 16,
+            "name" : "Cube.034",
+            "translation" : [
+                -2.7177062034606934,
+                0.6874625086784363,
+                4.992569923400879
+            ]
+        },
+        {
+            "mesh" : 17,
+            "name" : "Cube.035",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "translation" : [
+                0.017804980278015137,
+                0.6874625086784363,
+                5.845948219299316
+            ]
+        },
+        {
+            "mesh" : 18,
+            "name" : "Cube.036",
+            "rotation" : [
+                0,
+                0.7071068286895752,
+                0,
+                0.7071068286895752
+            ],
+            "translation" : [
+                0.07587647438049316,
+                2.6225833892822266,
+                5.890252590179443
+            ]
+        },
+        {
+            "mesh" : 19,
+            "name" : "Cube.037",
+            "translation" : [
+                -2.7234790325164795,
+                1.7226758003234863,
+                5.811699390411377
+            ]
+        },
+        {
+            "mesh" : 20,
+            "name" : "Cube.038",
+            "translation" : [
+                -2.7234790325164795,
+                1.4502792358398438,
+                0.15480881929397583
+            ]
+        },
+        {
+            "mesh" : 21,
+            "name" : "Cube.039",
+            "translation" : [
+                -2.2557733058929443,
+                2.6330604553222656,
+                0.1542750895023346
+            ]
+        },
+        {
+            "mesh" : 22,
+            "name" : "Cube.040",
+            "translation" : [
+                2.4665586948394775,
+                2.6330604553222656,
+                0.1542750895023346
+            ]
+        },
+        {
+            "mesh" : 23,
+            "name" : "Cube.041",
+            "translation" : [
+                0.12295699119567871,
+                2.6558241844177246,
+                0.1529242843389511
+            ]
+        },
+        {
+            "mesh" : 24,
+            "name" : "Cube.042",
+            "translation" : [
+                -2.775235652923584,
+                1.1307991743087769,
+                -2.735043525695801
+            ]
+        },
+        {
+            "mesh" : 25,
+            "name" : "Cube.043",
+            "translation" : [
+                -2.745558261871338,
+                1.1307991743087769,
+                2.181485176086426
+            ]
+        },
+        {
+            "mesh" : 26,
+            "name" : "Cube.044",
+            "translation" : [
+                -2.7990975379943848,
+                1.1307991743087769,
+                4.7776875495910645
+            ]
+        },
+        {
+            "mesh" : 27,
+            "name" : "Cube.045",
+            "translation" : [
+                -1.0293326377868652,
+                0.3604918122291565,
+                4.6449408531188965
+            ]
+        },
+        {
+            "mesh" : 28,
+            "name" : "Cylinder",
+            "translation" : [
+                -0.5892320275306702,
+                0.3807526230812073,
+                0.006993302144110203
+            ]
+        },
+        {
+            "mesh" : 29,
+            "name" : "Cylinder.001",
+            "translation" : [
+                0.6203820705413818,
+                0.3807526230812073,
+                2.1794605255126953
+            ]
+        },
+        {
+            "mesh" : 30,
+            "name" : "Cylinder.002",
+            "translation" : [
+                -1.060886263847351,
+                0.3807526230812073,
+                2.2367284297943115
+            ]
+        },
+        {
+            "mesh" : 31,
+            "name" : "Cylinder.003",
+            "translation" : [
+                1.387402057647705,
+                0.3807526230812073,
+                4.540921688079834
+            ]
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.044",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 0,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.045",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 1,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.046",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 7,
+                        "NORMAL" : 8,
+                        "TEXCOORD_0" : 9
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 2,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.047",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 10,
+                        "NORMAL" : 11,
+                        "TEXCOORD_0" : 12
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 3,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.049",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 13,
+                        "NORMAL" : 14,
+                        "TEXCOORD_0" : 15
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 4,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.050",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 5,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 19,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.051",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 20,
+                        "NORMAL" : 21,
+                        "TEXCOORD_0" : 22
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 6,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 19,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.052",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 23,
+                        "NORMAL" : 24,
+                        "TEXCOORD_0" : 25
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 7,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.053",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 26,
+                        "NORMAL" : 27,
+                        "TEXCOORD_0" : 28
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 8,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.054",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 29,
+                        "NORMAL" : 30,
+                        "TEXCOORD_0" : 31
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 9,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.055",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 32,
+                        "NORMAL" : 33,
+                        "TEXCOORD_0" : 34
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 10,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 35,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.056",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 36,
+                        "NORMAL" : 37,
+                        "TEXCOORD_0" : 38
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 11,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 35,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.057",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 39,
+                        "NORMAL" : 40,
+                        "TEXCOORD_0" : 41
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 12,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.058",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 42,
+                        "NORMAL" : 43,
+                        "TEXCOORD_0" : 44
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 13,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.059",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 45,
+                        "NORMAL" : 46,
+                        "TEXCOORD_0" : 47
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 14,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 35,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.060",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 48,
+                        "NORMAL" : 49,
+                        "TEXCOORD_0" : 50
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 15,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.061",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 51,
+                        "NORMAL" : 52,
+                        "TEXCOORD_0" : 53
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 16,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.062",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 54,
+                        "NORMAL" : 55,
+                        "TEXCOORD_0" : 56
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 17,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.063",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 57,
+                        "NORMAL" : 58,
+                        "TEXCOORD_0" : 59
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 18,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.064",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 60,
+                        "NORMAL" : 61,
+                        "TEXCOORD_0" : 62
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 19,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.065",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 63,
+                        "NORMAL" : 64,
+                        "TEXCOORD_0" : 65
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 20,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.066",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 66,
+                        "NORMAL" : 67,
+                        "TEXCOORD_0" : 68
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 21,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.067",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 69,
+                        "NORMAL" : 70,
+                        "TEXCOORD_0" : 71
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 22,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.068",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 72,
+                        "NORMAL" : 73,
+                        "TEXCOORD_0" : 74
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 23,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.069",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 75,
+                        "NORMAL" : 76,
+                        "TEXCOORD_0" : 77
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 24,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 19,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.070",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 78,
+                        "NORMAL" : 79,
+                        "TEXCOORD_0" : 80
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 25,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 19,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.071",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 81,
+                        "NORMAL" : 82,
+                        "TEXCOORD_0" : 83
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 26,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 19,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.072",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 84,
+                        "NORMAL" : 85,
+                        "TEXCOORD_0" : 86
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 27,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cylinder.011",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 87,
+                        "NORMAL" : 88,
+                        "TEXCOORD_0" : 89
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 28,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 90,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cylinder.012",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 91,
+                        "NORMAL" : 92,
+                        "TEXCOORD_0" : 93
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 29,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 90,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cylinder.013",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 94,
+                        "NORMAL" : 95,
+                        "TEXCOORD_0" : 96
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 30,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 90,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cylinder.014",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 97,
+                        "NORMAL" : 98,
+                        "TEXCOORD_0" : 99
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 31,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 90,
+                    "mode" : 4
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                1.5681098699569702,
+                0.4450322985649109,
+                0.3538179099559784
+            ],
+            "min" : [
+                -1.5681098699569702,
+                -0.4450322985649109,
+                -0.3538179099559784
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                2.656921863555908,
+                0.4450322985649109,
+                0.31883400678634644
+            ],
+            "min" : [
+                -2.656921863555908,
+                -0.4450322985649109,
+                -0.31883400678634644
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.24302086234092712,
+                0.12054163962602615,
+                0.7589645385742188
+            ],
+            "min" : [
+                -0.24302086234092712,
+                -0.12054161727428436,
+                -0.7589645385742188
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.24302086234092712,
+                0.43407195806503296,
+                0.06304624676704407
+            ],
+            "min" : [
+                -0.24302086234092712,
+                -0.43407198786735535,
+                -0.06304624676704407
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.24302086234092712,
+                0.43407195806503296,
+                0.06304624676704407
+            ],
+            "min" : [
+                -0.24302086234092712,
+                -0.43407198786735535,
+                -0.06304624676704407
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.22282738983631134,
+                0.016467951238155365,
+                0.7600107192993164
+            ],
+            "min" : [
+                -0.22282737493515015,
+                -0.016467951238155365,
+                -0.7600107192993164
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.22282738983631134,
+                0.016467951238155365,
+                0.7600107192993164
+            ],
+            "min" : [
+                -0.22282737493515015,
+                -0.016467951238155365,
+                -0.7600107192993164
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                1.358880639076233,
+                0.030360039323568344,
+                0.20016001164913177
+            ],
+            "min" : [
+                -1.358880639076233,
+                -0.030360039323568344,
+                -0.20016001164913177
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.24302086234092712,
+                1.4470441341400146,
+                6.051281452178955
+            ],
+            "min" : [
+                -0.24302086234092712,
+                -1.447044014930725,
+                -6.051281452178955
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.24302086234092712,
+                1.4470441341400146,
+                6.051281452178955
+            ],
+            "min" : [
+                -0.24302086234092712,
+                -1.447044014930725,
+                -6.051281452178955
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                3.2911875247955322,
+                1.4470441341400146,
+                0.24302101135253906
+            ],
+            "min" : [
+                -3.2911875247955322,
+                -1.4470441341400146,
+                -0.24302101135253906
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                3.2911875247955322,
+                1.4470441341400146,
+                0.24302101135253906
+            ],
+            "min" : [
+                -3.2911875247955322,
+                -1.4470441341400146,
+                -0.24302101135253906
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.2911033034324646,
+                0.1876901090145111,
+                0.9755909442901611
+            ],
+            "min" : [
+                -0.2911033034324646,
+                -0.1876901090145111,
+                -0.9755909442901611
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.4095921516418457,
+                0.1876901090145111,
+                0.9755909442901611
+            ],
+            "min" : [
+                -0.4095922112464905,
+                -0.1876901090145111,
+                -0.9755909442901611
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                2.082003593444824,
+                0.1876901090145111,
+                0.3584681451320648
+            ],
+            "min" : [
+                -2.082003593444824,
+                -0.1876901090145111,
+                -0.3584681451320648
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.06571128964424133,
+                0.3377073407173157,
+                0.9913104772567749
+            ],
+            "min" : [
+                -0.06571131944656372,
+                -0.3377073407173157,
+                -0.9913104772567749
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.18326562643051147,
+                0.3377073407173157,
+                0.9913104772567749
+            ],
+            "min" : [
+                -0.1832655966281891,
+                -0.3377073407173157,
+                -0.9913104772567749
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.1431097388267517,
+                0.3377073407173157,
+                2.538257122039795
+            ],
+            "min" : [
+                -0.14310970902442932,
+                -0.3377073407173157,
+                -2.538257122039795
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.09880535304546356,
+                0.28233271837234497,
+                2.5963287353515625
+            ],
+            "min" : [
+                -0.09880536049604416,
+                -0.28233271837234497,
+                -2.5963287353515625
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.20451802015304565,
+                1.1819442510604858,
+                0.16805106401443481
+            ],
+            "min" : [
+                -0.20451802015304565,
+                -1.1819443702697754,
+                -0.16805106401443481
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.20451802015304565,
+                1.4543406963348389,
+                0.3255362808704376
+            ],
+            "min" : [
+                -0.20451802015304565,
+                -1.4543406963348389,
+                -0.3255362808704376
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.25904834270477295,
+                0.27155959606170654,
+                0.23468947410583496
+            ],
+            "min" : [
+                -0.25904837250709534,
+                -0.27155983448028564,
+                -0.23468947410583496
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.21611416339874268,
+                0.2715597152709961,
+                0.23468947410583496
+            ],
+            "min" : [
+                -0.21611416339874268,
+                -0.2715597152709961,
+                -0.23468947410583496
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                2.1240086555480957,
+                0.24879592657089233,
+                0.17114783823490143
+            ],
+            "min" : [
+                -2.1240086555480957,
+                -0.24879592657089233,
+                -0.17114783823490143
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.1592629998922348,
+                0.02550540864467621,
+                2.5859835147857666
+            ],
+            "min" : [
+                -0.159263014793396,
+                -0.02550540491938591,
+                -2.5859835147857666
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.18894030153751373,
+                0.02550540678203106,
+                1.7051303386688232
+            ],
+            "min" : [
+                -0.18894031643867493,
+                -0.02550540678203106,
+                -1.7051302194595337
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.13540107011795044,
+                0.02550540678203106,
+                0.8912168741226196
+            ],
+            "min" : [
+                -0.13540105521678925,
+                -0.02550540678203106,
+                -0.8912167549133301
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.83059161901474,
+                0.36746445298194885,
+                0.41271543502807617
+            ],
+            "min" : [
+                -0.8305915594100952,
+                -0.36746442317962646,
+                -0.41271543502807617
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "max" : [
+                0.5536068081855774,
+                0.3762574791908264,
+                0.5536068081855774
+            ],
+            "min" : [
+                -0.5536068081855774,
+                -0.3762574791908264,
+                -0.5536068081855774
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 180,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "max" : [
+                0.5536068081855774,
+                0.3762574791908264,
+                0.5536068081855774
+            ],
+            "min" : [
+                -0.5536068081855774,
+                -0.3762574791908264,
+                -0.5536068081855774
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "max" : [
+                0.5536068081855774,
+                0.3762574791908264,
+                0.5536068081855774
+            ],
+            "min" : [
+                -0.5536068081855774,
+                -0.3762574791908264,
+                -0.5536068081855774
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "max" : [
+                0.5536068081855774,
+                0.3762574791908264,
+                0.5536068081855774
+            ],
+            "min" : [
+                -0.5536068081855774,
+                -0.3762574791908264,
+                -0.5536068081855774
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC2"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 346,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 340,
+            "byteOffset" : 348
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 346,
+            "byteOffset" : 688
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 333,
+            "byteOffset" : 1036
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 333,
+            "byteOffset" : 1372
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 343,
+            "byteOffset" : 1708
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 343,
+            "byteOffset" : 2052
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 333,
+            "byteOffset" : 2396
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 341,
+            "byteOffset" : 2732
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 341,
+            "byteOffset" : 3076
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 347,
+            "byteOffset" : 3420
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 347,
+            "byteOffset" : 3768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 346,
+            "byteOffset" : 4116
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 346,
+            "byteOffset" : 4464
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 339,
+            "byteOffset" : 4812
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 347,
+            "byteOffset" : 5152
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 348,
+            "byteOffset" : 5500
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 341,
+            "byteOffset" : 5848
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 335,
+            "byteOffset" : 6192
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 327,
+            "byteOffset" : 6528
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 327,
+            "byteOffset" : 6856
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 326,
+            "byteOffset" : 7184
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 327,
+            "byteOffset" : 7512
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 332,
+            "byteOffset" : 7840
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 322,
+            "byteOffset" : 8172
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 333,
+            "byteOffset" : 8496
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 340,
+            "byteOffset" : 8832
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 344,
+            "byteOffset" : 9172
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 859,
+            "byteOffset" : 9516
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 859,
+            "byteOffset" : 10376
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 859,
+            "byteOffset" : 11236
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 859,
+            "byteOffset" : 12096
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 12956,
+            "uri" : "data:application/octet-stream;base64,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AAD/PwAA0aJSwL44ub+A2ni+0aLSQA4AAwEBA/8HqTb/////////9wEErQL/////////860CB7JKT+YRPrX/AwAA/wEAAAoBAQEADQMBECMBGAEYBwD8Vup/Won////+/3//AYAAAgAA/t//AQAA/g+A//d/APB/AAiA//d/APB//wNg//0fAPwfAALg//0fAAAAAAAA/w8AAAAAAD4AAAAAAACAPwwARFJBQ08CAgEBAAAAGAwCDAAABd/3fd8H/wJmQP8CZkD/AmZAA/8AAAAAAAEAAAEACQMAAAIBAQkDAAEDAQMJAgACAgEBAQAPA60SJ60KA6kiB6fhVbv7+YAAgBEOAAQAANAlAADAXAIAKMIBgAAAgLkEAACgSwQAMMLpEgCgCAcAIAAU4QBAAGCEAwAAQBEOAAAAKMLpEgDACJ9LAIAiHABAAFCEAwACgBEOAAAARTgAAAAAAAD/PwAA0aJSwL44ub+A2ni+0aLSQA4AAwEBA/8HqTb/////////9wEErQL/////////860CB7JKT+YRPrX/AwAA/wEAAAoBAQEADQMBECMBGAEYBwD8Vup/Won////+/3//AYAAAgAA/t//AQAA/g+A//d/APB/AAiA//d/APB//wNg//0fAPwfAALg//0fAAAAAAAA/w8AAAAAAD4AAAAAAACAPwwARFJBQ08CAgEBAAAAGAwCDAAABd/3fd8H/wJmQP8CZkD/AmZAA/8AAAAAAAEAAAEACQMAAAIBAQkDAAEDAQMJAgACAgEBAQAPA60SKwEYVRUHiKvMjNMejDAmKAYAvJgAQAAAYwIAAAAAwCcGADAmABAAvJgAAAAAvpigGAAAAD4xAAAA+MQCAACA4gAAAD4xAMCL+YkBADAmKAYAAIBPDAAAAD5xAAAAoFgAAIBPDAAAAAAAAP8/AAB+C5W+1jFAvlTAeb9UwPk/DgADAQALAwEwGwEIAQgGAArxc22A/wEA/gMA/P8P/AcAAAAg4D+AAP8DAAD/AQAACgEBAQANAwEQIwEYARgHAPxW6n9aif////7/f/8BgAACAAD+3/8BAAD+D4D/938A8H8ACID/938A8H//A2D//R8A/B8AAuD//R8AAAAAAAD/DwAAAAAAPgAAAAAAAIA/DAAARFJBQ08CAgEBAAAAGAwCDAAABd/3fd8H/wJmQP8CZkD/AmZA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//////////////////////////////////////////8vHQdxBBSG+anpnX/Zs5adbcnk+UYlIPgMgQAAAAD/PwAAd1rKveqNkL5AKibAQCqmQA4AAwEACwMBMBsBCAEIBgAK8XNtgP8BAP4DAPz/D/wHAAAAIOA/gAD/AwAA/wEAAAoBAQEADQMBECMBGAEYBwD8Vup/Won////+/3//AYAAAgAA/t//AQAA/g+A//d/APB/AAiA//d/APB//wNg//0fAPwfAALg//0fAAAAAAAA/w8AAAAAAD4AAAAAAACAPwwARFJBQ08CAgEBAAAAGAwCDAAABd/3fd8H/wJmQP8CZkD/AmZAA/8AAAAAAAEAAAEACQMAAAIBAQkDAAEDAQMJAgACAgEBAQAOAwEQVQ0nrSIH6DzuPJZ3gSY2AACAEgsAZKSJBQAAAIiJBQAyssQCAAAAAAAAZGSJDQAAAAEAEAAxEgAEABmJoMQKAABgYgMAAEAAAASAjAQAASBGIgAAAAAA/z8AACxtUb70SZe/lBUsvvRJF0AOAAMBAAsDATAbAQgBCAYACvFzbYD/AQD+AwD8/w/8BwAAACDgP4AA/wMAAP8BAAAKAQEBAA0DARAjARgBGAcA/Fbqf1qJ/////v9//wGAAAIAAP7f/wEAAP4PgP/3fwDwfwAIgP/3fwDwf/8DYP/9HwD8HwAC4P/9HwAAAAAAAP8PAAAAAAA+AAAAAAAAgD8MAERSQUNPAgIBAQAAABgMAgwAAAXf933fB/8CZkD/AmZA/wJmQAP/AAAAAAABAAABAAkDAAACAQEJAwABAwEDCQIAAgIBAQEADgMBEFUNJ60iB+g87jyWd4EAMgAAgP8IAEw5gAQAAAAIgAQApvw/AgAAAAAAAEz5fwwAAAABABAApRwABABTjuA/CgAAACADAABAAAAEgCkHAAGglCMAAAAAAP8/AAAsbVG+1ie6v7Gspr7WJzpADgADAQALAwEwGwEIAQgGAArxc22A/wEA/gMA/P8P/AcAAAAg4D+AAP8DAAD/AQAACgEBAQANAwEQIwEYARgHAPxW6n9aif////7/f/8BgAACAAD+3/8BAAD+D4D/938A8H8ACID/938A8H//A2D//R8A/B8AAuD//R8AAAAAAAD/DwAAAAAAPgAAAAAAAIA/DABEUkFDTwICAQEAAAAYDAIM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HQAAAAAAAP8/AACTpgq+t/DQvMgmZL/JJuQ/DgADAQALAwEwG60CVQ0FY8OFnKj/AQD+AwAM+B+w/38AAAQC+gMIAP8DAAD/AQAACgEBAQANAwEQIwEYARgHAPxW6n9aif////7/f/8BgAACAAD+3/8BAAD+D4D/938A8H8ACID/938A8H//A2D//R8A/B8AAuD//R8AAAAAAAD/DwAAAAAAPgAAAAAAAIA/DERSQUNPAgIBAQAAABgMAgwAAAXf933fB/8CZkD/AmZA/wJmQAP/AAAAAAABAAABAAkDAAACAQEJAwABAwEDCQIAAgIBAQEADwOtEq0CK6kqBuJZDLvsgAEAKA4ACAAAgOYfAACfOAAQAAAAmr8AAAAA0PwFAFAcAAAAPnEAAADAJ575AwCguOYPAHziAAAEgE8cAAgAQHEAAAD4xAEAAACfuOYPAIDimT8A8IkDAAAAAAAA/z8AAKahVL9MJLy+cE/Tvqah1D8OAAMBAAsDATAbAQgBCAYACvFzbYD/AQD+AwD8/w/8BwAAACDgP4AA/wMAAP8BAAAKAQEBAA0DARAjARgBGAcA/Fbqf1qJ/////v9//wGAAAIAAP7f/wEAAP4PgP/3fwDwfwAIgP/3fwDwf/8DYP/9HwD8HwAC4P/9HwAAAAAAAP8PAAAAAAA+AAAAAAAAgD8MRFJBQ08CAgEBAAAAYDwCPAwAF3/+5E+efd+fP/mTZ9/3fd/3fd/3fd8H/wI1Qf8C8kL/AvJCA/8AAAAAAAEAAAEACQMAAAIBAQkDAAEDAQMJAgACAgEBAQEFoXY9Gv////////////////////////93rQLlAv//////////////////////////////////////////////760CrQL/////////////////////////dzg4//////////8PcQLJAf//////////////////1+QdAR0BHQH/////////////////////////////////////////////////////hzhw//////////////9nOP//////////C1UBVQH///////eRA+UG/////////////////4M4////czj////////////////////////////////////////////////////////////////////3rKz///9ncDis5H3JnAYX2sIwbclDDI63j5l6dPuSUuarGEPWaY7HOeGQItIM+N+CVQcemWl3QJDN0gxkLQxLlBbDCa31Q4oIbjgnjALSukT3Xsq2VYCCKyVvoW5TrNjz+wgPIypgin3f0mSkP7y2zU9S1cYTK11wu66Ebc1cR2hLkqFuiydIXAAAAAD/PwAALbkNv9KkwL4tuQ2/LbmNPw4AAwEBBKsHtTj/T1Q7VEdVAcOs//8bVP/bVP9PVAEB/////79U/1NVAUesO1QYxGWJ7pB4Zz2Oxmrin+4Py0Ht6Dg8Fg+E/wMAAP8BAAAKAQEBAQaAIBkQ/zdUA6z/C1UBVQH/N1T///8LrQFVAf9HVFQBBVUE+1TvAQFUR1T/c1Ss//+DrP//T1RU//9PVQGsv1R7VKz/c1T///////+frQGtAf///0dUVP+/AQEBAf////87VP//S1T///+3VP////////////NU////////o1T///+TVQ9eHMdt94eQ4iJTFiJ+IgxuykWo5GYqXyaEXpjFl+lcxIF74rIC6L4ZEWHtu3asn3RgJyte3sSOSbYSlD1UCVw8WNy/GOYKjLN4xjpWfkBvG32HM47XcgMFbn9IOyL1ewAAAAD/DwAAAAAAAAAAAAAAAIA/DABEUkFDTwICAQEAAABgPAI8DAAXf/7kT559358/+ZNn3/d93/d93/d93wf/AjVB/wLyQv8C8kID/wAAAAAAAQAAAQAJAwAAAgEBCQMAAQMBAwkCAAICAQEBAQWhdj0a/////////////////////////3etAuUC///////////////////////////////////////////////vrQKtAv////////////////////////93ODj//////////w9xAskB///////////////////X5B0BHQEdAf////////////////////////////////////////////////////+HOHD//////////////2c4//////////8LVQFVAf//////95ED5Qb/////////////////gzj///9zOP////////////////////////////////////////////////////////////////////esrP///2dwOKzkfcmcBhfawjBtyUMMjrePmXp0+5JS5qsYQ9Zpjsc54ZAi0gz434JVBx6ZaXdAkM3SDGQtDEuUFsMJrfVDighuOCeMAtK6RPdeyrZVgIIrJW+hblOs2PP7CA8jKmCKfd/SZKQ/vLbNT1LVxhMrXXC7roRtzVxHaEuSoW6LJ0hcAAAAAP8/AAAtuQ2/0qTAvi25Db8tuY0/DgADAQEEqwe1OP9PVDtUR1UBw6z//xtU/9tU/09UAQH/////v1T/U1UBR6w7VBjEZYnukHhnPY7GauKf7g/LQe3oODwWD4T/AwAA/wEAAAoBAQEBBoAgGRD/N1QDrP8LVQFVAf83VP///wutAVUB/0dUVAEFVQT7VO8BAVRHVP9zVKz//4Os//9PVFT//09VAay/VHtUrP9zVP///////5+tAa0B////R1RU/78BAQEB/////ztU//9LVP///7dU////////////81T///////+jVP///5NVD14cx233h5DiIlMWIn4iDG7KRajkZipfJoRemMWX6VzEgXvisgLovhkRYe27dqyfdGAnK17exI5JthKUPVQJXDxY3L8Y5gqMs3jGOlZ+QG8bfYczjtdyAwVuf0g7IvV7AAAAAP8PAAAAAAAAAAAAAAAAgD8MAERSQUNPAgIBAQAAAGA8AjwMABd//uRPnn3fnz/5k2ff933f933f933fB/8CNUH/AvJC/wLyQgP/AAAAAAABAAABAAkDAAACAQEJAwABAwEDCQIAAgIBAQEBBaF2PRr/////////////////////////d60C5QL//////////////////////////////////////////////++tAq0C/////////////////////////3c4OP//////////D3ECyQH//////////////////9fkHQEdAR0B/////////////////////////////////////////////////////4c4cP//////////////Zzj//////////wtVAVUB///////3kQPlBv////////////////+DOP///3M4////////////////////////////////////////////////////////////////////96ys////Z3A4rOR9yZwGF9rCMG3JQwyOt4+ZenT7klLmqxhD1mmOxznhkCLSDPjfglUHHplpd0CQzdIMZC0MS5QWwwmt9UOKCG44J4wC0rpE917KtlWAgislb6FuU6zY8/sIDyMqYIp939JkpD+8ts1PUtXGEytdcLuuhG3NXEdoS5KhbosnSFwAAAAA/z8AAC25Db/SpMC+LbkNvy25jT8OAAMBAQSrB7U4/09UO1RHVQHDrP//G1T/21T/T1QBAf////+/VP9TVQFHrDtUGMRlie6QeGc9jsZq4p/uD8tB7eg4PBYPhP8DAAD/AQAACgEBAQEGgCAZEP83VAOs/wtVAVUB/zdU////C60BVQH/R1RUAQVVBPtU7wEBVEdU/3NUrP//g6z//09UVP//T1UBrL9Ue1Ss/3NU////////n60BrQH///9HVFT/vwEBAQH/////O1T//0tU////t1T////////////zVP///////6NU////k1UPXhzHbfeHkOIiUxYifiIMbspFqORmKl8mhF6YxZfpXMSBe+KyAui+GRFh7bt2rJ90YCcrXt7Ejkm2EpQ9VAlcPFjcvxjmCoyzeMY6Vn5Abxt9hzOO13IDBW5/SDsi9XsAAAAA/w8AAAAAAAAAAAAAAACAPwwARFJBQ08CAgEBAAAAYDwCPAwAF3/+5E+efd+fP/mTZ9/3fd/3fd/3fd8H/wI1Qf8C8kL/AvJCA/8AAAAAAAEAAAEACQMAAAIBAQkDAAEDAQMJAgACAgEBAQEFoXY9Gv////////////////////////93rQLlAv//////////////////////////////////////////////760CrQL/////////////////////////dzg4//////////8PcQLJAf//////////////////1+QdAR0BHQH/////////////////////////////////////////////////////hzhw//////////////9nOP//////////C1UBVQH///////eRA+UG/////////////////4M4////czj////////////////////////////////////////////////////////////////////3rKz///9ncDis5H3JnAYX2sIwbclDDI63j5l6dPuSUuarGEPWaY7HOeGQItIM+N+CVQcemWl3QJDN0gxkLQxLlBbDCa31Q4oIbjgnjALSukT3Xsq2VYCCKyVvoW5TrNjz+wgPIypgin3f0mSkP7y2zU9S1cYTK11wu66Ebc1cR2hLkqFuiydIXAAAAAD/PwAALbkNv9KkwL4tuQ2/LbmNPw4AAwEBBKsHtTj/T1Q7VEdVAcOs//8bVP/bVP9PVAEB/////79U/1NVAUesO1QYxGWJ7pB4Zz2Oxmrin+4Py0Ht6Dg8Fg+E/wMAAP8BAAAKAQEBAQaAIBkQ/zdUA6z/C1UBVQH/N1T///8LrQFVAf9HVFQBBVUE+1TvAQFUR1T/c1Ss//+DrP//T1RU//9PVQGsv1R7VKz/c1T///////+frQGtAf///0dUVP+/AQEBAf////87VP//S1T///+3VP////////////NU////////o1T///+TVQ9eHMdt94eQ4iJTFiJ+IgxuykWo5GYqXyaEXpjFl+lcxIF74rIC6L4ZEWHtu3asn3RgJyte3sSOSbYSlD1UCVw8WNy/GOYKjLN4xjpWfkBvG32HM47XcgMFbn9IOyL1ewAAAAD/DwAAAAAAAAAAAAAAAIA/DAA="
+        }
+    ]
+}

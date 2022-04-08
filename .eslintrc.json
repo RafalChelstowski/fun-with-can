@@ -48,7 +48,7 @@
       ],
       "newlinesBetween": "always"
     }],
-    "no-multiple-empty-lines": ["error", {
+    "no-multiple-empty-lines": ["warn", {
       "max": 1
     }],
     "prettier/prettier": ["warn", {

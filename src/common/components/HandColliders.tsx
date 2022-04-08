@@ -81,8 +81,8 @@ export function HandsColliders(): JSX.Element {
 
 const rightPos = new THREE.Vector3();
 const leftPos = new THREE.Vector3();
-const rightRot = new THREE.Euler();
-const leftRot = new THREE.Euler();
+// const rightRot = new THREE.Euler();
+// const leftRot = new THREE.Euler();
 
 export function ControllerColliders(): JSX.Element {
   const rightController = useController('right');
@@ -103,22 +103,22 @@ export function ControllerColliders(): JSX.Element {
       const rp = rightPos.setFromMatrixPosition(
         rightController.controller.matrixWorld
       );
-      const rr = rightRot.setFromRotationMatrix(
-        rightController.controller.matrixWorld
-      );
+      // const rr = rightRot.setFromRotationMatrix(
+      //   rightController.controller.matrixWorld
+      // );
       rightHandApi.position.set(...rp.toArray());
-      rightHandApi.rotation.set(...rr.toVector3().toArray());
+      // rightHandApi.rotation.set(...rr.toArray().toArray());
     }
 
     if (leftController) {
       const lp = leftPos.setFromMatrixPosition(
         leftController.controller.matrixWorld
       );
-      const lr = leftRot.setFromRotationMatrix(
-        leftController.controller.matrixWorld
-      );
+      // const lr = leftRot.setFromRotationMatrix(
+      //   leftController.controller.matrixWorld
+      // );
       leftHandApi.position.set(...lp.toArray());
-      leftHandApi.rotation.set(...lr.toVector3().toArray());
+      // leftHandApi.rotation.set(...lr.toVector3().toArray());
     }
   });
 

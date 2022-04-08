@@ -5,4 +5,6 @@ import { State } from '../types';
 export const useStore = create<State>((set) => ({
   isLocked: false,
   toggleIsLocked: () => set((state) => ({ isLocked: !state.isLocked })),
+  clickedPoint: null,
+  pickedObject: false,
 }));

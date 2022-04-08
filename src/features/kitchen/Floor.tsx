@@ -9,8 +9,8 @@ export function Floor(): JSX.Element {
 
   return (
     <mesh ref={ref}>
-      <planeGeometry args={[100, 100]} />
-      <meshStandardMaterial attach="material" color="gray" />
+      <planeBufferGeometry args={[100, 100]} />
+      <meshBasicMaterial visible={false} />
     </mesh>
   );
 }
