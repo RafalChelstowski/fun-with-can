@@ -20,7 +20,9 @@ type GLTFResult = GLTF & {
 export function ToukMug2(): JSX.Element {
   const point = useStore((state) => state.clickedPoint);
   const camera = useThree((state) => state.camera);
-  const { nodes, materials } = useGLTF('/toukMug2.gltf') as GLTFResult;
+  const { nodes, materials } = useGLTF(
+    '/toukMug2.gltf'
+  ) as unknown as GLTFResult;
   const box = new THREE.Box3().setFromObject(nodes.toukMug2);
   const radius = (box.max.x - box.min.x) / 2;
   const height = box.max.y - box.min.y;
@@ -86,7 +88,7 @@ export function ToukMug2(): JSX.Element {
 
         setPicked(e.instanceId);
       }}
-      ref={ref}
+      ref={ref as unknown as React.RefObject<React.ReactNode>}
       args={[nodes.toukMug2.geometry, materials.salmonToukCupMaterial, num]}
       name={objName}
     />

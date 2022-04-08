@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { ReactNode, RefObject, useEffect, useRef } from 'react';
 
 import { useCylinder } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
@@ -37,7 +37,7 @@ export function Rain({ num }: { num: number }): JSX.Element {
   return (
     <group>
       <instancedMesh
-        ref={ref}
+        ref={ref as unknown as RefObject<ReactNode>}
         name="Can"
         args={[undefined, undefined, num]}
         material={materials.harnasblue}
@@ -75,7 +75,7 @@ export function Static({ num }: { num: number }): JSX.Element {
   return (
     <group>
       <instancedMesh
-        ref={ref}
+        ref={ref as unknown as RefObject<ReactNode>}
         name="Can"
         args={[undefined, undefined, num]}
         material={materials.harnasblue}

@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { ReactNode, RefObject, Suspense } from 'react';
 
 import { Triplet, useBox, useCylinder } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
@@ -26,7 +26,11 @@ function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
   }));
 
   return (
-    <mesh ref={ref} geometry={geometry} scale={scale}>
+    <mesh
+      ref={ref as unknown as RefObject<ReactNode>}
+      geometry={geometry}
+      scale={scale}
+    >
       <meshBasicMaterial visible={false} />
     </mesh>
   );
@@ -45,7 +49,11 @@ function CylinderBoundary({ mesh }: { mesh: THREE.Mesh }) {
   }));
 
   return (
-    <mesh ref={ref} geometry={geometry} scale={scale}>
+    <mesh
+      ref={ref as unknown as RefObject<ReactNode>}
+      geometry={geometry}
+      scale={scale}
+    >
       <meshBasicMaterial visible={false} />
     </mesh>
   );

@@ -28,7 +28,7 @@ export function KitchenModel(props: Props): JSX.Element {
   // const roughnessMap = useTexture('/elements_roughness.jpg');
   // roughnessMap.flipY = false;
 
-  const { nodes } = useGLTF('/kitchen.gltf') as GLTFResult;
+  const { nodes } = useGLTF('/kitchen.gltf') as unknown as GLTFResult;
 
   const meshes = Object.entries(nodes)
     .filter(
