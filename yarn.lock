@@ -1961,14 +1961,6 @@
     utility-types "^3.10.0"
     zustand "^3.5.1"
 
-"@react-three/xr@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@react-three/xr/-/xr-3.4.0.tgz#d01de32ec6bee0013a4c0839952a5be12fdb1373"
-  integrity sha512-pKNi/xzY75syV9IU8OQoF+TdQ3k8a3+Qdq/AZO+iKxEa5TvLdp3UIH7Tjh1Wp1FcVB/fWKG3ykj/7HGWS0v/Og==
-  dependencies:
-    react-merge-refs "^1.1.0"
-    three-stdlib "^2.8.6"
-
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-7.1.3.tgz#80de384edfbd7bfc9101164910f86078151a3eca"
@@ -12562,7 +12554,7 @@ three-mesh-bvh@^0.5.4:
   resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.5.5.tgz#2d7df2607ac8ea9ef0413eb47eb168d618fa54ab"
   integrity sha512-WPsEXLfUh+8n2CcWaDnBm4q3c6PbISPbXOBNYt8VLEOTATXP8UqAfEyEBmQU8B9h5FJSSccdXXlHiexO3hZezg==
 
-three-stdlib@^2.8.6, three-stdlib@^2.8.7:
+three-stdlib@^2.8.7:
   version "2.8.8"
   resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.8.8.tgz#ece7cfeecaa1886b7f68591ae334bf466f2cd3eb"
   integrity sha512-M178LLexkFajq4/HfLNchpHRYgDGFL5qrv0bO3fkr0JN3+fUvEbml7kFgmiQ1ohZeYbSl2cwWN3MxHb+e2sf5w==
