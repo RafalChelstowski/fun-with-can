@@ -11,31 +11,32 @@ import { InteractiveObjectStatus, PlayerStatus } from '../../types';
 
 type GLTFResult = GLTF & {
   nodes: {
-    toukMug2: THREE.Mesh;
+    toukMug1: THREE.Mesh;
   };
   materials: {
-    salmonToukCupMaterial: THREE.MeshStandardMaterial;
+    yellowToukCupMaterial: THREE.MeshStandardMaterial;
   };
 };
-const num = 8;
-const grid: number[][][] = Array.from({ length: num / 4 }).map(() => []);
+
+const num = 10;
+const grid: number[][][] = Array.from({ length: num / 5 }).map(() => []);
 Array.from({ length: num }).forEach((_, idx) => {
-  const gridIdx = Math.floor(idx / 4);
-  grid[gridIdx].push([idx - gridIdx * 4, gridIdx]);
+  const gridIdx = Math.floor(idx / 5);
+  grid[gridIdx].push([idx - gridIdx * 5, gridIdx]);
 });
 
-export function ToukMug2(): JSX.Element {
+export function ToukMug(): JSX.Element {
   const camera = useThree((state) => state.camera);
   const { nodes, materials } = useGLTF(
-    '/toukMug2.gltf'
+    '/toukMug.gltf'
   ) as unknown as GLTFResult;
-  const box = new THREE.Box3().setFromObject(nodes.toukMug2);
+  const box = new THREE.Box3().setFromObject(nodes.toukMug1);
   const radius = (box.max.x - box.min.x) / 2;
   const height = (box.max.y - box.min.y) * 1.07;
 
-  const { playerStatus, setPlayerStatus, mugs2, setInteractiveObject, point } =
+  const { playerStatus, setPlayerStatus, mugs, setInteractiveObject, point } =
     useStore((state) => ({
-      mugs2: state.interactiveObjects.mugs2,
+      mugs: state.interactiveObjects.mugs,
       setInteractiveObject: state.setInteractiveObject,
       playerStatus: state.playerStatus,
       setPlayerStatus: state.setPlayerStatus,
@@ -55,33 +56,27 @@ export function ToukMug2(): JSX.Element {
 
   useLayoutEffect(() => {
     Array.from({ length: num }).forEach((_, i) => {
-      const gridIdx = Math.floor(i / 4);
-      const [x, z] = grid[gridIdx][i - gridIdx * 4];
+      const gridIdx = Math.floor(i / 5);
+      const [x, z] = grid[gridIdx][i - gridIdx * 5];
 
-      api
-        .at(i)
-        .position.set(
-          -2.45 + x * 0.11,
-          1.5 + height + height,
-          -5.57 + z * 0.11
-        );
+      api.at(i).position.set(-2.5 + x * 0.11, 1.5 + height, -5.55 + z * 0.13);
     });
   }, [api, api.at, height]);
 
   useEffect(() => {
-    const { status, instanceId } = mugs2;
+    const { status, instanceId } = mugs;
     if (instanceId && point && status === InteractiveObjectStatus.DROPPED) {
       api.at(instanceId).position.set(point.x, point.y + height, point.z);
 
-      setInteractiveObject('mugs2', {
+      setInteractiveObject('mugs', {
         status: InteractiveObjectStatus.DROPPED,
         instanceId: undefined,
       });
     }
-  }, [api, height, mugs2, point, setInteractiveObject]);
+  }, [api, height, mugs, point, setInteractiveObject]);
 
   useFrame(() => {
-    const { status, instanceId } = mugs2;
+    const { status, instanceId } = mugs;
     if (instanceId && status === InteractiveObjectStatus.PICKED) {
       const zCamVec = new THREE.Vector3(0.15, -0.15, -0.3);
       const position = camera.localToWorld(zCamVec);
@@ -99,17 +94,17 @@ export function ToukMug2(): JSX.Element {
           return;
         }
 
-        setInteractiveObject('mugs2', {
+        setInteractiveObject('mugs', {
           status: InteractiveObjectStatus.PICKED,
           instanceId: e.instanceId,
         });
         setPlayerStatus(PlayerStatus.PICKED);
       }}
       ref={ref as unknown as React.RefObject<React.ReactNode>}
-      args={[nodes.toukMug2.geometry, materials.salmonToukCupMaterial, num]}
+      args={[nodes.toukMug1.geometry, materials.yellowToukCupMaterial, num]}
       name={objName}
     />
   );
 }
 
-useGLTF.preload('/toukMug2.gltf');
+useGLTF.preload('/toukMug.gltf');

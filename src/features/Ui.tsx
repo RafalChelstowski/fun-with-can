@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { LockButton } from '../common/components/lock-button/LockButton';
+import { LockButton } from '../common/components/LockButton';
 import { useStore } from '../store/store';
 
 export function Ui(): JSX.Element | null {

@@ -5,7 +5,7 @@ import { useGLTF, useTexture } from '@react-three/drei';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
-import { glassMaterial } from '../../../common/materials';
+import { glassMaterial } from '../../../common/materials/materials';
 
 type GLTFResult = GLTF & {
   nodes: {

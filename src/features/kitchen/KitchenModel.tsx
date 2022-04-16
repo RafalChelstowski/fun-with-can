@@ -16,6 +16,7 @@ type GLTFResult = GLTF & {
 type Props = JSX.IntrinsicElements['group'];
 
 export function KitchenModel(props: Props): JSX.Element {
+  const handleEvent = useStore((state) => state.handleEvent);
   const texture = useTexture('/elements.jpg');
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
@@ -51,7 +52,7 @@ export function KitchenModel(props: Props): JSX.Element {
               return;
             }
 
-            useStore.setState({ clickedPoint: e.point });
+            handleEvent(e);
           }}
         >
           <Suspense fallback={<meshStandardMaterial />}>

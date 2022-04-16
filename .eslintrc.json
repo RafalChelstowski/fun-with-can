@@ -22,6 +22,12 @@
     "jest"
   ],
   "rules": {
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
     "@typescript-eslint/no-empty-interface": ["error", {
         "allowSingleExtends": true
       }
