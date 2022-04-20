@@ -44,7 +44,7 @@ export function Express(): JSX.Element {
       setInteractiveObject: state.setInteractiveObject,
       playerStatus: state.playerStatus,
       setPlayerStatus: state.setPlayerStatus,
-      point: state.clickedPoint,
+      point: state.point,
     }));
 
   const { rotation, position } = useSpring({

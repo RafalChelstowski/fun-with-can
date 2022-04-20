@@ -32,7 +32,7 @@ export function App(): JSX.Element {
         <Canvas gl={{ powerPreference: 'high-performance' }}>
           <ContextBridge>
             <Lights />
-            <Physics gravity={[0, -1, 0]}>
+            <Physics gravity={[0, -4, 0]}>
               {/*
               // @ts-ignore */}
               <Debug color="black" scale={1.01}>
@@ -40,7 +40,7 @@ export function App(): JSX.Element {
                   <KitchenModel />
                   <StaticBounds />
                   <ToukMug />
-                  <ToukMug2 />
+                  {/* <ToukMug2 /> */}
                   {/* <Env /> */}
                   {/* <Glass /> */}
                   <Player />

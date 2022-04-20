@@ -48,10 +48,6 @@ export function KitchenModel(props: Props): JSX.Element {
           onClick={(e) => {
             e.stopPropagation();
 
-            if (e.distance > 1.5) {
-              return;
-            }
-
             handleEvent(e);
           }}
         >

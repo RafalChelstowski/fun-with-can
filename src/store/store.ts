@@ -3,7 +3,12 @@ import create, { StateSelector } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import shallow from 'zustand/shallow';
 
-import { InteractiveObjects, InteractiveObjectStatus, State } from '../types';
+import {
+  InteractiveObjects,
+  InteractiveObjectStatus,
+  PlayerStatus,
+  State,
+} from '../types';
 
 const interactiveObjectsInitialState: InteractiveObjects = {
   grip: {
@@ -21,7 +26,7 @@ export const initialState = {
   playerStatus: null,
   interactiveObjects: { ...interactiveObjectsInitialState },
   isLocked: false,
-  clickedPoint: null,
+  point: null,
 };
 
 const useStoreImpl = create<State>(
@@ -40,15 +45,26 @@ const useStoreImpl = create<State>(
           })
         ),
       handleEvent: (event) => {
+        if (event.distance > 2 && get().playerStatus === PlayerStatus.PICKED) {
+          set(() => ({
+            playerStatus: PlayerStatus.THROWING,
+            point: event.point,
+          }));
+
+          return;
+        }
+
         if (
           get().interactiveObjects.grip.status ===
           InteractiveObjectStatus.PICKED
         ) {
+          set(() => ({
+            point: event.point,
+          }));
           set(
             produce<State>((state) => {
               state.interactiveObjects.grip.status =
                 InteractiveObjectStatus.DROPPED;
-              state.clickedPoint = event.point;
               state.playerStatus = null;
             })
           );
@@ -58,11 +74,13 @@ const useStoreImpl = create<State>(
           get().interactiveObjects.mugs.status ===
           InteractiveObjectStatus.PICKED
         ) {
+          set(() => ({
+            point: event.point,
+          }));
           set(
             produce<State>((state) => {
               state.interactiveObjects.mugs.status =
                 InteractiveObjectStatus.DROPPED;
-              state.clickedPoint = event.point;
               state.playerStatus = null;
             })
           );
@@ -72,11 +90,13 @@ const useStoreImpl = create<State>(
           get().interactiveObjects.mugs2.status ===
           InteractiveObjectStatus.PICKED
         ) {
+          set(() => ({
+            point: event.point,
+          }));
           set(
             produce<State>((state) => {
               state.interactiveObjects.mugs2.status =
                 InteractiveObjectStatus.DROPPED;
-              state.clickedPoint = event.point;
               state.playerStatus = null;
             })
           );

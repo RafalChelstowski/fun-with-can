@@ -39,7 +39,7 @@ export function ToukMug2(): JSX.Element {
       setInteractiveObject: state.setInteractiveObject,
       playerStatus: state.playerStatus,
       setPlayerStatus: state.setPlayerStatus,
-      point: state.clickedPoint,
+      point: state.point,
     }));
 
   const [ref, api] = useCylinder(() => ({

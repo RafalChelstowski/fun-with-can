@@ -10,6 +10,7 @@ export enum InteractiveObjectStatus {
 
 export enum PlayerStatus {
   PICKED = 'picked',
+  THROWING = 'throwing',
 }
 
 export interface InteractiveObject {
@@ -30,7 +31,6 @@ export type State = {
   playerStatus: PlayerStatus | null;
   isLocked: boolean;
   toggleIsLocked: () => void;
-  clickedPoint: THREE.Vector3 | null;
   interactiveObjects: InteractiveObjects;
   setInteractiveObject: (
     key: keyof InteractiveObjects,
@@ -38,4 +38,5 @@ export type State = {
   ) => void;
   setPlayerStatus: (status: PlayerStatus | null) => void;
   handleEvent: (event: ThreeEvent<MouseEvent>) => void;
+  point: THREE.Vector3 | null;
 };

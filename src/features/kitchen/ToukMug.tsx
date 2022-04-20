@@ -40,11 +40,17 @@ export function ToukMug(): JSX.Element {
       setInteractiveObject: state.setInteractiveObject,
       playerStatus: state.playerStatus,
       setPlayerStatus: state.setPlayerStatus,
-      point: state.clickedPoint,
+      point: state.point,
     }));
 
+  const isPickedByPlayer =
+    mugs.status === InteractiveObjectStatus.PICKED &&
+    playerStatus === PlayerStatus.PICKED;
+  const isThrownByPlayer =
+    mugs.status === InteractiveObjectStatus.PICKED &&
+    playerStatus === PlayerStatus.THROWING;
   const [ref, api] = useCylinder(() => ({
-    mass: 1,
+    mass: 0.5,
     args: [radius, radius, height, 5],
     position: [0, 0, 0],
     rotation: [0, Math.random() * 3, 0],
@@ -75,9 +81,44 @@ export function ToukMug(): JSX.Element {
     }
   }, [api, height, mugs, point, setInteractiveObject]);
 
+  useEffect(() => {
+    const { instanceId } = mugs;
+    if (instanceId && point && isThrownByPlayer) {
+      const camPosition = new THREE.Vector3();
+      const position = camera.getWorldPosition(camPosition);
+      const target = new THREE.Vector3();
+      const distance = position.distanceTo(point);
+
+      target
+        .subVectors(point, position)
+        .normalize()
+        .addScalar(distance / 4);
+
+      api.at(instanceId).velocity.set(...target.toArray());
+      api
+        .at(instanceId)
+        .rotation.set(Math.random() * 3, Math.random() * 3, Math.random() * 3);
+
+      setInteractiveObject('mugs', {
+        status: InteractiveObjectStatus.DROPPED,
+        instanceId: undefined,
+      });
+
+      setPlayerStatus(null);
+    }
+  }, [
+    api,
+    camera,
+    isThrownByPlayer,
+    mugs,
+    point,
+    setInteractiveObject,
+    setPlayerStatus,
+  ]);
+
   useFrame(() => {
-    const { status, instanceId } = mugs;
-    if (instanceId && status === InteractiveObjectStatus.PICKED) {
+    const { instanceId } = mugs;
+    if (instanceId && isPickedByPlayer) {
       const zCamVec = new THREE.Vector3(0.15, -0.15, -0.3);
       const position = camera.localToWorld(zCamVec);
       api.at(instanceId).position.set(...position.toArray());
