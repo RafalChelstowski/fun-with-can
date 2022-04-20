@@ -25,7 +25,16 @@ export interface InteractiveObjects {
   grip: InteractiveObject;
   mugs: InteractiveObjectInstance;
   mugs2: InteractiveObjectInstance;
+  ikeaGlass: InteractiveObjectInstance;
+  ikeaMug1: InteractiveObjectInstance;
+  ikeaMug2: InteractiveObjectInstance;
 }
+
+export const isInteractiveObjectInstance = (
+  obj: InteractiveObject | InteractiveObjectInstance
+): obj is InteractiveObjectInstance => {
+  return (obj as InteractiveObjectInstance).instanceId !== undefined;
+};
 
 export type State = {
   playerStatus: PlayerStatus | null;

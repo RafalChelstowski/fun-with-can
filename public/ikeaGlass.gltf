@@ -1,0 +1,1148 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "rpr" : {
+                    "limits" : {
+                        "min_samples" : 32,
+                        "max_samples" : 256
+                    },
+                    "viewport_limits" : {
+                        "min_samples" : 16,
+                        "max_samples" : 32,
+                        "preview_samples" : 16,
+                        "noise_threshold" : 0.05000000074505806
+                    },
+                    "saved_addon_version" : [
+                        3,
+                        3,
+                        15
+                    ],
+                    "viewport_denoiser" : 1,
+                    "viewport_upscale" : 1,
+                    "max_ray_depth" : 8,
+                    "shadow_depth" : 5,
+                    "glossy_depth" : 5,
+                    "refraction_depth" : 5,
+                    "glossy_refraction_depth" : 5,
+                    "texture_compression" : 0,
+                    "use_tile_render" : 0,
+                    "tile_order" : 1,
+                    "use_clamp_radiance" : 0,
+                    "render_mode" : 4,
+                    "diffuse_depth" : 3
+                },
+                "qremesher" : {
+                    "target_count" : 2000,
+                    "symmetry_x" : 0,
+                    "autodetect_hard_edges" : 0,
+                    "symmetry_y" : 0,
+                    "adapt_quad_count" : 0
+                },
+                "automirror" : {
+                    "axis" : 2
+                },
+                "crowd_render" : {
+                    "render_engine" : 0,
+                    "local_node" : {
+                        "name" : "local",
+                        "node_state" : 4,
+                        "node_active" : 1,
+                        "node_uuid" : "local",
+                        "cr_version" : "0_3_1",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpgb5s665q/local_report_data.txt",
+                        "node_A_auto" : 0.0010000000474974513,
+                        "node_render_progress" : 100,
+                        "node_render_active" : 0,
+                        "node_A_manual" : 0.5
+                    },
+                    "use_cloud_rendering" : 0,
+                    "active_load_balance_node" : "DESKTOP-M33K6P1",
+                    "data_is_updated" : 0,
+                    "manual_load_balancer" : 0
+                },
+                "cr_nodes" : [
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "DESKTOP-M33K6P1",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba",
+                        "node_state" : 0,
+                        "node_address" : "192.168.1.17",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - NVIDIA GeForce RTX 2080",
+                                "type" : "OPTIX",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00_OptiX",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPTIX - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - NVIDIA GeForce RTX 2080",
+                                "type" : "CUDA",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpetqzrat9/a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba_report_data.txt",
+                        "node_A_auto" : 1.0,
+                        "reports" : [
+                            {
+                                "time_logged" : 1636636958,
+                                "time_stamp" : "Thu Nov 11 14:22:38 2021",
+                                "message" : "Info: node status updated: syncing...",
+                                "name" : "Info: node status updated: syncing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: repairing...",
+                                "name" : "Info: node status updated: repairing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_Material  ",
+                                "name" : "Warning: MISSING testPattern_Material  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top_Object  ",
+                                "name" : "Warning: MISSING top_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.040_Mesh  ",
+                                "name" : "Warning: MISSING Cube.040_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards_Object  ",
+                                "name" : "Warning: MISSING cupboards_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.041_Mesh  ",
+                                "name" : "Warning: MISSING Cube.041_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top  overhead_Object  ",
+                                "name" : "Warning: MISSING top  overhead_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.067_Mesh  ",
+                                "name" : "Warning: MISSING Cube.067_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards.001_Object  ",
+                                "name" : "Warning: MISSING cupboards.001_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.068_Mesh  ",
+                                "name" : "Warning: MISSING Cube.068_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane_Object  ",
+                                "name" : "Warning: MISSING Plane_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane.004_Mesh  ",
+                                "name" : "Warning: MISSING Plane.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink1_Object  ",
+                                "name" : "Warning: MISSING sink1_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink2_Object  ",
+                                "name" : "Warning: MISSING sink2_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Object  ",
+                                "name" : "Warning: MISSING Cube.075_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.107_Mesh  ",
+                                "name" : "Warning: MISSING Cube.107_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sprinkler_Object  ",
+                                "name" : "Warning: MISSING sprinkler_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Object  ",
+                                "name" : "Warning: MISSING Cube.073_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.010_Mesh  ",
+                                "name" : "Warning: MISSING Cube.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.074_Object  ",
+                                "name" : "Warning: MISSING Cube.074_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.106_Mesh  ",
+                                "name" : "Warning: MISSING Cube.106_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.006_Object  ",
+                                "name" : "Warning: MISSING Cylinder.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.008_Object  ",
+                                "name" : "Warning: MISSING Cylinder.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.009_Object  ",
+                                "name" : "Warning: MISSING Cylinder.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Object  ",
+                                "name" : "Warning: MISSING Cylinder.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Object  ",
+                                "name" : "Warning: MISSING Cylinder.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Object  ",
+                                "name" : "Warning: MISSING Cylinder.014_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Object  ",
+                                "name" : "Warning: MISSING Cylinder.015_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Object  ",
+                                "name" : "Warning: MISSING Cylinder.016_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Object  ",
+                                "name" : "Warning: MISSING Cylinder.017_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Object  ",
+                                "name" : "Warning: MISSING Cylinder.018_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Object  ",
+                                "name" : "Warning: MISSING Cylinder.020_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Object  ",
+                                "name" : "Warning: MISSING Cylinder.022_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.011_Object  ",
+                                "name" : "Warning: MISSING Cylinder.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Object  ",
+                                "name" : "Warning: MISSING Cylinder.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Object  ",
+                                "name" : "Warning: MISSING Cylinder.019_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Object  ",
+                                "name" : "Warning: MISSING Cylinder.021_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.023_Object  ",
+                                "name" : "Warning: MISSING Cylinder.023_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Object  ",
+                                "name" : "Warning: MISSING Cylinder.024_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.025_Object  ",
+                                "name" : "Warning: MISSING Cylinder.025_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Object  ",
+                                "name" : "Warning: MISSING Cylinder.026_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Object  ",
+                                "name" : "Warning: MISSING Cylinder.027_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.115_Mesh  ",
+                                "name" : "Warning: MISSING Cube.115_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Object  ",
+                                "name" : "Warning: MISSING Cylinder.028_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Object  ",
+                                "name" : "Warning: MISSING Cylinder.029_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING bar chair_Object  ",
+                                "name" : "Warning: MISSING bar chair_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.037_Mesh  ",
+                                "name" : "Warning: MISSING Cube.037_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.069_Mesh  ",
+                                "name" : "Warning: MISSING Cube.069_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.070_Mesh  ",
+                                "name" : "Warning: MISSING Cube.070_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.072_Mesh  ",
+                                "name" : "Warning: MISSING Cube.072_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Array_ArrayModifier  ",
+                                "name" : "Warning: MISSING Array_ArrayModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.071_Mesh  ",
+                                "name" : "Warning: MISSING Cube.071_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Mesh  ",
+                                "name" : "Warning: MISSING Cube.073_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Mesh  ",
+                                "name" : "Warning: MISSING Cube.075_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data scale",
+                                "name" : "Warning: Camera Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data location",
+                                "name" : "Warning: Camera Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data rotation_euler",
+                                "name" : "Warning: Camera Incorrect Data rotation_euler",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "name" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data location",
+                                "name" : "Warning: Cylinder.001 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.002 Incorrect Data location",
+                                "name" : "Warning: Cylinder.002 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.069 Incorrect Data scale",
+                                "name" : "Warning: Cube.069 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data scale",
+                                "name" : "Warning: Cube.011 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data location",
+                                "name" : "Warning: Cube.011 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.014 Incorrect Data scale",
+                                "name" : "Warning: Cube.014 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data scale",
+                                "name" : "Warning: Cube.015 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data location",
+                                "name" : "Warning: Cube.015 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data scale",
+                                "name" : "Warning: Cube.016 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data location",
+                                "name" : "Warning: Cube.016 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636961,
+                                "time_stamp" : "Thu Nov 11 14:22:41 2021",
+                                "message" : "Info: node status updated: synced",
+                                "name" : "Info: node status updated: synced",
+                                "level" : 6
+                            }
+                        ],
+                        "compute_device" : 1,
+                        "node_sync_progress" : 0,
+                        "node_render_progress" : 100,
+                        "node_result_progress" : 0,
+                        "node_A_manual" : 1.0,
+                        "node_repair_item" : "Camera"
+                    },
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "Rafas-MacBook-Pro.local",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "4af96e32-13ac-5d0d-8bb5-f9b3411d04d9",
+                        "node_state" : 0
+                    }
+                ],
+                "cr_node_index" : 0,
+                "muv_align_uv_enabled" : 1,
+                "muv_pack_uv_enabled" : 1,
+                "muv_align_uv_location" : 1,
+                "muv_uv_bounding_box_enabled" : 0,
+                "muv_uv_inspection_enabled" : 0
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "IKEAglass"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "glassMaterial",
+            "pbrMetallicRoughness" : {}
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.008",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 0,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "material" : 0,
+                    "mode" : 4
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "componentType" : 5126,
+            "count" : 190,
+            "max" : [
+                0.04500039666891098,
+                0.07579794526100159,
+                0.04324759170413017
+            ],
+            "min" : [
+                -0.04500017315149307,
+                -0.04159419238567352,
+                -0.04538566991686821
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 190,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 190,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 420,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1605,
+            "byteOffset" : 0
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1608,
+            "uri" : "data:application/octet-stream;base64,RFJBQ08CAgEBAAAAvgGMAQKMAQQANf+6ruu6rsvXdV3XdV33ruu6ruu6/eu6ruu6Ll/XdV3Xdd33fd/3fd//ZPu+7/u+7/u+ddsH/wKzQf8CYUn/AmFJA/8AAAAAAAEAAAEACQMAAAIBAQkDAAEDAQMJAgACAgEBAQAPA2EDHx0KFQjFCSEMjRQ8gJ0AYKgL10MzA6gHqa9eb13ErmGYHKYohU4Rx1DW+4r5vgGoC4aC/nH3PvvLkIR/kn+EMPkoXfqidWyCEHGuSdJA7iUAOx43ADhQuLtMgNzhXQCwiC4IAL5oNAFgbosBIA8XAUAzEEYAkKjgAhDNWAPArKAIANtSiwAAwIwKAA/QagCWDZEAoLcIQwBHrIwDQOjcXQannNA2l4B/cJsAIOIADUBL2AUABMybAP/CMADQVSYClM3NA5A6pwKwI98BwMPODQAAXwEAS30qADxmZgAs5SUBmD3VABAPugUAcLQCgPUBDYBLbXMJ+Ae3qeCcmgAAg1OICUEAsBedCADATxUFAHghCQAWimAEgCECKwBUvqgFANnmEAC2pSoCAAD0NQAsNagD8NhwCQD+gmAIQCG2PQDoaxUD8PdgAgCsZAgCQL0AAFKnVYR3FZxxwt0FAIsILZDBKQ65QAAwXpIOAFR5uwBw2fgEgGu9B4BU0koASK+NAZDY8hUAQNNDAHiAxAcAAJYXAB5WvgH45wgMAOUAKwIYfTwDgGy2wElQ4E+0EBCVKBoADKbuAoBE/CgAdNyxAKBVugUgQygSABOjPQCkvjIBAEDeAADKK48BAIBfBgDKIzIB8L+jGgAGi0UEUOLqGQDoUscEcNaOBACP7C4ARjT87Zr3O3YkcBpQYMG/WT5kKEBx4UDAWa2JAwKntaY3BJwfQh4BzAoIBZwl1R8kcJpU9MO/SQmABUCYKNq/+VmcaAAnaEEp/Jv2AqUAtANC9ps04n3ib75ik8K/aS+ABYCYT8i/qZRBIQBnUjY//JuUwB0C0Lq6DJyP8OQFcOYxAMC/ST5QCoA7m82+mefTWgDnf7M3BJwfwoYAGIf9CAAFbNskAKCG2A8AS71FAwAAAPYDAFNfJAHA48w0AQDNd5sAAEQTdwBgrRaZgLPcx9MATvPhK/g3y4dfAQCgJGs6nx8EC+EkwzY0ACivdwLw4D8HAOzISAHCSQ6mFwDAY9gIAClLKADAR/5AIZwOmkIEAIOdMwCSdWMBgKOyAEQ4MQ4DEAA4XQwGIKNHGwDQ1dIYhPPFU4gAgLBrBoCyFAoAAJLzJwhnxJdeAACQYSMAqPz2AECu/ucQzo7HAAQAUBeDAdDI7QEA9lDcDeG8ijY0ADCvdQIA4cR5l61fAAAAbQ9eJrzigQinIzEhAgAAwM0AAAAAAAAA/z8AABpSOL2sXiq9U+Y5vUpr8D0OAAMBAAsDvSQDWAUCrAexAlkBNRQnSyTlOFnPYr7r3tQMen9bWJWVH+NTFangQinLQcaVOKURWtMGMKy96KFvmb/92J9//vbbn38D+gML/dfP/fcjiv4QIH8BLQh/iz/9txDkDz30Lz/11480+FPA+waAP/20D/f+zuz8fv25cNDO1fxTeOGgDtAO/ihgNO/vjB2I4ww//DjzcAw/zg/H9uuiATxW88/gg5M6QDz5mwDRNzqUP//8558//wjwjw7+44/++pPDvwLcPwD854/CzwG95A/UHwD9Rw1I6zeAfz3A6AJAAGACA4kIABA9OpA6SwAv+APxB4D/UgPUAg7gHw/g2QAQgJZAQCYCANBYIwD/AwAA/wEAAAoBAQEBBoAguS0sWP//ZyyrLHss/wss3yz/Oyz//1cs/89Y//9vLCyvhQMxBAOA/9NY////mywsLOuscyz///93LP/nLP/XrCws/78sByz/byz//28sWP+XLAMs/3ss/7tY////iywDLCz///////////+vLMMs/+8s/7cs///////fWP83LQFmpZ6qS+dSLh+WzbW9WS90ZA6uA0KjNGAYDXLH+uaHbKc+Q9TrzY/keag94+IFMvmVeNj/6H/7FhU+M+CjtX/33seRS4kVlPUHG/M3+SY60eIom+haN+RTo1wien34hF/nceLqdkuEAAAAAP8PAAAAAEAzAAAAAP//fz8MAAAA"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useMemo } from 'react';
 
-import { useCylinder } from '@react-three/cannon';
+import { Triplet, useCylinder } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -10,33 +10,47 @@ import { useStore } from '../../store/store';
 import { InteractiveObjectStatus, PlayerStatus } from '../../types';
 
 type GLTFResult = GLTF & {
-  nodes: {
-    toukMug1: THREE.Mesh;
-  };
-  materials: {
-    yellowToukCupMaterial: THREE.MeshStandardMaterial;
-  };
+  nodes: Record<string, THREE.Mesh>;
+  materials: Record<string, THREE.MeshStandardMaterial>;
 };
 
-const num = 10;
-const grid: number[][][] = Array.from({ length: num / 5 }).map(() => []);
-Array.from({ length: num }).forEach((_, idx) => {
-  const gridIdx = Math.floor(idx / 5);
-  grid[gridIdx].push([idx - gridIdx * 5, gridIdx]);
-});
+interface Props {
+  initialPosition: Triplet;
+  objName: 'mugs' | 'mugs2' | 'ikeaGlass' | 'ikeaMug1' | 'ikeaMug2';
+  geometryName: string;
+  materialName: string;
+  customMaterial?: THREE.Material;
+  gltfName: string;
+  itemsNumber?: number;
+  rowModifier?: number;
+}
 
-export function ToukMug(): JSX.Element {
+export function InstancedKitchenObject({
+  initialPosition,
+  objName,
+  geometryName,
+  materialName,
+  customMaterial,
+  gltfName,
+  itemsNumber = 10,
+  rowModifier = 5,
+}: Props): JSX.Element {
+  const grid: number[][][] = useMemo(
+    () =>
+      Array.from({
+        length: itemsNumber / rowModifier,
+      }).map(() => []),
+    [itemsNumber, rowModifier]
+  );
   const camera = useThree((state) => state.camera);
-  const { nodes, materials } = useGLTF(
-    '/toukMug.gltf'
-  ) as unknown as GLTFResult;
-  const box = new THREE.Box3().setFromObject(nodes.toukMug1);
+  const { nodes, materials } = useGLTF(gltfName) as unknown as GLTFResult;
+  const box = new THREE.Box3().setFromObject(nodes[geometryName]);
   const radius = (box.max.x - box.min.x) / 2;
   const height = (box.max.y - box.min.y) * 1.07;
 
-  const { playerStatus, setPlayerStatus, mugs, setInteractiveObject, point } =
+  const { playerStatus, setPlayerStatus, obj, setInteractiveObject, point } =
     useStore((state) => ({
-      mugs: state.interactiveObjects.mugs,
+      obj: state.interactiveObjects[objName],
       setInteractiveObject: state.setInteractiveObject,
       playerStatus: state.playerStatus,
       setPlayerStatus: state.setPlayerStatus,
@@ -44,10 +58,10 @@ export function ToukMug(): JSX.Element {
     }));
 
   const isPickedByPlayer =
-    mugs.status === InteractiveObjectStatus.PICKED &&
+    obj.status === InteractiveObjectStatus.PICKED &&
     playerStatus === PlayerStatus.PICKED;
   const isThrownByPlayer =
-    mugs.status === InteractiveObjectStatus.PICKED &&
+    obj.status === InteractiveObjectStatus.PICKED &&
     playerStatus === PlayerStatus.THROWING;
   const [ref, api] = useCylinder(() => ({
     mass: 0.5,
@@ -58,31 +72,39 @@ export function ToukMug(): JSX.Element {
     type: 'Dynamic',
   }));
 
-  const objName = 'ToukMug2';
-
   useLayoutEffect(() => {
-    Array.from({ length: num }).forEach((_, i) => {
-      const gridIdx = Math.floor(i / 5);
-      const [x, z] = grid[gridIdx][i - gridIdx * 5];
-
-      api.at(i).position.set(-2.5 + x * 0.11, 1.5 + height, -5.55 + z * 0.13);
+    Array.from({ length: itemsNumber }).forEach((_, idx) => {
+      const gridIdx = Math.floor(idx / rowModifier);
+      grid[gridIdx].push([idx - gridIdx * rowModifier, gridIdx]);
     });
-  }, [api, api.at, height]);
+    Array.from({ length: itemsNumber }).forEach((_, i) => {
+      const gridIdx = Math.floor(i / rowModifier);
+      const [x, z] = grid[gridIdx][i - gridIdx * rowModifier];
+
+      api
+        .at(i)
+        .position.set(
+          initialPosition[0] + x * 0.11,
+          initialPosition[1] + height,
+          initialPosition[2] + z * 0.13
+        );
+    });
+  }, [api, grid, height, initialPosition, itemsNumber, rowModifier]);
 
   useEffect(() => {
-    const { status, instanceId } = mugs;
+    const { status, instanceId } = obj;
     if (instanceId && point && status === InteractiveObjectStatus.DROPPED) {
       api.at(instanceId).position.set(point.x, point.y + height, point.z);
 
-      setInteractiveObject('mugs', {
+      setInteractiveObject(objName, {
         status: InteractiveObjectStatus.DROPPED,
         instanceId: undefined,
       });
     }
-  }, [api, height, mugs, point, setInteractiveObject]);
+  }, [api, height, obj, objName, point, setInteractiveObject]);
 
   useEffect(() => {
-    const { instanceId } = mugs;
+    const { instanceId } = obj;
     if (instanceId && point && isThrownByPlayer) {
       const camPosition = new THREE.Vector3();
       const position = camera.getWorldPosition(camPosition);
@@ -99,7 +121,7 @@ export function ToukMug(): JSX.Element {
         .at(instanceId)
         .rotation.set(Math.random() * 3, Math.random() * 3, Math.random() * 3);
 
-      setInteractiveObject('mugs', {
+      setInteractiveObject(objName, {
         status: InteractiveObjectStatus.DROPPED,
         instanceId: undefined,
       });
@@ -110,14 +132,15 @@ export function ToukMug(): JSX.Element {
     api,
     camera,
     isThrownByPlayer,
-    mugs,
+    obj,
+    objName,
     point,
     setInteractiveObject,
     setPlayerStatus,
   ]);
 
   useFrame(() => {
-    const { instanceId } = mugs;
+    const { instanceId } = obj;
     if (instanceId && isPickedByPlayer) {
       const zCamVec = new THREE.Vector3(0.15, -0.15, -0.3);
       const position = camera.localToWorld(zCamVec);
@@ -135,17 +158,19 @@ export function ToukMug(): JSX.Element {
           return;
         }
 
-        setInteractiveObject('mugs', {
+        setInteractiveObject(objName, {
           status: InteractiveObjectStatus.PICKED,
           instanceId: e.instanceId,
         });
         setPlayerStatus(PlayerStatus.PICKED);
       }}
       ref={ref as unknown as React.RefObject<React.ReactNode>}
-      args={[nodes.toukMug1.geometry, materials.yellowToukCupMaterial, num]}
+      args={[
+        nodes[geometryName].geometry,
+        customMaterial || materials[materialName],
+        itemsNumber,
+      ]}
       name={objName}
     />
   );
 }
-
-useGLTF.preload('/toukMug.gltf');

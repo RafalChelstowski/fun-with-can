@@ -20,7 +20,18 @@ const interactiveObjectsInitialState: InteractiveObjects = {
   mugs2: {
     status: InteractiveObjectStatus.DROPPED,
   },
+  ikeaGlass: {
+    status: InteractiveObjectStatus.DROPPED,
+  },
+  ikeaMug1: {
+    status: InteractiveObjectStatus.DROPPED,
+  },
+  ikeaMug2: {
+    status: InteractiveObjectStatus.DROPPED,
+  },
 };
+
+export type InteractiveObjectsKeys = keyof InteractiveObjects;
 
 export const initialState = {
   playerStatus: null,
@@ -96,6 +107,54 @@ const useStoreImpl = create<State>(
           set(
             produce<State>((state) => {
               state.interactiveObjects.mugs2.status =
+                InteractiveObjectStatus.DROPPED;
+              state.playerStatus = null;
+            })
+          );
+        }
+
+        if (
+          get().interactiveObjects.ikeaGlass.status ===
+          InteractiveObjectStatus.PICKED
+        ) {
+          set(() => ({
+            point: event.point,
+          }));
+          set(
+            produce<State>((state) => {
+              state.interactiveObjects.ikeaGlass.status =
+                InteractiveObjectStatus.DROPPED;
+              state.playerStatus = null;
+            })
+          );
+        }
+
+        if (
+          get().interactiveObjects.ikeaMug1.status ===
+          InteractiveObjectStatus.PICKED
+        ) {
+          set(() => ({
+            point: event.point,
+          }));
+          set(
+            produce<State>((state) => {
+              state.interactiveObjects.ikeaMug1.status =
+                InteractiveObjectStatus.DROPPED;
+              state.playerStatus = null;
+            })
+          );
+        }
+
+        if (
+          get().interactiveObjects.ikeaMug2.status ===
+          InteractiveObjectStatus.PICKED
+        ) {
+          set(() => ({
+            point: event.point,
+          }));
+          set(
+            produce<State>((state) => {
+              state.interactiveObjects.ikeaMug2.status =
                 InteractiveObjectStatus.DROPPED;
               state.playerStatus = null;
             })
