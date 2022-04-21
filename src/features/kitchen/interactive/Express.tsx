@@ -31,7 +31,7 @@ type GLTFResult = GLTF & {
 
 const initialPosition: Triplet = [1.65, 1.08, -5.44];
 const grinderPosition: Triplet = [2.49, 0.98, -5.52];
-const targetRotation = degToRad(60);
+const targetRotation = degToRad(-60);
 const grinderRotation = degToRad(-41);
 
 export function Express(): JSX.Element {

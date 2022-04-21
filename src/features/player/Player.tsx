@@ -36,7 +36,7 @@ export function Player(): JSX.Element {
 
   const [ref, api] = useSphere(() => ({
     args: [0.1],
-    mass: 1,
+    mass: 20,
     type: 'Dynamic',
     position: INITIAL_POSITION,
   }));
@@ -85,6 +85,7 @@ export function Player(): JSX.Element {
         .applyEuler(camera.rotation);
 
       api.velocity.set(direction.x, velocityRef.current[1], direction.z);
+      api.rotation.set(0, 0, 0);
       ref.current.getWorldPosition(ref.current.position);
     } else {
       api.velocity.set(0, 0, 0);

@@ -16,7 +16,6 @@ import { Glass } from './features/kitchen/Glass';
 import { InstancedKitchenObject } from './features/kitchen/InstancedKitchenObject';
 import { KitchenModel } from './features/kitchen/KitchenModel';
 import { Surroundings } from './features/kitchen/Surroundings';
-// import { ToukMug2 } from './features/kitchen/ToukMug2';
 import { Player } from './features/player/Player';
 import { Ui } from './features/Ui';
 
@@ -57,7 +56,7 @@ export function App(): JSX.Element {
                     rowModifier={4}
                   />
                   <InstancedKitchenObject
-                    initialPosition={[-1.93, 1.5, -5.72]}
+                    initialPosition={[-1.93, 1.5, -5.65]}
                     objName="ikeaGlass"
                     geometryName="IKEAglass"
                     materialName="lol"
@@ -67,7 +66,7 @@ export function App(): JSX.Element {
                     rowModifier={6}
                   />
                   <InstancedKitchenObject
-                    initialPosition={[-1.25, 1.5, -5.7]}
+                    initialPosition={[-1.25, 1.5, -5.72]}
                     objName="ikeaMug1"
                     geometryName="IKEAmug1"
                     materialName="pinkCupMaterial"
@@ -76,7 +75,7 @@ export function App(): JSX.Element {
                     rowModifier={5}
                   />
                   <InstancedKitchenObject
-                    initialPosition={[-0.6, 1.5, -5.7]}
+                    initialPosition={[-0.6, 1.5, -5.6]}
                     objName="ikeaMug2"
                     geometryName="IKEAMug2"
                     materialName="blueCupMaterial"

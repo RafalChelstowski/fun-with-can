@@ -110,13 +110,10 @@ export function InstancedKitchenObject({
       const position = camera.getWorldPosition(camPosition);
       const target = new THREE.Vector3();
       const distance = position.distanceTo(point);
+      camera.getWorldDirection(target);
+      const { x, y, z } = target.multiplyScalar(distance * 2);
 
-      target
-        .subVectors(point, position)
-        .normalize()
-        .addScalar(distance / 4);
-
-      api.at(instanceId).velocity.set(...target.toArray());
+      api.at(instanceId).velocity.set(x, y, z);
       api
         .at(instanceId)
         .rotation.set(Math.random() * 3, Math.random() * 3, Math.random() * 3);
