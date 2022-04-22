@@ -11,18 +11,19 @@ type GLTFResult = GLTF & {
 };
 
 function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
+  const { position, geometry, scale, rotation } = mesh;
   const box = new THREE.Box3().setFromObject(mesh);
   const dimensions: Triplet = [
-    box.max.x - box.min.x,
+    rotation.y === 0 ? box.max.x - box.min.x : (box.max.x - box.min.x) / 2,
     box.max.y - box.min.y,
     box.max.z - box.min.z,
   ];
-  const { position, geometry, scale } = mesh;
 
   const [ref] = useBox(() => ({
     type: 'Static',
     position: [...position.toArray()],
     args: dimensions,
+    rotation: [rotation.x, rotation.y, rotation.z],
   }));
 
   return (
