@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
-import { glassMaterial } from '../../common/materials';
+import { glassMaterial } from '../../common/materials/materials';
 
 type GLTFResult = GLTF & {
   nodes: Record<string, THREE.Mesh>;

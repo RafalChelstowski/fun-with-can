@@ -13,7 +13,7 @@ import { ControlsLock } from '../../types';
 extend({ PointerLockControls });
 
 const INITIAL_POSITION: [x: number, y: number, z: number] = [0, 0.2, 1];
-const SPEED = 3;
+const SPEED = 7;
 
 const direction = new THREE.Vector3();
 const frontVector = new THREE.Vector3();
@@ -36,7 +36,7 @@ export function Player(): JSX.Element {
 
   const [ref, api] = useSphere(() => ({
     args: [0.1],
-    mass: 1,
+    mass: 20,
     type: 'Dynamic',
     position: INITIAL_POSITION,
   }));
@@ -85,6 +85,7 @@ export function Player(): JSX.Element {
         .applyEuler(camera.rotation);
 
       api.velocity.set(direction.x, velocityRef.current[1], direction.z);
+      api.rotation.set(0, 0, 0);
       ref.current.getWorldPosition(ref.current.position);
     } else {
       api.velocity.set(0, 0, 0);
