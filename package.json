@@ -48,7 +48,9 @@
     "zustand": "3.6.8"
   },
   "scripts": {
-    "start": "BROWSER=none craco start",
+    "start": "BROWSER=none concurrently \"craco start\" \"firebase emulators:start\"",
+    "start:read": "BROWSER=none concurrently \"craco start\" \"firebase emulators:start --import=./database_data\"",
+    "start:write": "BROWSER=none concurrently \"craco start\" \"firebase emulators:start --import=./database_data --export-on-exit=./database_data\"",
     "build": "craco build",
     "test": "yarn test",
     "eject": "react-scripts eject"
