@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
+import { useStore } from '../../store/store';
 import { KeyboardKeys } from '../../types';
 import { useEventListener } from './useEventListener';
 
@@ -11,12 +12,17 @@ interface UseControlsHook {
 }
 
 export function useControls(): UseControlsHook {
+  const isLocked = useStore(useCallback((state) => state.isLocked, []));
   const [controlsUp, setControlsUp] = useState(false);
   const [controlsDown, setControlsDown] = useState(false);
   const [controlsLeft, setControlsLeft] = useState(false);
   const [controlsRight, setControlsRight] = useState(false);
 
   useEventListener<KeyboardEvent>('keydown', ({ key }) => {
+    if (!key || !isLocked) {
+      return;
+    }
+
     switch (key.toLowerCase()) {
       case KeyboardKeys.W:
         setControlsUp(true);
@@ -36,6 +42,10 @@ export function useControls(): UseControlsHook {
   });
 
   useEventListener<KeyboardEvent>('keyup', ({ key }) => {
+    if (!key || !isLocked) {
+      return;
+    }
+
     switch (key.toLowerCase()) {
       case KeyboardKeys.W:
         setControlsUp(false);
