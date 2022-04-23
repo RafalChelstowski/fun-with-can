@@ -38,6 +38,7 @@
     "react-hooks-worker": "^1.0.4",
     "react-query": "^3.34.19",
     "react-scripts": "4.0.3",
+    "react-toastify": "^8.2.0",
     "react-transition-group": "^4.4.2",
     "react-use": "^17.1.0",
     "source-map-explorer": "^2.5.2",
@@ -99,7 +100,7 @@
     "worker-plugin": "^5.0.1"
   },
   "resolutions": {
-      "//": "See https://github.com/facebook/create-react-app/issues/11773",
-      "react-error-overlay": "6.0.9"
+    "//": "See https://github.com/facebook/create-react-app/issues/11773",
+    "react-error-overlay": "6.0.9"
   }
 }

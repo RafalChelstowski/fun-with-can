@@ -36,7 +36,22 @@ export const isInteractiveObjectInstance = (
   return (obj as InteractiveObjectInstance).instanceId !== undefined;
 };
 
+export enum AchievementName {
+  TEST = 'test',
+}
+
+// export interface Achievement {
+//   name: AchievementName;
+//   description: string;
+//   dateObtained: string;
+// }
+
+export type Achievements = Partial<Record<AchievementName, boolean>>;
+
 export type State = {
+  achievements: Achievements;
+  setAchievement: (name: AchievementName) => void;
+  setAchievements: (obj: Achievements) => void;
   playerStatus: PlayerStatus | null;
   isLocked: boolean;
   toggleIsLocked: () => void;

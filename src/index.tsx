@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider, QueryKey } from 'react-query';
 import { fetch } from './api/database';
 import { App } from './App';
 
+import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
 const container = document.getElementById('root');

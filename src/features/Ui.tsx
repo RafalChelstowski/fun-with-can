@@ -1,4 +1,5 @@
 import { ReactNode, useCallback } from 'react';
+import { toast } from 'react-toastify';
 
 import { Link } from 'wouter';
 
@@ -50,13 +51,19 @@ export function Ui({ children }: { children: ReactNode }): JSX.Element | null {
         ) : (
           <>
             <Link className={linkClass} to={SIGN_IN}>
-              Sign In
+              Log In
             </Link>
             <Link className={linkClass} to={SIGN_UP}>
-              Sign Up
+              Create account
             </Link>
             {isDev && (
-              <button type="button" onClick={() => userApi.signInTestUser()}>
+              <button
+                type="button"
+                onClick={() => {
+                  userApi.signInTestUser();
+                  toast.success('Signed In!');
+                }}
+              >
                 Test Sign In
               </button>
             )}
