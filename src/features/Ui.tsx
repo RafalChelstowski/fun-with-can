@@ -1,4 +1,5 @@
 import { ReactNode, useCallback } from 'react';
+import { toast } from 'react-toastify';
 
 import { Link } from 'wouter';
 
@@ -12,6 +13,7 @@ export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
 export const SIGN_OUT = '/signout';
 export const ACCOUNT = '/account';
+export const ACHIEVEMENTS = '/achievements';
 export const PASSWORD_FORGET = '/pw-forget';
 
 export const routes = {
@@ -20,6 +22,7 @@ export const routes = {
   SIGN_IN,
   SIGN_OUT,
   ACCOUNT,
+  ACHIEVEMENTS,
   PASSWORD_FORGET,
 };
 
@@ -45,23 +48,36 @@ export function Ui({ children }: { children: ReactNode }): JSX.Element | null {
             <Link className={linkClass} to={ACCOUNT}>
               Account
             </Link>
+            {/* <Link className={linkClass} to={ACHIEVEMENTS}>
+              Achievements
+            </Link> */}
             <SignOutButton route={routes.HOME} />
           </>
         ) : (
           <>
             <Link className={linkClass} to={SIGN_IN}>
-              Sign In
+              Log In
             </Link>
             <Link className={linkClass} to={SIGN_UP}>
-              Sign Up
+              Create account
             </Link>
             {isDev && (
-              <button type="button" onClick={() => userApi.signInTestUser()}>
+              <button
+                className={linkClass}
+                type="button"
+                onClick={() => {
+                  userApi.signInTestUser();
+                  toast.success('Signed In!');
+                }}
+              >
                 Test Sign In
               </button>
             )}
           </>
         )}
+        <Link className={linkClass} to={ACHIEVEMENTS}>
+          Achievements
+        </Link>
       </nav>
       {children}
     </div>

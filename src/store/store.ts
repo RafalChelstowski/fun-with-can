@@ -34,6 +34,7 @@ const interactiveObjectsInitialState: InteractiveObjects = {
 export type InteractiveObjectsKeys = keyof InteractiveObjects;
 
 export const initialState = {
+  achievements: {},
   playerStatus: null,
   interactiveObjects: { ...interactiveObjectsInitialState },
   isLocked: false,
@@ -44,6 +45,16 @@ const useStoreImpl = create<State>(
   devtools(
     (set, get) => ({
       ...initialState,
+      setAchievement: (name) => {
+        set(
+          produce<State>((state) => {
+            state.achievements[name] = true;
+          })
+        );
+      },
+      setAchievements: (achievements) => {
+        set(() => ({ achievements }));
+      },
       toggleIsLocked: () => set((state) => ({ isLocked: !state.isLocked })),
       setPlayerStatus: (status) => set(() => ({ playerStatus: status })),
       setInteractiveObject: (key, obj) =>

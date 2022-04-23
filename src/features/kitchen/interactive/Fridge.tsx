@@ -5,7 +5,9 @@ import { useGLTF, useTexture } from '@react-three/drei';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
+import { useAchievement } from '../../../api/hooks/useAchievement';
 import { glassMaterial } from '../../../common/materials/materials';
+import { AchievementName } from '../../../types';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -26,6 +28,7 @@ export function Fridge(): JSX.Element {
     config: { mass: 20, tension: 400, friction: 300, precision: 0.0001 },
   });
   const rotation = spring.to([0, 1], [0, degToRad(88)]);
+  const { addAchievement } = useAchievement();
 
   return (
     <>
@@ -39,6 +42,7 @@ export function Fridge(): JSX.Element {
           }
 
           toggleFridgeOpen(Number(!fridgeOpen));
+          addAchievement(AchievementName.TEST);
         }}
       >
         <mesh geometry={nodes.Cube010.geometry}>
