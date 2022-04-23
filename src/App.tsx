@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import { Debug, Physics } from '@react-three/cannon';
@@ -23,6 +23,7 @@ import { KitchenModel } from './features/kitchen/KitchenModel';
 import { Surroundings } from './features/kitchen/Surroundings';
 import { Player } from './features/player/Player';
 import { routes, Ui } from './features/Ui';
+import { Achievements as AchievementsPage } from './features/user/Achievements';
 import { PasswordForgetPage } from './features/user/PasswordForget';
 import { SignInPage } from './features/user/SignIn';
 import { SignOutPage } from './features/user/SignOut';
@@ -62,6 +63,7 @@ function UserMenus() {
         path={routes.ACCOUNT}
         component={uid ? UserAccountPage : () => <Redirect to={routes.HOME} />}
       />
+      <Route path={routes.ACHIEVEMENTS} component={AchievementsPage} />
       <Route
         path={routes.PASSWORD_FORGET}
         component={
@@ -70,6 +72,19 @@ function UserMenus() {
       />
       <Route path={routes.SIGN_OUT} component={SignOutPage} />
     </Ui>
+  );
+}
+
+function DevDebug({ children }: { children: ReactNode }): JSX.Element {
+  const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+
+  return isDev ? (
+    // @ts-ignore
+    <Debug color="black" scale={1.01}>
+      {children}
+    </Debug>
+  ) : (
+    <>{children}</>
   );
 }
 
@@ -86,9 +101,7 @@ export function App(): JSX.Element {
         <ContextBridge>
           <Lights />
           <Physics gravity={[0, -4, 0]}>
-            {/*
-              // @ts-ignore */}
-            <Debug color="black" scale={1.01}>
+            <DevDebug>
               <Suspense fallback={null}>
                 <KitchenModel />
                 <StaticBounds />
@@ -142,7 +155,7 @@ export function App(): JSX.Element {
                 <Floor />
                 <Surroundings />
               </Suspense>
-            </Debug>
+            </DevDebug>
           </Physics>
         </ContextBridge>
       </Canvas>

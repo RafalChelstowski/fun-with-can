@@ -40,11 +40,15 @@ export enum AchievementName {
   TEST = 'test',
 }
 
-// export interface Achievement {
-//   name: AchievementName;
-//   description: string;
-//   dateObtained: string;
-// }
+export interface AchievementDescription {
+  description: string;
+  fullName: string;
+}
+
+export type AchievementDescriptions = Record<
+  AchievementName,
+  AchievementDescription
+>;
 
 export type Achievements = Partial<Record<AchievementName, boolean>>;
 
