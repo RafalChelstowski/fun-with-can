@@ -48,9 +48,6 @@ export function Ui({ children }: { children: ReactNode }): JSX.Element | null {
             <Link className={linkClass} to={ACCOUNT}>
               Account
             </Link>
-            {/* <Link className={linkClass} to={ACHIEVEMENTS}>
-              Achievements
-            </Link> */}
             <SignOutButton route={routes.HOME} />
           </>
         ) : (
@@ -65,9 +62,13 @@ export function Ui({ children }: { children: ReactNode }): JSX.Element | null {
               <button
                 className={linkClass}
                 type="button"
-                onClick={() => {
-                  userApi.signInTestUser();
-                  toast.success('Signed In!');
+                onClick={async () => {
+                  try {
+                    await userApi.signInTestUser();
+                    toast.success('Signed In!');
+                  } catch (err) {
+                    toast.error('Error signing in...');
+                  }
                 }}
               >
                 Test Sign In

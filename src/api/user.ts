@@ -7,13 +7,11 @@ if (window.location.hostname === 'localhost') {
   auth.useEmulator('http://localhost:9099');
 }
 
-const signInTestUser = (): void => {
-  const email = process.env.REACT_APP_TEST_EMAIL;
-  const password = process.env.REACT_APP_TEST_PASSWORD;
+const signInTestUser = (): Promise<UserCredential> => {
+  const email = <string>process.env.REACT_APP_TEST_EMAIL;
+  const password = <string>process.env.REACT_APP_TEST_PASSWORD;
 
-  if (email && password) {
-    auth.signInWithEmailAndPassword(email, password);
-  }
+  return auth.signInWithEmailAndPassword(email, password);
 };
 
 const doCreateUserWithEmailAndPassword = (

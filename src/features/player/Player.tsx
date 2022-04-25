@@ -13,7 +13,7 @@ import { ControlsLock } from '../../types';
 extend({ PointerLockControls });
 
 const INITIAL_POSITION: [x: number, y: number, z: number] = [0, 0.2, 1];
-const SPEED = 7;
+const SPEED = 2.5;
 
 const direction = new THREE.Vector3();
 const frontVector = new THREE.Vector3();

@@ -19,6 +19,7 @@ import { Env } from './features/kitchen/Env';
 import { Floor } from './features/kitchen/Floor';
 import { Glass } from './features/kitchen/Glass';
 import { InstancedKitchenObject } from './features/kitchen/InstancedKitchenObject';
+import { Neon } from './features/kitchen/interactive/Neon';
 import { KitchenModel } from './features/kitchen/KitchenModel';
 import { Surroundings } from './features/kitchen/Surroundings';
 import { Player } from './features/player/Player';
@@ -97,7 +98,7 @@ export function App(): JSX.Element {
 
   return (
     <main className="w-screen h-screen overflow-hidden">
-      <Canvas gl={{ powerPreference: 'high-performance' }}>
+      <Canvas gl={{ powerPreference: 'high-performance' }} camera={{ fov: 55 }}>
         <ContextBridge>
           <Lights />
           <Physics gravity={[0, -4, 0]}>
@@ -150,6 +151,7 @@ export function App(): JSX.Element {
                   rowModifier={5}
                 />
                 <Env />
+                <Neon />
                 <Glass />
                 <Player />
                 <Floor />

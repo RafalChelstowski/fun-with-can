@@ -1,0 +1,2298 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "rpr" : {
+                    "limits" : {
+                        "min_samples" : 32,
+                        "max_samples" : 256
+                    },
+                    "viewport_limits" : {
+                        "min_samples" : 16,
+                        "max_samples" : 32,
+                        "preview_samples" : 16,
+                        "noise_threshold" : 0.05000000074505806
+                    },
+                    "saved_addon_version" : [
+                        3,
+                        3,
+                        15
+                    ],
+                    "viewport_denoiser" : 1,
+                    "viewport_upscale" : 1,
+                    "max_ray_depth" : 8,
+                    "shadow_depth" : 5,
+                    "glossy_depth" : 5,
+                    "refraction_depth" : 5,
+                    "glossy_refraction_depth" : 5,
+                    "texture_compression" : 0,
+                    "use_tile_render" : 0,
+                    "tile_order" : 1,
+                    "use_clamp_radiance" : 0,
+                    "render_mode" : 4,
+                    "diffuse_depth" : 3
+                },
+                "qremesher" : {
+                    "target_count" : 2000,
+                    "symmetry_x" : 0,
+                    "autodetect_hard_edges" : 0,
+                    "symmetry_y" : 0,
+                    "adapt_quad_count" : 0
+                },
+                "automirror" : {
+                    "axis" : 2
+                },
+                "crowd_render" : {
+                    "render_engine" : 0,
+                    "local_node" : {
+                        "name" : "local",
+                        "node_state" : 4,
+                        "node_active" : 1,
+                        "node_uuid" : "local",
+                        "cr_version" : "0_3_1",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpgb5s665q/local_report_data.txt",
+                        "node_A_auto" : 0.0010000000474974513,
+                        "node_render_progress" : 100,
+                        "node_render_active" : 0,
+                        "node_A_manual" : 0.5
+                    },
+                    "use_cloud_rendering" : 0,
+                    "active_load_balance_node" : "DESKTOP-M33K6P1",
+                    "data_is_updated" : 0,
+                    "manual_load_balancer" : 0
+                },
+                "cr_nodes" : [
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "DESKTOP-M33K6P1",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba",
+                        "node_state" : 0,
+                        "node_address" : "192.168.1.17",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - NVIDIA GeForce RTX 2080",
+                                "type" : "OPTIX",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00_OptiX",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPTIX - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - NVIDIA GeForce RTX 2080",
+                                "type" : "CUDA",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpetqzrat9/a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba_report_data.txt",
+                        "node_A_auto" : 1.0,
+                        "reports" : [
+                            {
+                                "time_logged" : 1636636958,
+                                "time_stamp" : "Thu Nov 11 14:22:38 2021",
+                                "message" : "Info: node status updated: syncing...",
+                                "name" : "Info: node status updated: syncing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: repairing...",
+                                "name" : "Info: node status updated: repairing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_Material  ",
+                                "name" : "Warning: MISSING testPattern_Material  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top_Object  ",
+                                "name" : "Warning: MISSING top_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.040_Mesh  ",
+                                "name" : "Warning: MISSING Cube.040_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards_Object  ",
+                                "name" : "Warning: MISSING cupboards_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.041_Mesh  ",
+                                "name" : "Warning: MISSING Cube.041_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top  overhead_Object  ",
+                                "name" : "Warning: MISSING top  overhead_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.067_Mesh  ",
+                                "name" : "Warning: MISSING Cube.067_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards.001_Object  ",
+                                "name" : "Warning: MISSING cupboards.001_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.068_Mesh  ",
+                                "name" : "Warning: MISSING Cube.068_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane_Object  ",
+                                "name" : "Warning: MISSING Plane_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane.004_Mesh  ",
+                                "name" : "Warning: MISSING Plane.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink1_Object  ",
+                                "name" : "Warning: MISSING sink1_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink2_Object  ",
+                                "name" : "Warning: MISSING sink2_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Object  ",
+                                "name" : "Warning: MISSING Cube.075_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.107_Mesh  ",
+                                "name" : "Warning: MISSING Cube.107_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sprinkler_Object  ",
+                                "name" : "Warning: MISSING sprinkler_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Object  ",
+                                "name" : "Warning: MISSING Cube.073_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.010_Mesh  ",
+                                "name" : "Warning: MISSING Cube.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.074_Object  ",
+                                "name" : "Warning: MISSING Cube.074_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.106_Mesh  ",
+                                "name" : "Warning: MISSING Cube.106_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.006_Object  ",
+                                "name" : "Warning: MISSING Cylinder.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.008_Object  ",
+                                "name" : "Warning: MISSING Cylinder.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.009_Object  ",
+                                "name" : "Warning: MISSING Cylinder.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Object  ",
+                                "name" : "Warning: MISSING Cylinder.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Object  ",
+                                "name" : "Warning: MISSING Cylinder.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Object  ",
+                                "name" : "Warning: MISSING Cylinder.014_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Object  ",
+                                "name" : "Warning: MISSING Cylinder.015_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Object  ",
+                                "name" : "Warning: MISSING Cylinder.016_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Object  ",
+                                "name" : "Warning: MISSING Cylinder.017_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Object  ",
+                                "name" : "Warning: MISSING Cylinder.018_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Object  ",
+                                "name" : "Warning: MISSING Cylinder.020_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Object  ",
+                                "name" : "Warning: MISSING Cylinder.022_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.011_Object  ",
+                                "name" : "Warning: MISSING Cylinder.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Object  ",
+                                "name" : "Warning: MISSING Cylinder.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Object  ",
+                                "name" : "Warning: MISSING Cylinder.019_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Object  ",
+                                "name" : "Warning: MISSING Cylinder.021_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.023_Object  ",
+                                "name" : "Warning: MISSING Cylinder.023_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Object  ",
+                                "name" : "Warning: MISSING Cylinder.024_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.025_Object  ",
+                                "name" : "Warning: MISSING Cylinder.025_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Object  ",
+                                "name" : "Warning: MISSING Cylinder.026_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Object  ",
+                                "name" : "Warning: MISSING Cylinder.027_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.115_Mesh  ",
+                                "name" : "Warning: MISSING Cube.115_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Object  ",
+                                "name" : "Warning: MISSING Cylinder.028_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Object  ",
+                                "name" : "Warning: MISSING Cylinder.029_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING bar chair_Object  ",
+                                "name" : "Warning: MISSING bar chair_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.037_Mesh  ",
+                                "name" : "Warning: MISSING Cube.037_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.069_Mesh  ",
+                                "name" : "Warning: MISSING Cube.069_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.070_Mesh  ",
+                                "name" : "Warning: MISSING Cube.070_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.072_Mesh  ",
+                                "name" : "Warning: MISSING Cube.072_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Array_ArrayModifier  ",
+                                "name" : "Warning: MISSING Array_ArrayModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.071_Mesh  ",
+                                "name" : "Warning: MISSING Cube.071_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Mesh  ",
+                                "name" : "Warning: MISSING Cube.073_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Mesh  ",
+                                "name" : "Warning: MISSING Cube.075_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data scale",
+                                "name" : "Warning: Camera Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data location",
+                                "name" : "Warning: Camera Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data rotation_euler",
+                                "name" : "Warning: Camera Incorrect Data rotation_euler",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "name" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data location",
+                                "name" : "Warning: Cylinder.001 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.002 Incorrect Data location",
+                                "name" : "Warning: Cylinder.002 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.069 Incorrect Data scale",
+                                "name" : "Warning: Cube.069 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data scale",
+                                "name" : "Warning: Cube.011 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data location",
+                                "name" : "Warning: Cube.011 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.014 Incorrect Data scale",
+                                "name" : "Warning: Cube.014 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data scale",
+                                "name" : "Warning: Cube.015 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data location",
+                                "name" : "Warning: Cube.015 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data scale",
+                                "name" : "Warning: Cube.016 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data location",
+                                "name" : "Warning: Cube.016 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636961,
+                                "time_stamp" : "Thu Nov 11 14:22:41 2021",
+                                "message" : "Info: node status updated: synced",
+                                "name" : "Info: node status updated: synced",
+                                "level" : 6
+                            }
+                        ],
+                        "compute_device" : 1,
+                        "node_sync_progress" : 0,
+                        "node_render_progress" : 100,
+                        "node_result_progress" : 0,
+                        "node_A_manual" : 1.0,
+                        "node_repair_item" : "Camera"
+                    },
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "Rafas-MacBook-Pro.local",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "4af96e32-13ac-5d0d-8bb5-f9b3411d04d9",
+                        "node_state" : 0
+                    }
+                ],
+                "cr_node_index" : 0,
+                "muv_align_uv_enabled" : 1,
+                "muv_pack_uv_enabled" : 1,
+                "muv_align_uv_location" : 1,
+                "muv_uv_bounding_box_enabled" : 0,
+                "muv_uv_inspection_enabled" : 0
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "NurbsPath.001",
+            "translation" : [
+                5.288260459899902,
+                1.058085560798645,
+                -2.663323163986206
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "NurbsPath.002",
+            "translation" : [
+                5.288259983062744,
+                1.058085560798645,
+                -2.663323163986206
+            ]
+        },
+        {
+            "mesh" : 2,
+            "name" : "NurbsPath.003",
+            "translation" : [
+                5.288260459899902,
+                1.0580854415893555,
+                -2.663323163986206
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "Cube.108",
+            "translation" : [
+                5.310435771942139,
+                0.8680504560470581,
+                -2.536139726638794
+            ]
+        },
+        {
+            "mesh" : 4,
+            "name" : "Cube.109",
+            "translation" : [
+                5.310435771942139,
+                0.9747517108917236,
+                -2.4760019779205322
+            ]
+        },
+        {
+            "mesh" : 5,
+            "name" : "Cube.110",
+            "translation" : [
+                5.310435771942139,
+                0.6966325640678406,
+                -2.3889377117156982
+            ]
+        },
+        {
+            "mesh" : 6,
+            "name" : "Cube.111",
+            "translation" : [
+                5.310435771942139,
+                0.6496655941009521,
+                -3.1800241470336914
+            ]
+        },
+        {
+            "mesh" : 7,
+            "name" : "Cube.112",
+            "translation" : [
+                5.310435771942139,
+                1.0033189058303833,
+                -2.283881664276123
+            ]
+        },
+        {
+            "mesh" : 8,
+            "name" : "Cube.113",
+            "translation" : [
+                5.310435771942139,
+                1.203310489654541,
+                -3.0940663814544678
+            ]
+        },
+        {
+            "mesh" : 9,
+            "name" : "NurbsPath",
+            "translation" : [
+                5.310421943664551,
+                1.7214739322662354,
+                -2.9608001708984375
+            ]
+        },
+        {
+            "mesh" : 10,
+            "name" : "NurbsPath.004",
+            "translation" : [
+                5.310421943664551,
+                1.7214739322662354,
+                -2.9520578384399414
+            ]
+        },
+        {
+            "mesh" : 11,
+            "name" : "Cube.114",
+            "translation" : [
+                5.310435771942139,
+                1.2773072719573975,
+                -2.7917113304138184
+            ]
+        },
+        {
+            "mesh" : 12,
+            "name" : "NurbsPath.005",
+            "translation" : [
+                5.318002700805664,
+                1.7214739322662354,
+                -2.9520578384399414
+            ]
+        },
+        {
+            "mesh" : 13,
+            "name" : "NurbsPath.006",
+            "translation" : [
+                5.310421943664551,
+                0.992043137550354,
+                -3.340214490890503
+            ]
+        },
+        {
+            "mesh" : 14,
+            "name" : "NurbsPath.007",
+            "translation" : [
+                5.310421943664551,
+                1.217423677444458,
+                -2.709432601928711
+            ]
+        },
+        {
+            "mesh" : 15,
+            "name" : "Cube.115",
+            "translation" : [
+                5.310435771942139,
+                0.7030112743377686,
+                -2.5682499408721924
+            ]
+        },
+        {
+            "mesh" : 16,
+            "name" : "NurbsPath.008",
+            "translation" : [
+                5.310421943664551,
+                1.6974921226501465,
+                -2.1977224349975586
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "name" : "neonMaterialWhite",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.9130991101264954,
+                    0.9057499766349792,
+                    0.9751529693603516,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0.5066969431936741,
+                1,
+                1
+            ],
+            "name" : "neonMaterialGreen",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.18447497487068176,
+                    0.9301110506057739,
+                    0.8227861523628235,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0.6190240569412708,
+                0.42806449346244335,
+                1
+            ],
+            "name" : "neonMaterialPurple",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.18790756165981293,
+                    0.14539293944835663,
+                    0.7791864275932312,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "blackPlasticMaterial",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.005604761186987162,
+                    0.005604761186987162,
+                    0.005604761186987162,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.7167832255363464
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "NurbsPath.016",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 0,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "material" : 0,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath.017",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 1,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 7,
+                    "material" : 1,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath.020",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 2,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 11,
+                    "material" : 2,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 12,
+                        "NORMAL" : 13,
+                        "TEXCOORD_0" : 14
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 3,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 15,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 4,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 15,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.004",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 19,
+                        "NORMAL" : 20,
+                        "TEXCOORD_0" : 21
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 5,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 22,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.035",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 23,
+                        "NORMAL" : 24,
+                        "TEXCOORD_0" : 25
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 6,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 15,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.036",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 26,
+                        "NORMAL" : 27,
+                        "TEXCOORD_0" : 28
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 7,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 29,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.127",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 30,
+                        "NORMAL" : 31,
+                        "TEXCOORD_0" : 32
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 8,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 15,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 33,
+                        "NORMAL" : 34,
+                        "TEXCOORD_0" : 35
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 9,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 36,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath.022",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 37,
+                        "NORMAL" : 38,
+                        "TEXCOORD_0" : 39
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 10,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 36,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.128",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 40,
+                        "NORMAL" : 41,
+                        "TEXCOORD_0" : 42
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 11,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 22,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath.021",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 43,
+                        "NORMAL" : 44,
+                        "TEXCOORD_0" : 45
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 12,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 46,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath.023",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 47,
+                        "NORMAL" : 48,
+                        "TEXCOORD_0" : 49
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 13,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 36,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath.024",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 50,
+                        "NORMAL" : 51,
+                        "TEXCOORD_0" : 52
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 14,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 53,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cube.135",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 54,
+                        "NORMAL" : 55,
+                        "TEXCOORD_0" : 56
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 15,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 15,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "NurbsPath.025",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 57,
+                        "NORMAL" : 58,
+                        "TEXCOORD_0" : 59
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 16,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 36,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "componentType" : 5126,
+            "count" : 3937,
+            "max" : [
+                0.013653906062245369,
+                0.17648611962795258,
+                0.6745586395263672
+            ],
+            "min" : [
+                -0.011310772970318794,
+                -0.44587865471839905,
+                -1.2838116884231567
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 3937,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 3937,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 20340,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1803,
+            "max" : [
+                0.02451998181641102,
+                0.6895293593406677,
+                0.4552565813064575
+            ],
+            "min" : [
+                -0.013550125993788242,
+                -0.4466506838798523,
+                0.052071213722229004
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1803,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1803,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 9324,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1713,
+            "max" : [
+                0.024432379752397537,
+                0.4824347198009491,
+                0.3371692895889282
+            ],
+            "min" : [
+                -0.013698998838663101,
+                -0.5248146057128906,
+                -0.3989413380622864
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1713,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1713,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 8844,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.028167495504021645,
+                0.07060278952121735
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.028167495504021645,
+                -0.07060278952121735
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.03870277479290962,
+                0.05222809314727783
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.03870277479290962,
+                -0.05222809314727783
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.05669023096561432,
+                0.053422167897224426
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.05669023096561432,
+                -0.053422167897224426
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.027555648237466812,
+                0.0707678273320198
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.027555648237466812,
+                -0.0707678273320198
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.07106177508831024,
+                0.02640153467655182
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.07106177508831024,
+                -0.02640153467655182
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.03870277479290962,
+                0.05222809314727783
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.03870277479290962,
+                -0.05222809314727783
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "max" : [
+                0.002564156660810113,
+                0.4223443865776062,
+                0.03408493101596832
+            ],
+            "min" : [
+                -0.0025641568936407566,
+                -0.490255206823349,
+                -0.08763851970434189
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 1368,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "max" : [
+                0.00779667729511857,
+                0.4223688244819641,
+                0.12891611456871033
+            ],
+            "min" : [
+                -0.00256186886690557,
+                -0.4067647159099579,
+                -0.009850949980318546
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.047463309019804,
+                0.044815681874752045
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.047463309019804,
+                -0.044815681874752045
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 520,
+            "max" : [
+                0.008181270211935043,
+                0.42237967252731323,
+                0.35447466373443604
+            ],
+            "min" : [
+                -0.008260334841907024,
+                -0.8702092170715332,
+                -0.01396272610872984
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 520,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 520,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 2808,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "max" : [
+                0.002564157359302044,
+                -0.20419847965240479,
+                0.4956876337528229
+            ],
+            "min" : [
+                -0.0025641571264714003,
+                -0.3757573962211609,
+                -0.13511435687541962
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "max" : [
+                0.002564156660810113,
+                -0.3477107286453247,
+                0.2852325737476349
+            ],
+            "min" : [
+                -0.0025641568936407566,
+                -0.5186458230018616,
+                0.13368932902812958
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 1368,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.006026132497936487,
+                0.04912593960762024,
+                0.060298334807157516
+            ],
+            "min" : [
+                -0.006026132497936487,
+                -0.04912593960762024,
+                -0.060298334807157516
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "max" : [
+                0.0025641571264714003,
+                -0.20529596507549286,
+                -0.06622038781642914
+            ],
+            "min" : [
+                -0.002564157359302044,
+                -0.7367150783538818,
+                -0.21935783326625824
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 260,
+            "type" : "VEC2"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 20425,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10553,
+            "byteOffset" : 20428
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10254,
+            "byteOffset" : 30984
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 349,
+            "byteOffset" : 41240
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 349,
+            "byteOffset" : 41592
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 339,
+            "byteOffset" : 41944
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 347,
+            "byteOffset" : 42284
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 347,
+            "byteOffset" : 42632
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 349,
+            "byteOffset" : 42980
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1568,
+            "byteOffset" : 43332
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1603,
+            "byteOffset" : 44900
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 345,
+            "byteOffset" : 46504
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2948,
+            "byteOffset" : 46852
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1703,
+            "byteOffset" : 49800
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1829,
+            "byteOffset" : 51504
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 348,
+            "byteOffset" : 53336
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1697,
+            "byteOffset" : 53684
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 55384,
+            "uri" : "data:application/octet-stream;base64,RFJBQ08CAgEBAAAA4R78NAL8NEUAnQ5f13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd17VPVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVW1+lRVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbWqT1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbWq+lRVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVW1qqpPVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVT1VVdWnqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpVVVV9qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq86/qu69d1Xdd1Xde1T1VVVVVVq09VVVVVVbWqT1VVVVVVVauqT1VVVVVVVbWqqk9VVVVVVVXVU1VVfaqqqqqqqqqqVVVVfaqqqqqqqqrKu67vun5d13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd1z5VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV1epTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVdWqPlVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV1arqU1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV1aqqPlVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVfVUVVWfqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqlZVVfWpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq8q7ru65f13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd13Vd17VPVVVVVVVVVVVVVVVVVVVVVVVVVVVVtfpUVVVVVVVVVVVVVVVVVVVVVVVVVVVVtapPVVVVVVVVVVVVVVVVVVVVVVVVVVVVVbWq+lRVVVVVVVVVVVVVVVVVVVVVVVVVVVVVtaqqT1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVPVVV1aeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpVVVV9qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfF37de3XrV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3Xde1TVVVVVVVVVVVVVVVVVVVVVVVVVVVVrT5VWlVVVVVVVVVVVVVVVVVVVVVVVVVVrepTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVa2qPlVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVrarqU1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVT1VV9amqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmpVVVWfqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqoqX9d+Xft1Xdd1Xdd1Xdd1Xdd1Xdd1Xdc+VVVVVVVVVVVVVVVVrT5VVVVVVVVVVVVVVVXVqj5VVVVVVVVVVVVVVVVVrao+VVVVVVVVVVVVVVVVVfWolj5VVVVVVVVVVVVVVVVVVa2qqj5VVVVVVVVVVVVVVVVVVdVqlao+VVVVVVVVVVVVVVVVVVVVraqqqj5VVVVVVVVVVVVVVVVVVVXVqqqqqj5VVVVVVVVVVVVVVVVVVVVVT1VVVVX1qaqqqqqqqqqqqqqqqqqqqqpWVVVVVfWpqqqqqqqqqqqqqqqqqqqqKl/XdV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3XdV3Xde1TVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVdXqU1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVrepTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVXVqupTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVrarqU1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVfVUVVWfqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmpVVVWfqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvJ17buuX9d1Xdd1Xdd1Xdd1Xdd1Xdd1Xdd1Xdd1Xdd1Xdd1Xdd1Xde1T1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVtfpUVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVW1qk9VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVW1qvpUVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVtaqqT1VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU9VVXVp6qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqVVVVfaqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfF37riv/An1B/wnUS0tLS0tzwIb/CdRLS0tLS3PAhgP/AAAAAAABAAABAAkDAAACAQEJAwABAwEDCQIAAgIBAQEBCeBtOSL1CFUK6QKFA+kBjQIdApEC9QEJAokBcQEdAYkBDQFxAdQ1AeQlAezQsPzUJQHUBQHo9Iy4tJiM0IzQhLBwvGyogJSEjIygmNB8hGCgRIRQTGBwYEhQWEhQVDyEcHB0UEgsOChEGDg8KDg8JFAsKCg0FCAoJBggDBAYFBgMGBQwCAwIKBggGCAMEBggGCQYIBgUCBwQFAMYBBQEBAgUBCAIOAgYBAQEGAQEFBAEDAQMBAgMBAQEBAMMBBAECAgYBCQDDAMMBAgEBAwEMAgcBAQMAxgEDAQEAxAEDAMgAxADDAMEAwgDBAMEAwQEBAQLBBcEDwQHBAMEAwQDDBsEBwQ3BAMEDwQEDAQEHwQEKwQPBBsEAwQLBDMMAwwLBAMECwQTBAsECwQTBAMEewQDBBsEOwQrBBMEcwQHBCcETwTPBAcElwRzBCMEEwQnBP////8PBP/jBCcELwT//4cELwT/QwSTBP8XBHME////////////6wQbBP/////////vBP8bBP////+jBP+DBP////+bBCME//////////////////////////////8zBP//////hwT/////////NwRrBP//lwRTBDsE/////////////0sE////owT/////////////////////////LwT/////EwT////////////////rBP///////////////78E////////////////////////////////////////////////////////////////////////////////////2wSJPmN1lLIuQ+h0osBYdKCJK0l29p/t9IlwPZY+YuHXRbJbVU9Q4ECdjQTy6//IV9e3W1LdcSj4vzNg3Bd+h9fJcJ5Ux/QgDe6oTJ7i9PTzKMAYo4NlJdn1fmr5g/TvaMYxdLtg55eWGll86BMFFlLsli9A7x64ZI8dzdaZ2HzgwhyNoLR4RS2BI7i0FQt0ZKSECjycvYSgVawyst4fP1g1gd3+DZLhI8OW/fLvGqDQWrxN0n2J4cVkyEEDSBP2lyyaTjOXV9Rq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8vTNl/yx9M2LvPH01c+zPcURh7+9xROD733FFXvfvcUXb7/9xRhnj33GG1cvfcchN398yfww3/ITDU1f9B8L27C/3yMUH7UZbno96HuwnL8TLQf4VqEz+8uU0bL28tyHoQ/RPffvdNcdJ8J2rQnopdysxBr6bcsuXuG5DLMx3ouzl+TBhBNZTszACl8HUzWE2cQwyrg5NsSr63jdjed/4InngeSD6H7pe+518W/5ZPpbB5EgrOHRgUj5r7Bow2KQhkQYGlmIZGEShUoSKknI5CCUglQEcv2P6cfJ751LYn8OM3syrzlEsFD0m8y3vd+L6oD4aP1hA6kYjJJQicIkC48sNMKwCMMiC4swJNJwSMMgD308zEFRhkUVHTl0jDCApASPLijqiFglIJSEYftFEPaTeomB7+TuPj/YDG87PusQzzpR09guGJc92G7w7IGzwaBLHt9avjne2vjoiUZ/wy5LYvwn7xewN5OR/ad35G0mtzUPme/05pRfHffffdMteNxwE7642moz/vjZaDvuONpqM9542mszzvjaaTu+ONtHq3742HDrgjbiW3ueN+Nucx6443ljXvjjhzNuOOOU9z1445jfDXjjmsvdd+OZu6334pW/fffijNt99+KK44334ovnjTfjie+t9+J0Xy445FAjDznkM58feeAOt0/41qsPYzfjaH/+t+N6Vz7443lznvjjbq/euONZBx854mXLLrngSCMsAfvpfAfEr3XyG3z/NeoedG8fL9A+vZ8D8YcdfQffX+Jcfjm+ezrhY7rseFsF+s62lOH0WTtdztx/N9K/PXysBOeXF1LpPjeV4vFg53wi//UNaPJe34Qm73WNaPJey5QOL7YN6O5r+2DSLrcRpOt4NyWuznfV//reWv7ucEsZNu81kiX6RM/k+vy+M0DT3NOCOM29bEjT3suCMA3+7AfT4MeOLP39q4vS2L8K0UA0MJYPKuMBPc+NYI+Auur2DMXP/bIC0UeNNfGvr/026p/jzbfmlAtueOSIO3654HWT/jrcUkfvvtUoLwFFymcHI8vN0e8ixMwLqPs/XcLZPdgzlN5nLYPJv88esRqELEB9gtHAE1ZHDwvCNfSoKFtLb6qiNfWmKlpTT7rCtfSkLF5DL9pytvGbMnbf/rhT+eZ45vVfQ91z8EtsQL3Sben2Zkfp1Z8dlEj92DmU1Xst4zk9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QP+Ki4x6BuC/aKenqGfoJaolq+TrY6yj7CKtYm1ireGt4W0gL72voAtu3csVdz1H/gPsL8D+A+xPwP4E8C8A/wPgb0D+BhA6gpJifvnjlR+QvwH4D9A/AfsP0L/nhG/rgL/8CwD9C7D/APwDkMnK+eQI3E/A/gPw353zL0D/AoC0eABA89oAwIMTT527/wEwT+yvQMrxKy/0uRNMXCy17swT4RgE7N9A/ggA/rvA/gavE50fDoRjMHGx1LozT4RjMHEx/gfY7wH5EUCQo/hvD7PLyms/T/nbzMw+wP7M4RhMXCy17swT4RhMXAw6ExMXozMxcXFyMsnJAFLr3loEdPLCH50w/vInpDzOJ5ff/M84Y9/80EBHr/zRRD+vfNJIL29800srP7zUTx/vO9ZUFx872mD7Hnjnga/u9PaiJ64y/7xvLTAE148sdBUyS2/6108HD7rcY9feOd9xr7654HmbrrnhgIeOueKEe15544dzXvnjiHMuueSMZw555Y1jDnnlj1seOeWQVw555ZJP/rjlkk/u+OWTS9745ZRD/njllEMOOeWVP/545ZY77rjllzfeuOWaK9545Z8Tvnjlqudd9+5sa7/ALHluw0op0+VFPD75A/gcoGxi56EGGnQTQb4us0ASTXIGENgfH9B/OAt8TF4BQsndKzSsjA0EBMrcT0ZczL7VhL8F0VSBL+QNxbFtRfHwe5tOSAY3p62R9xxo3frpY6u9OeZuyy155HXb/fjieufduOJ95+144n/z3bjgiQfeONqsM/7417w73rjcpzuOuN6aM25435QzTnjfkjMueN6ULx443Jov3nfXpiNe983MhI04vwg8Trm6KzRet9/01K342KH7zfjekQveOOGME9444okT3rjiiBveeOKKG9544oob3vjhjR/uOOCWL9443qE7zrjcqDu+ONquO1442K43vrfZnEP+ttqTc0721qLTHvXNyg8v88EEpB637TYtgfEH6scT/sUcfJO+yBhME7DM/7KFzOtLk3xwcveMCxi/O1WxsTLmX1SvtcE77Ar+2OBi43U7iEd687lXYiuGX15PamNWb0pvRn86ez6LMoc2myKbHsv+zuoKqyaLWkt6J6bruc/dl/F36Wv9b82nyc91M1J7xvZ6UqvVI2G44eRJAScZfJQA8kHIBiIVjEwwEsHIAyQNkDSAX0EA/WNe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AAL0X8D+CeTPwP0O3O9A/gvoT4D/+RMQ/wHsK8D+Au4vIL8C9SNw/wH2J2B/AvUzIHvxqfduAfoUrB+B+xG0L0H7GZgPwvcmaH8C9h+Ez8D89StQfgbgezD+BulbAP8D+BtQufMA+G+A/gzUH4H8FbxvwfsSzG/A/vcbkD4E41MgvgXmV8A+BPEzMP8C8jcA/wP/AwAA/wEAAAoBAQEBBIAgqT0NAfz///83EBD/////////WxD//////7sQ//////////////////////////////////////////////////////////////+PEChiEhxUKqnESmSkUDtK0NDkbUpx0wFFh+ksFkj0umdXuO73//H/+7+GAAAAAP8PAAAAAAAAAAAAAAAAgD8MRFJBQ08CAgEBAAAAhALIAwLIAwwAel/XdV3Xde1TVVVV1epTVVVVVa3qU1VVVVXVqupTVVVVVVWtqupTVVVVVVXVqqrqU1VVVVVVVa2qqupTVVVVVVVV1aqqqupTVVVVVVVVVa2qqqrqU1VVVVVVVVX1VFVVVVWfqqqqqqqqqqpqVVVVVVWfqqqqqqqqqqoC/wER/wP/w4D/A//DgAP/AAAAAAABAAABAAkDAAACAQEJAwABAwEDCQIAAgIBAQEADwM1Ay0FKQYdCcUOrQS1Ap0IsQMxBH0BB0Brv7tY+fVpjucJsT0YvsC1hKjROM/pQCY4h2JhMgkheFABxcoTyQc53QzMaQfNAp2Utj7j5o+TWI2UB34hn73W7/iczoLPlow/1ZVzFXzeOC6bsb2gbeXzzGh62QfEPEdlJlrAITtG67XU/09CgP/QNxJBSY0FQJYQG4gOwCQVwIBkJFcAgBugApGJXAFEOgGcqwAgwIAkpGZAKgDADEBIB+EQCDAgkchZhwagEQngXATAwAIgDKBgQAbSM3CWQQAEXgBjNgAS5QBggbAAQBAMckTOOmQjEAAsEgGcewA4eABgfQUEARAyGJCF9AZAJgPyrwAMWgBpMwBA5QCAsCDASMAsQBYgCTH4F4FMh24cjN4OwCIQQDoHgIQDANZLADqfUIAQQTAgE+kDoEoO5yOgfQEMWABpMwBS8QCgsCIAQCQpYIIqsAMIQRVkwDcSgS7hODj9BQzAmA5kAUhkBNMASCwKKBEAmJQFZPaAYXt0IPjvGnTMQsbokALFCEBo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"
+        }
+    ]
+}

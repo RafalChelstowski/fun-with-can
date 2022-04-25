@@ -2,12 +2,9 @@ import * as THREE from 'three';
 
 export const glassMaterial = new THREE.MeshPhysicalMaterial({
   metalness: 0,
-  roughness: 0.1,
-  transmission: 1,
-  ior: 1.5,
-  opacity: 1,
-  clearcoat: 1,
-  reflectivity: 0.5,
+  roughness: 0.07,
+  transmission: 0.8,
+  ior: 2.33,
 });
 
 export const ikeaGlassMaterial = new THREE.MeshPhysicalMaterial({
@@ -19,4 +16,8 @@ export const ikeaGlassMaterial = new THREE.MeshPhysicalMaterial({
   clearcoat: 1,
   reflectivity: 0.5,
   sheen: 1,
+});
+
+export const disabledNeonMaterial = new THREE.MeshStandardMaterial({
+  color: 'lightGray',
 });

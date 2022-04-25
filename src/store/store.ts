@@ -11,6 +11,9 @@ import {
 } from '../types';
 
 const interactiveObjectsInitialState: InteractiveObjects = {
+  neon: {
+    status: InteractiveObjectStatus.OFF,
+  },
   grip: {
     status: InteractiveObjectStatus.ATTACHED_EXPRESS,
   },
