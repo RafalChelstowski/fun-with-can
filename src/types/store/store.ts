@@ -6,6 +6,8 @@ export enum InteractiveObjectStatus {
   PICKED = 'picked',
   ANIMATED = 'animated',
   DROPPED = 'dropped',
+  ON = 'on',
+  OFF = 'off',
 }
 
 export enum PlayerStatus {
@@ -22,6 +24,7 @@ export interface InteractiveObjectInstance extends InteractiveObject {
 }
 
 export interface InteractiveObjects {
+  neon: InteractiveObject;
   grip: InteractiveObject;
   mugs: InteractiveObjectInstance;
   mugs2: InteractiveObjectInstance;

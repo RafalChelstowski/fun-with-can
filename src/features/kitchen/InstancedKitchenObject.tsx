@@ -139,7 +139,7 @@ export function InstancedKitchenObject({
   useFrame(() => {
     const { instanceId } = obj;
     if (instanceId && isPickedByPlayer) {
-      const zCamVec = new THREE.Vector3(0.15, -0.15, -0.3);
+      const zCamVec = new THREE.Vector3(0.15, -0.15, -0.4);
       const position = camera.localToWorld(zCamVec);
       api.at(instanceId).position.set(...position.toArray());
       api.at(instanceId).velocity.set(0, 0, 0);
