@@ -61,6 +61,7 @@ export type State = {
   setAchievements: (obj: Achievements) => void;
   playerStatus: PlayerStatus | null;
   isLocked: boolean;
+  pointerSpeed: string;
   toggleIsLocked: () => void;
   interactiveObjects: InteractiveObjects;
   setInteractiveObject: (

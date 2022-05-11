@@ -12,6 +12,7 @@ import { useSnapshot } from './api/hooks/useSnapshot';
 import { useUser } from './api/hooks/useUser';
 import { Lights } from './common/components/Lights';
 import { LockButton } from './common/components/LockButton';
+import { PointerSpeedSlider } from './common/components/PointerSpeedSlider';
 import { ikeaGlassMaterial } from './common/materials/materials';
 import { Crosshair } from './features/Crosshair';
 import { StaticBounds } from './features/kitchen/Bounds';
@@ -51,6 +52,7 @@ function UserMenus() {
     <Ui>
       <Route path="/">
         <LockButton />
+        <PointerSpeedSlider />
       </Route>
       <Route
         path={routes.SIGN_IN}
@@ -101,7 +103,7 @@ export function App(): JSX.Element {
       <Canvas gl={{ powerPreference: 'high-performance' }} camera={{ fov: 55 }}>
         <ContextBridge>
           <Lights />
-          <Physics gravity={[0, -4, 0]}>
+          <Physics gravity={[0, -3, 0]}>
             <DevDebug>
               <Suspense fallback={null}>
                 <KitchenModel />
