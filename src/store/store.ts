@@ -41,6 +41,7 @@ export const initialState = {
   playerStatus: null,
   interactiveObjects: { ...interactiveObjectsInitialState },
   isLocked: false,
+  pointerSpeed: '0.2',
   point: null,
 };
 

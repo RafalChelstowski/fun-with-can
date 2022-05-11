@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { useSphere } from '@react-three/cannon';
 import { extend, useFrame, useThree } from '@react-three/fiber';
@@ -13,7 +13,7 @@ import { ControlsLock } from '../../types';
 extend({ PointerLockControls });
 
 const INITIAL_POSITION: [x: number, y: number, z: number] = [0, 0.2, 1];
-const SPEED = 2.5;
+const SPEED = 3.5;
 
 const direction = new THREE.Vector3();
 const frontVector = new THREE.Vector3();
@@ -24,9 +24,10 @@ export function Player(): JSX.Element {
   const controlsRef = useRef<ControlsLock | null>(null);
   const velocityRef = useRef([0, 0, 0]);
 
-  const toggleIsLocked = useStore(
-    useCallback((state) => state.toggleIsLocked, [])
-  );
+  const { toggleIsLocked, pointerSpeed } = useStore((state) => ({
+    toggleIsLocked: state.toggleIsLocked,
+    pointerSpeed: state.pointerSpeed,
+  }));
 
   const camera = useThree((state) => state.camera);
   const gl = useThree((state) => state.gl);
@@ -94,7 +95,11 @@ export function Player(): JSX.Element {
 
   return (
     <>
-      <pointerLockControls args={[camera, gl.domElement]} ref={controlsRef} />
+      <pointerLockControls
+        args={[camera, gl.domElement]}
+        ref={controlsRef}
+        pointerSpeed={pointerSpeed}
+      />
       <mesh ref={ref as unknown as React.RefObject<React.ReactNode>} />
     </>
   );
