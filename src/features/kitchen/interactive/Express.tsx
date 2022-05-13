@@ -1,10 +1,11 @@
-import { ReactNode, RefObject, useEffect } from 'react';
+import { Ref, useEffect } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
 import { Triplet, useBox } from '@react-three/cannon';
 import { useGLTF, useTexture } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
+import { Group } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
@@ -117,7 +118,7 @@ export function Express(): JSX.Element {
   return (
     <group dispose={null}>
       <a.group
-        ref={ref as unknown as RefObject<ReactNode>}
+        ref={ref as unknown as Ref<Group> | undefined}
         onClick={(e) => {
           e.stopPropagation();
 

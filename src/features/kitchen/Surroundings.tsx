@@ -1,7 +1,8 @@
-import { ReactNode, RefObject, useRef } from 'react';
+import { Ref, useRef } from 'react';
 
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
+import { Group } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 type GLTFResult = GLTF & {
@@ -33,7 +34,7 @@ export function Surroundings({
     '/surroundings.gltf'
   ) as unknown as GLTFResult;
   return (
-    <group ref={group as RefObject<ReactNode>} {...props} dispose={null}>
+    <group ref={group as Ref<Group> | undefined} {...props} dispose={null}>
       <mesh
         geometry={nodes.tree.geometry}
         material={nodes.tree.material}

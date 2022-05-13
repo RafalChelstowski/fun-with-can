@@ -1,9 +1,10 @@
-import { useEffect, useLayoutEffect, useMemo } from 'react';
+import { Ref, useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { Triplet, useBox } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
+import { BufferGeometry, InstancedMesh, Material } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { useStore } from '../../store/store';
@@ -166,7 +167,11 @@ export function InstancedKitchenObject({
         });
         setPlayerStatus(PlayerStatus.PICKED);
       }}
-      ref={ref as unknown as React.RefObject<React.ReactNode>}
+      ref={
+        ref as unknown as
+          | Ref<InstancedMesh<BufferGeometry, Material | Material[]>>
+          | undefined
+      }
       args={[
         nodes[geometryName].geometry,
         customMaterial || materials[materialName],

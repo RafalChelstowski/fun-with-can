@@ -1,8 +1,9 @@
-import { ReactNode, RefObject, useEffect, useRef } from 'react';
+import { Ref, useEffect, useRef } from 'react';
 
 import { useCylinder } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
+import { BufferGeometry, InstancedMesh, Material } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 type GLTFResult = GLTF & {
@@ -37,7 +38,11 @@ export function Rain({ num }: { num: number }): JSX.Element {
   return (
     <group>
       <instancedMesh
-        ref={ref as unknown as RefObject<ReactNode>}
+        ref={
+          ref as unknown as
+            | Ref<InstancedMesh<BufferGeometry, Material | Material[]>>
+            | undefined
+        }
         name="Can"
         args={[undefined, undefined, num]}
         material={materials.harnasblue}
@@ -75,7 +80,11 @@ export function Static({ num }: { num: number }): JSX.Element {
   return (
     <group>
       <instancedMesh
-        ref={ref as unknown as RefObject<ReactNode>}
+        ref={
+          ref as unknown as
+            | Ref<InstancedMesh<BufferGeometry, Material | Material[]>>
+            | undefined
+        }
         name="Can"
         args={[undefined, undefined, num]}
         material={materials.harnasblue}
