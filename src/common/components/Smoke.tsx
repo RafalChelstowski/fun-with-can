@@ -1,9 +1,15 @@
-import { ReactNode, RefObject, useMemo, useRef } from 'react';
+import { Ref, useMemo, useRef } from 'react';
 
 import { useSpring } from '@react-spring/three';
 import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { DoubleSide, InstancedMesh, Object3D } from 'three';
+import {
+  BufferGeometry,
+  DoubleSide,
+  InstancedMesh,
+  Material,
+  Object3D,
+} from 'three';
 
 interface SmokeProps {
   isVisible: boolean;
@@ -60,7 +66,11 @@ export function Smoke({ isVisible }: SmokeProps): JSX.Element {
 
   return (
     <instancedMesh
-      ref={ref as RefObject<ReactNode>}
+      ref={
+        ref as unknown as
+          | Ref<InstancedMesh<BufferGeometry, Material | Material[]>>
+          | undefined
+      }
       args={[undefined, undefined, 15]}
     >
       <planeBufferGeometry args={[0.3, 0.3]} />

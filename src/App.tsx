@@ -13,7 +13,6 @@ import { useUser } from './api/hooks/useUser';
 import { Lights } from './common/components/Lights';
 import { LockButton } from './common/components/LockButton';
 import { PointerSpeedSlider } from './common/components/PointerSpeedSlider';
-import { ikeaGlassMaterial } from './common/materials/materials';
 import { Crosshair } from './features/Crosshair';
 import { StaticBounds } from './features/kitchen/Bounds';
 import { Env } from './features/kitchen/Env';
@@ -109,48 +108,22 @@ export function App(): JSX.Element {
                 <KitchenModel />
                 <StaticBounds />
                 <InstancedKitchenObject
-                  initialPosition={[-2.5, 1.5, -5.55]}
+                  initialPosition={[-2.3, 1.5, -5.55]}
                   objName="mugs"
                   geometryName="toukMug1"
                   materialName="yellowToukCupMaterial"
                   gltfName="/toukMug.gltf"
+                  itemsNumber={12}
+                  rowModifier={6}
                 />
                 <InstancedKitchenObject
-                  initialPosition={[-2.45, 1.6, -5.57]}
+                  initialPosition={[-1.33, 1.5, -5.65]}
                   objName="mugs2"
                   geometryName="toukMug2"
                   materialName="salmonToukCupMaterial"
                   gltfName="/toukMug2.gltf"
-                  itemsNumber={8}
-                  rowModifier={4}
-                />
-                <InstancedKitchenObject
-                  initialPosition={[-1.93, 1.5, -5.65]}
-                  objName="ikeaGlass"
-                  geometryName="IKEAglass"
-                  materialName="lol"
-                  customMaterial={ikeaGlassMaterial}
-                  gltfName="/ikeaGlass.gltf"
-                  itemsNumber={18}
-                  rowModifier={6}
-                />
-                <InstancedKitchenObject
-                  initialPosition={[-1.25, 1.5, -5.72]}
-                  objName="ikeaMug1"
-                  geometryName="IKEAmug1"
-                  materialName="pinkCupMaterial"
-                  gltfName="/ikeaMug1.gltf"
-                  itemsNumber={10}
-                  rowModifier={5}
-                />
-                <InstancedKitchenObject
-                  initialPosition={[-0.6, 1.5, -5.6]}
-                  objName="ikeaMug2"
-                  geometryName="IKEAMug2"
-                  materialName="blueCupMaterial"
-                  gltfName="/ikeaMug2.gltf"
-                  itemsNumber={10}
-                  rowModifier={5}
+                  itemsNumber={16}
+                  rowModifier={8}
                 />
                 <Env />
                 <Neon />

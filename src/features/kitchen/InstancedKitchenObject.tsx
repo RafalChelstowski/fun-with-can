@@ -1,9 +1,10 @@
-import { useEffect, useLayoutEffect, useMemo } from 'react';
+import { Ref, useEffect, useLayoutEffect, useMemo } from 'react';
 
-import { Triplet, useCylinder } from '@react-three/cannon';
+import { Triplet, useBox } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
+import { BufferGeometry, InstancedMesh, Material } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { useStore } from '../../store/store';
@@ -44,9 +45,6 @@ export function InstancedKitchenObject({
   );
   const camera = useThree((state) => state.camera);
   const { nodes, materials } = useGLTF(gltfName) as unknown as GLTFResult;
-  const box = new THREE.Box3().setFromObject(nodes[geometryName]);
-  const radius = (box.max.x - box.min.x) / 2;
-  const height = (box.max.y - box.min.y) * 1.07;
 
   const { playerStatus, setPlayerStatus, obj, setInteractiveObject, point } =
     useStore((state) => ({
@@ -63,9 +61,10 @@ export function InstancedKitchenObject({
   const isThrownByPlayer =
     obj.status === InteractiveObjectStatus.PICKED &&
     playerStatus === PlayerStatus.THROWING;
-  const [ref, api] = useCylinder(() => ({
-    mass: 0.5,
-    args: [radius, radius, height, 5],
+
+  const [ref, api] = useBox(() => ({
+    mass: 1,
+    args: [0.1, 0.1, 0.1],
     position: [0, 0, 0],
     rotation: [0, Math.random() * 3, 0],
     allowSleep: true,
@@ -85,23 +84,23 @@ export function InstancedKitchenObject({
         .at(i)
         .position.set(
           initialPosition[0] + x * 0.11,
-          initialPosition[1] + height,
+          initialPosition[1] + 0.2,
           initialPosition[2] + z * 0.13
         );
     });
-  }, [api, grid, height, initialPosition, itemsNumber, rowModifier]);
+  }, [api, grid, initialPosition, itemsNumber, rowModifier]);
 
   useEffect(() => {
     const { status, instanceId } = obj;
     if (instanceId && point && status === InteractiveObjectStatus.DROPPED) {
-      api.at(instanceId).position.set(point.x, point.y + height, point.z);
+      api.at(instanceId).position.set(point.x, point.y + 0.2, point.z);
 
       setInteractiveObject(objName, {
         status: InteractiveObjectStatus.DROPPED,
         instanceId: undefined,
       });
     }
-  }, [api, height, obj, objName, point, setInteractiveObject]);
+  }, [api, obj, objName, point, setInteractiveObject]);
 
   useEffect(() => {
     const { instanceId } = obj;
@@ -137,14 +136,20 @@ export function InstancedKitchenObject({
   ]);
 
   const zCamVec = new THREE.Vector3();
+  const rotationDirection = new THREE.Vector3();
 
   useFrame(() => {
     const { instanceId } = obj;
     if (instanceId && isPickedByPlayer) {
       zCamVec.set(0.15, -0.15, -0.4);
       const position = camera.localToWorld(zCamVec);
+      camera.getWorldDirection(rotationDirection);
+      rotationDirection.normalize();
+      const theta = Math.atan2(rotationDirection.x, rotationDirection.z);
+
       api.at(instanceId).position.set(...position.toArray());
       api.at(instanceId).velocity.set(0, 0, 0);
+      api.at(instanceId).rotation.set(0, theta + Math.PI, 0);
     }
   });
 
@@ -162,7 +167,11 @@ export function InstancedKitchenObject({
         });
         setPlayerStatus(PlayerStatus.PICKED);
       }}
-      ref={ref as unknown as React.RefObject<React.ReactNode>}
+      ref={
+        ref as unknown as
+          | Ref<InstancedMesh<BufferGeometry, Material | Material[]>>
+          | undefined
+      }
       args={[
         nodes[geometryName].geometry,
         customMaterial || materials[materialName],

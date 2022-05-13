@@ -1,8 +1,9 @@
-import { ReactNode, RefObject, Suspense } from 'react';
+import { RefObject, Suspense } from 'react';
 
 import { Triplet, useBox, useCylinder } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
+import { BufferGeometry, Material, Mesh } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 type GLTFResult = GLTF & {
@@ -28,7 +29,9 @@ function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
 
   return (
     <mesh
-      ref={ref as unknown as RefObject<ReactNode>}
+      ref={
+        ref as unknown as RefObject<Mesh<BufferGeometry, Material | Material[]>>
+      }
       geometry={geometry}
       scale={scale}
     >
@@ -51,7 +54,9 @@ function CylinderBoundary({ mesh }: { mesh: THREE.Mesh }) {
 
   return (
     <mesh
-      ref={ref as unknown as RefObject<ReactNode>}
+      ref={
+        ref as unknown as RefObject<Mesh<BufferGeometry, Material | Material[]>>
+      }
       geometry={geometry}
       scale={scale}
     >

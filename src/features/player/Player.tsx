@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { Ref, useEffect, useRef } from 'react';
 
 import { useSphere } from '@react-three/cannon';
 import { extend, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
+import { BufferGeometry, Material, Mesh } from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
 
 import { useControls } from '../../common/hooks/useControls';
@@ -100,7 +101,13 @@ export function Player(): JSX.Element {
         ref={controlsRef}
         pointerSpeed={pointerSpeed}
       />
-      <mesh ref={ref as unknown as React.RefObject<React.ReactNode>} />
+      <mesh
+        ref={
+          ref as unknown as
+            | Ref<Mesh<BufferGeometry, Material | Material[]>>
+            | undefined
+        }
+      />
     </>
   );
 }
