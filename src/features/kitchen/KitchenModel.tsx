@@ -5,6 +5,8 @@ import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { useStore } from '../../store/store';
+import { Cupboard } from './interactive/Cupboard';
+import { Drawer } from './interactive/Drawer';
 import { Express } from './interactive/Express';
 import { Fridge } from './interactive/Fridge';
 
@@ -71,6 +73,8 @@ export function KitchenModel(props: Props): JSX.Element {
           {meshes}
           <Fridge />
           <Express />
+          <Drawer />
+          <Cupboard />
         </>
       </Suspense>
     </group>

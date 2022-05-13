@@ -81,7 +81,6 @@ function DevDebug({ children }: { children: ReactNode }): JSX.Element {
   const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
   return isDev ? (
-    // @ts-ignore
     <Debug color="black" scale={1.01}>
       {children}
     </Debug>
