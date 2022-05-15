@@ -5,7 +5,7 @@ import { Link } from 'wouter';
 import { userApi } from '../../api';
 import { useSet } from '../../api/hooks/useSet';
 // import { useSnapshot } from '../../api/hooks/useSnapshot';
-import { routes } from '../Ui';
+import { routes } from '../Nav';
 
 export interface SignUpFormData {
   username: string;

@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { Link } from 'wouter';
 
 import { userApi } from '../../api';
-import { routes } from '../Ui';
+import { routes } from '../Nav';
 
 export interface PasswordForgetFormData {
   email: string;

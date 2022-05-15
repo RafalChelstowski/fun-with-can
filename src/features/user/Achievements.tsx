@@ -31,7 +31,7 @@ export function Achievements(): JSX.Element | null {
         const { fullName, description } = data[k as AchievementName];
 
         return (
-          <div key={k} className="flex flex-row w-2/3">
+          <div key={k} className="flex flex-row">
             <div className={`w-1/6 ${cellClassName}`}>{i + 1}</div>
             <div className={`w-2/6 ${cellClassName}`}>{fullName}</div>
             <div className={`w-3/6 ${cellClassName}`}>{description}</div>

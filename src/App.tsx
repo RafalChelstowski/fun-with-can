@@ -21,8 +21,8 @@ import { InstancedKitchenObject } from './features/kitchen/InstancedKitchenObjec
 import { Neon } from './features/kitchen/interactive/Neon';
 import { KitchenModel } from './features/kitchen/KitchenModel';
 import { Surroundings } from './features/kitchen/Surroundings';
+import { Nav, routes } from './features/Nav';
 import { Player } from './features/player/Player';
-import { routes, Ui } from './features/Ui';
 import { Achievements as AchievementsPage } from './features/user/Achievements';
 import { PasswordForgetPage } from './features/user/PasswordForget';
 import { SignInPage } from './features/user/SignIn';
@@ -33,6 +33,7 @@ import { useStore } from './store/store';
 import { Achievements } from './types';
 
 function UserMenus() {
+  const isLocked = useStore((state) => state.isLocked);
   const { uid } = useUser();
   const achievements = useStore((state) => state.achievements);
   const setAchievements = useStore((state) => state.setAchievements);
@@ -46,11 +47,28 @@ function UserMenus() {
     },
   });
 
+  if (isLocked) {
+    return null;
+  }
+
   return (
-    <Ui>
+    <div className="flex absolute w-screen h-screen justify-center z-50 top-0 left-0 bg-gray-400 bg-opacity-75">
+      <Nav />
       <Route path="/">
-        <LockButton />
-        <PointerSpeedSlider />
+        <div className="flex-col items-center w-2/3 mt-40">
+          <div className="flex w-full items-center justify-around bg-gray-50 py-8">
+            <h1>Work in progress ;)</h1>
+          </div>
+          <div className="flex w-full items-center justify-around bg-gray-50 py-8">
+            <p>WASDA to move</p>
+            <p>LEFTCLICK to pick/open/interact</p>
+            <p>SPACE to throw</p>
+          </div>
+          <div className="flex w-full items-center justify-around bg-gray-50 py-8">
+            <LockButton />
+            <PointerSpeedSlider />
+          </div>
+        </div>
       </Route>
       <Route
         path={routes.SIGN_IN}
@@ -72,7 +90,7 @@ function UserMenus() {
         }
       />
       <Route path={routes.SIGN_OUT} component={SignOutPage} />
-    </Ui>
+    </div>
   );
 }
 
@@ -97,7 +115,13 @@ export function App(): JSX.Element {
 
   return (
     <main className="w-screen h-screen overflow-hidden">
-      <Canvas gl={{ powerPreference: 'high-performance' }} camera={{ fov: 55 }}>
+      <Canvas
+        gl={{
+          powerPreference: 'high-performance',
+          physicallyCorrectLights: true,
+        }}
+        camera={{ fov: 55 }}
+      >
         <ContextBridge>
           <Lights />
           <Physics gravity={[0, -2, 0]}>
