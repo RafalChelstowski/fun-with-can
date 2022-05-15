@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { useEvent } from 'react-use';
+import { useEffectOnce, useEvent } from 'react-use';
 
-import { useBox } from '@react-three/cannon';
-import { extend, useFrame, useThree } from '@react-three/fiber';
+import { Triplet, useBox } from '@react-three/cannon';
+import { extend, RootState, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Mesh } from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
@@ -13,7 +13,7 @@ import { ControlsLock } from '../../types';
 
 extend({ PointerLockControls });
 
-const INITIAL_POSITION: [x: number, y: number, z: number] = [0, 0.2, 1];
+const INITIAL_POSITION: Triplet = [0, 0.2, 1];
 const SPEED = 3.5;
 
 const direction = new THREE.Vector3();
@@ -22,7 +22,7 @@ const sideVector = new THREE.Vector3();
 const cameraPosition = new THREE.Vector3();
 
 export function Player(): JSX.Element {
-  const controlsRef = useRef<ControlsLock | null>(null);
+  const controlsRef = useRef<ControlsLock>(null);
   const velocityRef = useRef([0, 0, 0]);
 
   const { toggleIsLocked, pointerSpeed } = useStore((state) => ({
@@ -32,6 +32,8 @@ export function Player(): JSX.Element {
 
   const camera = useThree((state) => state.camera);
   const gl = useThree((state) => state.gl);
+  const setEvents = useThree((state) => state.setEvents);
+  const get = useThree((state) => state.get);
 
   const { controlsUp, controlsDown, controlsLeft, controlsRight } =
     useControls();
@@ -51,8 +53,28 @@ export function Player(): JSX.Element {
       });
     }
   }, [api.velocity, api.position]);
+
+  useEffectOnce(() => {
+    const oldComputeOffsets = get().events.compute;
+    setEvents({
+      compute(_, state: RootState) {
+        const offsetX = state.size.width / 2;
+        const offsetY = state.size.height / 2;
+        state.pointer.set(
+          (offsetX / state.size.width) * 2 - 1,
+          -(offsetY / state.size.height) * 2 + 1
+        );
+        state.raycaster.setFromCamera(state.pointer, state.camera);
+      },
+    });
+
+    return () => {
+      setEvents({ compute: oldComputeOffsets });
+    };
+  });
+
   useEvent('click', (e) => {
-    if ((e.target as HTMLButtonElement)?.name === 'Play') {
+    if (e.target.name === 'Play') {
       controlsRef.current?.lock();
     }
   });

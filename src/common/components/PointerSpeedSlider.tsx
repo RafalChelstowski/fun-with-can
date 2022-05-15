@@ -14,7 +14,7 @@ export function PointerSpeedSlider(): JSX.Element {
   }, [value]);
 
   return (
-    <div className="absolute flex x w-80 h-10 z-50 left-2/4 top-2/4 -mt-24 -ml-40 bg-gray-50">
+    <div className="flex x w-80 h-10 z-50 bg-gray-50">
       <input
         type="range"
         min="0.01"
