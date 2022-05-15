@@ -30,8 +30,6 @@ const queryClient = new QueryClient({
 });
 
 root.render(
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   <QueryClientProvider client={queryClient} contextSharing>
     <App />
   </QueryClientProvider>

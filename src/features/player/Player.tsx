@@ -1,13 +1,13 @@
-import { Ref, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useEvent } from 'react-use';
 
-import { useSphere } from '@react-three/cannon';
+import { useBox } from '@react-three/cannon';
 import { extend, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { BufferGeometry, Material, Mesh } from 'three';
+import { Mesh } from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
 
 import { useControls } from '../../common/hooks/useControls';
-import { useEventListener } from '../../common/hooks/useEventListener';
 import { useStore } from '../../store/store';
 import { ControlsLock } from '../../types';
 
@@ -35,10 +35,11 @@ export function Player(): JSX.Element {
 
   const { controlsUp, controlsDown, controlsLeft, controlsRight } =
     useControls();
+  const isMoving = controlsUp || controlsDown || controlsLeft || controlsRight;
 
-  const [ref, api] = useSphere(() => ({
-    args: [0.1],
-    mass: 20,
+  const [ref, api] = useBox<Mesh>(() => ({
+    args: [0.05, 1.2, 0.05],
+    mass: 100,
     type: 'Dynamic',
     position: INITIAL_POSITION,
   }));
@@ -49,24 +50,19 @@ export function Player(): JSX.Element {
         velocityRef.current = v;
       });
     }
-  }, [api.velocity]);
-  useEventListener(
-    'click',
-    (e) => {
-      if ((e.target as HTMLButtonElement)?.name === 'Play') {
-        controlsRef.current?.lock();
-      }
-    },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    document as any
-  );
-  useEventListener(
+  }, [api.velocity, api.position]);
+  useEvent('click', (e) => {
+    if ((e.target as HTMLButtonElement)?.name === 'Play') {
+      controlsRef.current?.lock();
+    }
+  });
+
+  useEvent(
     'pointerlockchange',
     () => {
       toggleIsLocked();
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    document as any
+    document
   );
 
   useFrame((state) => {
@@ -74,7 +70,9 @@ export function Player(): JSX.Element {
       state.camera.position.copy(
         cameraPosition.set(
           ref.current.position.x,
-          ref.current.position.y + 1.6,
+          ref.current.position.y > 0.65
+            ? ref.current.position.y + 0.4
+            : ref.current.position.y + 1,
           ref.current.position.z
         )
       );
@@ -86,11 +84,17 @@ export function Player(): JSX.Element {
         .multiplyScalar(SPEED)
         .applyEuler(camera.rotation);
 
-      api.velocity.set(direction.x, velocityRef.current[1], direction.z);
+      api.velocity.set(
+        direction.x,
+        ref.current.position.y > 0.65 && isMoving ? -1 : velocityRef.current[1],
+        direction.z
+      );
       api.rotation.set(0, 0, 0);
+
       ref.current.getWorldPosition(ref.current.position);
     } else {
       api.velocity.set(0, 0, 0);
+      api.rotation.set(0, 0, 0);
     }
   });
 
@@ -101,13 +105,7 @@ export function Player(): JSX.Element {
         ref={controlsRef}
         pointerSpeed={pointerSpeed}
       />
-      <mesh
-        ref={
-          ref as unknown as
-            | Ref<Mesh<BufferGeometry, Material | Material[]>>
-            | undefined
-        }
-      />
+      <mesh ref={ref} />
     </>
   );
 }

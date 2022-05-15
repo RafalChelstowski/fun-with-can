@@ -3,8 +3,6 @@ import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { disabledNeonMaterial } from '../../../common/materials/materials';
-import { useStore } from '../../../store/store';
-import { InteractiveObjectStatus } from '../../../types';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -38,9 +36,7 @@ export function Neon({
   ...props
 }: JSX.IntrinsicElements['group']): JSX.Element {
   const { nodes, materials } = useGLTF('/neon.gltf') as unknown as GLTFResult;
-  const neonOn =
-    useStore((state) => state.interactiveObjects.neon.status) ===
-    InteractiveObjectStatus.ON;
+  const neonOn = false;
 
   return (
     <group {...props} dispose={null}>

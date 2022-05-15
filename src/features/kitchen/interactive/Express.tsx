@@ -1,4 +1,5 @@
-import { Ref, useEffect } from 'react';
+import { useRef, useState } from 'react';
+import { useEvent } from 'react-use';
 
 import { a, useSpring } from '@react-spring/three';
 import { Triplet, useBox } from '@react-three/cannon';
@@ -10,8 +11,9 @@ import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
 // import { Smoke } from '../../../common/components/Smoke';
+
 import { glassMaterial } from '../../../common/materials/materials';
-import { useStore } from '../../../store/store';
+import { getState, setState } from '../../../store/store';
 import { InteractiveObjectStatus, PlayerStatus } from '../../../types';
 
 type GLTFResult = GLTF & {
@@ -38,28 +40,26 @@ const grinderRotation = degToRad(-41);
 export function Express(): JSX.Element {
   const { nodes } = useGLTF('/express.gltf') as unknown as GLTFResult;
   const camera = useThree((state) => state.camera);
+  const raycaster = useThree((state) => state.raycaster);
+  const scene = useThree((state) => state.scene);
   const texture = useTexture('/elements.jpg');
-  const { playerStatus, setPlayerStatus, grip, setInteractiveObject, point } =
-    useStore((state) => ({
-      grip: state.interactiveObjects.grip,
-      setInteractiveObject: state.setInteractiveObject,
-      playerStatus: state.playerStatus,
-      setPlayerStatus: state.setPlayerStatus,
-      point: state.point,
-    }));
+  const [animated, setAnimated] = useState(false);
+
+  const gripStatus = useRef<InteractiveObjectStatus | undefined>(
+    InteractiveObjectStatus.ATTACHED_EXPRESS
+  );
 
   const { rotation, position } = useSpring({
     to: async (next) => {
-      if (grip.status === InteractiveObjectStatus.ANIMATED) {
+      if (animated) {
         await next({ rotation: targetRotation, position: 1 });
         await next({
           rotation: targetRotation,
           position: initialPosition[1],
         });
         await next({ rotation: 0, position: initialPosition[1] });
-        setInteractiveObject('grip', {
-          status: InteractiveObjectStatus.ATTACHED_EXPRESS,
-        });
+        setAnimated(false);
+        gripStatus.current = InteractiveObjectStatus.ATTACHED_EXPRESS;
       }
     },
     from: {
@@ -68,7 +68,8 @@ export function Express(): JSX.Element {
     },
     reset: true,
   });
-  const [ref, api] = useBox(() => ({
+
+  const [ref, api] = useBox<Group>(() => ({
     mass: 3,
     args: [0.1, 0.1, 0.2],
     position: initialPosition,
@@ -76,28 +77,82 @@ export function Express(): JSX.Element {
     type: 'Dynamic',
   }));
 
-  useEffect(() => {
-    if (grip.status === InteractiveObjectStatus.DROPPED && point) {
-      api.position.set(point.x, point.y + 0.05, point.z);
+  useEvent('click', () => {
+    const { playerStatus } = getState();
+
+    const interaction = raycaster
+      .intersectObjects(scene.children)
+      .filter(
+        (o) =>
+          o.object.name.includes('area') ||
+          o.object.name.includes('grip') ||
+          o.object.name.includes('express') ||
+          o.object.name.includes('grinder')
+      )?.[0];
+
+    if (interaction?.object.name.includes('grip')) {
+      if (
+        gripStatus.current === InteractiveObjectStatus.ANIMATED ||
+        playerStatus === PlayerStatus.PICKED
+      ) {
+        return;
+      }
+
+      gripStatus.current = InteractiveObjectStatus.PICKED;
+      setState({ playerStatus: PlayerStatus.PICKED });
+
+      return;
     }
-  }, [api.position, grip.status, point]);
+
+    if (
+      interaction?.object.name.includes('express') &&
+      playerStatus === PlayerStatus.PICKED
+    ) {
+      gripStatus.current = InteractiveObjectStatus.ANIMATED;
+      setState({ playerStatus: null });
+      setAnimated(true);
+
+      return;
+    }
+
+    if (
+      interaction?.object.name.includes('grinder') &&
+      playerStatus === PlayerStatus.PICKED
+    ) {
+      gripStatus.current = InteractiveObjectStatus.ATTACHED_GRINDER;
+      setState({ playerStatus: null });
+
+      return;
+    }
+
+    if (
+      gripStatus.current === InteractiveObjectStatus.PICKED &&
+      interaction?.distance < 2
+    ) {
+      const { point } = interaction;
+
+      gripStatus.current = undefined;
+      setState({ playerStatus: null });
+      api.position.set(point.x, point.y + 0.2, point.z);
+    }
+  });
 
   const rotationDirection = new THREE.Vector3();
 
   useFrame(() => {
-    if (grip.status === InteractiveObjectStatus.ATTACHED_EXPRESS) {
+    if (gripStatus.current === InteractiveObjectStatus.ATTACHED_EXPRESS) {
       api.position.set(...initialPosition);
       api.velocity.set(0, 0, 0);
       api.rotation.set(0, 0, 0);
     }
 
-    if (grip.status === InteractiveObjectStatus.ATTACHED_GRINDER) {
+    if (gripStatus.current === InteractiveObjectStatus.ATTACHED_GRINDER) {
       api.position.set(...grinderPosition);
       api.velocity.set(0, 0, 0);
       api.rotation.set(0, grinderRotation, 0);
     }
 
-    if (grip.status === InteractiveObjectStatus.PICKED) {
+    if (gripStatus.current === InteractiveObjectStatus.PICKED) {
       const zCamVec = new THREE.Vector3(0.15, -0.15, -0.3);
       const playerPosition = camera.localToWorld(zCamVec);
       camera.getWorldDirection(rotationDirection);
@@ -108,7 +163,7 @@ export function Express(): JSX.Element {
       api.rotation.set(0, theta + Math.PI, 0);
     }
 
-    if (grip.status === InteractiveObjectStatus.ANIMATED) {
+    if (gripStatus.current === InteractiveObjectStatus.ANIMATED) {
       api.rotation.set(0, rotation.get(), 0);
       api.position.set(initialPosition[0], position.get(), initialPosition[2]);
       api.velocity.set(0, 0, 0);
@@ -117,20 +172,7 @@ export function Express(): JSX.Element {
 
   return (
     <group dispose={null}>
-      <a.group
-        ref={ref as unknown as Ref<Group> | undefined}
-        onClick={(e) => {
-          e.stopPropagation();
-
-          if (playerStatus === PlayerStatus.PICKED) {
-            return;
-          }
-          setInteractiveObject('grip', {
-            status: InteractiveObjectStatus.PICKED,
-          });
-          setPlayerStatus(PlayerStatus.PICKED);
-        }}
-      >
+      <a.group ref={ref}>
         <mesh
           geometry={nodes.NurbsPath011.geometry}
           material={nodes.NurbsPath011.material}
@@ -139,7 +181,7 @@ export function Express(): JSX.Element {
           geometry={nodes.NurbsPath011_1.geometry}
           material={nodes.NurbsPath011_1.material}
         />
-        <mesh name="boundary extension" visible={false}>
+        <mesh name="grip" visible={false}>
           <meshStandardMaterial />
           <boxBufferGeometry args={[0.1, 0.15, 0.3]} />
         </mesh>
@@ -157,25 +199,7 @@ export function Express(): JSX.Element {
       <mesh
         geometry={nodes.bake_express.geometry}
         position={[1.64, 0.88, -5.5]}
-        onClick={(e) => {
-          e.stopPropagation();
-          if (
-            grip.status === InteractiveObjectStatus.ATTACHED_EXPRESS &&
-            playerStatus === null
-          ) {
-            setInteractiveObject('grip', {
-              status: InteractiveObjectStatus.PICKED,
-            });
-            setPlayerStatus(PlayerStatus.PICKED);
-          }
-
-          if (grip.status === InteractiveObjectStatus.PICKED) {
-            setInteractiveObject('grip', {
-              status: InteractiveObjectStatus.ANIMATED,
-            });
-            setPlayerStatus(null);
-          }
-        }}
+        name="express"
       >
         <meshStandardMaterial
           map={texture}
@@ -208,25 +232,7 @@ export function Express(): JSX.Element {
       <mesh
         geometry={nodes.bake_grinder.geometry}
         position={[2.52, 1.05, -5.54]}
-        onClick={(e) => {
-          e.stopPropagation();
-          if (
-            grip.status === InteractiveObjectStatus.ATTACHED_GRINDER &&
-            playerStatus === null
-          ) {
-            setInteractiveObject('grip', {
-              status: InteractiveObjectStatus.PICKED,
-            });
-            setPlayerStatus(PlayerStatus.PICKED);
-          }
-
-          if (grip.status === InteractiveObjectStatus.PICKED) {
-            setInteractiveObject('grip', {
-              status: InteractiveObjectStatus.ATTACHED_GRINDER,
-            });
-            setPlayerStatus(null);
-          }
-        }}
+        name="grinder"
       >
         <meshStandardMaterial
           map={texture}

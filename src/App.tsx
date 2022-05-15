@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ReactNode, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
@@ -81,7 +80,6 @@ function DevDebug({ children }: { children: ReactNode }): JSX.Element {
   const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
   return isDev ? (
-    // @ts-ignore
     <Debug color="black" scale={1.01}>
       {children}
     </Debug>
@@ -102,7 +100,7 @@ export function App(): JSX.Element {
       <Canvas gl={{ powerPreference: 'high-performance' }} camera={{ fov: 55 }}>
         <ContextBridge>
           <Lights />
-          <Physics gravity={[0, -3, 0]}>
+          <Physics gravity={[0, -2, 0]}>
             <DevDebug>
               <Suspense fallback={null}>
                 <KitchenModel />
@@ -116,7 +114,7 @@ export function App(): JSX.Element {
                   itemsNumber={12}
                   rowModifier={6}
                 />
-                <InstancedKitchenObject
+                {/* <InstancedKitchenObject
                   initialPosition={[-1.33, 1.5, -5.65]}
                   objName="mugs2"
                   geometryName="toukMug2"
@@ -124,7 +122,7 @@ export function App(): JSX.Element {
                   gltfName="/toukMug2.gltf"
                   itemsNumber={16}
                   rowModifier={8}
-                />
+                /> */}
                 <Env />
                 <Neon />
                 <Glass />
