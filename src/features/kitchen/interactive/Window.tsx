@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
+import { Triplet, useBox } from '@react-three/cannon';
 import { useGLTF, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
+import { Mesh } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
@@ -33,13 +35,32 @@ export function InteractiveWindow(): JSX.Element {
   });
   const rotation = spring.to([0, 1], [0, degToRad(65)]);
 
+  const { position, geometry, scale } = nodes.window_bound;
+  const box = new THREE.Box3().setFromObject(nodes.window_bound);
+  const dimensions: Triplet = [
+    box.max.x - box.min.x,
+    box.max.y - box.min.y,
+    box.max.z - box.min.z,
+  ];
+
+  const [ref, api] = useBox<Mesh>(() => ({
+    type: 'Static',
+    position: [...position.toArray()],
+    args: dimensions,
+  }));
+
+  useEffect(() => {
+    if (windowOpen) {
+      const { x, y, z } = position;
+      api.position.set(x, y + 5, z);
+    }
+  }, [api.position, position, windowOpen]);
+
   return (
     <group dispose={null}>
-      {/* <mesh
-        geometry={nodes.window_bound.geometry}
-        material={nodes.window_bound.material}
-        position={[-3.06, 1.57, -4.91]}
-      /> */}
+      <mesh ref={ref} geometry={geometry} scale={scale}>
+        <meshBasicMaterial visible={false} />
+      </mesh>
       <a.group
         position={[-2.99, 1.57, -5.26]}
         rotation-y={rotation}
