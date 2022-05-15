@@ -9,6 +9,8 @@ import { Cupboard } from './interactive/Cupboard';
 import { Drawer } from './interactive/Drawer';
 import { Express } from './interactive/Express';
 import { Fridge } from './interactive/Fridge';
+import { Microwave } from './interactive/Microvawe';
+import { InteractiveWindow } from './interactive/Window';
 
 type GLTFResult = GLTF & {
   nodes: Record<string, THREE.Mesh>;
@@ -75,6 +77,8 @@ export function KitchenModel(props: Props): JSX.Element {
           <Express />
           <Drawer />
           <Cupboard />
+          <InteractiveWindow />
+          <Microwave />
         </>
       </Suspense>
     </group>

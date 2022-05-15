@@ -115,7 +115,7 @@ export function App(): JSX.Element {
                   itemsNumber={12}
                   rowModifier={6}
                 />
-                <InstancedKitchenObject
+                {/* <InstancedKitchenObject
                   initialPosition={[-1.33, 1.5, -5.65]}
                   objName="mugs2"
                   geometryName="toukMug2"
@@ -123,7 +123,7 @@ export function App(): JSX.Element {
                   gltfName="/toukMug2.gltf"
                   itemsNumber={16}
                   rowModifier={8}
-                />
+                /> */}
                 <Env />
                 <Neon />
                 <Glass />

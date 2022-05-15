@@ -64,7 +64,7 @@ export function InstancedKitchenObject({
 
   const [ref, api] = useBox(() => ({
     mass: 1,
-    args: [0.1, 0.1, 0.1],
+    args: [0.1, 0.08, 0.1],
     position: [0, 0, 0],
     rotation: [0, Math.random() * 3, 0],
     allowSleep: true,

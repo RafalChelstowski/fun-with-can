@@ -6,35 +6,42 @@ import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
+import { glassMaterial } from '../../../common/materials/materials';
+
 type GLTFResult = GLTF & {
   nodes: {
-    Cube162: THREE.Mesh;
-    Cube162_1: THREE.Mesh;
-    cupboard: THREE.Mesh;
+    window_bound: THREE.Mesh;
+    Cylinder002: THREE.Mesh;
+    Cylinder002_1: THREE.Mesh;
+    Cylinder002_2: THREE.Mesh;
   };
   materials: {
     elementsMaterial: THREE.MeshStandardMaterial;
-    woodMaterial: THREE.MeshStandardMaterial;
+    glassMaterial: THREE.MeshStandardMaterial;
+    whiteMaterial: THREE.MeshStandardMaterial;
   };
 };
 
-export function Cupboard(): JSX.Element {
-  const { nodes, materials } = useGLTF(
-    '/cupboard.gltf'
-  ) as unknown as GLTFResult;
+export function InteractiveWindow(): JSX.Element {
+  const { nodes, materials } = useGLTF('/window.gltf') as unknown as GLTFResult;
   const texture = useTexture('/elements.jpg');
-  const [cupboardOpen, toggleCupboardOpen] = useState(0);
+
+  const [windowOpen, toggleWindowOpen] = useState(0);
   const { spring } = useSpring({
-    spring: cupboardOpen,
+    spring: windowOpen,
     config: { mass: 20, tension: 400, friction: 300, precision: 0.0001 },
   });
   const rotation = spring.to([0, 1], [0, degToRad(65)]);
-  // const { addAchievement } = useAchievement();
 
   return (
-    <>
+    <group dispose={null}>
+      {/* <mesh
+        geometry={nodes.window_bound.geometry}
+        material={nodes.window_bound.material}
+        position={[-3.06, 1.57, -4.91]}
+      /> */}
       <a.group
-        position={[-0.31, 0.43, -3.92]}
+        position={[-2.99, 1.57, -5.26]}
         rotation-y={rotation}
         onClick={(e) => {
           e.stopPropagation();
@@ -42,11 +49,11 @@ export function Cupboard(): JSX.Element {
             return;
           }
 
-          toggleCupboardOpen(Number(!cupboardOpen));
+          toggleWindowOpen(Number(!windowOpen));
           // addAchievement(AchievementName.TEST);
         }}
       >
-        <mesh geometry={nodes.Cube162.geometry}>
+        <mesh geometry={nodes.Cylinder002.geometry}>
           <meshStandardMaterial
             map={texture}
             // normalMap={normalMap}
@@ -56,17 +63,16 @@ export function Cupboard(): JSX.Element {
           />
         </mesh>
         <mesh
-          geometry={nodes.Cube162_1.geometry}
-          material={materials.woodMaterial}
+          geometry={nodes.Cylinder002_1.geometry}
+          material={glassMaterial}
+        />
+        <mesh
+          geometry={nodes.Cylinder002_2.geometry}
+          material={materials.whiteMaterial}
         />
       </a.group>
-      <mesh
-        geometry={nodes.cupboard.geometry}
-        material={nodes.cupboard.material}
-        position={nodes.cupboard.position}
-      />
-    </>
+    </group>
   );
 }
 
-useGLTF.preload('/cupboard.gltf');
+useGLTF.preload('/window.gltf');
