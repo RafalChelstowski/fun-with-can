@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useEvent } from 'react-use';
 
 import { useBox } from '@react-three/cannon';
 import { extend, useFrame, useThree } from '@react-three/fiber';
@@ -7,7 +8,6 @@ import { Mesh } from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
 
 import { useControls } from '../../common/hooks/useControls';
-import { useEventListener } from '../../common/hooks/useEventListener';
 import { useStore } from '../../store/store';
 import { ControlsLock } from '../../types';
 
@@ -51,23 +51,18 @@ export function Player(): JSX.Element {
       });
     }
   }, [api.velocity, api.position]);
-  useEventListener(
-    'click',
-    (e) => {
-      if ((e.target as HTMLButtonElement)?.name === 'Play') {
-        controlsRef.current?.lock();
-      }
-    },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    document as any
-  );
-  useEventListener(
+  useEvent('click', (e) => {
+    if ((e.target as HTMLButtonElement)?.name === 'Play') {
+      controlsRef.current?.lock();
+    }
+  });
+
+  useEvent(
     'pointerlockchange',
     () => {
       toggleIsLocked();
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    document as any
+    document
   );
 
   useFrame((state) => {

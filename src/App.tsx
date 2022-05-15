@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ReactNode, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
@@ -101,7 +100,7 @@ export function App(): JSX.Element {
       <Canvas gl={{ powerPreference: 'high-performance' }} camera={{ fov: 55 }}>
         <ContextBridge>
           <Lights />
-          <Physics gravity={[0, -3, 0]}>
+          <Physics gravity={[0, -2, 0]}>
             <DevDebug>
               <Suspense fallback={null}>
                 <KitchenModel />

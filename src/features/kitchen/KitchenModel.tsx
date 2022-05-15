@@ -4,7 +4,6 @@ import { useGLTF, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
-import { useStore } from '../../store/store';
 import { Cupboard } from './interactive/Cupboard';
 import { Drawer } from './interactive/Drawer';
 import { Express } from './interactive/Express';
@@ -20,7 +19,6 @@ type GLTFResult = GLTF & {
 type Props = JSX.IntrinsicElements['group'];
 
 export function KitchenModel(props: Props): JSX.Element {
-  const handleEvent = useStore((state) => state.handleEvent);
   const texture = useTexture('/elements.jpg');
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
@@ -41,6 +39,8 @@ export function KitchenModel(props: Props): JSX.Element {
     )
     .map((node) => {
       const [key, mesh] = node;
+      // console.log(mesh.name);
+
       return (
         <mesh
           key={key}
@@ -48,12 +48,7 @@ export function KitchenModel(props: Props): JSX.Element {
           rotation={mesh.rotation}
           geometry={mesh.geometry}
           scale={mesh.scale}
-          name={mesh.name}
-          onClick={(e) => {
-            e.stopPropagation();
-
-            handleEvent(e);
-          }}
+          name={`area-${mesh.name}`}
         >
           <Suspense fallback={<meshStandardMaterial />}>
             <meshStandardMaterial

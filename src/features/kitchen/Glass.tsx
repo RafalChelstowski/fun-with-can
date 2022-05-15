@@ -28,6 +28,7 @@ export function Glass(): JSX.Element {
                 geometry={mesh.geometry}
                 material={glassMaterial}
                 scale={mesh.scale}
+                name={`area-${mesh.name}`}
               />
             );
           })}

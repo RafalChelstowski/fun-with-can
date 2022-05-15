@@ -25,6 +25,13 @@ function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
     position: [...position.toArray()],
     args: dimensions,
     rotation: [rotation.x, rotation.y, rotation.z],
+    // material: {
+    //   contactEquationRelaxation: 3,
+    //   contactEquationStiffness: 1e8,
+    //   friction: 0.4,
+    //   frictionEquationStiffness: 1e8,
+    //   restitution: 0.3,
+    // },
   }));
 
   return (
