@@ -1,8 +1,5 @@
-import { Ref, useRef } from 'react';
-
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import { Group } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 type GLTFResult = GLTF & {
@@ -26,15 +23,13 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Surroundings({
-  ...props
-}: JSX.IntrinsicElements['group']): JSX.Element {
-  const group = useRef<THREE.Group>();
+export function Surroundings(): JSX.Element {
   const { nodes, materials } = useGLTF(
     '/surroundings.gltf'
   ) as unknown as GLTFResult;
+
   return (
-    <group ref={group as Ref<Group> | undefined} {...props} dispose={null}>
+    <>
       <mesh
         geometry={nodes.tree.geometry}
         material={nodes.tree.material}
@@ -78,7 +73,7 @@ export function Surroundings({
         material={materials.grassMaterial}
         position={[-4.21, -4.16, -50.46]}
       />
-    </group>
+    </>
   );
 }
 

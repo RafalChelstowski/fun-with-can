@@ -1,5 +1,3 @@
-import { Suspense } from 'react';
-
 import { Triplet, useBox, useCylinder } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
@@ -79,11 +77,7 @@ export function StaticBounds(): JSX.Element {
       return null;
     });
 
-  return (
-    <group dispose={null}>
-      <Suspense fallback={null}>
-        <>{meshes}</>
-      </Suspense>
-    </group>
-  );
+  return <>{meshes}</>;
 }
+
+useGLTF.preload('/bounds.gltf');

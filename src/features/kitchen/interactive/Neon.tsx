@@ -32,14 +32,12 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Neon({
-  ...props
-}: JSX.IntrinsicElements['group']): JSX.Element {
+export function Neon(): JSX.Element {
   const { nodes, materials } = useGLTF('/neon.gltf') as unknown as GLTFResult;
   const neonOn = false;
 
   return (
-    <group {...props} dispose={null}>
+    <>
       <mesh
         geometry={nodes.NurbsPath001.geometry}
         material={neonOn ? materials.neonMaterialWhite : disabledNeonMaterial}
@@ -125,7 +123,7 @@ export function Neon({
         material={materials.blackPlasticMaterial}
         position={[5.31, 1.7, -2.2]}
       />
-    </group>
+    </>
   );
 }
 
