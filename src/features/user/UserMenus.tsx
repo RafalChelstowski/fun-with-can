@@ -1,4 +1,3 @@
-import { useDetectGPU } from '@react-three/drei';
 import { isEmpty } from 'lodash';
 import { Redirect, Route } from 'wouter';
 
@@ -17,7 +16,6 @@ import { SignUpPage } from './SignUp';
 import { UserAccountPage } from './UserAccountPage';
 
 export function UserMenus(): JSX.Element | null {
-  const GPUTier = useDetectGPU();
   const isLocked = useStore((state) => state.isLocked);
   const { uid } = useUser();
   const achievements = useStore((state) => state.achievements);
@@ -52,10 +50,6 @@ export function UserMenus(): JSX.Element | null {
           <div className="flex w-full items-center justify-around bg-gray-50 py-8">
             <LockButton />
             <PointerSpeedSlider />
-          </div>
-          <div className="flex w-full items-center justify-around bg-gray-50 py-8">
-            <p>GPU USED: {GPUTier.gpu}</p>
-            <p>TIER: {GPUTier.tier}</p>
           </div>
         </div>
       </Route>
