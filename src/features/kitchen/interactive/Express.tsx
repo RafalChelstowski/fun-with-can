@@ -98,10 +98,12 @@ export function Express(): JSX.Element {
         return;
       }
 
-      gripStatus.current = InteractiveObjectStatus.PICKED;
-      setState({ playerStatus: PlayerStatus.PICKED });
+      if (interaction.distance < 2) {
+        gripStatus.current = InteractiveObjectStatus.PICKED;
+        setState({ playerStatus: PlayerStatus.PICKED });
 
-      return;
+        return;
+      }
     }
 
     if (

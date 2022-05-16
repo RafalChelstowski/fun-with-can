@@ -21,6 +21,7 @@ import { Cupboard } from './features/kitchen/interactive/Cupboard';
 import { Drawer } from './features/kitchen/interactive/Drawer';
 import { Express } from './features/kitchen/interactive/Express';
 import { Fridge } from './features/kitchen/interactive/Fridge';
+import { Harnas } from './features/kitchen/interactive/Harnas';
 import { Microwave } from './features/kitchen/interactive/Microvawe';
 import { Neon } from './features/kitchen/interactive/Neon';
 import { InteractiveWindow } from './features/kitchen/interactive/Window';
@@ -89,6 +90,7 @@ export function App(): JSX.Element {
                   <Cupboard />
                   <InteractiveWindow />
                   <Microwave />
+                  <Harnas />
                   <Preload all />
                 </Suspense>
               </group>

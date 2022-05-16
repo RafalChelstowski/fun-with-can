@@ -6,6 +6,7 @@ export enum InteractiveObjectStatus {
   DROPPED = 'dropped',
   ON = 'on',
   OFF = 'off',
+  HIDDEN = 'hidden',
 }
 
 export enum PlayerStatus {
