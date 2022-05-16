@@ -96,13 +96,15 @@ export function Mugs({
         return;
       }
 
-      instanceId.current = x.instanceId;
-      setState({ playerStatus: PlayerStatus.PICKED });
+      if (x.distance < 2) {
+        instanceId.current = x.instanceId;
+        setState({ playerStatus: PlayerStatus.PICKED });
 
-      return;
+        return;
+      }
     }
 
-    if (instanceId.current && x && x.distance < 2) {
+    if (instanceId.current !== undefined && x && x.distance < 2) {
       const { point } = x;
       api.at(instanceId.current).position.set(point.x, point.y + 0.2, point.z);
       instanceId.current = undefined;
@@ -116,7 +118,7 @@ export function Mugs({
     }
 
     if (key === ' ') {
-      if (instanceId.current) {
+      if (instanceId.current !== undefined) {
         const camPosition = new THREE.Vector3();
         const position = camera.getWorldPosition(camPosition);
         const target = new THREE.Vector3();
@@ -147,7 +149,7 @@ export function Mugs({
   const rotationDirection = new THREE.Vector3();
 
   useFrame(() => {
-    if (instanceId.current) {
+    if (instanceId.current !== undefined) {
       zCamVec.set(0.15, -0.15, -0.4);
       const position = camera.localToWorld(zCamVec);
       camera.getWorldDirection(rotationDirection);
