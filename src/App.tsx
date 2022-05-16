@@ -2,97 +2,33 @@ import { ReactNode, Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import { Debug, Physics } from '@react-three/cannon';
-import { useContextBridge } from '@react-three/drei';
+import {
+  AdaptiveDpr,
+  Loader,
+  Preload,
+  Stats,
+  useContextBridge,
+} from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import isEmpty from 'lodash/isEmpty';
-import { Redirect, Route } from 'wouter';
 
-import { useSnapshot } from './api/hooks/useSnapshot';
-import { useUser } from './api/hooks/useUser';
 import { Lights } from './common/components/Lights';
-import { LockButton } from './common/components/LockButton';
-import { PointerSpeedSlider } from './common/components/PointerSpeedSlider';
 import { Crosshair } from './features/Crosshair';
 import { StaticBounds } from './features/kitchen/Bounds';
 import { Env } from './features/kitchen/Env';
 import { Floor } from './features/kitchen/Floor';
 import { Glass } from './features/kitchen/Glass';
-import { InstancedKitchenObject } from './features/kitchen/InstancedKitchenObject';
+import { Cupboard } from './features/kitchen/interactive/Cupboard';
+import { Drawer } from './features/kitchen/interactive/Drawer';
+import { Express } from './features/kitchen/interactive/Express';
+import { Fridge } from './features/kitchen/interactive/Fridge';
+import { Microwave } from './features/kitchen/interactive/Microvawe';
 import { Neon } from './features/kitchen/interactive/Neon';
+import { InteractiveWindow } from './features/kitchen/interactive/Window';
 import { KitchenModel } from './features/kitchen/KitchenModel';
+import { Mugs } from './features/kitchen/Mugs';
 import { Surroundings } from './features/kitchen/Surroundings';
-import { Nav, routes } from './features/Nav';
 import { Player } from './features/player/Player';
-import { Achievements as AchievementsPage } from './features/user/Achievements';
-import { PasswordForgetPage } from './features/user/PasswordForget';
-import { SignInPage } from './features/user/SignIn';
-import { SignOutPage } from './features/user/SignOut';
-import { SignUpPage } from './features/user/SignUp';
-import { UserAccountPage } from './features/user/UserAccountPage';
-import { useStore } from './store/store';
-import { Achievements } from './types';
-
-function UserMenus() {
-  const isLocked = useStore((state) => state.isLocked);
-  const { uid } = useUser();
-  const achievements = useStore((state) => state.achievements);
-  const setAchievements = useStore((state) => state.setAchievements);
-
-  useSnapshot<Achievements | null>(`users/${uid}/achievements`, {
-    enabled: Boolean(uid) && isEmpty(achievements),
-    onSuccess: (d) => {
-      if (d) {
-        setAchievements(d);
-      }
-    },
-  });
-
-  if (isLocked) {
-    return null;
-  }
-
-  return (
-    <div className="flex absolute w-screen h-screen justify-center z-50 top-0 left-0 bg-gray-400 bg-opacity-75">
-      <Nav />
-      <Route path="/">
-        <div className="flex-col items-center w-2/3 mt-40">
-          <div className="flex w-full items-center justify-around bg-gray-50 py-8">
-            <h1>Work in progress ;)</h1>
-          </div>
-          <div className="flex w-full items-center justify-around bg-gray-50 py-8">
-            <p>WASDA to move</p>
-            <p>LEFTCLICK to pick/open/interact</p>
-            <p>SPACE to throw</p>
-          </div>
-          <div className="flex w-full items-center justify-around bg-gray-50 py-8">
-            <LockButton />
-            <PointerSpeedSlider />
-          </div>
-        </div>
-      </Route>
-      <Route
-        path={routes.SIGN_IN}
-        component={uid ? () => <Redirect to={routes.HOME} /> : SignInPage}
-      />
-      <Route
-        path={routes.SIGN_UP}
-        component={uid ? () => <Redirect to={routes.HOME} /> : SignUpPage}
-      />
-      <Route
-        path={routes.ACCOUNT}
-        component={uid ? UserAccountPage : () => <Redirect to={routes.HOME} />}
-      />
-      <Route path={routes.ACHIEVEMENTS} component={AchievementsPage} />
-      <Route
-        path={routes.PASSWORD_FORGET}
-        component={
-          uid ? () => <Redirect to={routes.HOME} /> : PasswordForgetPage
-        }
-      />
-      <Route path={routes.SIGN_OUT} component={SignOutPage} />
-    </div>
-  );
-}
+import { UserMenus } from './features/user/UserMenus';
 
 function DevDebug({ children }: { children: ReactNode }): JSX.Element {
   const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
@@ -100,6 +36,7 @@ function DevDebug({ children }: { children: ReactNode }): JSX.Element {
   return isDev ? (
     <Debug color="black" scale={1.01}>
       {children}
+      <Stats showPanel={0} className="absolute right-0" />
     </Debug>
   ) : (
     <>{children}</>
@@ -124,40 +61,43 @@ export function App(): JSX.Element {
       >
         <ContextBridge>
           <Lights />
+
           <Physics gravity={[0, -2, 0]}>
             <DevDebug>
-              <Suspense fallback={null}>
-                <KitchenModel />
-                <StaticBounds />
-                <InstancedKitchenObject
-                  initialPosition={[-2.3, 1.5, -5.55]}
-                  objName="mugs"
-                  geometryName="toukMug1"
-                  materialName="yellowToukCupMaterial"
-                  gltfName="/toukMug.gltf"
-                  itemsNumber={12}
-                  rowModifier={6}
-                />
-                {/* <InstancedKitchenObject
-                  initialPosition={[-1.33, 1.5, -5.65]}
-                  objName="mugs2"
-                  geometryName="toukMug2"
-                  materialName="salmonToukCupMaterial"
-                  gltfName="/toukMug2.gltf"
-                  itemsNumber={16}
-                  rowModifier={8}
-                /> */}
-                <Env />
-                <Neon />
-                <Glass />
-                <Player />
-                <Floor />
-                <Surroundings />
-              </Suspense>
+              <group dispose={null}>
+                <Suspense fallback={null}>
+                  <KitchenModel />
+                  <StaticBounds />
+                  <Mugs
+                    initialPosition={[-2.3, 1.5, -5.55]}
+                    objName="mugs"
+                    geometryName="toukMug1"
+                    materialName="yellowToukCupMaterial"
+                    gltfName="/toukMug.gltf"
+                    itemsNumber={12}
+                    rowModifier={6}
+                  />
+                  <Env />
+                  <Neon />
+                  <Glass />
+                  <Player />
+                  <Floor />
+                  <Surroundings />
+                  <Fridge />
+                  <Express />
+                  <Drawer />
+                  <Cupboard />
+                  <InteractiveWindow />
+                  <Microwave />
+                  <Preload all />
+                </Suspense>
+              </group>
             </DevDebug>
           </Physics>
         </ContextBridge>
+        <AdaptiveDpr pixelated />
       </Canvas>
+      <Loader />
       <UserMenus />
       <Crosshair />
       <ToastContainer theme="light" autoClose={3000} />

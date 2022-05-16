@@ -27,7 +27,7 @@ interface Props {
   rowModifier?: number;
 }
 
-export function InstancedKitchenObject({
+export function Mugs({
   initialPosition,
   objName,
   geometryName,

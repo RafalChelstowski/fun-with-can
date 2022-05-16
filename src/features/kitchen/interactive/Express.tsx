@@ -251,3 +251,5 @@ export function Express(): JSX.Element {
     </group>
   );
 }
+
+useGLTF.preload('/express.gltf');

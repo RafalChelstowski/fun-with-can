@@ -75,3 +75,5 @@ export function Fridge(): JSX.Element {
     </>
   );
 }
+
+useGLTF.preload('/fridge.gltf');

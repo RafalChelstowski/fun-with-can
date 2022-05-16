@@ -1,23 +1,15 @@
-import { Ref } from 'react';
-
 import { usePlane } from '@react-three/cannon';
-import { BufferGeometry, Material, Mesh } from 'three';
+import { Mesh } from 'three';
 
 export function Floor(): JSX.Element {
-  const [ref] = usePlane(() => ({
+  const [ref] = usePlane<Mesh>(() => ({
     position: [0, -4.5, 0],
     rotation: [-Math.PI / 2, 0, 0],
     type: 'Static',
   }));
 
   return (
-    <mesh
-      ref={
-        ref as unknown as
-          | Ref<Mesh<BufferGeometry, Material | Material[]>>
-          | undefined
-      }
-    >
+    <mesh ref={ref}>
       <planeBufferGeometry args={[100, 100]} />
       <meshBasicMaterial visible={false} />
     </mesh>

@@ -86,7 +86,6 @@ export function Player(): JSX.Element {
     },
     document
   );
-
   useFrame((state) => {
     if (ref.current && controlsRef.current?.isLocked) {
       state.camera.position.copy(
