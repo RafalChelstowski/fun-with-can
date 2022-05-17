@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { isEmpty } from 'lodash';
 import { Redirect, Route } from 'wouter';
 
@@ -21,14 +23,18 @@ export function UserMenus(): JSX.Element | null {
   const achievements = useStore((state) => state.achievements);
   const setAchievements = useStore((state) => state.setAchievements);
 
-  useSnapshot<Achievements | null>(`users/${uid}/achievements`, {
-    enabled: Boolean(uid) && isEmpty(achievements),
-    onSuccess: (d) => {
-      if (d) {
-        setAchievements(d);
-      }
-    },
-  });
+  const { data } = useSnapshot<Achievements | null>(
+    `users/${uid}/achievements`,
+    {
+      enabled: Boolean(uid) && isEmpty(achievements),
+    }
+  );
+
+  useEffect(() => {
+    if (data) {
+      setAchievements(data);
+    }
+  }, [data, setAchievements]);
 
   if (isLocked) {
     return null;

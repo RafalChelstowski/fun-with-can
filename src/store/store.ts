@@ -16,10 +16,10 @@ const useStoreImpl = create<State>(
   devtools(
     (set) => ({
       ...initialState,
-      setAchievement: (name) => {
+      setAchievement: (name, payload) => {
         set(
           produce<State>((state) => {
-            state.achievements[name] = true;
+            state.achievements[name] = payload;
           })
         );
       },

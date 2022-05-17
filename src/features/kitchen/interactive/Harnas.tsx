@@ -9,8 +9,13 @@ import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
+import { useAchievement } from '../../../api/hooks/useAchievement';
 import { getState, setState } from '../../../store/store';
-import { InteractiveObjectStatus, PlayerStatus } from '../../../types';
+import {
+  AchievementName,
+  InteractiveObjectStatus,
+  PlayerStatus,
+} from '../../../types';
 
 type GLTFResult = GLTF & {
   nodes: Record<string, THREE.Mesh>;
@@ -26,12 +31,19 @@ export function Harnas(): JSX.Element {
   const camera = useThree((state) => state.camera);
   const { nodes, materials } = useGLTF('/can_uv.gltf') as unknown as GLTFResult;
   const dummyRef = useRef<Mesh>(null);
+  const { addAchievement } = useAchievement();
+
   const [ref, api] = useCylinder<Mesh>(() => ({
     mass: 1,
     args: [0.05, 0.05, 0.14, 12],
     position: [0, 1, 0],
     rotation: [Math.random(), Math.random(), Math.random()],
     allowSleep: false,
+    onCollideBegin: (e) => {
+      if (e.body.name === 'floor') {
+        addAchievement(AchievementName.HARNAS);
+      }
+    },
   }));
 
   const harnasStatus = useRef<InteractiveObjectStatus | undefined>(

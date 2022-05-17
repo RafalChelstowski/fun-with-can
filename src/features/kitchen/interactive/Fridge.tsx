@@ -42,7 +42,7 @@ export function Fridge(): JSX.Element {
           }
 
           toggleFridgeOpen(Number(!fridgeOpen));
-          addAchievement(AchievementName.TEST);
+          addAchievement(AchievementName.FRIDGE);
         }}
       >
         <mesh geometry={nodes.Cube010.geometry}>

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider, QueryKey } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { fetch } from './api/database';
 import { App } from './App';
@@ -32,5 +33,6 @@ const queryClient = new QueryClient({
 root.render(
   <QueryClientProvider client={queryClient} contextSharing>
     <App />
+    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );
