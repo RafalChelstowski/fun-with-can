@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
 import { Triplet, useBox } from '@react-three/cannon';
@@ -36,6 +36,8 @@ export function InteractiveWindow(): JSX.Element {
   const rotation = spring.to([0, 1], [0, degToRad(65)]);
 
   const { position, geometry, scale } = nodes.window_bound;
+
+  const initialPosition = useRef(position);
   const box = new THREE.Box3().setFromObject(nodes.window_bound);
   const dimensions: Triplet = [
     box.max.x - box.min.x,
@@ -50,9 +52,15 @@ export function InteractiveWindow(): JSX.Element {
   }));
 
   useEffect(() => {
-    if (windowOpen) {
+    if (windowOpen === 1) {
       const { x, y, z } = position;
       api.position.set(x, y + 5, z);
+    } else if (windowOpen === 0) {
+      api.position.set(
+        initialPosition.current.x,
+        initialPosition.current.y,
+        initialPosition.current.z
+      );
     }
   }, [api.position, position, windowOpen]);
 

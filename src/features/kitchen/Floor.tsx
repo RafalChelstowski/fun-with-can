@@ -9,7 +9,7 @@ export function Floor(): JSX.Element {
   }));
 
   return (
-    <mesh ref={ref}>
+    <mesh name="floor" ref={ref}>
       <planeBufferGeometry args={[100, 100]} />
       <meshBasicMaterial visible={false} />
     </mesh>

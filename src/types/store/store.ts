@@ -15,7 +15,8 @@ export enum PlayerStatus {
 }
 
 export enum AchievementName {
-  TEST = 'test',
+  FRIDGE = 'fridge',
+  HARNAS = 'harnas',
 }
 
 export interface AchievementDescription {
@@ -28,11 +29,21 @@ export type AchievementDescriptions = Record<
   AchievementDescription
 >;
 
-export type Achievements = Partial<Record<AchievementName, boolean>>;
+export enum AchievementPayloadStatus {
+  NEW = 'new',
+  VIEWED = 'viewed',
+}
+
+export type AchievementPayload = {
+  date: string;
+  status: AchievementPayloadStatus;
+};
+
+export type Achievements = Partial<Record<AchievementName, AchievementPayload>>;
 
 export type State = {
   achievements: Achievements;
-  setAchievement: (name: AchievementName) => void;
+  setAchievement: (name: AchievementName, payload: AchievementPayload) => void;
   setAchievements: (obj: Achievements) => void;
   playerStatus: PlayerStatus | null;
   isLocked: boolean;

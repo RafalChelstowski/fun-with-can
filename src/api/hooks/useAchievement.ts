@@ -1,8 +1,10 @@
 import { useIsMutating } from 'react-query';
 import { toast } from 'react-toastify';
 
-import { useStore } from '../../store/store';
-import { AchievementName } from '../../types';
+import isUndefined from 'lodash/isUndefined';
+
+import { getState, setState } from '../../store/store';
+import { AchievementName, AchievementPayloadStatus } from '../../types';
 import { useSet } from './useSet';
 import { useUser } from './useUser';
 
@@ -10,17 +12,22 @@ export function useAchievement(): {
   addAchievement: (name: AchievementName) => Promise<void>;
 } {
   const mutations = useIsMutating();
-  const achievements = useStore((state) => state.achievements);
-  const setAchievement = useStore((state) => state.setAchievement);
   const { uid } = useUser();
   const { set } = useSet();
 
   const addAchievement = async (name: AchievementName) => {
-    if (achievements[name] === true) {
+    const { achievements } = getState();
+
+    if (!isUndefined(achievements[name])) {
       return;
     }
 
-    setAchievement(name);
+    const payload = {
+      date: new Date().toDateString(),
+      status: AchievementPayloadStatus.NEW,
+    };
+
+    setState({ achievements: { ...achievements, [name]: payload } });
     toast.success('New achievement!');
 
     if (mutations > 0 || !uid) {
@@ -30,7 +37,7 @@ export function useAchievement(): {
     try {
       await set({
         path: `users/${uid}/achievements/${name}`,
-        payload: true,
+        payload,
       });
     } catch (err) {
       toast.error(

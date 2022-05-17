@@ -6,7 +6,7 @@ import {
   AdaptiveDpr,
   Loader,
   Preload,
-  Stats,
+  // Stats,
   useContextBridge,
 } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -37,7 +37,7 @@ function DevDebug({ children }: { children: ReactNode }): JSX.Element {
   return isDev ? (
     <Debug color="black" scale={1.01}>
       {children}
-      <Stats showPanel={0} className="absolute right-0" />
+      {/* <Stats showPanel={0} /> */}
     </Debug>
   ) : (
     <>{children}</>
@@ -67,7 +67,11 @@ export function App(): JSX.Element {
             <DevDebug>
               <group dispose={null}>
                 <Suspense fallback={null}>
+                  <Player />
                   <KitchenModel />
+                  <Surroundings />
+                  <Env />
+                  <Glass />
                   <StaticBounds />
                   <Mugs
                     initialPosition={[-2.3, 1.5, -5.55]}
@@ -78,12 +82,8 @@ export function App(): JSX.Element {
                     itemsNumber={12}
                     rowModifier={6}
                   />
-                  <Env />
                   <Neon />
-                  <Glass />
-                  <Player />
                   <Floor />
-                  <Surroundings />
                   <Fridge />
                   <Express />
                   <Drawer />
