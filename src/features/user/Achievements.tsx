@@ -15,7 +15,7 @@ import {
 
 const cellClassName = 'p-6';
 
-export function Achievements(): JSX.Element | null {
+export function Achievements(): JSX.Element {
   const queryClient = useQueryClient();
   const mutations = useIsMutating();
   const achievements = useStore((state) => state.achievements);
@@ -23,12 +23,16 @@ export function Achievements(): JSX.Element | null {
   const { uid } = useUser();
 
   const { update } = useUpdate<AchievementPayload>();
-  const { data } = useSnapshot<AchievementDescriptions>(
+  const { data, isFetching } = useSnapshot<AchievementDescriptions>(
     `achievementDescriptions`,
     {
       enabled: !noAchievements,
     }
   );
+
+  if (isFetching) {
+    return <>loading...</>;
+  }
 
   if (!data || noAchievements) {
     return (
@@ -50,8 +54,9 @@ export function Achievements(): JSX.Element | null {
         const isNew = status === AchievementPayloadStatus.NEW;
 
         return (
+          // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
           <div
-            onPointerEnter={async () => {
+            onMouseOver={async () => {
               if (uid && isNew && mutations === 0) {
                 await update({
                   path: `users/${uid}/achievements/${name}`,
@@ -64,7 +69,9 @@ export function Achievements(): JSX.Element | null {
               }
             }}
             key={k}
-            className={`flex flex-row ${isNew ? 'bg-yellow-200' : 'bg-white'}`}
+            className={`flex flex-row ${
+              isNew && uid ? 'bg-yellow-200' : 'bg-white'
+            }`}
           >
             <div className={`w-1/6 ${cellClassName}`}>
               {isNew ? 'NEW!' : i + 1}

@@ -1,8 +1,14 @@
+import { useState } from 'react';
+
+import { a, useSpring } from '@react-spring/three';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import { degToRad } from 'three/src/math/MathUtils';
 
+import { useAchievement } from '../../../api/hooks/useAchievement';
 import { disabledNeonMaterial } from '../../../common/materials/materials';
+import { getState } from '../../../store/store';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -23,21 +29,47 @@ type GLTFResult = GLTF & {
     NurbsPath007: THREE.Mesh;
     Cube115: THREE.Mesh;
     NurbsPath008: THREE.Mesh;
+    switch_button: THREE.Mesh;
+    switch_container: THREE.Mesh;
   };
   materials: {
     neonMaterialWhite: THREE.MeshStandardMaterial;
     neonMaterialGreen: THREE.MeshStandardMaterial;
     neonMaterialPurple: THREE.MeshStandardMaterial;
     blackPlasticMaterial: THREE.MeshStandardMaterial;
+    whiteMaterial: THREE.MeshStandardMaterial;
   };
 };
 
 export function Neon(): JSX.Element {
   const { nodes, materials } = useGLTF('/neon.gltf') as unknown as GLTFResult;
-  const neonOn = false;
+  const [neonOn, toggleNeonOn] = useState(0);
+  const { spring } = useSpring({
+    spring: neonOn,
+    config: { mass: 20, tension: 400, friction: 300, precision: 0.0001 },
+  });
+  const rotation = spring.to([0, 1], [0, degToRad(10)]);
+  const { addAchievement } = useAchievement();
 
   return (
     <>
+      <a.mesh
+        geometry={nodes.switch_button.geometry}
+        material={materials.whiteMaterial}
+        position={[2.677, 1.16, -1.164]}
+        rotation-z={rotation}
+        onClick={() => {
+          const { t, o, u, k } = getState().letters;
+          if (t && o && u && k) {
+            toggleNeonOn(Number(!neonOn));
+          }
+        }}
+      />
+      <mesh
+        geometry={nodes.switch_container.geometry}
+        material={materials.whiteMaterial}
+        position={[2.69, 1.16, -1.14]}
+      />
       <mesh
         geometry={nodes.NurbsPath001.geometry}
         material={neonOn ? materials.neonMaterialWhite : disabledNeonMaterial}

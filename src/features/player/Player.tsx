@@ -93,7 +93,7 @@ export function Player(): JSX.Element {
           ref.current.position.x,
           ref.current.position.y > 0.65
             ? ref.current.position.y + 0.4
-            : ref.current.position.y + 1,
+            : ref.current.position.y + 0.9,
           ref.current.position.z
         )
       );

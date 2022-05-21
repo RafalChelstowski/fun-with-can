@@ -32,7 +32,7 @@ export function Microwave(): JSX.Element {
     spring: microwaveOpen,
     config: { mass: 20, tension: 400, friction: 300, precision: 0.0001 },
   });
-  const rotation = spring.to([0, 1], [0, degToRad(-115)]);
+  const rotation = spring.to([0, 1], [0, degToRad(-83)]);
 
   return (
     <group dispose={null}>
