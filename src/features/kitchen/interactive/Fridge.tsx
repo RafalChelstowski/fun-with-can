@@ -1,27 +1,16 @@
 import { useState } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
-import { useGLTF, useTexture } from '@react-three/drei';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
 import { useAchievement } from '../../../api/hooks/useAchievement';
 import { glassMaterial } from '../../../common/materials/materials';
 import { AchievementName } from '../../../types';
-
-type GLTFResult = GLTF & {
-  nodes: {
-    Cube010: THREE.Mesh;
-    Cube010_1: THREE.Mesh;
-    Cube010_2: THREE.Mesh;
-    fridgeInside: THREE.Mesh;
-    glass: THREE.Mesh;
-  };
-};
+import { useKitchenGltf } from '../useKitchenGltf';
 
 export function Fridge(): JSX.Element {
-  const { nodes } = useGLTF('/fridge.gltf') as unknown as GLTFResult;
-  const texture = useTexture('/elements.jpg');
+  const { nodes, kitchenMaterial } = useKitchenGltf();
+
   const [fridgeOpen, toggleFridgeOpen] = useState(0);
   const { spring } = useSpring({
     spring: fridgeOpen,
@@ -45,15 +34,7 @@ export function Fridge(): JSX.Element {
           addAchievement(AchievementName.FRIDGE);
         }}
       >
-        <mesh geometry={nodes.Cube010.geometry}>
-          <meshStandardMaterial
-            map={texture}
-            // normalMap={normalMap}
-            // metalnessMap={metalMap}
-            // normalScale={new THREE.Vector2(1, 1)}
-            // roughnessMap={roughnessMap}
-          />
-        </mesh>
+        <mesh geometry={nodes.Cube010.geometry}>{kitchenMaterial}</mesh>
         <mesh geometry={nodes.Cube010_1.geometry}>
           <meshPhongMaterial color="white" />
         </mesh>
@@ -75,5 +56,3 @@ export function Fridge(): JSX.Element {
     </>
   );
 }
-
-useGLTF.preload('/fridge.gltf');
