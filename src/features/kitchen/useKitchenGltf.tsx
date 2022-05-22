@@ -17,26 +17,25 @@ export function useKitchenGltf(): UseKitchenGltf {
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
 
-  // const normalMap = useTexture('/elements_normal.jpg');
-  // normalMap.flipY = false;
+  const normalMap = useTexture('/elements_normal.jpg');
+  normalMap.flipY = false;
 
-  // const metalMap = useTexture('/elements_metalness.jpg');
-  // metalMap.flipY = false;
+  const metalMap = useTexture('/elements_metalness.jpg');
+  metalMap.flipY = false;
 
-  // const roughnessMap = useTexture('/elements_roughness.jpg');
-  // roughnessMap.flipY = false;
+  const roughnessMap = useTexture('/elements_roughness.jpg');
+  roughnessMap.flipY = false;
 
   const kitchenMaterial = useMemo(
     () => (
-      <meshStandardMaterial
+      <meshPhysicalMaterial
         map={texture}
-        // normalMap={normalMap}
-        // metalnessMap={metalMap}
-        // normalScale={new THREE.Vector2(1, 1)}
-        // roughnessMap={roughnessMap}
+        normalMap={normalMap}
+        metalnessMap={metalMap}
+        roughnessMap={roughnessMap}
       />
     ),
-    [texture]
+    [metalMap, normalMap, roughnessMap, texture]
   );
 
   const memo = useMemo(

@@ -64,7 +64,6 @@ export function App(): JSX.Element {
       >
         <ContextBridge>
           <Lights />
-
           <Physics gravity={[0, -2, 0]}>
             <DevDebug>
               <group dispose={null}>

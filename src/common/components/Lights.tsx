@@ -1,11 +1,23 @@
+import { useEffect, useMemo } from 'react';
+
 import { Sky } from '@react-three/drei';
+import { useThree } from '@react-three/fiber';
+import * as THREE from 'three';
 
 export function Lights(): JSX.Element {
+  const scene = useThree((state) => state.scene);
+
+  const targetObject = useMemo(() => new THREE.Object3D(), []);
+
+  useEffect(() => {
+    targetObject.position.set(10, 0, 2);
+    scene.add(targetObject);
+  }, [scene, targetObject]);
+
   return (
     <>
       <ambientLight />
-      {/* <fog attach="fog" color="white" near={5} far={50} /> */}
-      <directionalLight />
+      <directionalLight intensity={0.7} target={targetObject} />
       <Sky />
     </>
   );
