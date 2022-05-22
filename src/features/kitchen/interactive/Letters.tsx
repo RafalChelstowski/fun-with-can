@@ -7,7 +7,9 @@ import * as THREE from 'three';
 import { Mesh } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
+import { useAchievement } from '../../../api/hooks/useAchievement';
 import { getState, setState, subscribe } from '../../../store/store';
+import { AchievementName } from '../../../types';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -96,6 +98,8 @@ export function Letters(): JSX.Element {
     }
   });
 
+  const { addAchievement } = useAchievement();
+
   return (
     <group>
       <mesh
@@ -110,6 +114,7 @@ export function Letters(): JSX.Element {
             tRef.current.position.set(...tPresentationPos);
             tRef.current.rotation.set(0, 0, 0);
             setState((state) => ({ letters: { ...state.letters, t: true } }));
+            addAchievement(AchievementName.AT);
           }
         }}
       />
@@ -125,6 +130,7 @@ export function Letters(): JSX.Element {
             oRef.current.position.set(...oPresentationPos);
             oRef.current.rotation.set(0, 0, 0);
             setState((state) => ({ letters: { ...state.letters, o: true } }));
+            addAchievement(AchievementName.BO);
           }
         }}
       />
@@ -140,6 +146,7 @@ export function Letters(): JSX.Element {
             uRef.current.position.set(...uPresentationPos);
             uRef.current.rotation.set(0, 0, 0);
             setState((state) => ({ letters: { ...state.letters, u: true } }));
+            addAchievement(AchievementName.CU);
           }
         }}
       />
@@ -155,6 +162,7 @@ export function Letters(): JSX.Element {
             kRef.current.position.set(...kPresentationPos);
             kRef.current.rotation.set(0, 0, 0);
             setState((state) => ({ letters: { ...state.letters, k: true } }));
+            addAchievement(AchievementName.DK);
           }
         }}
       />

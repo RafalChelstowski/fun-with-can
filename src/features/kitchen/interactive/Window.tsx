@@ -8,7 +8,9 @@ import { Mesh } from 'three';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
+import { useAchievement } from '../../../api/hooks/useAchievement';
 import { glassMaterial } from '../../../common/materials/materials';
+import { AchievementName } from '../../../types';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -64,6 +66,8 @@ export function InteractiveWindow(): JSX.Element {
     }
   }, [api.position, position, windowOpen]);
 
+  const { addAchievement } = useAchievement();
+
   return (
     <group dispose={null}>
       <mesh ref={ref} geometry={geometry} scale={scale}>
@@ -79,7 +83,7 @@ export function InteractiveWindow(): JSX.Element {
           }
 
           toggleWindowOpen(Number(!windowOpen));
-          // addAchievement(AchievementName.TEST);
+          addAchievement(AchievementName.WINDOW);
         }}
       >
         <mesh geometry={nodes.Cylinder002.geometry}>

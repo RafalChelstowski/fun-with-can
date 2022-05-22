@@ -17,6 +17,12 @@ export enum PlayerStatus {
 export enum AchievementName {
   FRIDGE = 'fridge',
   HARNAS = 'harnas',
+  AT = 'at',
+  BO = 'bo',
+  CU = 'cu',
+  DK = 'dk',
+  NEON = 'neon',
+  WINDOW = 'window',
 }
 
 export interface AchievementDescription {

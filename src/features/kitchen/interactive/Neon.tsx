@@ -8,7 +8,8 @@ import { degToRad } from 'three/src/math/MathUtils';
 
 import { useAchievement } from '../../../api/hooks/useAchievement';
 import { disabledNeonMaterial } from '../../../common/materials/materials';
-import { getState } from '../../../store/store';
+import { getState, useStore } from '../../../store/store';
+import { AchievementName } from '../../../types';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -43,6 +44,7 @@ type GLTFResult = GLTF & {
 
 export function Neon(): JSX.Element {
   const { nodes, materials } = useGLTF('/neon.gltf') as unknown as GLTFResult;
+  const neonUnlocked = useStore((state) => state.achievements.neon);
   const [neonOn, toggleNeonOn] = useState(0);
   const { spring } = useSpring({
     spring: neonOn,
@@ -60,8 +62,9 @@ export function Neon(): JSX.Element {
         rotation-z={rotation}
         onClick={() => {
           const { t, o, u, k } = getState().letters;
-          if (t && o && u && k) {
+          if (neonUnlocked || (t && o && u && k)) {
             toggleNeonOn(Number(!neonOn));
+            addAchievement(AchievementName.NEON);
           }
         }}
       />
