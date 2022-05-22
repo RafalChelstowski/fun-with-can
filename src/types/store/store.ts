@@ -17,6 +17,12 @@ export enum PlayerStatus {
 export enum AchievementName {
   FRIDGE = 'fridge',
   HARNAS = 'harnas',
+  AT = 'at',
+  BO = 'bo',
+  CU = 'cu',
+  DK = 'dk',
+  NEON = 'neon',
+  WINDOW = 'window',
 }
 
 export interface AchievementDescription {
@@ -41,8 +47,16 @@ export type AchievementPayload = {
 
 export type Achievements = Partial<Record<AchievementName, AchievementPayload>>;
 
+interface Letters {
+  t?: boolean;
+  o?: boolean;
+  u?: boolean;
+  k?: boolean;
+}
+
 export type State = {
   achievements: Achievements;
+  letters: Letters;
   setAchievement: (name: AchievementName, payload: AchievementPayload) => void;
   setAchievements: (obj: Achievements) => void;
   playerStatus: PlayerStatus | null;

@@ -6,6 +6,7 @@ import shallow from 'zustand/shallow';
 import { State } from '../types';
 
 export const initialState = {
+  letters: {},
   achievements: {},
   playerStatus: null,
   isLocked: false,
@@ -40,6 +41,6 @@ const useStore = <T>(sel: StateSelector<State, T>): T =>
 
 Object.assign(useStore, useStoreImpl);
 
-const { getState, setState } = useStoreImpl;
+const { getState, setState, subscribe } = useStoreImpl;
 
-export { getState, setState, useStore };
+export { getState, setState, subscribe, useStore };
