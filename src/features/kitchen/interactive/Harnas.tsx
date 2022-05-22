@@ -6,21 +6,16 @@ import { useGLTF } from '@react-three/drei';
 import { ThreeEvent, useFrame, useThree } from '@react-three/fiber';
 import { Mesh } from 'three';
 import * as THREE from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
 import { useAchievement } from '../../../api/hooks/useAchievement';
 import { getState, setState } from '../../../store/store';
 import {
   AchievementName,
+  GLTFResult,
   InteractiveObjectStatus,
   PlayerStatus,
 } from '../../../types';
-
-type GLTFResult = GLTF & {
-  nodes: Record<string, THREE.Mesh>;
-  materials: Record<string, THREE.Material>;
-};
 
 const HIDDEN_POSITION = [2.85, 5, -3.7];
 const FRIDGE_POSITION = [3.0, 0.63, -3.63];

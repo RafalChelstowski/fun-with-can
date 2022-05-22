@@ -14,6 +14,7 @@ import { Canvas } from '@react-three/fiber';
 import { Lights } from './common/components/Lights';
 import { Crosshair } from './features/Crosshair';
 import { StaticBounds } from './features/kitchen/Bounds';
+import { Emissive } from './features/kitchen/Emissive';
 import { Env } from './features/kitchen/Env';
 import { Floor } from './features/kitchen/Floor';
 import { Glass } from './features/kitchen/Glass';
@@ -63,7 +64,6 @@ export function App(): JSX.Element {
       >
         <ContextBridge>
           <Lights />
-
           <Physics gravity={[0, -2, 0]}>
             <DevDebug>
               <group dispose={null}>
@@ -72,6 +72,7 @@ export function App(): JSX.Element {
                   <KitchenModel />
                   <Surroundings />
                   <Env />
+                  <Emissive />
                   <Glass />
                   <StaticBounds />
                   <Mugs

@@ -3,25 +3,11 @@ import { useEffect, useRef } from 'react';
 import { Triplet } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
 import { Mesh } from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { useAchievement } from '../../../api/hooks/useAchievement';
 import { getState, setState, subscribe } from '../../../store/store';
-import { AchievementName } from '../../../types';
-
-type GLTFResult = GLTF & {
-  nodes: {
-    letterT: THREE.Mesh;
-    letterO: THREE.Mesh;
-    letterU: THREE.Mesh;
-    letterK: THREE.Mesh;
-  };
-  materials: {
-    toukLettersMaterial: THREE.MeshStandardMaterial;
-  };
-};
+import { AchievementName, GLTFResult } from '../../../types';
 
 const tPresentationPos: Triplet = [0.53, 0.98, 5.95];
 const tInitialPos: Triplet = [0.2, 0.35, -3.8];

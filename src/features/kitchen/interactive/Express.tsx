@@ -3,11 +3,9 @@ import { useEvent } from 'react-use';
 
 import { a, useSpring } from '@react-spring/three';
 import { Triplet, useBox } from '@react-three/cannon';
-import { useGLTF, useTexture } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Group } from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
 // import { Smoke } from '../../../common/components/Smoke';
@@ -15,22 +13,7 @@ import { degToRad } from 'three/src/math/MathUtils';
 import { glassMaterial } from '../../../common/materials/materials';
 import { getState, setState } from '../../../store/store';
 import { InteractiveObjectStatus, PlayerStatus } from '../../../types';
-
-type GLTFResult = GLTF & {
-  nodes: {
-    NurbsPath011: THREE.Mesh;
-    NurbsPath011_1: THREE.Mesh;
-    buttons: THREE.Mesh;
-    buttons_pressable: THREE.Mesh;
-    bake_express: THREE.Mesh;
-    grinderGlass: THREE.Mesh;
-    NurbsPath018: THREE.Mesh;
-    NurbsPath018_1: THREE.Mesh;
-    bin: THREE.Mesh;
-    bake_grinder: THREE.Mesh;
-    coffeeAccesories: THREE.Mesh;
-  };
-};
+import { useKitchenGltf } from '../useKitchenGltf';
 
 const initialPosition: Triplet = [1.65, 1.08, -5.44];
 const grinderPosition: Triplet = [2.49, 0.98, -5.52];
@@ -38,11 +21,11 @@ const targetRotation = degToRad(-60);
 const grinderRotation = degToRad(-41);
 
 export function Express(): JSX.Element {
-  const { nodes } = useGLTF('/express.gltf') as unknown as GLTFResult;
+  const { nodes, kitchenMaterial } = useKitchenGltf();
+
   const camera = useThree((state) => state.camera);
   const raycaster = useThree((state) => state.raycaster);
   const scene = useThree((state) => state.scene);
-  const texture = useTexture('/elements.jpg');
   const [animated, setAnimated] = useState(false);
 
   const gripStatus = useRef<InteractiveObjectStatus | undefined>(
@@ -203,13 +186,7 @@ export function Express(): JSX.Element {
         position={[1.64, 0.88, -5.5]}
         name="express"
       >
-        <meshStandardMaterial
-          map={texture}
-          // normalMap={normalMap}
-          // metalnessMap={metalMap}
-          // normalScale={new THREE.Vector2(1, 1)}
-          // roughnessMap={roughnessMap}
-        />
+        {kitchenMaterial}
       </mesh>
       <mesh
         geometry={nodes.grinderGlass.geometry}
@@ -236,13 +213,7 @@ export function Express(): JSX.Element {
         position={[2.52, 1.05, -5.54]}
         name="grinder"
       >
-        <meshStandardMaterial
-          map={texture}
-          // normalMap={normalMap}
-          // metalnessMap={metalMap}
-          // normalScale={new THREE.Vector2(1, 1)}
-          // roughnessMap={roughnessMap}
-        />
+        {kitchenMaterial}
       </mesh>
       <mesh
         geometry={nodes.coffeeAccesories.geometry}
@@ -253,5 +224,3 @@ export function Express(): JSX.Element {
     </group>
   );
 }
-
-useGLTF.preload('/express.gltf');

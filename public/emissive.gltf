@@ -1,0 +1,1170 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "rpr" : {
+                    "limits" : {
+                        "min_samples" : 32,
+                        "max_samples" : 256
+                    },
+                    "viewport_limits" : {
+                        "min_samples" : 16,
+                        "max_samples" : 32,
+                        "preview_samples" : 16,
+                        "noise_threshold" : 0.05000000074505806
+                    },
+                    "saved_addon_version" : [
+                        3,
+                        3,
+                        15
+                    ],
+                    "viewport_denoiser" : 1,
+                    "viewport_upscale" : 1,
+                    "max_ray_depth" : 8,
+                    "shadow_depth" : 5,
+                    "glossy_depth" : 5,
+                    "refraction_depth" : 5,
+                    "glossy_refraction_depth" : 5,
+                    "texture_compression" : 0,
+                    "use_tile_render" : 0,
+                    "tile_order" : 1,
+                    "use_clamp_radiance" : 0,
+                    "render_mode" : 4,
+                    "diffuse_depth" : 3
+                },
+                "qremesher" : {
+                    "target_count" : 2000,
+                    "symmetry_x" : 0,
+                    "autodetect_hard_edges" : 0,
+                    "symmetry_y" : 0,
+                    "adapt_quad_count" : 0
+                },
+                "automirror" : {
+                    "axis" : 2
+                },
+                "crowd_render" : {
+                    "render_engine" : 0,
+                    "local_node" : {
+                        "name" : "local",
+                        "node_state" : 4,
+                        "node_active" : 1,
+                        "node_uuid" : "local",
+                        "cr_version" : "0_3_1",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpgb5s665q/local_report_data.txt",
+                        "node_A_auto" : 0.0010000000474974513,
+                        "node_render_progress" : 100,
+                        "node_render_active" : 0,
+                        "node_A_manual" : 0.5
+                    },
+                    "use_cloud_rendering" : 0,
+                    "active_load_balance_node" : "DESKTOP-M33K6P1",
+                    "data_is_updated" : 0,
+                    "manual_load_balancer" : 0
+                },
+                "cr_nodes" : [
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "DESKTOP-M33K6P1",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba",
+                        "node_state" : 0,
+                        "node_address" : "192.168.1.17",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - NVIDIA GeForce RTX 2080",
+                                "type" : "OPTIX",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00_OptiX",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPTIX - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - NVIDIA GeForce RTX 2080",
+                                "type" : "CUDA",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpetqzrat9/a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba_report_data.txt",
+                        "node_A_auto" : 1.0,
+                        "reports" : [
+                            {
+                                "time_logged" : 1636636958,
+                                "time_stamp" : "Thu Nov 11 14:22:38 2021",
+                                "message" : "Info: node status updated: syncing...",
+                                "name" : "Info: node status updated: syncing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: repairing...",
+                                "name" : "Info: node status updated: repairing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_Material  ",
+                                "name" : "Warning: MISSING testPattern_Material  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top_Object  ",
+                                "name" : "Warning: MISSING top_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.040_Mesh  ",
+                                "name" : "Warning: MISSING Cube.040_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards_Object  ",
+                                "name" : "Warning: MISSING cupboards_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.041_Mesh  ",
+                                "name" : "Warning: MISSING Cube.041_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top  overhead_Object  ",
+                                "name" : "Warning: MISSING top  overhead_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.067_Mesh  ",
+                                "name" : "Warning: MISSING Cube.067_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards.001_Object  ",
+                                "name" : "Warning: MISSING cupboards.001_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.068_Mesh  ",
+                                "name" : "Warning: MISSING Cube.068_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane_Object  ",
+                                "name" : "Warning: MISSING Plane_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane.004_Mesh  ",
+                                "name" : "Warning: MISSING Plane.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink1_Object  ",
+                                "name" : "Warning: MISSING sink1_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink2_Object  ",
+                                "name" : "Warning: MISSING sink2_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Object  ",
+                                "name" : "Warning: MISSING Cube.075_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.107_Mesh  ",
+                                "name" : "Warning: MISSING Cube.107_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sprinkler_Object  ",
+                                "name" : "Warning: MISSING sprinkler_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Object  ",
+                                "name" : "Warning: MISSING Cube.073_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.010_Mesh  ",
+                                "name" : "Warning: MISSING Cube.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.074_Object  ",
+                                "name" : "Warning: MISSING Cube.074_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.106_Mesh  ",
+                                "name" : "Warning: MISSING Cube.106_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.006_Object  ",
+                                "name" : "Warning: MISSING Cylinder.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.008_Object  ",
+                                "name" : "Warning: MISSING Cylinder.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.009_Object  ",
+                                "name" : "Warning: MISSING Cylinder.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Object  ",
+                                "name" : "Warning: MISSING Cylinder.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Object  ",
+                                "name" : "Warning: MISSING Cylinder.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Object  ",
+                                "name" : "Warning: MISSING Cylinder.014_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Object  ",
+                                "name" : "Warning: MISSING Cylinder.015_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Object  ",
+                                "name" : "Warning: MISSING Cylinder.016_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Object  ",
+                                "name" : "Warning: MISSING Cylinder.017_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Object  ",
+                                "name" : "Warning: MISSING Cylinder.018_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Object  ",
+                                "name" : "Warning: MISSING Cylinder.020_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Object  ",
+                                "name" : "Warning: MISSING Cylinder.022_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.011_Object  ",
+                                "name" : "Warning: MISSING Cylinder.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Object  ",
+                                "name" : "Warning: MISSING Cylinder.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Object  ",
+                                "name" : "Warning: MISSING Cylinder.019_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Object  ",
+                                "name" : "Warning: MISSING Cylinder.021_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.023_Object  ",
+                                "name" : "Warning: MISSING Cylinder.023_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Object  ",
+                                "name" : "Warning: MISSING Cylinder.024_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.025_Object  ",
+                                "name" : "Warning: MISSING Cylinder.025_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Object  ",
+                                "name" : "Warning: MISSING Cylinder.026_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Object  ",
+                                "name" : "Warning: MISSING Cylinder.027_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.115_Mesh  ",
+                                "name" : "Warning: MISSING Cube.115_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Object  ",
+                                "name" : "Warning: MISSING Cylinder.028_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Object  ",
+                                "name" : "Warning: MISSING Cylinder.029_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING bar chair_Object  ",
+                                "name" : "Warning: MISSING bar chair_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.037_Mesh  ",
+                                "name" : "Warning: MISSING Cube.037_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.069_Mesh  ",
+                                "name" : "Warning: MISSING Cube.069_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.070_Mesh  ",
+                                "name" : "Warning: MISSING Cube.070_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.072_Mesh  ",
+                                "name" : "Warning: MISSING Cube.072_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Array_ArrayModifier  ",
+                                "name" : "Warning: MISSING Array_ArrayModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.071_Mesh  ",
+                                "name" : "Warning: MISSING Cube.071_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Mesh  ",
+                                "name" : "Warning: MISSING Cube.073_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Mesh  ",
+                                "name" : "Warning: MISSING Cube.075_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data scale",
+                                "name" : "Warning: Camera Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data location",
+                                "name" : "Warning: Camera Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data rotation_euler",
+                                "name" : "Warning: Camera Incorrect Data rotation_euler",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "name" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data location",
+                                "name" : "Warning: Cylinder.001 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.002 Incorrect Data location",
+                                "name" : "Warning: Cylinder.002 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.069 Incorrect Data scale",
+                                "name" : "Warning: Cube.069 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data scale",
+                                "name" : "Warning: Cube.011 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data location",
+                                "name" : "Warning: Cube.011 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.014 Incorrect Data scale",
+                                "name" : "Warning: Cube.014 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data scale",
+                                "name" : "Warning: Cube.015 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data location",
+                                "name" : "Warning: Cube.015 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data scale",
+                                "name" : "Warning: Cube.016 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data location",
+                                "name" : "Warning: Cube.016 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636961,
+                                "time_stamp" : "Thu Nov 11 14:22:41 2021",
+                                "message" : "Info: node status updated: synced",
+                                "name" : "Info: node status updated: synced",
+                                "level" : 6
+                            }
+                        ],
+                        "compute_device" : 1,
+                        "node_sync_progress" : 0,
+                        "node_render_progress" : 100,
+                        "node_result_progress" : 0,
+                        "node_A_manual" : 1.0,
+                        "node_repair_item" : "Camera"
+                    },
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "Rafas-MacBook-Pro.local",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "4af96e32-13ac-5d0d-8bb5-f9b3411d04d9",
+                        "node_state" : 0
+                    }
+                ],
+                "cr_node_index" : 0,
+                "muv_align_uv_enabled" : 1,
+                "muv_pack_uv_enabled" : 1,
+                "muv_align_uv_location" : 1,
+                "muv_uv_bounding_box_enabled" : 0,
+                "muv_uv_inspection_enabled" : 0
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "extras" : {
+                "rpr" : {}
+            },
+            "mesh" : 0,
+            "name" : "emmisive",
+            "translation" : [
+                -1.2841243743896484,
+                2.3711740970611572,
+                3.127725601196289
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.007",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 0,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "material" : 0,
+                    "mode" : 4
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "componentType" : 5126,
+            "count" : 5964,
+            "max" : [
+                2.8838114738464355,
+                0.4150806665420532,
+                1.7117853164672852
+            ],
+            "min" : [
+                -1.3606255054473877,
+                -0.6703444123268127,
+                -8.373645782470703
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 5964,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 5964,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 27258,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 22728,
+            "byteOffset" : 0
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 22728,
+            "uri" : "data:application/octet-stream;base64,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CQMAAAIBAQkDAAEDAQMJAgACAgEBAQEIzm1NFpkH6QelB50GSQJdAkhYLCQ4KDRILBw4PBwcWGQ4JDwwFCAEDAQIEAwQEBAQDBQEBAcIBBAQAwgHBAQHEBAEBAwMBAMMEAQDCAgUFAwMBAQnBAQEBA8EBBAQBwQEFwQEBAQEAwQECwQDBBsIpwgM+wjPBKMIcwT/////////LwT/////dwT/BwT//+8E/////ysMBP+TBP///4sE6wT/PwS/BP9HBP//BK8EBP/bBP///9ME/////9sE///TBP8LBP///////////////////////////////////zcEBP8nBPMEKwT/awT/WwT///87BP//AwT/JwT//3cE////////xwT//////////////////9sEPwT//////////////+ME/1sE/////////////////2ME////////////////////////////////////////////////////ywT//0cE/////////////////////////////////////////////+cExDmRMKRtqR89k440ZAyEd/N64+GmIIUUATESBAFWd4u/jobr5vkQpyyhka+aEldnlc2hYGN6VnCuZQRNnD5wDPnd81FjM4/Igw9lCrNy6OiUAqdVqVTBk0KjZ/V186J7S9CmIKSq7UGNNvRXd4u/jobr5vkQpyyhka+aEldnlc2hYGN6VnCuZQRNnD5wDPnd81FjM4/Igw9lCrNy6OKUAqdVqVTBk0KjZ/V186J7S+dpgv77wWAotVZfDI14TYUJ3TmkgLnOqK+eEbEklYFhT7p7EGylEQBMjq8YvwGXs1NqMI7BgjQGvz9y6//j1jShwc/ixA91vh8Eig9WoD/7zMCjUXMmH+V5Dlppk5SAime0qFqzZ2RYxVDDXsJfU8a5QWPvsL+0IIIlQquEui56UJ9EIT9rXOpgLhSUf2LRuxTQsv1VH4jwbO9NlcMpk8JY0b61s4o/pqhVE9nogVEEK38AZWbgWrrCgIqztFA1sbTQUmQBwT7AXwzG66BhLRK/KEKJsUGjYrze01W/iztvSnRdeV6I0n8KU7UuU7BjV1/Fnt/fzPctbXxwtE9YAP7eiyTxQQRxTqFwcFwhigbX0YFS2U8Qg47jbEZjCnHVip9c3/3j8zVpmTIYe2LzfbBzwHjD1BlXOuCPC3enLuFB5Ayw9xNoeVhPRvJ2KXebYYFurjwu5o+8/sLbQk62cMdubkllAGh7cSqL5RBeNtK+rTn/jwJ4YjpBk26mSSDQ2FwOoFMxfCIp7v/m2Mipo32eD06SjhNtpHj3Yn1L5zKzfmBDIzKTQV6FY430h09N74+dmmSbbKu8FD/Wlo82aohNeWl07vbue6w3MvdINFhP9GR8gYHKBVwzcj4nv82kgZ8Pb5KPPW0FeAc9f2DkWLMejE/6OZIXXt0AjIiGe+PkBpw/cJsPq2kRL1KW1YJoWnnvqWhSCj+YYDQPOkCLWB+nZLSAglXzxXJzESpoUKQMoluglKTibHh1kn9uHPGcs71xQG45PtBcYKGLmIgPbOBOnBTBmuqsbxVPSpiMPWmWYXkabpH4nwIuNnpDXtVYarNkg4FvEPwDcq8OKHmjc+miT3WTT2tPeXYffKGN5HSzjutG6jSZV11ZpI1eiM8v79+copCaGq0zow9Llk/waQ+5exBspREAKrWYLUQ/bjFZuGdPIIES/1k1c2VCIgCaCSKmT5UfzWqEc3k6cEwFD8+qdy/7TvmSWe9mj22Ccv7OBJ6l2NKpARnXgZIia099dv13pC3pyrssQhNaMqddD4GLfLOIsubxMXTS/+X9maKcImnnW0+NCFMsecNNcm+haX6GV45aatYcUSzgxtVs5m+ZYNhvU20Q019P6k+zN4ouGn6eVnuwPupfxM4ZVn7lTk2OJSYf6df/1QUC3K/C0n7cnGPd7Y3aD9XcD8BE6NpvxMV+9c/J8NyC483ab0ndL4Dab0Vl28wzRXLbunPdmnD8Bv7bv8BE6NpvxMV+9c/J8NyC483ab0ndL+fe/6vdBVZw7f/T2HdytGzZ1XDYLDoWOja5mbeylCNnuXo0gGw6wSxWsLoEUXbvt5o+pFIsaVgL372HzDbODBK+1dnSZyzSeceqDvPUBue9s1nfg//Gp4erU5D9RJwklMTDRd8ppRkNqi0eh4CNCHOpv1e5UEC3adSeu2D9dOSBHKy8KQ2/yGEmYd6L94aY/2prh+7a8sHp6okTFdnyewbeWbBDT9Nut4RMQY00rnoTHP2WXzxwRqtMjoi6raq9aCRS2drskwPHC/vsOUAjdd8la4KT0E1UGP5wOQnJSwWV27l+A7Od1L4/QDoACuvIW1VBRNlLKQjXA/vYGwWEY2uGbXd+6bU+Qvo+xYYfDzHmPm+R3gknaYao/X/EyAEK2FCkFSk7sFclRaSpzh9AmFMQIgVpiEOMOqb44GU8ykYxHDPGI00CIzTfJFTETOqWJ/r6QFW3k5U7nQNMeoOVVy/qUz7z9RswkaEarI9v89UAENHkiMYz5iRD45hcZiHAY6kQ1DV6nxKmAB2UgVa77T7oHM/tiNPu9L0V9TsgzfZ76nFXGKM/3nxIlYFPMhhmL4mNoQKxhVcONwMgVhOhhwpAKcSpxTLi/p1d0REwvGkmEaXucomV+6JthFx/EnXZV8I6SBxifnUiv9wsgaoXtyvnbpFfs1q5Cea7Ntq3DQGXmM1wltV+cNEZhh4BkZiPd/ZpPEvvwcfn/tlWdS0cOQtgsQFAXHzwdkoZ8HBqSvXNPK4Cx8p/fTUYss4kKUco4avmS18NQFu5m4OLy2u/oLesVQyGTNQUjVL5WeEhUFkLiW8v4V+RXtWxawLFTNYJD7mQvwE+VVmNng09EOaiavIUisrmPFwHLd9dXgVEvD9auJ8CkPwySf4lpeK/yQrHZx+eSkzZT1DFv4mdvkpgBrDgPtPutZGUo/3hDVfYBesFCQ1Ll59qmTE7AH+RvK/gfgstLBaOemO2Z6zHLA4kQILpC9qU2CXenvs630T4QfsVA17KNl+jVMwg2JFGRE1I5MrvJ4PiGVTxGkR5vF510fkidyaYZDXx7un1ps+eMsFfCErwxrmwAhYqTC1+j+/2QHQsuncAH8EX9Xf+c4SHJaIZXGhx+XaBjWwsfowRNXhxpr0Czajlun0wGO8tHYBkbOBZLtNIBEn42WjiXMSQuCSxr8uCfCOBoINyiCzV3QZnRy+APiehJUR0H3RhRh/slf1AnfyoV+cukNTr2NOJjttXVaHRLdiAjaZn2tqgpoY7pf31B3tw41JdChvgW2SZwhpj5NCbhfwdJHBPdIS6J+GoK+wGys9Tv9NMaNsk/DI/ZnDzaDtcaL+hwC2AzIci9LUfaSVf5FUFF9s6povYzdg+lzPFbQ0CFLny9aUSn30/i54HoqsMCcdsTkPq9G9rcN1BS7FLacWJ8+Hwqfle6GIbWAg2GbnWuA9RTLyHj6hHT6nkx3YHMFIeE7EM1hamPaWUZ8Jdz0swLEnvoG41qfeT4JNvqOiSK5jRzp/xXHsxomNeg5mihEHRJ0YqvYJxkuouaskpQcW9ajoTQukk8A3eUctG14iAwXjAbb5VqZXQtbkSGxRu1L0Ii7S8WEkm8z0SJaTAxT/qE2TkXRfa2dyFE+RaNyUEjjRYRYtqfExpxOWxkFsF8IoinnT0JsPEl06j7djVozYq23MyEMnrNW6MeGfeoKspssPerjZPtIshhKsQGSgUc1cgZaPNVGr0ewgJGdFDGvuhCFNkzhnw4JP+RVxJGpVTte1OEjuQ4/bb14JKVwiprnHfcfUz3BTHyn44bSzCNngZ/IkmQR3SZupaAZPkoYvGyrmTvmi9ak3f1MIN5BzadwnYPuFWMXdflEL4ZFD/ISw+PB9pTZDE5cos3960DFp95QwmohCdxztPN05W7124wUe8Zly4tmYuBScGX36nts1w0jxljPYJPRA2Wsg+gAVuUcoHR6ROQN/6mVipkusSXL+b1dYBSYUgqD7pf/l8kV68lvhT8Uq4EyCw53C4xu8ULA06Pwh3BgKW3hFr/gdWYUZ0Jwsnvy/7HQ6gisVVUUdDBURIbZmF2oft+3nn4VDMn27y0X9+u+juCLbmJpErhMa8xM5oYOOn4FCshTsAfjD6HgZl1giwON7dF6jWwZWCghSY/UflsGEbZjPi+5Pwe4giTbltRRkZtTLaBTwg/4qoA6HG42ulPir7T5Oxabf8UiYki+GI9I7FW2Dgfxa4c7hNkQFh+woVpCkkBaT/F5HvrQS3U7ICeawB+EC3T5HknON96AyUeL+jIO3Fzfo2NpZ/4LiFslccoxAoe/EW5nYMmD6mlZLDFBzwbjqjmt7L/eozrSpFqTa13bQZK5S45BezDrN28xAvVJjUt9jbQuWeIB6+k6AdFqWCbe6vTzBy1Q1K1sKr8/uBk7hp1TA26X+CyACOwFQkLpU15lpxEtTztxggEqLz6X92FlRJPTBJ4BUPZ94/h4aTV4QmJPwyosBf6tNUK1TGTjxoX3G4RHkHXfNn0SiFkAQmsi3AYet9PFbhWn+urePjM/T3Uzvah+cYkOiGVvxKReoVqVQgvh+Kt8edjQLBOKtpf+J5SZ5sq6Ioa3SSzoQ/6au2qdUN/Lj4T6V9aR+KcdXqXuS+kP8f4CuXerkGjUvTlqLiXnf9uC5F0QNZThV/9kT6qzQpDvlX2tnZNki/J3szOCxVMZPvjmgzL5gWfN44ehrJbJCBgL/A0i/9h8Y7CgiBMfXv/jgObuXUrH2c86w6SRXxktTk1mwP7kbD/qFGSVR2GMZxT+MHEnBubaWNMV9Xi8tIQRtxgsC57vZ8I27lp3IxqfkdUMhPyn4ZkRQeGwXH/EwVEQjaZYVZ1UObiIrL6chMtgbZFc9M1Bj8bAHIvX8hAKFBkqf8ZyquGSNsiAsBGmXPZXi7vBK7Q9Yg5nHH9M4AhZajSDSC8IxP6HUuW76sQ7xTMri67Ykv9q4No/3DfNHzYkqI/dpQevbFY4H5AZ0n/InDT1PflpLhpB3acFY9/WcQ1k6+mqNwjYtnIHp2vLBnBiPPYguSeMK6DdmBOiMC7qjsIZlPJb6taDh/R5s/3dwWWD01uqUSzDCq+lJATL7MdTPDh/wawYCZU+O0cn/Q+epW7sAr+80Y9PksaW9ALeBBGca6EdcJRmVufPX3zJuqQPzm+YkPb6YAg7u57nGVSERcBsYiI6P9EjJe5/WBO6x4IsScNZYnRDYQ+NltfA2cYXfu4Z4fnYD4fELIh1TkfRh3hhDmFpz7OkfOTFz5ZMBZKXS4FbgrpY9t5JakL2uzSYC0b+HW8Uc4rv0ERuuZnSP9HhgdyJR7vJuOdkFrdWQqQ2On1nKtHDQq037gBWwSKw7qrgzwJn7mN3hprQqjFBvstPPix6k06g/zuhNpw/WPnsezo640pokm0XCL6LVvLK5YnZnyvC3jHglNnZ8kWTgH3BtQCkscaLFUZrkyXDazoDT1Fr7MuzUt5hUafP1r9IQaJHAv9c/Z6JQPZ94/h4aTV4QmJPwyosBf6tNUK1TGTjxoX3G4RHkHXfNn0SiFkAQmsi3AFd8KwwsGo96OhgXm8yPJsjUqOaX+347J2Bn+hvX4qVTzZq/fIE3XLWrO50bBifm1T4a///a/+b8Cxilryd7ub3gRda3RCNTHSqDlUOWbOdYOmqw36Cv7Rx5sGqQmVNfREXm8UTKrB4cftATT6Jrx7x5ivHOKbaoJCJ1eqxff6QGshocY9CmEKkKg9mpzAj4ObHiG8EYuAVkY/HbyRJ8/1KE1rgaHLJUv6OHgIgMFSIfSH8BAY09BcalVnQRaPKL3G5RNkqww7E+yH3JTnpEWtr3pjlB5fU9Dsgs0vgQ9hcb3CmQ78IHIyn7/lT0PEwUMNxKlsAXeX/tZbpObY4LEA8UstJ2VY9BM1BBfw5GjI4Hg5PSlVrcL5sN+4z0ZvTfu3sYsZ2Y/LD43F32DlihdCb8AzE+c/pJWz0jaLAq/B1s5Tby/ZDK4CDMAXPVtpKBKy43eZV7KvlEmeTCIzWiMv2/sNgbGjOof53WNgaFo2PlZ34El//9LyKfBkKVm+ncOe7xmgG+FSp4UXpkSsT7pCS83NV5/YLTDlzoYtgVBXrVGEW7qAjd6Uhv4qb/CfD1NQFdASFSDOZeFGPPq6XYSNKP70X/f9Mie58lN7FHQYU0GWW1ZhA5RXdzRl7AEJa9DQMdgDPOuB9eLt9w6HdB8Q/mzd2xXNg6I5emmJodvq/wtmes6YTQvnoNV5aWYyN9d9x4fo1tp1cGqOm7y9XuxfQ2Izmm1GvtIEfd0IFgrSKObrbF76AMNDPHdQrcoX3UB3nmMnM93kolON12iB+mjmCAmw/iu/N2/IWYr8f5Xj5mGT/RhOUD1QEZ6FViVDr/eBrQZT3SKYr/tRKdFbb+xkPXCZnGjdDCWEwRD29EAox+66yMuXcr4J94sbZnFj9V3Dq8hNGAycl/Hw2iqMTfdL4C+LX0eHo0YSgAUwtrEq0dyP7063XV+7Qod5TFvbP91QRBOBNliq89oZgZdswJIKR2tZIT62rLH7k3O2Cpidb47QBHel9OG2fo7fFFuDvUepCHPr4yPIZQbNvC5++Qr/pLOE/N+YWwY2bpXwnIIe6I8bliMbajgnVUMqaKEQdEnRiq9gnGS6g2h7jkIVQK3ACZsHBTCqFAnnJCcjQXYEQTnhjEm05wKvJAfFdJW5G3QcY6yNTjoLscd6acDXKbwMxUs4D80fYSMpoqy+CJPYX14zT4CSuIxqTzZxULqoX87WSqtV24YljItSn/KuOG7lXN9fkFnFOGjH+iSKHmG2H6EdQwtpyuOGJi8eSVnSBveefbPnudrWWHt8l+6OB8xfAWxyTyOibx12h+6bPgSuqq4D61V4mrK5ClProKvJjBo1ADuRcdfyn5NdbcXM7bVMSkoBsRknntd/J3mi4DHzYi2/t3WurtN1LGG/RCAPm3XoByBN6SMbRj7qjFh1iwA6SpSLojdTDL1k1hJG9HmoL5r2SRfwze4hja/5D3bXQRHvEMyzrdslvZiCViiDOBiiCtkW927IEMxn8BbhoS9Igou/VA/0uVBmqz9TjMVWxc0HDHegz9lpcsPpjAQf5m8f7Y5JSWOFt944gJCpZsx7kQ/9cndjJtQKmD6hzlpDxupRbZcATEMh6CdzPAyF1M9PxKrlXOHg+Yf9uJF9bd3v9D5s+6o9LGNqpzjFLHjK6I17hJGn3efZssL5R39USiDSnQCAKcabHaZbjzJh49PIlTZe3UC5Ub8FIuNguS33HQvBqLmKfkMWZGoxoylrYwDJoe02MpIZrWsVKIZSOp7eqG9X3GeNastaq6OI8VqjXPAfqwpjmOXezkM88kAGHy9BbdZ1AQqi9ly0AL+wZqK956MfktfrdV21aNM5BBhbFBfMVKLGupAs86ByPNo7jV6OHyEsm9TbvQUMhq44PIuUZ27A2hzMmATG0t+/3+0//LEoXDAKer6+XGJBHlQiig/+cuGQPSoPjwN4gX1Eww5y8Cf6QXONj/zJP1DAh0N+9ohkMBiXBcSC794bzqiULGl/a+34/i//7BO5s8EYmUn0M9atMfuTc7YKmJ1vjtAEd6X04bZ+jt8UW4O9R6kIc+vjI8hlBs28Ln783Od7btjFkuPCWPK6U0CKSVz775k4zZ/CmO9bpM7Rda3pgoy7rWvcWowCgbQFcOs/khlF7HjsW3RaLuY3lBLTN4BylJFEP/veSfOHe8f4s7ZuIixlmYyNcZsS2xCYngiYN/Fa0IbPskbtLYHMomjS5EkeBnu0vrSlZXcv0lNIlkENjqD1sP1NGHSA/3AFoRopVwAAzc8+0D7hpLlG0JFOWvwjmG42m4UANrk7Ixc+ADxIvH7WKDR5njBYyshXEXgWmVFSTEvVdB9FjOivPGLrrIKX3fuUQxwoq2OlN2CV76rNHjpayIHxy/JfuN31budR/Q1XyZTAWcPHln/l/uByaHHyLqtLyUTTS/TwJ05NpqEzjzik4OEi4NskZsT5R5ovQaZs4/aT6eEWamxklR7sesdhFXGV8DB61B6UA9izG5XzUqevGI0uJzNQmEGJzKh4SZJJWX5FXDaz34iQb+JpbZYNdJD55VV56dwnTii3tZsVkJsQqJGRIBpoUIfXxl5lT66VvR2gUowD8ibeLrvJd4tHl4v7Pj2HJSdjAueUFw4mTslt5XzNWYZA6ncwy46jU90T0gicVYdiesEOfDEOuSh8NF/+ARzA9wjTGNnx2PmPCAriIQOUV3c0ZewBCWvQ0DHYAzzrgfXi7fcOh3QfEP5s3dsVzYOiOXppiaHb6v8LZnrOmE0L56DVeWlbqQ15gqMFYhmVy8HZBksH8Ov59irLiVmK90VmGQL7lG6jiPFCBdWFaa/Ghzx3Q6RnAmMtweEmOO1xks1ChhNey7iFept1XIT/S5bdvO8o3p8ig2oZ4IdAxY826GHvAdCuzbNO63T/sCw62+haehVb1MQ3aKamW9l86ztZdjH7yvU2UsJKZxamyhoDFk/B/CeBsWy+rez75F+Reu5eolLbv56AomCI0iZL9Oh6+S8XIS4OB2J2ahcTEo6RheHRMM7ozv+VNbZsaurvqI0pIzzBgW0eHBXeN8R/xWWmRhpMeMu3HZUVFbwNVtp+gmi+bwbUiMTQ5f6CVJDHvyn7AUMsIR3ziD4n8qUhIHQTxM9zsZM4cQLmnntvodV2eKr1pAOrvOzdgM5QkWofHvbeQzXgTAIMlIc2chFZyXG43qRk3FI1ONx5POoBjqiYxG/FrUs2jm5u/3hR8kSm+A04VJ4LKyNu3rcfCFde5MLSyvBpyFkFmSdFJoC3srJvCivylJmV99N5WjrXtHTmQM8yOzQteKRj1NB+3r+Dgs38r0g8HC/7w7PVMXKj2452UjiMxSowSMXMgyxXEYyI08ut+b6idpw7ZzOKkJa0Q1V2P9sEZu4D2JYrPFD23TI78JSZt+MFvTTQMfK/341GLLOJClHKOGr5ktfDUBbuZuDi8trv6C3rFUMhkzUFI1SoQs0jAtQTt1c7lk0SidnPXDGvVQKUzOkLaKA3AWdbB6BXbUPTmUIvbsKyXf+CxDptVn5R868T1q4I/DyBOj7hamuyvvR8GfEW/TUGc1SzDOIH65fygdHpE5A3+CR66a17pBY0cZQd7tmQhaiU5KJOF5+lbywZwYjz2ILknjCug3Z/jtIwifYLC6AlyUnE/0zMYpFxz5bG1VYhTe2ou3JX7ULQyZJSDSCOZeFGCHY5KnaBbR30f/c7AUGgPOZYJLmZ/o7maFLzWJv5tZE8+biD6axWx2UwgglnED85vmJD2+mAING8yjGxIoVXAbGIiOj/RIyXuf1gTuseCLEnDVskJUxehc0h6L3bW8Ftyh2EZ2A+MGw73IGHieosFSN894A7DpHzrKUuqKWbBETQjx01hxnULXPxhLhvixpQGiQ12Rwe8dF5VDfmZ0j/aKkKbeqXRaPyhLXzzw2y1XkhQu8re0xhOMW8JD09HeCy6JW1ZUOWsU4NmnWOQwERcFJbzFHdZYDBDxjWD3lGfAP9K2KilfSnejCCZhW5DDyUvzwvWnHN370VL+EBcqEaDeNXE4mqRw61jjYe6c3FbA5Pc4S+ikredQBGbkybjeQR2wzx6iRw28bjTpJpEcRfCbnYtbOO0AR3pfThuPo8zoukCpIHcSLMr9eciHxIOrrchIjNKXhDRsYbSyHFTbTL63P1oYXN69pfNaGzaBgcciQDq7zs3YDOUJFqHw8pXCQK2DqtOzRbBWOvYQjJzo07x/gf2z7zc6esSELI0aV6AeouLMHYrt3MDkIHnGaSsLMwbAMwL41i935zMKvO3XFsJxnXDjEW1oPROtss09dZRt0nKkRn9tFOkh+qfWefxtlTuTpahev1c+rj+Q8HGVicntL6hssrHhmUTOOIEsWWGcrpvly6YONQuhCKdFDGvuhCFNkzhlXv/XNZ4jzoOhwbN9OEjuQ4/bMZze3NCh9KQTkNzzoFcDHyv99rz0fE/cj4Ocs7YrFYxQY/GWVw4DMLcu2uor9fMhM1PZSg/0YOGgZjxMJPf6Eh+FpliYmR7wV6a9nxO9A9Su075XM43JJeIctENVO8/fO+H0TjfJcDq1DvGBcuLq6RvP4+hqlhE9EoK1g7+n0RIlXpcsdwCf+f4PaAPhGSN+5jo6kcnNQVxUVAjE+pVI6os2cKRuKf4+8vxxGzkppLBjdneS+s7/rN8U6LvxgQymSeQ6+03RYdoRIKU9FcjF4HhID+uDNtBtILdpE0Fn2DocxAMLpzEtAn/Pv4P6/nAAAAAD/PwAA+iiuv7GbK790+gXB7V0hQQ4AAwEBCP8HoQ4ssJgUQAzoTGxMDHBUTGS8TEBYvDggFDhAbBTQOBQ8rCxALCCwICA4LAwsDJCkOJADhEAYTGhoB7ADGBQ4pIQ4DGx4AxQgbANMbGwELAsMbEA4A0AfIAcUHyAPIDcsLyAjOENAK2QXeAc4hwz//wMMDwx7DH8MrwybFAQzDP8XDP///7MMFxQrFEMUIwwvDC9kA9ADDAekGwykBxQHDAsUA3gDIBQUeANAA0wEICwgODg4FAw4TAxALEwULCAMOBQDVAxskGyQAx0BLEAMCxQDIBQ4AxRYFDxQFCxAIHgsDCxAFEkBFJBkLEBYTEQDkCAUKQEDLAyQ0DjzSKjqsmIoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IowFp58kGiYPPxYiggKbNiKCDJVmkzomDz8WIoICmzYiggKbNiKCAps2IoICmzYiggKbNiKCAps2IowEU8CuoH/X0P/jmBil0dJGTr7lM8lk4ZGBwxU7JYVlPJR7/a1cYQz43oMDWzTBJSlF1xThPH9nOdwqfLEOiJo0yvflUeXY9+iANyWIgFAjc4AUjUzIrJdz2qVH15aoAKjUeXyyq3jssaNapM9rIFbnu1PydqPYR7T40JmnGB2+zXmmR+r5eK81rnOi5ETT3a31Zv0Dy9LsTbvHXedfDgAXjFn8CvEoj3gZn1yfF7J79nbz1mL9wfzeUivFzu9z3+4NqFvqPccQ1fFXt7vQJ84BHPi1+VyvrKIILZaWas64Jy77vzIy103j5kP0Gh3WMivBHv7R7IuwbD1ONf//ZupcDgzpz3as6rbdujpvygQj7XSJhsoeshfguk9Mc+7Ma5A9n/Z7FOf3dheJbdbukbdGdL4NUmhQVTSIcR+jxpIrQK80zIvPMVvdTiWfaHY6y95M6K/V7O+1uEsB5PDppubeHpqlGHlPDxipMvz+JYqs/WzzKXVNHhxeVVGfu8zDJumhWzf83vLsp9/K0qIBejC9dh79Bor4EZAxwKjv/tbFuxmVItPLVvytlzs0krGvn5VIM2eeMluRBnsSHtQGU8Pl9M3a9WbSNsJ/tIV+octFFTwkzN+WtNFP6glCVrZwC5os9DvL1DaOdolTQ0l1/8Q6Qut7FrmcCeDoYMKBBoOK2VGAeNYnr4Vt2ZMtDn+/y8g9goWPvx3wVYqr32uWhr8hqEC3mooy5uIKzjuB6cy94pwfK+QDeTxOPujcnQ1zCXZMfhxfhtYgzyuSxumhuzp7l7FyGedQyqESOT/9xp68C+UUf+GfwipoPuCVOloaYkPbh3yN11rENhMvK4+6iLNnke3yVAsB75yGtr0zhDTN1PZxAZJCb7Wlgg/J1doEWQoyjsS8abfy+DjmHkuVFk9jG4tWutyI4WdQsuEGo1q5gOD2jEdfpO2ZKuIQSu0nRUerpdzJhqRbKf6P0o7l6/8pgwxXD+y6OOPhKO9gvWdLGoJULE3fqsDtuORVeX16rqBTs4OcfAACwwAo8+8cP9GPxwxfmrElT1wyq++3s+Cq0QgBU+EXwKQto+g6BeidtbMLcgAe1Jh4bDhV8fKzXS/c4w1AQ/SNaw5FNDF6UE7lW0a9BjjXRNg6BNHYZUopTn57/V1XPlc/7oBo7Oz1yhVLI4jNeBtiyPwjFyIqwN+zrIrfAZutTt+/YdW2CvzgjmaaF4YDP+llhO/DcGLMOUiFYWkm4fvr20owUsVXSTEaxErEkG5oosJ5YCend3QF+zKtZ9k+OD87KazBVRV7ImBjIJ6V8XFY1dgPFI5Us3NkFU9kaklSIsl/T9WzvZ1jWCoM36fBsVmfEYSBqch32fTuy/8/yDKqmDuuQDPOROIk7pYSx6n+Vk+R9TeJH2B//T2JnJ1zGmb9aeOj8NnQbEOzBlKiqkSeW0K0Dn5vtvd6svswTqBcT9cMvrP+nQomDz8WIoICmzYiggKbNi+AfiwPFiKCAps2IoICmzYiggKbPqQTuIGW79cDjwLSCAi1kpVNPnVzOhlSIxFSLnRqRBT0nP+cHWzcYQz5HhLjipTB5VjF13XAvHYIWcv9IQ5pCsTEutUyZdjFF8gfVuiQ0COzgObuDQhtF3L5uEgnloiA+OcZ7THq2q0CA0qj/ssgdie91JR2o9hHtPjQmacYHb7NeaZH6vl4rzWuc6LkRNPdrfVm/QPL0uxNu8dd518OABeMWfwK8SiPeBmfXJ8Xsnv2dvPWYv3B/N5SK8XO73Pf7g2oW+o9xxDV8Ve3u9AnzgEemLPZXC9PoxhNNnjm/aglT7u9zqpTah02I/X4XfmW6oDfHzMsiu7P3n82kk8GKtaOjOgu1izqsDXrIv94M7PtZanW2B3yFYCLDvAifou8P07Alao5hQf3d4F4+L4fYaZEvgua/1BlMnB5YR/mgiqAzz3yLItvbC1ONf//ZupcDgzpz3as6rbYLBcykEkIZs03voqlOL7cWSjy8VSumQz9TXHJdY0+HF+19cAPvdO266BbOHx4P/Kp55JKYVDqsb2Vj5xFaWTGYkGRqSmxbmXcG5okkrtUfu63K5WgQy5uGcc4g2eSC7JkutJefIYWvXLEtM3V9vElpqJf9kVRcCmkdQvWbI+WtNERqLBxVvZxyhsME+yNdgCfxZlTAsl2gGQqVDy6GNCdGW6oIOKhBuL6eT/4Ro2H0CU7+YNtDnEuHFtyMkThPq5wFIprztYWubJBiQA4GooyZz/K31uAzB4isnwss5NJUIyedVmrvY1zCXVM/hxeFfE/q+2zpuuh2zl88UI2p3GKYvDiGL/9xY7cJPr1khCQYYlv8Na0WxrUpCJLhlzNV1r0MTMvO2CIc2eesdsxxathjnKK5t1GtM3cFabRNKGxthKxkK9rVPoE+yNvrxT7+fLDSaYeRJvVRi+EHZwY0J0Zbqgg4qEG4vp5P/hGjYfQJTv5iu+bE0ceRUebXrgaF9Q7Sf6QrsXr/3diHFu3eZxqOUPiqG9wJqqLwdlkLMtCirMdQ/MGCoy57uBTU1x8umACwClm/YKMLwGO14wSV8DWbHlNpi/D2DDqEMhD0RfzwJQtE+gEyF2SF+OK8eFRtBen7DaF4PL9sL0TW20wxX1qy64SRPF60BUX7BgchdjW9DaqBMIYhaiHzF5b/Q2GR1/OyCE47Oz2ScUKM8ks+DtiyPujZGIrTg61LIue7sxulXAOUXVz+zxgfscbF4hTH0q3hICDQKKL+XihWS8GXb38HQq4H2UoWVC0K4cQnhlyoujAJ6d3c9Z7ey04+F43scs5biJFBks3xIADYELHgWkV14VSL0VYc2Q1X5RqWVKBqXbAJlNMvULJ6suQp7aQWh+RikR7J3uUKtXNxT9DVFqUK6hOU7JE60SGXLJoqyObJpE05QkNEz+trZIzJRp0yO3042+8cwMrlf6fcLfqRw3btPl+rEEm1fqgHW2eEbxFV3w6tAaBDB8WIoICmzYiggKbNiKCA5TtNAomDz8WIoICmzYiggKbNiKGBBCjtsNst12A8hRJuOXRFD1/JTOqqUQCkWFt10oT1kT9/32eC5xhDPkuonJrZMGlWPXX5eEcdeeZu30hDqiqVMS7VTIl2VYoBv+HeJEQI3OAJo2uyH3XczPp15eW6EBI1nmu99HZbRGk+fReayBW57tT8naj2Ee0+NCZpxgdvs15pkfq+XivNa5zouRE092t9Wb9A8vS7E27x13nXw4AF4xZ/ArxKI94GZ9cnxeye/Z289Zi/cH83lIrxc7vc9/uDahb6j3HENXxV7e70CfOARz4tflcr6yiCC2WlmrOuCcu+78yMtdN4+ZD9Bod1jIrwR7+0eyLsGw9TjX//2bqXA4M6c92rOq23bo6b8oEI+10iYbKHrIX4LpPTHPuzGuQPZ/2exTn93YXiW3W7pG3RnS+DVJoUFU0iHEfo8aSK0CvNMyLzzFb3U4ln2h2OsveTOiv1ezvtbhLAeTw6abm3h6apRh5Tw8YqTL8/iWKrP1s8yl1TR4cXlVRn7vMwybpoVs3/N7y7KffytKiAXowvXYe/QaK+BGQMcCo7/7WxbsZlSLTy1b8rZc7NJKxr5+VSDNnnjJbkQZ7Eh7Xh+bdNoTL2+Wm0TShsbYSsZCva1T1C/3arya04SpJgfIXlqx5KQvTvGMV3p6mWVGiCX56pFpSmda4Ebuxp8Ww0icCqlaxwPhWPic/ZD15kw0OcNAqK0gSxk+9/tCkievsNGa/gYDrALdaijJnQArOm4mMfaKxgCyTk3icTjCFymz8zXHJdI2+HFYFgIAL6/Qm66G7PMdgchnm0YqicYFqsD2e20wGWvNTMQESChCgZvK8CmbyU4t0Hs93RdVAIS6LqiizZ58SW7HUqqG+drWtUucUzdm1YiWdIxF2FZ+v6lUaBFmKMx/la6m5MfKJZh5LtSY+o5z6VrjQ2N+oYNIhBmKLGXFA+FXNr6R8qdriQAns93Una8W+h4dUO4W58Iae1av/WZQtVrXpmdlT4ynvcI1lS0sClBxNmuFTHImmQ4QLCm5IcGNTXHy54AMAKMPt0guvEYe8QisKSr511yVsT8PoMSAo8mQxGDPB1C3HyYSJ3ZIUi1JBQVEHyIw34IBC0x6iXSOtMgP2TWoLTpJzmixANUc2/kWJWES3igTSeBSqKRldXtv9lj7TcC34If4czOtFKxPJazcbothrQ0diKsEv/nVMj0MMbg5Vn+8BJan8oJ9m+xeHp9Lfdrd0n7Mwcrw5eGFJLzW9vbubQubA5dcJEPQnxLFuiRIjKQAnp3dz1nstOPS5jvhxGr1CE8UmKNTvs3BChsEruTXWD7KudTNiprBdtCpJUgKmfq8Vg70CzEkpy9EmckEbH1GEfK+oAZrZgKyWT8nKEEfcjJA95SQxRI6Sy2T50BcPMyU4WEcvzskB5UxDlD2snqHzaL+obj0TMviYAIY04BpojlrBf9k6lRN7S43xHII2XHPjnKoMDxYiggKbNiKCAps2IoYDw54UCiYPPxYiggKbNiKCAps2IowEU8CuoH/X0P/jmBil0dJGTr7lM8lk4ZGBwxU7JYVlPJR7/a1cYQz43oMDWzTBJSlF1xThPH9nOdwqfLEOiJo0yvflUeXY9+iP6FiRkCOTgPHFna5ITZHmG1c2Z5QnYIjFfjexyzluIkL6bmra4GbntHM2+teH5F3o8CWIfPtfLcpkd8sJWQ6OxGLkRwbSne11DxO90hHePRvHbbT92uS9vbvMiz9OxahJMN2/VtJrp7ekNyNNS8U0e802ro4z375ny/w7PUYBf1l4ByuQl/9SfLjWGVt/rKKIDSZWaZ6YJSqdrsp0Ch3D5zPzWZnFYioBL38VK64wq/zOxl+n1bmr32zpH1cs4LXuKnp/6gPD7TnZkyheMhWKTn9sdE6MUW39AZVrRPgXdlcJbfZecacEra4KEUfy9bDZYR/jxvIqQL/U7IwekFxujl/u5yP5697M6UYc6rE4BudAFPGJR8eoHeqlWNheLpjocxtelXks3M2TSXTMfhxftMEO/BwS9umh+zi4P/Jp5tFKo0DCivD9tgxMhYr4YeEAcIjgvybnexsUUiJbgz4OF1qUMmGuLrHIs2efYVvxJPrh3jPmPVRVVM3bdsZw5bG+9OV+77o1FTwkzN+WtNFP6glCVrZwC5os9DvL1DaOdolTQ0l1/8Q6Qut7FrmcCeDoYMKBBoOK2VGAeNYnr4Vt2ZMtDn+/y8g9goWPvx3wVYqr32uWhr8hqEC3mooy5uIKzjuB6cy94pwfK+QDeTxOPujcnQ1zCXZMfhxfhtYgzyuSxumhuzp7l7FyGedQyqESOT/9xp68C+UUf+GfwipoPuCVOloaYkPbh34vd1rENhMvK4+6iLNnke3yVAsB754mtc02hMvb5abRNKGxthKxkK9rVPoE+yNvrxT7+fLDSaYeRJvVRi+EHZwY0J0Zbqgg4qEG4vp5P/hGjYfQJTv5iu+bE0ceRUebXrgaF9Q7Sf6QrsXr/3diHFu3eZxqOUPiqG9wJqqLwdlkLMtCirMdQ/MGCoy57uBTU1x8umACwClm/YKMLwGO14wSV8DWbHlNpi/D2DDqEMhD0RfzwJQtE+gEyF2SF+OK8eFRtBen7DaF4PL9sL0TW20wxX1qy64SRPF60BUX7BgchdjW9DaqBMIYhaiHzF5b/Q2GR1/OyCE47Oz2ScUKM8ks+DtiyPujZGIrTg61LIue7sxulXAOUXVz+zxgfscbF4hTH0q3hICDQKKL+XihWS8GXb38HQq4H2UoWVC0K4cQnhlyoujAJ6d3c9Z7ey04+F43scs5biJFBks3xIADYELHgWkV14VSL0VYc2Q1X5RqWVKBqXbAJlNMvULJ6suQp7aQWh+RikR7J3uUKtXNxT9DVFqUK6hOU7JE60SGXLJoqyObJpE05QkNEz+trZIzJRp0yO3042+8cwMrlf6fcLfqRw3btPl+rEEm1fqgHW2eEbxFV3w6tAaBDB8WIoICmzYiggKbNiKCA5TtNAomDz8WIoICmzYiggKbNiKGBBCjtsNst12A8hRJuOXRFD1/JTOqqUQCkWFt10oT1kT9/32eC5xhDPkuonJrZMGlWPXX5eEcdeeZu30hDqiqVMS7VTIl2VYoBv+HeJEQI3OAJo2uyH3XczPp15eW6EBI1nmu99HZbRGk+fReayBW57tT8naj2Ee0+NCZpxgdvs15pkfq+XivNa5zouRE092t9Wb9A8vS7E27x13nXw4AF4xZ/ArxKI94GZ9cnxeye/Z289Zi/cH83lIrxc7vc9/uDahb6j3HENXxV7e70CfOARz4tflcr6yiCC2WlmrOuCcu+78yMtdN4+ZD9Bod1jIrwR7+0eyLsGw9TjX//2bqXA4M6c92rOq23bo6b8oEI+10iYbKHrIX4LpPTHPuzGuQPZ/2exTn93YXiW3W7pG3RnS+DVJoUFU0iHEfo8aSK0CvNMyLzzFb3U4ln2h2OsveTOiv1ezvtbhLAeTw6abm3h6apRh5Tw8YqTL8/iWKrP1s8yl1TR4cXlVRn7vMwybpoVs3/N7y7KffytKiAXowvXYe/QaK+BGQMcCo7/7WxbsZlSLTy1b8rZc7NJKxr5+VSDNnnjJbkQZ7Eh7Xh+bdNoTL2+Wm0TShsbYSsZCva1T1C/3arya04SpJgfIXlqx5KQvTvGMV3p6mWVGiCX56pFpSmda4Ebuxp8Ww0icCqlaxwPhWPic/ZD15kw0OcNAqK0gSxk+9/tCkievsNGa/gYDrALdaijJnQArOm4mMfaKxgCyTk3icTjCFymz8zXHJdI2+HFYFgIAL6/Qm66G7PMdgchnm0YqicYFqsD2e20wGWvNTMQESChCgZvK8CmbyU4t0HS53RdVAIS6LqiizZ58SW7HUqqG81rbPzUQUzdl2BpJNoxF11YGhP4UjtVlLcp9uA3uKIvIIJf5LtZUWT9yL1rsR27GnsLCvxuOKmbFg+dXtp++b6Z7Rf2pdB0U3e2YdSCpYFJtp/zB+5uv/KZM8HAUZe/p4w+le0L1nqjnCVAxOGsJLXwoWI+SZffqugIMzXHwb4ALQKUP+Ew2v8Y9oENqLQkBo8Nalz8QYf+EHz+MhGcPCFCzT6URoHrIYQ1txQJD0N/GGtYDD814vzOM9QAP2DWtLXnJSsXnQFSca7naJ1vR3igTh19XKKUlsHvv8xs9Vf66IITh9bPWqRQpTnLeLqrLp5miiK0DePrUsi9G8PM5V0C5Rxgo8wJ9HO1eI15afabZEQLNAcrw5eGFJLzW9vbubQubA5dcJEPQnxLFuiRIjKQAnp3dz1nstOPS5jvhxGr1CE8UmKNTvs3BChsEruTXWD7KudTNiprBdtCpJUgKmfq8Vg70CzEkpy9EmckEbH1GEfK+oAZrZgKyWT8nKEEfcjJA95SQxRI6Sricq2RcH+gUKeISg9pyNoBwFtQms/DpzSvJ61Ln7s4R4NFjIC0m7EA0O7483mrC84k7hXA+4vFP+pS++BAomDz8WIoICmzYiggKfVnM6Jg8/FiKCAps2IoICmzYiggyUQ9hKFQ/IMQ+jQegYUrJFrL71c9qZAXGSYZ11qgQVBd2fnNy9PJEM+N6ym0TB5PUYxdVTYNx2CEm8PSEOGMuExLqVUmXZNlem1/yBwCM7g8GEXg2IrFdz+tc3l5MnwCjmGV4+yqot0bNqJg4q4GdnvJVRSgOIR3NYwKl0fRtSDTnld9m5aW5130RStEVifs3XRv1N4pJefSvHHWM/jiXd/bwdyv7HBfcpkO299+JrrXXHdmOegf0ecwvHHu4y0C59pDzK+0h+wonH51wwR26SDXjlSVuPzKOoLVazKh34Ju+7fmYyKh3T59PzmB4WsioA/97TTItyS70OReGOZRr8T4zon4bs6rgdavpvSgQD7SXIBohd8haBGo5Mcg97/GAdoIWaxPf3dJXJbfYeoaeJdL390TfhRdKogRFjVZIrQK80zIvPMVvdTiWfaHY6y95M6K/V7O+1uEsB5PDppubeHpqlGHlPDxipMvz+JYqs/WzzKXVNHhxeVVGfu8zDJumhWzf83vLsp9/K0qIBejC9dh79Bor4EZAxwKjv/tbFuxmVItPLVv5PNzs0krGvn5VIM2eeMluRBnsSHteH5t02hMvb5abRNKGxthKxkK9rVPUL/dqvJrThKkmB8heWrHkpC9O8YxXenqZZUaIJfnqkWlKZ1rgRu7GnxbDSJwKqVrHA+FY+Jz9kPXmTDQ5w0CorSBLGT73+0KSJ6+w0Zr+BgOsAt1qKMmdACs6biYx9orGALJOTeJxOMIXKbPzNccl0jb4cVgWAgAvr9Cbrobs8x2ByGebRiqJxgWqwPZ7bTAZa81MxARIKEKBm8rwKZvJTi3QdLndF1UAhLouqKLNnnxJbsdSqob52ta1S5xTN2bViJZ0jEXYVn6/qVRoEWYozH+Vrqbkx8olmHku1Jj6jnPpWuNDY36hg0iEGYosZcUD4Vc2vpHyp2uJACez3dSdrxb6Hh1Q7hbnwhp7Vq/9ZlC1WtemZ2VPjKe9wjWVLSwKUHE2a4VMciaZDhAsKbkhwY1NcfLngAwAow+3SC68Rh7xCKwpKvnXXJWxPw+gxICjyZDEYM8HULcfJhIndkhSLUkFBUQfIjDfggELTHqJdI60yA/ZNagtOknOaLEA1Rzb+RYlYRLeKBNJ4FKopGV1e2/2WPtNwLfgh/hzM60UrE8lrNxui2GtDR2IqwS/+dUyPQwxuDlWf7wElqfygn2b7F4en0t92t3SfszByvDl4YUkvNb29u5tC5sDl1wkQ9CfEsW6JEiMpACend3PWey049LmO+HEavUITxSYo1O+zcEKGwSu5NdYPsq51M2KmsF20KklSAqZ+rxWDvQLMSSnL0SZyQRsfUYR8r6gBmtmArJZPycoQR9yKzioygx9E7LKqq/rj1w6RFTp4hKD2nI2gHAW1Caz8OnNK8nrUvDMzcJ0UWMgLSbJqvLTPoDg6731CbnJcrdQsk+mkLpwhnqsmIoICmzYiggKbMSG2og8/FiKCAps2IoICmzYiggKbMqQztyGhf9exDgO0KKZSElesvwSzacLTEnHTHTTqJAP8tX+OnDxhAk0oniRqZMHlSVz1pQDmzEX32SuNIQ6JKrTEuoUy5dkkN87X2JFQIxOAUUY9bQjM1AQqVxeXlIgBCPdeCH9baS1iFLld8tsgdye2RFbq1Igk1ejQRsd+OtI9lQGHurm4zu5zYuRHBtKd7XUPE73SEd49G8dttP3a5L29u8yLP07FqEkw3b9W0munt6Q3I01LxTR7zTaujjPfvmfL/Ds9RgF/WXgHK5CX/1J8uNYZW3+soogNJlZpnpglKp2uynQKHcPnM/NZmcViKgEvfxUrrjCr/M7GX6fVuavfbOkfVyzgte4qen/qA8PtOdmTKF4yFYpOf2x0ToxRbf0BlWtE+Bd2Vwlt9l5xpwStrgoRR/L1sNlhH+PG8ipAv9TsjB6QXG6OX+7nI/nr3szpRhzqsTgG50AU8YlHx6gd6qVY2F4umOhzG16VeSzczZNJdMx+HF+0wQ78HBL26aH7OLg/8mnm0UqjQMKK8P22DEyFivhh4QBwiOC/Jud7GxRSIluDPGx3WpQyYa4uscizZ59hW/Ek+uHeN2Xm3XMEzduyhrESqrGUtV8g3vrUlSt8HzaytOH5CsDwV4FceGqMk9xCxg6upYlSAqZ+pEi6jVuWuVC7kWgJsMFmoqsZkMC5Vb2HzvwrqXMdDn/L+rNBkxBgbg8xdSwAHKUGvvIByYE4Cooyz/se24DLC33CvA8totM43E4+hgnsPYzSxI3eGp+21SGPC+zyluDzqhxXvvIp50JKY1GK8f2VzwxdFFr+EsAySOk/oNZ8CxpnMlJDHK03SwRD8vLui2R4U2efkhsxujJvHQR2zUNktM3bc+ZRlKLQdjVvb5qF2gb5SjNehAu6uLLyiaX+S+UrpiOtWta6ENmfaACioUeSqnkRwTiVrYdly1kq4UCbLRd1SCsGHQgI1vQ7yf6PvtXr/1mkndU16Xw5uHM6L0ANZKt7wfQMThqgQP3aZEO2Wg06byBzs1x82iAC8CjkDpKNLyGPlxDai0JAaPDWpc/EGH/hB8/jIRnDwhQs0+lEaB6yGENbcUCQ9DfxhrWAw/NeL8zjPUAD9g1rS15yUrF50BUnGu52idb0d4oE4dfVyilJbB77/MbPVX+uiCE4fWz1qkUKU5y3i6qy6eZooitA3j61LIvRvDzOVdAuUcYKPMCfRztXiNeWn2m2RECzQHK8OXhhSS81vb27m0LmwOXXCRD0Socj0K60E2lAJ6d3e5QWO0049/yoXvsp7OHFBgs30uCzb/KFwSlV1uWOUu7FE2RWL5QqeVGiiXaPFmL9TMMbigyQ5vc/x+7hg0RyxJxYO3eOC3/j2NqBbISPBzWkbYSUtbKeqt8Y9nrUqwG7SDEHPZGXhnB0Tu1MaiN1MU7J07iDtpgIp1KxOise+wt/sDr0+HjKfwIVpnW8U/OJKzYiggKbNiKCAps2IoICn7iDKiYPPxYiggKbNiKCAps2IoIClDQjsucHf9iBAEQ42MSR0c1u9RZ7KIKCUgIi2HtEBHU8f4xd65xhDPleU1O7lMLlOWXXk+D8degJO+0hDikKNMS7FUFl3dXHxs/3+JFQI5OAQQadBfxncpRKFsYluIBY9xmdOHEq+K3R4wYeiuJwZuvmIhap0oineMDpqLg9exJJ1laJyIk45F5UQrRHQ/LupTa9Qz1SE35M28eU/s6gRi2+O8tKNhH197lw7M63smvXp2XTXIH7XkSrzQauwx/9rag7zbr9QIVxOQfYS5DHvtFMdRJsDE/Mp2z2Niea3fSAes0+6oJqHSPoFpmdudUiK4CPNIyLPoMMjxVhrsgWOgwPiT8GbOq/tn3aem7qAgPnGRlZnrIUoPrOnyxz6tuQDkzP9in09/d1NYltWK5BpgS+C9o+4GSzUYlhEiNVmwD/XpJsiw8MnI6GMJ60q0xO7OkvFizqsParV2FE8Ve3vNbOyqX3yG0J+cPjFv4mWqy9DTGGTN4cUFaE4Q7rrXMKUNs4PLfu8knmkMrjMOoP/aWPC0tV2v8y8AI56LAvIspcGyQSmHRejzdLtATfkV4jg3hjZ54x21ELMm8dBHbNQ2S0zdtz5lGUotB2NW9vmoXVO0Urjya00mGqGkJWp8ALuC0T7M0jBk+16VMhiXbP1EpSvNsWuBzJYShwsoJHIwq5QaA5Fle/pO2Zg10OcBAsaf/SpOD/bf+1uyxAHSPmvzII4Hg6ijJnogqOG4CIi53Cu9/bcwN5PE4+6NydDXMJdkx+HF+G1iDPK5LG6aG7OnuXsXIZ51DKoRI5P/3GnrwL5RR/4Z/CKmg+4JU6WhpiQ9uHfI3XWsQ2Ey8rj7qIs2eR7fJUCwHvnia1zTaEy9vlptE0obG2ErGQr2tU+gT7I2+vFPv58sNJph5Em9VGL4QdnBjQnRluqCDioQbi+nk/+EaNh9AlO/mK75sTRx5FR5teuBoX1DtJ/pCuxev/d2IcW7d5nGo5Q+Kob3AmqovB2WQsy0KKsx1D8wYKjLnu4FNTXHy6YALAKWb9gowvAY7XjBJXwNZseU2mL8PYMOoQyEPRF/PAlC0T6ATIXZIX44rx4VG0F6fsNoXg8v2wvRNbbTDFfWrLrhJE8XrQFRfsGByF2Nb0NqoEwhiFqIfMXlv9DYZHX87IITjs7PZJxQozySz4O2LI+6NkYitODrUsi57uzG6VcA5RdXP7PGB+xxsXiFMfSreEgINAoov5eKFZLwZdvfwdCrgfZShZULQrhxCeGXKi6MAnp3dz1nt7LTj4XjexyzluIkUGSzfEgANgQseBaRXXhVIvRVhzZDVflGpZUoGpdsAmU0y9Qsnqy5CntpBaH5GKRHsne5Qq1c3FP0NUWpQrqE5TskTrRIZcsmirI5smkTTlCQ0TP62tkjMlGnTI7fTjb7xzAyuV/p9wt+pHDdu0+X6sQSbV+qAdbZ4RvEVXfDq0BoEMHxYiggKbNiKCAps2IoIDlO00CiYPPxYiggKbNiKCApW0BGSoD/AwAA/wEAAAoBAQEBB4AguTTc6IcsLKcUczgsFwwTDAMJAa0BUwx3IBTvFBQnFCCTDAcUFH8sIBcUFGsMFCsMDEAMbwwMKwz/T0xYDFssIM8UFLMMRxTLDDMsLJ8UFM8MDO8sLP8bFMcgDAwU/0MUICwUKwwzDBQMDCcUDAwU/////////////zsI///////vDP////8DBP//////////////////Mwz/uwz//////////wMEGwgDBP/LDAwM8BIUdoXaPj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+9hPUpXy1ZSr7TaAPZASUCpT+DfgbMcNNueO4R330VgGNwRfnj2apUW6eFbuaM4jGD/xBOf6hNvcDEenI7/qJkT7swgGrQezCAYHYQZWbEsbVz0zqOU6ITxYDpDf8hCE/oFFHhvFGC8hEyHWpiv/yJVsE9DoG9BRkB/QcOBD0NhL0Gk8C9H67pCz7Pz0FCz+MZ/d/o9Pprh3SrMzCt3luz1mNuJiiP//Vr+DS/fers7xy/IJdX5+5NZ2izbsd26Dky7R/+nNihLSbbp8zy5/dwc3hosDMa3avhmeZsv/+SoftrF6tkMgznZOfSYBd05W0vU6quNjK2MDNmT9IUVmKkT7Owru3w9Et48XePqdNP0ONYNCPvszBb6nivd7SpjVfQZNofZDSbq5S9X+SZJMW1gV7dV7YpOfNuDNWABQkZekUUmMiEzNpXug0F8GC3ccceVMF7a6oCpWguEkDaj0wg8Z8WnkIKHx4QezCAatB7MIBq+XfArYUaTf+LIrBD40k/Cv+PEQ46uwUi5EzThMy6P84T9mncPT98iczEyRHA/QUdhH0Mw/0JoEK9H0J9BRPpH4quedru0FTwTD4otT96q/StM7/vbd5bVyJt56Zoj/Vrh3hzfazs7uuc/2CXZxutS6doc3H16Ct48u0+nBl73uwnqA3/8mp3bvhoH25zG52jWGvmLMASl+H76ytkF7GNZ2URX9V39aRtL6rz7fZyte8mz+/Rk9diJHQwV6+ucTJ5L3c/j6lT0ONaF/Oj7jMwazlv73b0KU0Q5X/YYKQ069OU/VW+/leQScTZn1moEb0Kmbq8DR2X4wIUUiJFoDdD3f3HAX6j1cF7TAHWeScovaqf47v2oo4g1jYMu68oLdWuszSqkHswgGrQeysPuaVAF56rISreSfb7vvddZ5aUq1AZsN0e9bcp6ss7j50q2b+L/BPEvQgfgz0aAz0GB8B9BhuAyRHA/QUxKMqLMYvM/5MMEXR+aTT6f+r0a/Qu7rveWxZirmZ/qI/1LDgT8r1rrPBcG/7f12cuS2dqC3Mxdmn48uetPpwaHyzzp6fNcmp/dzD4aS/zG3Pd4tglrGeAEqI/u+sqZDHLd+blUWBWtI+k7S/rLfYyN3Zups/Rk0/V4iT0cC/tT3Bzua/2z6lb05BjWnPj71fxcGs5sfazO2nMkSTaoOQvtKuU//1EqSiVZ3EFAHAbNb0dFlSgfQWOlojeM2uyhCNp8+N5XH68NL7Ncs2p127xZba0hNlMhNqPTCDUFq+bkVpYPQHZQb6KhJiBvoqGZdb8/7BMN2ewt/+YZzSHNPPLcoLp5Ps92vXTdvUlAloRx6H//EdSw70Sw/0FlUR9FIG9BooDvQgWBD04qEeKzk0JPaqDTSy+KKe1Oqt06/tz7+9eG1dkP+5maE/X9Sw38j2sI2zwXL8flyPm7gunafOx9ovpuTLtPmudGGFsJuery3LpN7D3eGlv8xvdolhr5mw//5Kh+6sqp+KxjKdkT9FglXVlLTDLqq12cjYwM2ZP0lOXYeUztDEvrjEzuPPutw+pU+fQIhmzo+5zMKfqubD3s+oLq9EkWCBkNOer1P1/0qyffHsv6dWLRdPhGTWA+ebl/Utp426D+tm27aP6jo9EHnfV/TOPxk6TtMAxaurqw8MiziDDu5dKRbnfeveD91ENGUG+ioSuolkLVo6calNwEy+xdYayVATJfglkmX5ABk/GDxEy3iLXKVO/m/xeQz0GB8B9BhuAyRHA/QUdhH0Mw/0JpOkK7lK6+RTZxL6d/ih063rsNGqzcLAz3huWZC1l56iP9ayXeHJ96yzvHGf/IFYnLctr5ihzMPZpeSey7T6cmGEL7KfoDbL/6Pew9+lvcxebXeOaJdusP5LiP7vrKmQ3sYvnZFGhFkf1JS0v6m1PdfJ2bybP0efUF+IlM27u7+3xdLmwd4+v6VRQY5h0M6MvMzCrObHfdvOpS5Ck2l9f4vTrVRP9AqRNdoNWd1seRg/UgNsVwTPWUp6Q4x5oEvWgl3BnpdTJl3qz0MdYdUq5TdIPbJEErrdavm1fx5iBgpHTWl0yQ8EEZUBaOzCAYHYQZWbEsbVz0zqOU6ITxYDpDf8hCE/oFFHhvFGC8hEyHWpiv/yJVsE9DoG9BRkB/QcOBD0NhL0Gk8C9H67pCz7Pz0FCz+MZ/d/o9Pprh3SrMzCt3luz1mNuJiiP//Vr+DS/fers7xy/IJdX5+5NZ2izbsd26Dky7R/+nNihLSbbp8zy5/dwc3hosDMa3avhmeZsv/+SoftrF6tkMgznZOfSYBd05W0vU6quNjK2MDNmT9IUVmKkT7Owru3w9Et48XePqdNP0ONYNCPvszBb6nivd7SpjVfQZNofZDSbq5S9X+SZJMW1gV7dV7YpOfNuDNWABQkZekUUmMiEzNpXug0F8GC3ccceVMF7a6oCpWguEkDaj0wg8Z8WnkIKHx4QezCAatB7MIBq+XfArYUaTf+LIrBD40k/Cv+PEQ46uwUi5EzThMy6P84T9mncPT98iczEyRHA/QUdhH0Mw/0JoEK9H0J9BRPpH4quedru0FTwTD4otT96q/StM7/vbd5bVyJt56Zoj/Vrh3hzfazs7uuc/2CXZxutS6doc3H16Ct48u0+nBl73uwnqA3/8mp3bvhoH25zG52jWGvmLMASl+H76ytkF7GNZ2URX9V39aRtL6rz7fZyte8mz+/Rk9diJHQwV6+ucTJ5L3c/j6lT0ONaF/Oj7jMwazlv73b0KU0Q5X/YYKQ069OU/VW+/leQScTZn1moEb0Kmbq8DR2X4wIUUiJFoDdD3f3HAX6j1cF7TAHWeScovaqf47v2oo4g1jYMu68oLdWuszSqkHswgGrQeysPuaVAF56rISreSfb7vvddZ5aUq1AZsN0e9bcp6ss7j50q2b+L/BPEvQgfgz0aAz0GB8B9BhuAyRHA/QUxKMqLMYvM/5MMEXR+aTT6f+r0a/Qu7rveWxZirmZ/qI/1LDgT8r1rrPBcG/7f12cuS2dqC3Mxdmn48uetPpwaHyzzp6fNcmp/dzD4aS/zG3Pd4tglrGeAEqI/u+sqZDHLd+blUWBWtI+k7S/rLfYyN3Zups/Rk0/V4iT0cC/tT3Bzua/2z6lb05BjWnPj71fxcGs5sfazO2nMkSTaoOQvtKuU//27L+PAAAAAP8PAAAAAAAAAAAAAAEAgD8M"
+        }
+    ]
+}

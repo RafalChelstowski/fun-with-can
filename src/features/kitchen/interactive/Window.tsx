@@ -2,33 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
 import { Triplet, useBox } from '@react-three/cannon';
-import { useGLTF, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { Mesh } from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
 import { useAchievement } from '../../../api/hooks/useAchievement';
 import { glassMaterial } from '../../../common/materials/materials';
 import { AchievementName } from '../../../types';
-
-type GLTFResult = GLTF & {
-  nodes: {
-    window_bound: THREE.Mesh;
-    Cylinder002: THREE.Mesh;
-    Cylinder002_1: THREE.Mesh;
-    Cylinder002_2: THREE.Mesh;
-  };
-  materials: {
-    elementsMaterial: THREE.MeshStandardMaterial;
-    glassMaterial: THREE.MeshStandardMaterial;
-    whiteMaterial: THREE.MeshStandardMaterial;
-  };
-};
+import { useKitchenGltf } from '../useKitchenGltf';
 
 export function InteractiveWindow(): JSX.Element {
-  const { nodes, materials } = useGLTF('/window.gltf') as unknown as GLTFResult;
-  const texture = useTexture('/elements.jpg');
+  const { nodes, materials, kitchenMaterial } = useKitchenGltf();
 
   const [windowOpen, toggleWindowOpen] = useState(0);
   const { spring } = useSpring({
@@ -86,15 +70,7 @@ export function InteractiveWindow(): JSX.Element {
           addAchievement(AchievementName.WINDOW);
         }}
       >
-        <mesh geometry={nodes.Cylinder002.geometry}>
-          <meshStandardMaterial
-            map={texture}
-            // normalMap={normalMap}
-            // metalnessMap={metalMap}
-            // normalScale={new THREE.Vector2(1, 1)}
-            // roughnessMap={roughnessMap}
-          />
-        </mesh>
+        <mesh geometry={nodes.Cylinder002.geometry}>{kitchenMaterial}</mesh>
         <mesh
           geometry={nodes.Cylinder002_1.geometry}
           material={glassMaterial}
@@ -107,5 +83,3 @@ export function InteractiveWindow(): JSX.Element {
     </group>
   );
 }
-
-useGLTF.preload('/window.gltf');

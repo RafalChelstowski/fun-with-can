@@ -1,31 +1,12 @@
 import { useState } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
-import { useGLTF, useTexture } from '@react-three/drei';
-import * as THREE from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
-type GLTFResult = GLTF & {
-  nodes: {
-    Cube192: THREE.Mesh;
-    Cube192_1: THREE.Mesh;
-    Cube193: THREE.Mesh;
-    Cube193_1: THREE.Mesh;
-  };
-  materials: {
-    elementsMaterial: THREE.MeshStandardMaterial;
-    steelMaterial: THREE.MeshStandardMaterial;
-    blackPlasticMaterial: THREE.MeshStandardMaterial;
-  };
-};
+import { useKitchenGltf } from '../useKitchenGltf';
 
 export function Microwave(): JSX.Element {
-  const { nodes, materials } = useGLTF(
-    '/microvawe.gltf'
-  ) as unknown as GLTFResult;
-
-  const texture = useTexture('/elements.jpg');
+  const { nodes, materials, kitchenMaterial } = useKitchenGltf();
 
   const [microwaveOpen, toggleMicrowaveOpen] = useState(0);
   const { spring } = useSpring({
@@ -35,17 +16,9 @@ export function Microwave(): JSX.Element {
   const rotation = spring.to([0, 1], [0, degToRad(-83)]);
 
   return (
-    <group dispose={null}>
+    <>
       <group position={[-2.76, 0.85, -3.42]}>
-        <mesh geometry={nodes.Cube192.geometry}>
-          <meshStandardMaterial
-            map={texture}
-            // normalMap={normalMap}
-            // metalnessMap={metalMap}
-            // normalScale={new THREE.Vector2(1, 1)}
-            // roughnessMap={roughnessMap}
-          />
-        </mesh>
+        <mesh geometry={nodes.Cube192.geometry}>{kitchenMaterial}</mesh>
         <mesh
           geometry={nodes.Cube192_1.geometry}
           material={materials.steelMaterial}
@@ -61,25 +34,14 @@ export function Microwave(): JSX.Element {
           }
 
           toggleMicrowaveOpen(Number(!microwaveOpen));
-          // addAchievement(AchievementName.TEST);
         }}
       >
-        <mesh geometry={nodes.Cube193.geometry}>
-          <meshStandardMaterial
-            map={texture}
-            // normalMap={normalMap}
-            // metalnessMap={metalMap}
-            // normalScale={new THREE.Vector2(1, 1)}
-            // roughnessMap={roughnessMap}
-          />
-        </mesh>
+        <mesh geometry={nodes.Cube193.geometry}>{kitchenMaterial}</mesh>
         <mesh
           geometry={nodes.Cube193_1.geometry}
           material={materials.blackPlasticMaterial}
         />
       </a.group>
-    </group>
+    </>
   );
 }
-
-useGLTF.preload('/microvawe.gltf');

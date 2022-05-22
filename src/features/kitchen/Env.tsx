@@ -1,11 +1,6 @@
 import { useGLTF } from '@react-three/drei';
-import * as THREE from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
-type GLTFResult = GLTF & {
-  nodes: Record<string, THREE.Mesh>;
-  materials: Record<string, unknown>;
-};
+import { GLTFResult } from '../../types';
 
 export function Env(): JSX.Element {
   const { nodes } = useGLTF('/env.gltf') as unknown as GLTFResult;

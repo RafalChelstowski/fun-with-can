@@ -1,49 +1,17 @@
 import { useState } from 'react';
 
 import { a, useSpring } from '@react-spring/three';
-import { useGLTF } from '@react-three/drei';
-import * as THREE from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { degToRad } from 'three/src/math/MathUtils';
 
 import { useAchievement } from '../../../api/hooks/useAchievement';
 import { disabledNeonMaterial } from '../../../common/materials/materials';
 import { getState, useStore } from '../../../store/store';
 import { AchievementName } from '../../../types';
-
-type GLTFResult = GLTF & {
-  nodes: {
-    NurbsPath001: THREE.Mesh;
-    NurbsPath002: THREE.Mesh;
-    NurbsPath003: THREE.Mesh;
-    Cube108: THREE.Mesh;
-    Cube109: THREE.Mesh;
-    Cube110: THREE.Mesh;
-    Cube111: THREE.Mesh;
-    Cube112: THREE.Mesh;
-    Cube113: THREE.Mesh;
-    NurbsPath: THREE.Mesh;
-    NurbsPath004: THREE.Mesh;
-    Cube114: THREE.Mesh;
-    NurbsPath005: THREE.Mesh;
-    NurbsPath006: THREE.Mesh;
-    NurbsPath007: THREE.Mesh;
-    Cube115: THREE.Mesh;
-    NurbsPath008: THREE.Mesh;
-    switch_button: THREE.Mesh;
-    switch_container: THREE.Mesh;
-  };
-  materials: {
-    neonMaterialWhite: THREE.MeshStandardMaterial;
-    neonMaterialGreen: THREE.MeshStandardMaterial;
-    neonMaterialPurple: THREE.MeshStandardMaterial;
-    blackPlasticMaterial: THREE.MeshStandardMaterial;
-    whiteMaterial: THREE.MeshStandardMaterial;
-  };
-};
+import { useKitchenGltf } from '../useKitchenGltf';
 
 export function Neon(): JSX.Element {
-  const { nodes, materials } = useGLTF('/neon.gltf') as unknown as GLTFResult;
+  const { nodes, materials } = useKitchenGltf();
+
   const neonUnlocked = useStore((state) => state.achievements.neon);
   const [neonOn, toggleNeonOn] = useState(0);
   const { spring } = useSpring({
@@ -161,5 +129,3 @@ export function Neon(): JSX.Element {
     </>
   );
 }
-
-useGLTF.preload('/neon.gltf');

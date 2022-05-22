@@ -1,13 +1,8 @@
 import { Triplet, useBox, useCylinder } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import { Mesh } from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
-type GLTFResult = GLTF & {
-  nodes: Record<string, THREE.Mesh>;
-  materials: Record<string, unknown>;
-};
+import { GLTFResult } from '../../types';
 
 function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
   const { position, geometry, scale, rotation } = mesh;
@@ -18,7 +13,7 @@ function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
     box.max.z - box.min.z,
   ];
 
-  const [ref] = useBox<Mesh>(() => ({
+  const [ref] = useBox<THREE.Mesh>(() => ({
     type: 'Static',
     position: [...position.toArray()],
     args: dimensions,
@@ -45,7 +40,7 @@ function CylinderBoundary({ mesh }: { mesh: THREE.Mesh }) {
   const height = box.max.y - box.min.y;
   const { position, geometry, scale } = mesh;
 
-  const [ref] = useCylinder<Mesh>(() => ({
+  const [ref] = useCylinder<THREE.Mesh>(() => ({
     type: 'Static',
     position: [...position.toArray()],
     args: [radius, radius, height, 16],
