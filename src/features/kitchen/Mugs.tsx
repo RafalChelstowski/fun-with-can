@@ -6,15 +6,9 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { InstancedMesh } from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { getState, setState } from '../../store/store';
-import { PlayerStatus } from '../../types';
-
-type GLTFResult = GLTF & {
-  nodes: Record<string, THREE.Mesh>;
-  materials: Record<string, THREE.MeshStandardMaterial>;
-};
+import { GLTFResult, PlayerStatus } from '../../types';
 
 interface Props {
   initialPosition: Triplet;

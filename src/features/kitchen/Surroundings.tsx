@@ -1,27 +1,6 @@
 import { useGLTF } from '@react-three/drei';
-import * as THREE from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
-type GLTFResult = GLTF & {
-  nodes: {
-    tree: THREE.Mesh;
-    leaves: THREE.Mesh;
-    tree001: THREE.Mesh;
-    leaves001: THREE.Mesh;
-    Cube046: THREE.Mesh;
-    Cube047: THREE.Mesh;
-    Plane: THREE.Mesh;
-    Plane016: THREE.Mesh;
-  };
-  materials: {
-    treeMAterial: THREE.MeshStandardMaterial;
-    leavesMaterial: THREE.MeshStandardMaterial;
-    fenceMaterial: THREE.MeshStandardMaterial;
-    parkingMaterial: THREE.MeshStandardMaterial;
-    outerPlaneMaterial: THREE.MeshStandardMaterial;
-    grassMaterial: THREE.MeshStandardMaterial;
-  };
-};
+import { GLTFResult } from '../../types';
 
 export function Surroundings(): JSX.Element {
   const { nodes, materials } = useGLTF(
