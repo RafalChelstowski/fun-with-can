@@ -4,9 +4,12 @@ import * as THREE from 'three';
 
 import { GLTFResult } from '../../types';
 
+const tBox = new THREE.Box3();
+const material = new THREE.MeshBasicMaterial({ visible: false });
+
 function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
   const { position, geometry, scale, rotation } = mesh;
-  const box = new THREE.Box3().setFromObject(mesh);
+  const box = tBox.setFromObject(mesh);
   const dimensions: Triplet = [
     rotation.y === 0 ? box.max.x - box.min.x : (box.max.x - box.min.x) / 2,
     box.max.y - box.min.y,
@@ -28,14 +31,12 @@ function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
   }));
 
   return (
-    <mesh ref={ref} geometry={geometry} scale={scale}>
-      <meshBasicMaterial visible={false} />
-    </mesh>
+    <mesh ref={ref} geometry={geometry} material={material} scale={scale} />
   );
 }
 
 function CylinderBoundary({ mesh }: { mesh: THREE.Mesh }) {
-  const box = new THREE.Box3().setFromObject(mesh);
+  const box = tBox.setFromObject(mesh);
   const radius = (box.max.x - box.min.x) / 2;
   const height = box.max.y - box.min.y;
   const { position, geometry, scale } = mesh;
@@ -47,9 +48,7 @@ function CylinderBoundary({ mesh }: { mesh: THREE.Mesh }) {
   }));
 
   return (
-    <mesh ref={ref} geometry={geometry} scale={scale}>
-      <meshBasicMaterial visible={false} />
-    </mesh>
+    <mesh ref={ref} geometry={geometry} material={material} scale={scale} />
   );
 }
 

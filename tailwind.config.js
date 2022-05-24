@@ -7,17 +7,6 @@ module.exports = {
         tViolet: '#6d3979',
         tGreen: '#75ab4f',
       },
-      // fontFamily: {
-      //   sans: [
-      //     'Nunito Sans',
-      //     'Lato',
-      //     'Arial',
-      //     'sans-serif',
-      //     'Lato',
-      //     'Arial',
-      //     'sans-serif',
-      //   ],
-      // },
     },
   },
   variants: {

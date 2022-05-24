@@ -20,6 +20,9 @@ const grinderPosition: Triplet = [2.49, 0.98, -5.52];
 const targetRotation = degToRad(-60);
 const grinderRotation = degToRad(-41);
 
+const zCamVec = new THREE.Vector3();
+const rotationDirection = new THREE.Vector3();
+
 export function Express(): JSX.Element {
   const { nodes, kitchenMaterial } = useKitchenGltf();
 
@@ -122,7 +125,7 @@ export function Express(): JSX.Element {
     }
   });
 
-  const rotationDirection = new THREE.Vector3();
+  // const rotationDirection = new THREE.Vector3();
 
   useFrame(() => {
     if (gripStatus.current === InteractiveObjectStatus.ATTACHED_EXPRESS) {
@@ -138,7 +141,7 @@ export function Express(): JSX.Element {
     }
 
     if (gripStatus.current === InteractiveObjectStatus.PICKED) {
-      const zCamVec = new THREE.Vector3(0.15, -0.15, -0.3);
+      zCamVec.set(0.15, -0.15, -0.3);
       const playerPosition = camera.localToWorld(zCamVec);
       camera.getWorldDirection(rotationDirection);
       const theta = Math.atan2(rotationDirection.x, rotationDirection.z);

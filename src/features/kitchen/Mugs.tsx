@@ -21,6 +21,9 @@ interface Props {
   rowModifier?: number;
 }
 
+const zCamVec = new THREE.Vector3();
+const rotationDirection = new THREE.Vector3();
+
 export function Mugs({
   initialPosition,
   objName,
@@ -138,9 +141,6 @@ export function Mugs({
       }
     }
   });
-
-  const zCamVec = new THREE.Vector3();
-  const rotationDirection = new THREE.Vector3();
 
   useFrame(() => {
     if (instanceId.current !== undefined) {

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { useEffectOnce, useEvent } from 'react-use';
 
 import { Triplet, useBox } from '@react-three/cannon';
@@ -45,6 +45,14 @@ export function Player(): JSX.Element {
     type: 'Dynamic',
     position: INITIAL_POSITION,
   }));
+
+  useLayoutEffect(() => {
+    if (!controlsRef.current?.isLocked) {
+      camera.position.set(0, 1.5, 0);
+      camera.lookAt(-3, 1, -8);
+      camera.updateProjectionMatrix();
+    }
+  }, [camera]);
 
   useEffect(() => {
     if (controlsRef.current?.isLocked) {
