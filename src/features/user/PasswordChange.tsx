@@ -37,10 +37,11 @@ export function PasswordChangeForm(): JSX.Element {
   };
 
   return (
-    <div className="mt-10">
-      <h1>Password change:</h1>
+    <>
+      <div className="font-semibold text-lg">Password change:</div>
       <form onSubmit={onSubmit}>
         <input
+          className="text-input"
           name="passwordOne"
           type="password"
           value={passwordOne}
@@ -49,7 +50,9 @@ export function PasswordChangeForm(): JSX.Element {
           }
           placeholder="Password"
         />
+        <br />
         <input
+          className="text-input"
           name="passwordTwo"
           type="password"
           value={passwordTwo}
@@ -58,15 +61,16 @@ export function PasswordChangeForm(): JSX.Element {
           }
           placeholder="Confirm Password"
         />
-
-        <button disabled={isInvalid} type="submit">
-          Change Password
-        </button>
+        <br />
+        <div className="my-6 w-full justify-center flex place-content-center">
+          <button className="cta" disabled={isInvalid} type="submit">
+            Change Password
+          </button>
+        </div>
 
         {error && <p>{error.message}</p>}
         {isPasswordChangeMessageVisible && <p>successfully changed password</p>}
       </form>
-      {JSON.stringify(formState)}
-    </div>
+    </>
   );
 }

@@ -1,14 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: 'Nunito Sans', sans-serif;
+    @apply text-white;
+  }
+}
+
 @layer components {
-  .btn-temp {
-    @apply mb-1 py-2 px-4 bg-blue-500 text-white text-xs font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  .nav-link {
+    @apply text-white text-4xl font-semibold block w-full py-2 ;
   }
 
-  .btn-disabled {
-    @apply mb-1 py-2 px-4 bg-gray-400 text-white text-xs font-semibold rounded-lg shadow-md focus:outline-none cursor-not-allowed;
+  .keyboard-btn {
+    @apply flex place-items-center place-content-center w-11 h-11 m-1 bg-white text-gray-600 rounded font-semibold shadow-lg;
+  }
+
+  .action-description {
+    @apply flex place-content-center font-black text-xl mt-2;
+  }
+
+  .cta {
+    @apply bg-tGreen font-semibold text-2xl px-10 py-3 tracking-wider rounded;
+  }
+
+  .text-input {
+    @apply w-80 text-black p-4 my-4 rounded-lg;
   }
 }
 

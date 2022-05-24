@@ -3,26 +3,27 @@ import { useEffect, useState } from 'react';
 import { auth } from '../user';
 
 export interface UseUser {
-  uid: string | undefined;
+  uid?: string;
+  displayName?: string | null;
 }
 
 export function useUser(): UseUser {
-  const [uid, setUid] = useState(() => auth.currentUser?.uid);
+  const [user, setUser] = useState(() => auth.currentUser);
 
   useEffect(() => {
-    const firebaseAuthListener = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUid(user.uid);
+    const firebaseAuthListener = auth.onAuthStateChanged((u) => {
+      if (u) {
+        setUser(u);
       } else {
-        setUid(undefined);
+        setUser(null);
       }
     });
 
     return () => {
       firebaseAuthListener();
-      setUid(undefined);
+      setUser(null);
     };
   }, []);
 
-  return { uid };
+  return { uid: user?.uid, displayName: user?.displayName };
 }
