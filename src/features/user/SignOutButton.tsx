@@ -7,6 +7,7 @@ export function SignOutButton({ route }: { route: string }): JSX.Element {
 
   return (
     <button
+      className="nav-link flex"
       type="button"
       onClick={async () => {
         try {

@@ -36,6 +36,7 @@ function SignInForm(): JSX.Element {
     <>
       <form onSubmit={onSubmit}>
         <input
+          className="text-input"
           name="email"
           type="email"
           value={email}
@@ -44,7 +45,9 @@ function SignInForm(): JSX.Element {
           }
           placeholder="e-mail"
         />
+        <br />
         <input
+          className="text-input"
           name="password"
           type="password"
           value={password}
@@ -53,22 +56,25 @@ function SignInForm(): JSX.Element {
           }
           placeholder="Password"
         />
+        <br />
+        <div className="my-6 w-full justify-center flex place-content-center">
+          <button className="cta" disabled={isInvalid} type="submit">
+            Log In
+          </button>
+        </div>
 
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
-        {error && <p>{error.message}</p>}
+        <div>{error && <p>{error.message}</p>}</div>
       </form>
-      {JSON.stringify(formState)}
     </>
   );
 }
 
 export function SignInPage(): JSX.Element {
   return (
-    <div style={{ marginTop: '300px' }}>
-      <h1>sign in:</h1>
+    <div className="flex flex-col w-full place-content-center place-items-center">
+      <div className="font-semibold text-lg">
+        Log in to an existing account:
+      </div>
       <SignInForm />
       <PasswordForgetLink />
       <SignUpPageLink />

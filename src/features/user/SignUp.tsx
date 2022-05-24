@@ -71,6 +71,7 @@ function SignUpForm(): JSX.Element {
     <>
       <form onSubmit={onSubmit}>
         <input
+          className="text-input"
           name="username"
           type="text"
           value={username}
@@ -79,7 +80,9 @@ function SignUpForm(): JSX.Element {
           }
           placeholder="Username"
         />
+        <br />
         <input
+          className="text-input"
           name="email"
           type="email"
           value={email}
@@ -88,7 +91,9 @@ function SignUpForm(): JSX.Element {
           }
           placeholder="e-mail"
         />
+        <br />
         <input
+          className="text-input"
           name="passwordOne"
           type="password"
           value={passwordOne}
@@ -97,7 +102,9 @@ function SignUpForm(): JSX.Element {
           }
           placeholder="Password"
         />
+        <br />
         <input
+          className="text-input"
           name="passwordTwo"
           type="password"
           value={passwordTwo}
@@ -106,22 +113,23 @@ function SignUpForm(): JSX.Element {
           }
           placeholder="Confirm Password"
         />
+        <br />
+        <div className="my-6 w-full justify-center flex place-content-center">
+          <button className="cta" disabled={isInvalid} type="submit">
+            Sign Up
+          </button>
+        </div>
 
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
-
-        {error && <p>{error.message}</p>}
+        <div>{error && <p>{error.message}</p>}</div>
       </form>
-      {JSON.stringify(formState)}
     </>
   );
 }
 
 export function SignUpPage(): JSX.Element {
   return (
-    <div style={{ marginTop: '300px' }}>
-      <h1>sign up:</h1>
+    <div className="flex flex-col w-full place-content-center place-items-center">
+      <div className="font-semibold text-lg">Create new account:</div>
       <SignUpForm />
     </div>
   );
@@ -130,7 +138,7 @@ export function SignUpPage(): JSX.Element {
 export function SignUpPageLink(): JSX.Element {
   return (
     <p>
-      <Link to={routes.SIGN_UP}>Sign Up</Link>
+      <Link to={routes.SIGN_UP}>Create account</Link>
     </p>
   );
 }

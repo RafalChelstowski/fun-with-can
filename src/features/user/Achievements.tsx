@@ -30,20 +30,16 @@ export function Achievements(): JSX.Element {
     }
   );
 
-  if (isFetching) {
-    return <>loading...</>;
-  }
-
-  if (!data || noAchievements) {
+  if (!data || noAchievements || isFetching) {
     return (
-      <div className="flex-col items-center w-2/3 mt-40">
-        No achievements :( You can create an account to get your first one!
+      <div className="flex-col items-center w-full mt-10 font-semibold text-lg">
+        {isFetching ? 'Loading...' : 'No achievements...'}
       </div>
     );
   }
 
   return (
-    <div className="flex-col items-center w-2/3 mt-40">
+    <div className="flex-col items-center w-full my-10 overflow-y-auto">
       {Object.entries(achievements).map(([k], i) => {
         const name = k as AchievementName;
         const { fullName, description } = data[name];
@@ -69,15 +65,15 @@ export function Achievements(): JSX.Element {
               }
             }}
             key={k}
-            className={`flex flex-row ${
-              isNew && uid ? 'bg-yellow-200' : 'bg-white'
+            className={`flex flex-row font-semibold text-lg transition-colors duration-1000 ${
+              isNew && uid ? 'text-tGreen' : 'text-white'
             }`}
           >
-            <div className={`w-1/6 ${cellClassName}`}>
-              {isNew ? 'NEW!' : i + 1}
+            <div className={`w-1/6 ${cellClassName}`}>{`${i + 1}.`}</div>
+            <div className={`w-1/6 font-black ${cellClassName}`}>
+              {fullName}
             </div>
-            <div className={`w-2/6 ${cellClassName}`}>{fullName}</div>
-            <div className={`w-2/6 ${cellClassName}`}>{description}</div>
+            <div className={`w-3/6 ${cellClassName}`}>{description}</div>
             <div className={`w-1/6 ${cellClassName}`}>{date}</div>
           </div>
         );

@@ -37,10 +37,11 @@ export function PasswordForgetForm(): JSX.Element {
   };
 
   return (
-    <div className="mt-10">
-      <h1>Password forget: </h1>
+    <>
+      <div className="font-semibold text-lg">Password forget: </div>
       <form onSubmit={onSubmit}>
         <input
+          className="text-input"
           name="email"
           type="email"
           value={email}
@@ -49,25 +50,25 @@ export function PasswordForgetForm(): JSX.Element {
           }
           placeholder="e-mail"
         />
-
-        <button disabled={isInvalid} type="submit">
-          Reset
-        </button>
+        <br />
+        <div className="my-6 w-full justify-center flex place-content-center">
+          <button className="cta" disabled={isInvalid} type="submit">
+            Reset
+          </button>
+        </div>
 
         {error && <p>{error.message}</p>}
         {isPasswordMessageVisible && (
           <p>password reset was successfully sent</p>
         )}
       </form>
-      {JSON.stringify(formState)}
-    </div>
+    </>
   );
 }
 
 export function PasswordForgetPage(): JSX.Element {
   return (
-    <div style={{ marginTop: '300px' }}>
-      <h1>reset password</h1>
+    <div className="flex flex-col w-full place-content-center place-items-center">
       <PasswordForgetForm />
     </div>
   );

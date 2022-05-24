@@ -14,17 +14,23 @@ export function PointerSpeedSlider(): JSX.Element {
   }, [value]);
 
   return (
-    <div className="flex x w-80 h-10 z-50 bg-gray-50">
-      <input
-        type="range"
-        min="0.01"
-        max="1"
-        step="0.01"
-        value={value}
-        id="pointerSpeedSlider"
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <p className="ml-4">sensitivity: {value}</p>
+    <div className="flex place-content-center place-items-center">
+      <div className="bg-white rounded-lg px-6 py-3">
+        <input
+          className="w-80"
+          type="range"
+          min="0.01"
+          max="1"
+          step="0.01"
+          value={value}
+          id="pointerSpeedSlider"
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </div>
+
+      <div className="font-black text-3xl ml-14">
+        controls sensitivity: {value}
+      </div>
     </div>
   );
 }

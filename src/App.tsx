@@ -54,7 +54,7 @@ export function App(): JSX.Element {
   const ContextBridge = useContextBridge(window.ReactQueryClientContext);
 
   return (
-    <main className="w-screen h-screen overflow-hidden">
+    <div className="w-screen h-screen overflow-hidden">
       <Canvas
         gl={{
           powerPreference: 'high-performance',
@@ -106,6 +106,6 @@ export function App(): JSX.Element {
       <UserMenus />
       <Crosshair />
       <ToastContainer theme="light" autoClose={3000} />
-    </main>
+    </div>
   );
 }
