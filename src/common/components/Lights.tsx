@@ -10,7 +10,7 @@ export function Lights(): JSX.Element {
   const targetObject = useMemo(() => new THREE.Object3D(), []);
 
   useEffect(() => {
-    targetObject.position.set(10, 0, 2);
+    targetObject.position.set(12, 0, 4);
     scene.add(targetObject);
   }, [scene, targetObject]);
 

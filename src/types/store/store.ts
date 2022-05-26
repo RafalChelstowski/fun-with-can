@@ -47,7 +47,7 @@ export type AchievementPayload = {
 
 export type Achievements = Partial<Record<AchievementName, AchievementPayload>>;
 
-interface Letters {
+export interface InteractiveLetters {
   t?: boolean;
   o?: boolean;
   u?: boolean;
@@ -56,7 +56,7 @@ interface Letters {
 
 export type State = {
   achievements: Achievements;
-  letters: Letters;
+  letters: InteractiveLetters;
   setAchievement: (name: AchievementName, payload: AchievementPayload) => void;
   setAchievements: (obj: Achievements) => void;
   playerStatus: PlayerStatus | null;
