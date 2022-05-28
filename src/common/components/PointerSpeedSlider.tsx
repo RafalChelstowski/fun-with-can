@@ -15,6 +15,13 @@ export function PointerSpeedSlider(): JSX.Element {
 
   return (
     <div className="flex place-content-center place-items-center">
+      <div className="font-black text-3xl mr-14">
+        <label htmlFor="pointerSpeedSlider">
+          controls sensitivity:
+          <span className="pl-2">{Number(value).toFixed(2)}</span>
+        </label>
+      </div>
+
       <div className="bg-white rounded-lg px-6 py-3">
         <input
           className="w-80"
@@ -26,10 +33,6 @@ export function PointerSpeedSlider(): JSX.Element {
           id="pointerSpeedSlider"
           onChange={(e) => setValue(e.target.value)}
         />
-      </div>
-
-      <div className="font-black text-3xl ml-14">
-        controls sensitivity: {value}
       </div>
     </div>
   );
