@@ -8,7 +8,7 @@ export function KitchenModel(): JSX.Element {
   const { kitchenMaterial } = useKitchenGltf();
 
   return (
-    <>
+    <group name="nonInteractive">
       {Object.entries(nodes)
         .filter(
           (mesh) =>
@@ -25,12 +25,15 @@ export function KitchenModel(): JSX.Element {
               geometry={mesh.geometry}
               scale={mesh.scale}
               name={`area-${mesh.name}`}
+              // onClick={(e) => {
+              //   e.stopPropagation();
+              // }}
             >
               {kitchenMaterial}
             </mesh>
           );
         })}
-    </>
+    </group>
   );
 }
 

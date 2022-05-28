@@ -4,6 +4,7 @@ import { useEvent } from 'react-use';
 import { Triplet, useBox } from '@react-three/cannon';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
+import first from 'lodash/first';
 import * as THREE from 'three';
 import { InstancedMesh } from 'three';
 
@@ -80,32 +81,40 @@ export function Mugs({
 
   useEvent('click', () => {
     const { playerStatus } = getState();
-    const x = raycaster
-      .intersectObjects(scene.children)
-      .filter(
-        (o) =>
-          o.object.name.includes('area') ||
-          o.object.name.includes('interactive')
-      )?.[0];
 
-    if (x?.object.name.includes('interactive')) {
-      if (instanceId.current || playerStatus === PlayerStatus.PICKED) {
+    if (playerStatus === PlayerStatus.PICKED) {
+      const x = raycaster.intersectObjects(
+        scene.getObjectByName('nonInteractive')?.children || scene.children
+      );
+
+      if (!x[0]) {
         return;
       }
 
-      if (x.distance < 2) {
-        instanceId.current = x.instanceId;
-        setState({ playerStatus: PlayerStatus.PICKED });
-
-        return;
+      if (instanceId.current !== undefined && x[0].distance < 2) {
+        const { point } = x[0];
+        api
+          .at(instanceId.current)
+          .position.set(point.x, point.y + 0.2, point.z);
+        instanceId.current = undefined;
+        setState({ playerStatus: null });
       }
+
+      return;
     }
 
-    if (instanceId.current !== undefined && x && x.distance < 2) {
-      const { point } = x;
-      api.at(instanceId.current).position.set(point.x, point.y + 0.2, point.z);
-      instanceId.current = undefined;
-      setState({ playerStatus: null });
+    if (playerStatus === null) {
+      const y = scene.getObjectByName('mug');
+      const x = raycaster.intersectObjects(y?.children || scene.children);
+
+      if (!x[0]) {
+        return;
+      }
+
+      if (x[0].distance < 2) {
+        instanceId.current = x[0].instanceId;
+        setState({ playerStatus: PlayerStatus.PICKED });
+      }
     }
   });
 
@@ -119,7 +128,7 @@ export function Mugs({
         const camPosition = new THREE.Vector3();
         const position = camera.getWorldPosition(camPosition);
         const target = new THREE.Vector3();
-        const targetMesh = raycaster.intersectObjects(scene.children)?.[0];
+        const targetMesh = first(raycaster.intersectObjects(scene.children));
 
         if (targetMesh) {
           const distance = position.distanceTo(targetMesh.point);
@@ -159,14 +168,28 @@ export function Mugs({
   });
 
   return (
-    <instancedMesh
-      ref={ref}
-      args={[
-        nodes[geometryName].geometry,
-        customMaterial || materials[materialName],
-        itemsNumber,
-      ]}
-      name={`interactive-${objName}`}
-    />
+    <group name="mug">
+      <instancedMesh
+        ref={ref}
+        args={[
+          nodes[geometryName].geometry,
+          customMaterial || materials[materialName],
+          itemsNumber,
+        ]}
+        name={`${objName}`}
+        // onClick={(e) => {
+        //   e.stopPropagation();
+
+        //   const { playerStatus } = getState();
+
+        //   if (playerStatus === PlayerStatus.PICKED) {
+        //     return;
+        //   }
+
+        //   instanceId.current = e.instanceId;
+        //   setState({ playerStatus: PlayerStatus.PICKED });
+        // }}
+      />
+    </group>
   );
 }

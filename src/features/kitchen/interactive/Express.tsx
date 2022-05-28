@@ -66,66 +66,73 @@ export function Express(): JSX.Element {
   useEvent('click', () => {
     const { playerStatus } = getState();
 
-    const interaction = raycaster
-      .intersectObjects(scene.children)
-      .filter(
-        (o) =>
-          o.object.name.includes('area') ||
-          o.object.name.includes('grip') ||
-          o.object.name.includes('express') ||
-          o.object.name.includes('grinder')
-      )?.[0];
+    if (playerStatus === null) {
+      const x = raycaster.intersectObjects(
+        scene.getObjectByName('grip')?.children || []
+      );
 
-    if (interaction?.object.name.includes('grip')) {
-      if (
-        gripStatus.current === InteractiveObjectStatus.ANIMATED ||
-        playerStatus === PlayerStatus.PICKED
-      ) {
+      if (!x[0]) {
         return;
       }
 
-      if (interaction.distance < 2) {
+      if (
+        x[0].distance < 2 &&
+        gripStatus.current !== InteractiveObjectStatus.ANIMATED
+      ) {
         gripStatus.current = InteractiveObjectStatus.PICKED;
         setState({ playerStatus: PlayerStatus.PICKED });
+      }
+
+      return;
+    }
+
+    if (playerStatus === PlayerStatus.PICKED) {
+      const expressSceneObj = scene.getObjectByName('express')?.children || [];
+      const nonInteractiveSceneObj =
+        scene.getObjectByName('nonInteractive')?.children || [];
+
+      const x = raycaster.intersectObjects([
+        ...expressSceneObj,
+        ...nonInteractiveSceneObj,
+      ]);
+
+      if (
+        x[0] &&
+        x[0].distance < 2 &&
+        x[0].object.name.includes('express') &&
+        gripStatus.current !== undefined
+      ) {
+        gripStatus.current = InteractiveObjectStatus.ANIMATED;
+        setState({ playerStatus: null });
+        setAnimated(true);
 
         return;
       }
-    }
+      if (
+        x[0] &&
+        x[0].distance < 2 &&
+        x[0].object.name.includes('grinder') &&
+        gripStatus.current !== undefined
+      ) {
+        gripStatus.current = InteractiveObjectStatus.ATTACHED_GRINDER;
+        setState({ playerStatus: null });
 
-    if (
-      interaction?.object.name.includes('express') &&
-      playerStatus === PlayerStatus.PICKED
-    ) {
-      gripStatus.current = InteractiveObjectStatus.ANIMATED;
-      setState({ playerStatus: null });
-      setAnimated(true);
+        return;
+      }
 
-      return;
-    }
-
-    if (
-      interaction?.object.name.includes('grinder') &&
-      playerStatus === PlayerStatus.PICKED
-    ) {
-      gripStatus.current = InteractiveObjectStatus.ATTACHED_GRINDER;
-      setState({ playerStatus: null });
-
-      return;
-    }
-
-    if (
-      gripStatus.current === InteractiveObjectStatus.PICKED &&
-      interaction?.distance < 2
-    ) {
-      const { point } = interaction;
-
-      gripStatus.current = undefined;
-      setState({ playerStatus: null });
-      api.position.set(point.x, point.y + 0.2, point.z);
+      if (
+        gripStatus.current === InteractiveObjectStatus.PICKED &&
+        x[0] &&
+        x[0].distance < 2 &&
+        x[0].object.name.includes('area')
+      ) {
+        const { point } = x[0];
+        api.position.set(point.x, point.y + 0.2, point.z);
+        gripStatus.current = undefined;
+        setState({ playerStatus: null });
+      }
     }
   });
-
-  // const rotationDirection = new THREE.Vector3();
 
   useFrame(() => {
     if (gripStatus.current === InteractiveObjectStatus.ATTACHED_EXPRESS) {
@@ -160,7 +167,7 @@ export function Express(): JSX.Element {
 
   return (
     <group dispose={null}>
-      <a.group ref={ref}>
+      <a.group name="grip" ref={ref}>
         <mesh
           geometry={nodes.NurbsPath011.geometry}
           material={nodes.NurbsPath011.material}
@@ -169,28 +176,40 @@ export function Express(): JSX.Element {
           geometry={nodes.NurbsPath011_1.geometry}
           material={nodes.NurbsPath011_1.material}
         />
-        <mesh name="grip" visible={false}>
+        <mesh visible={false}>
           <meshStandardMaterial />
           <boxBufferGeometry args={[0.1, 0.15, 0.3]} />
         </mesh>
       </a.group>
-      <mesh
-        geometry={nodes.buttons.geometry}
-        material={nodes.buttons.material}
-        position={[1.64, 0.88, -5.5]}
-      />
-      <mesh
-        geometry={nodes.buttons_pressable.geometry}
-        material={nodes.buttons_pressable.material}
-        position={[1.64, 0.88, -5.5]}
-      />
-      <mesh
-        geometry={nodes.bake_express.geometry}
-        position={[1.64, 0.88, -5.5]}
-        name="express"
-      >
-        {kitchenMaterial}
-      </mesh>
+      <group name="express">
+        <mesh
+          geometry={nodes.buttons.geometry}
+          material={nodes.buttons.material}
+          position={[1.64, 0.88, -5.5]}
+          name="express-buttons"
+        />
+        <mesh
+          geometry={nodes.buttons_pressable.geometry}
+          material={nodes.buttons_pressable.material}
+          position={[1.64, 0.88, -5.5]}
+          name="express-button-pressable"
+        />
+        <mesh
+          geometry={nodes.bake_express.geometry}
+          position={[1.64, 0.88, -5.5]}
+          name="express-body"
+        >
+          {kitchenMaterial}
+        </mesh>
+        <mesh
+          geometry={nodes.bake_grinder.geometry}
+          position={[2.52, 1.05, -5.54]}
+          name="grinder-body"
+        >
+          {kitchenMaterial}
+        </mesh>
+      </group>
+
       <mesh
         geometry={nodes.grinderGlass.geometry}
         material={glassMaterial}
@@ -211,13 +230,6 @@ export function Express(): JSX.Element {
         material={nodes.bin.material}
         position={[2.13, 0.85, -5.39]}
       />
-      <mesh
-        geometry={nodes.bake_grinder.geometry}
-        position={[2.52, 1.05, -5.54]}
-        name="grinder"
-      >
-        {kitchenMaterial}
-      </mesh>
       <mesh
         geometry={nodes.coffeeAccesories.geometry}
         material={nodes.coffeeAccesories.material}

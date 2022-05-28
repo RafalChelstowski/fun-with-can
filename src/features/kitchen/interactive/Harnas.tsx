@@ -50,35 +50,42 @@ export function Harnas(): JSX.Element {
   useEvent('click', () => {
     const { playerStatus } = getState();
 
-    const x = raycaster
-      .intersectObjects(scene.children)
-      .filter(
-        (o) =>
-          o.object.name.includes('harnas_real') ||
-          o.object.name.includes('area')
-      )?.[0];
+    if (playerStatus === null) {
+      const x = raycaster.intersectObjects(
+        scene.getObjectByName('harnas')?.children || []
+      );
 
-    if (x?.object.name.includes('harnas_real')) {
-      if (playerStatus === PlayerStatus.PICKED) {
+      if (!x[0]) {
         return;
       }
-      if (x.distance < 2) {
+
+      if (x[0].distance < 2) {
         harnasStatus.current = InteractiveObjectStatus.PICKED;
         setState({ playerStatus: PlayerStatus.PICKED });
-
-        return;
       }
+
+      return;
     }
 
-    if (
-      harnasStatus.current === InteractiveObjectStatus.PICKED &&
-      x &&
-      x.distance < 2
-    ) {
-      const { point } = x;
-      api.position.set(point.x, point.y + 0.2, point.z);
-      harnasStatus.current = undefined;
-      setState({ playerStatus: null });
+    if (playerStatus === PlayerStatus.PICKED) {
+      const x = raycaster.intersectObjects(
+        scene.getObjectByName('nonInteractive')?.children || scene.children
+      );
+
+      if (!x[0]) {
+        return;
+      }
+
+      if (
+        x[0] &&
+        x[0].distance < 2 &&
+        harnasStatus.current === InteractiveObjectStatus.PICKED
+      ) {
+        const { point } = x[0];
+        api.position.set(point.x, point.y + 0.2, point.z);
+        harnasStatus.current = undefined;
+        setState({ playerStatus: null });
+      }
     }
   });
 
@@ -149,13 +156,15 @@ export function Harnas(): JSX.Element {
 
   return (
     <>
-      <mesh
-        ref={ref}
-        name="harnas_real"
-        material={materials.harnasblue}
-        geometry={nodes.Cylinder.geometry}
-        scale={0.7}
-      />
+      <group name="harnas">
+        <mesh
+          ref={ref}
+          name="harnas_real"
+          material={materials.harnasblue}
+          geometry={nodes.Cylinder.geometry}
+          scale={0.7}
+        />
+      </group>
       <mesh
         ref={dummyRef}
         name="harnas_dummy"
