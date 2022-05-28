@@ -1,8 +1,10 @@
 export enum InteractiveObjectStatus {
   ATTACHED_EXPRESS = 'attachedExpress',
-  ATTACHED_GRINDER = 'attachedGrinder',
   PICKED = 'picked',
   ANIMATED = 'animated',
+  ANIMATED_EXPRESS = 'animatedExpress',
+  ANIMATED_GRINDER = 'animatedGrinder',
+  ANIMATED_ACCESSORIES = 'animatedAccessories',
   DROPPED = 'dropped',
   ON = 'on',
   OFF = 'off',
@@ -11,7 +13,6 @@ export enum InteractiveObjectStatus {
 
 export enum PlayerStatus {
   PICKED = 'picked',
-  // THROWING = 'throwing',
 }
 
 export enum AchievementName {
