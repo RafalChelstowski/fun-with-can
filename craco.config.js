@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const WorkerPlugin = require('worker-plugin');
 
 module.exports = {
   webpack: {
+    plugins: [new WorkerPlugin()],
     resolve: {
       alias: {
         react: path.resolve('./node_modules/react'),
