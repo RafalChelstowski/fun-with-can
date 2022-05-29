@@ -6,6 +6,12 @@ import shallow from 'zustand/shallow';
 import { State } from '../types';
 
 export const initialState = {
+  controls: {
+    controlsUp: false,
+    controlsDown: false,
+    controlsLeft: false,
+    controlsRight: false,
+  },
   letters: {},
   achievements: {},
   playerStatus: null,

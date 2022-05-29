@@ -55,7 +55,15 @@ export interface InteractiveLetters {
   k?: boolean;
 }
 
+export interface Controls {
+  controlsUp: boolean;
+  controlsDown: boolean;
+  controlsLeft: boolean;
+  controlsRight: boolean;
+}
+
 export type State = {
+  controls: Controls;
   achievements: Achievements;
   letters: InteractiveLetters;
   setAchievement: (name: AchievementName, payload: AchievementPayload) => void;

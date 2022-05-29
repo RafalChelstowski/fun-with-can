@@ -8,7 +8,7 @@ import { Mesh } from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
 
 import { useControls } from '../../common/hooks/useControls';
-import { useStore } from '../../store/store';
+import { getState, useStore } from '../../store/store';
 import { ControlsLock } from '../../types';
 
 extend({ PointerLockControls });
@@ -34,14 +34,11 @@ export function Player(): JSX.Element {
   const gl = useThree((state) => state.gl);
   const setEvents = useThree((state) => state.setEvents);
   const get = useThree((state) => state.get);
-
-  const { controlsUp, controlsDown, controlsLeft, controlsRight } =
-    useControls();
-  const isMoving = controlsUp || controlsDown || controlsLeft || controlsRight;
+  useControls();
 
   const [ref, api] = useBox<Mesh>(() => ({
     args: [0.05, 1.2, 0.05],
-    mass: 100,
+    mass: 0,
     type: 'Dynamic',
     position: INITIAL_POSITION,
   }));
@@ -95,7 +92,13 @@ export function Player(): JSX.Element {
     document
   );
   useFrame((state) => {
+    const { controlsDown, controlsUp, controlsLeft, controlsRight } =
+      getState().controls;
+    const isMoving =
+      controlsUp || controlsDown || controlsLeft || controlsRight;
+
     if (ref.current && controlsRef.current?.isLocked) {
+      api.mass.set(3);
       state.camera.position.copy(
         cameraPosition.set(
           ref.current.position.x,
@@ -124,6 +127,7 @@ export function Player(): JSX.Element {
     } else {
       api.velocity.set(0, 0, 0);
       api.rotation.set(0, 0, 0);
+      api.mass.set(0);
     }
   });
 

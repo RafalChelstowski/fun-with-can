@@ -19,7 +19,7 @@ const grinderPosition: Triplet = [2.49, 0.98, -5.52];
 const expressRotation: Triplet = [0, degToRad(-60), 0];
 const grinderRotation: Triplet = [0, degToRad(-41), 0];
 
-const grinderTrayPosition: Triplet = [2.51, 0.89, -5.3];
+const grinderTrayPosition: Triplet = [2.51, 0.91, -5.3];
 const tamperPosition: Triplet = [2.49, 0.91, -5.33];
 
 const zCamVec = new THREE.Vector3();
@@ -34,13 +34,16 @@ export function Express(): JSX.Element {
   const [animated, setAnimated] = useState<
     'express' | 'grinder' | 'accessories' | null
   >(null);
+  const [coffeeState, setCoffeeState] = useState<'grinded' | 'tempered' | null>(
+    null
+  );
 
   const gripStatus = useRef<InteractiveObjectStatus | undefined>(
     InteractiveObjectStatus.ATTACHED_EXPRESS
   );
 
   const [ref, api] = useBox<THREE.Group>(() => ({
-    mass: 3,
+    mass: 0,
     args: [0.1, 0.1, 0.2],
     position: initialPosition,
     allowSleep: false,
@@ -85,6 +88,9 @@ export function Express(): JSX.Element {
 
           setAnimated(null);
           gripStatus.current = InteractiveObjectStatus.ATTACHED_EXPRESS;
+          api.position.set(...initialPosition);
+          api.rotation.set(0, 0, 0);
+          api.mass.set(0);
         }
       },
       from: {
@@ -97,12 +103,18 @@ export function Express(): JSX.Element {
   const { rotation: gripGrinderRotation, position: gripGrinderPosition } =
     useSpring({
       to: async (next) => {
+        const tempGripPos = structuredClone(gripPosRef.current);
         if (animated === 'grinder') {
           await next({ rotation: grinderRotation, position: grinderPosition });
+          await new Promise((res) => {
+            setTimeout(res, 2000);
+          });
+          await next({ position: tempGripPos });
 
           setAnimated(null);
           gripStatus.current = InteractiveObjectStatus.PICKED;
           setState({ playerStatus: PlayerStatus.PICKED });
+          setCoffeeState('grinded');
         }
       },
       from: {
@@ -166,6 +178,7 @@ export function Express(): JSX.Element {
         setAnimated(null);
         gripStatus.current = InteractiveObjectStatus.PICKED;
         setState({ playerStatus: PlayerStatus.PICKED });
+        setCoffeeState('tempered');
       }
     },
     from: {
@@ -188,11 +201,7 @@ export function Express(): JSX.Element {
         return;
       }
 
-      if (
-        x[0].distance < 2 &&
-        gripStatus.current !== InteractiveObjectStatus.ANIMATED_EXPRESS &&
-        gripStatus.current !== InteractiveObjectStatus.ANIMATED_GRINDER
-      ) {
+      if (x[0].distance < 2 && animated === null) {
         gripStatus.current = InteractiveObjectStatus.PICKED;
         setState({ playerStatus: PlayerStatus.PICKED });
       }
@@ -229,9 +238,9 @@ export function Express(): JSX.Element {
         x[0] &&
         x[0].distance < 2 &&
         x[0].object.name.includes('grinder') &&
+        coffeeState === null &&
         gripStatus.current !== undefined
       ) {
-        // gripStatus.current = InteractiveObjectStatus.ATTACHED_GRINDER;
         gripStatus.current = InteractiveObjectStatus.ANIMATED_GRINDER;
         setState({ playerStatus: null });
         setAnimated('grinder');
@@ -243,6 +252,7 @@ export function Express(): JSX.Element {
         x[0] &&
         x[0].distance < 2 &&
         x[0].object.name.includes('accessories') &&
+        coffeeState === 'grinded' &&
         gripStatus.current !== undefined
       ) {
         gripStatus.current = InteractiveObjectStatus.ANIMATED_ACCESSORIES;
@@ -259,6 +269,7 @@ export function Express(): JSX.Element {
         x[0].object.name.includes('area')
       ) {
         const { point } = x[0];
+        api.mass.set(3);
         api.position.set(point.x, point.y + 0.2, point.z);
         gripStatus.current = undefined;
         setState({ playerStatus: null });
@@ -270,13 +281,7 @@ export function Express(): JSX.Element {
     if (gripStatus.current === InteractiveObjectStatus.ANIMATED_EXPRESS) {
       api.rotation.set(...(gripExpressRotation.get() as Triplet));
       api.position.set(...(gripExpressPosition.get() as Triplet));
-      api.velocity.set(0, 0, 0);
-    }
-
-    if (gripStatus.current === InteractiveObjectStatus.ATTACHED_EXPRESS) {
-      api.position.set(...initialPosition);
-      api.velocity.set(0, 0, 0);
-      api.rotation.set(0, 0, 0);
+      api.mass.set(0);
     }
 
     if (gripStatus.current === InteractiveObjectStatus.ANIMATED_GRINDER) {
@@ -284,7 +289,7 @@ export function Express(): JSX.Element {
       const [pX, pY, pZ] = gripGrinderPosition.get();
       api.rotation.set(rX, rY, rZ);
       api.position.set(pX, pY, pZ);
-      api.velocity.set(0, 0, 0);
+      api.mass.set(0);
     }
 
     if (gripStatus.current === InteractiveObjectStatus.ANIMATED_ACCESSORIES) {
@@ -293,15 +298,9 @@ export function Express(): JSX.Element {
       const [tpX, tpY, tpZ] = tamperAnimationPos.get();
       api.rotation.set(rX, rY, rZ);
       api.position.set(pX, pY, pZ);
-      api.velocity.set(0, 0, 0);
+      api.mass.set(0);
       tamperRef.current?.position.set(tpX, tpY, tpZ);
     }
-
-    // if (gripStatus.current === InteractiveObjectStatus.ATTACHED_GRINDER) {
-    //   api.position.set(...grinderPosition);
-    //   api.velocity.set(0, 0, 0);
-    //   api.rotation.set(...(grinderRotation as Triplet));
-    // }
 
     if (gripStatus.current === InteractiveObjectStatus.PICKED) {
       zCamVec.set(0.15, -0.15, -0.3);
@@ -310,7 +309,7 @@ export function Express(): JSX.Element {
       const theta = Math.atan2(rotationDirection.x, rotationDirection.z);
 
       api.position.set(...playerPosition.toArray());
-      api.velocity.set(0, 0, 0);
+      api.mass.set(0);
       api.rotation.set(0, theta + Math.PI, 0);
     }
   });
