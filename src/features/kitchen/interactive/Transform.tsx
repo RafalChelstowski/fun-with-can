@@ -50,7 +50,11 @@ export function Transform(): JSX.Element {
 
   useEvent('click', (event: Event) => {
     event.stopPropagation();
-    if (status.current === InteractiveObjectStatus.ANIMATED) {
+    if (
+      status.current === InteractiveObjectStatus.ANIMATED ||
+      getState().coffeeState === 'cupReady' ||
+      getState().coffeeState === 'inProgress'
+    ) {
       return;
     }
 
@@ -94,7 +98,7 @@ export function Transform(): JSX.Element {
         x[0] &&
         x[0].distance < 2 &&
         x[0].object.name.includes('express') &&
-        getState().coffeeState === 'tempered'
+        getState().coffeeState === 'gripAttached'
       ) {
         status.current = InteractiveObjectStatus.ANIMATED;
         setState({ playerStatus: null });

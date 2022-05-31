@@ -60,6 +60,7 @@ export type State = {
   coffeeState:
     | 'grinded'
     | 'tempered'
+    | 'gripAttached'
     | 'cupReady'
     | 'inProgress'
     | 'ready'
