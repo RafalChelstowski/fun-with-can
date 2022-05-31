@@ -93,6 +93,12 @@ export function Express(): JSX.Element {
           api.position.set(...initialPosition);
           api.rotation.set(0, 0, 0);
           api.mass.set(0);
+
+          if (getState().coffeeState === 'tempered') {
+            setState({
+              coffeeState: 'gripAttached',
+            });
+          }
         }
       },
       from: {
@@ -215,7 +221,9 @@ export function Express(): JSX.Element {
       if (
         x[0].distance < 2 &&
         x[0].object.name.includes('grip') &&
-        getState().coffeeState !== 'tempered'
+        getState().coffeeState !== 'gripAttached' &&
+        getState().coffeeState !== 'cupReady' &&
+        getState().coffeeState !== 'inProgress'
       ) {
         gripStatus.current = InteractiveObjectStatus.PICKED;
         setState({ playerStatus: PlayerStatus.PICKED });
