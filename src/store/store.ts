@@ -6,6 +6,7 @@ import shallow from 'zustand/shallow';
 import { State } from '../types';
 
 export const initialState = {
+  coffeeState: null,
   letters: {},
   achievements: {},
   playerStatus: null,
