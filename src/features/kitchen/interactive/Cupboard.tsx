@@ -24,7 +24,7 @@ export function Cupboard(): JSX.Element {
         rotation-y={rotation}
         onClick={(e) => {
           e.stopPropagation();
-          if (e.distance > 1.5) {
+          if (e.distance > 2) {
             return;
           }
 

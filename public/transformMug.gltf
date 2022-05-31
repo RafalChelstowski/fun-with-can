@@ -1,0 +1,1639 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired" : [
+        "KHR_draco_mesh_compression"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "rpr" : {
+                    "limits" : {
+                        "min_samples" : 32,
+                        "max_samples" : 256
+                    },
+                    "viewport_limits" : {
+                        "min_samples" : 16,
+                        "max_samples" : 32,
+                        "preview_samples" : 16,
+                        "noise_threshold" : 0.05000000074505806
+                    },
+                    "saved_addon_version" : [
+                        3,
+                        3,
+                        15
+                    ],
+                    "viewport_denoiser" : 1,
+                    "viewport_upscale" : 1,
+                    "max_ray_depth" : 8,
+                    "shadow_depth" : 5,
+                    "glossy_depth" : 5,
+                    "refraction_depth" : 5,
+                    "glossy_refraction_depth" : 5,
+                    "texture_compression" : 0,
+                    "use_tile_render" : 0,
+                    "tile_order" : 1,
+                    "use_clamp_radiance" : 0,
+                    "render_mode" : 4,
+                    "diffuse_depth" : 3
+                },
+                "qremesher" : {
+                    "target_count" : 2000,
+                    "symmetry_x" : 0,
+                    "autodetect_hard_edges" : 0,
+                    "symmetry_y" : 0,
+                    "adapt_quad_count" : 0
+                },
+                "automirror" : {
+                    "axis" : 2
+                },
+                "crowd_render" : {
+                    "render_engine" : 0,
+                    "local_node" : {
+                        "name" : "local",
+                        "node_state" : 4,
+                        "node_active" : 1,
+                        "node_uuid" : "local",
+                        "cr_version" : "0_3_1",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpgb5s665q/local_report_data.txt",
+                        "node_A_auto" : 0.0010000000474974513,
+                        "node_render_progress" : 100,
+                        "node_render_active" : 0,
+                        "node_A_manual" : 0.5
+                    },
+                    "use_cloud_rendering" : 0,
+                    "active_load_balance_node" : "DESKTOP-M33K6P1",
+                    "data_is_updated" : 0,
+                    "manual_load_balancer" : 0
+                },
+                "cr_nodes" : [
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "DESKTOP-M33K6P1",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba",
+                        "node_state" : 0,
+                        "node_address" : "192.168.1.17",
+                        "compute_devices" : [
+                            {
+                                "name" : "OPTIX - NVIDIA GeForce RTX 2080",
+                                "type" : "OPTIX",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00_OptiX",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPTIX - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPTIX",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - NVIDIA GeForce RTX 2080",
+                                "type" : "CUDA",
+                                "id" : "CUDA_NVIDIA GeForce RTX 2080_0000:04:00",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CUDA - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CUDA",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "OPENCL - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "OPENCL",
+                                "id" : "CPU",
+                                "use" : 1
+                            },
+                            {
+                                "name" : "CPU - Intel Xeon CPU E5-2620 v3 @ 2.40GHz",
+                                "type" : "CPU",
+                                "id" : "CPU",
+                                "use" : 1
+                            }
+                        ],
+                        "node_report_path" : "/Users/rafalchelstowski/cr/client/tmpetqzrat9/a28ae1f4-4548-56fd-8c1a-eca7dc1ddeba_report_data.txt",
+                        "node_A_auto" : 1.0,
+                        "reports" : [
+                            {
+                                "time_logged" : 1636636958,
+                                "time_stamp" : "Thu Nov 11 14:22:38 2021",
+                                "message" : "Info: node status updated: syncing...",
+                                "name" : "Info: node status updated: syncing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: repairing...",
+                                "name" : "Info: node status updated: repairing...",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_Material  ",
+                                "name" : "Warning: MISSING testPattern_Material  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top_Object  ",
+                                "name" : "Warning: MISSING top_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.040_Mesh  ",
+                                "name" : "Warning: MISSING Cube.040_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards_Object  ",
+                                "name" : "Warning: MISSING cupboards_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.041_Mesh  ",
+                                "name" : "Warning: MISSING Cube.041_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING top  overhead_Object  ",
+                                "name" : "Warning: MISSING top  overhead_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.067_Mesh  ",
+                                "name" : "Warning: MISSING Cube.067_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING cupboards.001_Object  ",
+                                "name" : "Warning: MISSING cupboards.001_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.068_Mesh  ",
+                                "name" : "Warning: MISSING Cube.068_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane_Object  ",
+                                "name" : "Warning: MISSING Plane_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Plane.004_Mesh  ",
+                                "name" : "Warning: MISSING Plane.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink1_Object  ",
+                                "name" : "Warning: MISSING sink1_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sink2_Object  ",
+                                "name" : "Warning: MISSING sink2_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.001_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "name" : "Warning: MISSING testPattern_MaterialSlot  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.006_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.004_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.007_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.008_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.009_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.011_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Object  ",
+                                "name" : "Warning: MISSING Cube.075_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.107_Mesh  ",
+                                "name" : "Warning: MISSING Cube.107_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING sprinkler_Object  ",
+                                "name" : "Warning: MISSING sprinkler_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.005_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Object  ",
+                                "name" : "Warning: MISSING Cube.073_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.010_Mesh  ",
+                                "name" : "Warning: MISSING Cube.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.074_Object  ",
+                                "name" : "Warning: MISSING Cube.074_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.106_Mesh  ",
+                                "name" : "Warning: MISSING Cube.106_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.006_Object  ",
+                                "name" : "Warning: MISSING Cylinder.006_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.010_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.008_Object  ",
+                                "name" : "Warning: MISSING Cylinder.008_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.012_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.009_Object  ",
+                                "name" : "Warning: MISSING Cylinder.009_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.013_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.010_Object  ",
+                                "name" : "Warning: MISSING Cylinder.010_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.014_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.012_Object  ",
+                                "name" : "Warning: MISSING Cylinder.012_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.016_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.014_Object  ",
+                                "name" : "Warning: MISSING Cylinder.014_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.018_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Object  ",
+                                "name" : "Warning: MISSING Cylinder.015_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.016_Object  ",
+                                "name" : "Warning: MISSING Cylinder.016_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.020_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Object  ",
+                                "name" : "Warning: MISSING Cylinder.017_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.021_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.018_Object  ",
+                                "name" : "Warning: MISSING Cylinder.018_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.022_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.020_Object  ",
+                                "name" : "Warning: MISSING Cylinder.020_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.024_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.022_Object  ",
+                                "name" : "Warning: MISSING Cylinder.022_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.026_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.011_Object  ",
+                                "name" : "Warning: MISSING Cylinder.011_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.027_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.013_Object  ",
+                                "name" : "Warning: MISSING Cylinder.013_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.028_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.019_Object  ",
+                                "name" : "Warning: MISSING Cylinder.019_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.029_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.021_Object  ",
+                                "name" : "Warning: MISSING Cylinder.021_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.030_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.023_Object  ",
+                                "name" : "Warning: MISSING Cylinder.023_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.031_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.024_Object  ",
+                                "name" : "Warning: MISSING Cylinder.024_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.032_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.025_Object  ",
+                                "name" : "Warning: MISSING Cylinder.025_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.033_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.026_Object  ",
+                                "name" : "Warning: MISSING Cylinder.026_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.034_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.027_Object  ",
+                                "name" : "Warning: MISSING Cylinder.027_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.035_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.115_Mesh  ",
+                                "name" : "Warning: MISSING Cube.115_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.028_Object  ",
+                                "name" : "Warning: MISSING Cylinder.028_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.015_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.029_Object  ",
+                                "name" : "Warning: MISSING Cylinder.029_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "name" : "Warning: MISSING Cylinder.017_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING bar chair_Object  ",
+                                "name" : "Warning: MISSING bar chair_Object  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "name" : "Warning: MISSING NurbsPath.019_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.037_Mesh  ",
+                                "name" : "Warning: MISSING Cube.037_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.069_Mesh  ",
+                                "name" : "Warning: MISSING Cube.069_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.070_Mesh  ",
+                                "name" : "Warning: MISSING Cube.070_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.072_Mesh  ",
+                                "name" : "Warning: MISSING Cube.072_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Array_ArrayModifier  ",
+                                "name" : "Warning: MISSING Array_ArrayModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.071_Mesh  ",
+                                "name" : "Warning: MISSING Cube.071_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.073_Mesh  ",
+                                "name" : "Warning: MISSING Cube.073_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "name" : "Warning: MISSING Mirror_MirrorModifier  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: MISSING Cube.075_Mesh  ",
+                                "name" : "Warning: MISSING Cube.075_Mesh  ",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data scale",
+                                "name" : "Warning: Camera Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data location",
+                                "name" : "Warning: Camera Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Camera Incorrect Data rotation_euler",
+                                "name" : "Warning: Camera Incorrect Data rotation_euler",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "name" : "Warning: Cylinder.001 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.001 Incorrect Data location",
+                                "name" : "Warning: Cylinder.001 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cylinder.002 Incorrect Data location",
+                                "name" : "Warning: Cylinder.002 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.069 Incorrect Data scale",
+                                "name" : "Warning: Cube.069 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data scale",
+                                "name" : "Warning: Cube.011 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.011 Incorrect Data location",
+                                "name" : "Warning: Cube.011 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.014 Incorrect Data scale",
+                                "name" : "Warning: Cube.014 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data scale",
+                                "name" : "Warning: Cube.015 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.015 Incorrect Data location",
+                                "name" : "Warning: Cube.015 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data scale",
+                                "name" : "Warning: Cube.016 Incorrect Data scale",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Warning: Cube.016 Incorrect Data location",
+                                "name" : "Warning: Cube.016 Incorrect Data location",
+                                "level" : 4
+                            },
+                            {
+                                "time_logged" : 1636636959,
+                                "time_stamp" : "Thu Nov 11 14:22:39 2021",
+                                "message" : "Info: node status updated: sync failed",
+                                "name" : "Info: node status updated: sync failed",
+                                "level" : 6
+                            },
+                            {
+                                "time_logged" : 1636636961,
+                                "time_stamp" : "Thu Nov 11 14:22:41 2021",
+                                "message" : "Info: node status updated: synced",
+                                "name" : "Info: node status updated: synced",
+                                "level" : 6
+                            }
+                        ],
+                        "compute_device" : 1,
+                        "node_sync_progress" : 0,
+                        "node_render_progress" : 100,
+                        "node_result_progress" : 0,
+                        "node_A_manual" : 1.0,
+                        "node_repair_item" : "Camera"
+                    },
+                    {
+                        "cr_version" : "0_3_1",
+                        "name" : "Rafas-MacBook-Pro.local",
+                        "node_active" : 0,
+                        "node_access_key" : "",
+                        "node_uuid" : "4af96e32-13ac-5d0d-8bb5-f9b3411d04d9",
+                        "node_state" : 0
+                    }
+                ],
+                "cr_node_index" : 0,
+                "muv_align_uv_enabled" : 1,
+                "muv_pack_uv_enabled" : 1,
+                "muv_align_uv_location" : 1,
+                "muv_uv_bounding_box_enabled" : 0,
+                "muv_uv_inspection_enabled" : 0
+            },
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "opt1",
+            "translation" : [
+                1.6608399152755737,
+                0.9934255480766296,
+                -5.432603359222412
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "opt2",
+            "translation" : [
+                1.6669445037841797,
+                0.9850244522094727,
+                -5.430481433868408
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "salmonToukCupMaterial",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.33543306589126587
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "blackPlasticMaterial",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.005604761186987162,
+                    0.005604761186987162,
+                    0.005604761186987162,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.7167832255363464
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0.6103032231330872,
+                0.005420589353889227,
+                0.0031370322685688734
+            ],
+            "name" : "cupRedEmmisiveMAterial",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.8000000715255737,
+                    0,
+                    0.01093975082039833,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "coffeeMaterial",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.14721040427684784,
+                    0.03471125289797783,
+                    0,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "cupWhiteMaterial",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.2625899314880371
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 0,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 3,
+                    "material" : 0,
+                    "mode" : 4
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 2,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 7,
+                    "material" : 1,
+                    "mode" : 4
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 3,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 11,
+                    "material" : 2,
+                    "mode" : 4
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 12,
+                        "NORMAL" : 13,
+                        "TEXCOORD_0" : 14
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 4,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 15,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        },
+        {
+            "name" : "Cylinder.009",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 5,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 19,
+                    "material" : 1,
+                    "mode" : 4
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 20,
+                        "NORMAL" : 21,
+                        "TEXCOORD_0" : 22
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 6,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 23,
+                    "material" : 4,
+                    "mode" : 4
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 24,
+                        "NORMAL" : 25,
+                        "TEXCOORD_0" : 26
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 7,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 11,
+                    "material" : 2,
+                    "mode" : 4
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 27,
+                        "NORMAL" : 28,
+                        "TEXCOORD_0" : 29
+                    },
+                    "extensions" : {
+                        "KHR_draco_mesh_compression" : {
+                            "bufferView" : 8,
+                            "attributes" : {
+                                "POSITION" : 0,
+                                "NORMAL" : 1,
+                                "TEXCOORD_0" : 2
+                            }
+                        }
+                    },
+                    "indices" : 30,
+                    "material" : 3,
+                    "mode" : 4
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "bufferView" : 1,
+            "mimeType" : "image/jpeg",
+            "name" : "mug2"
+        }
+    ],
+    "accessors" : [
+        {
+            "componentType" : 5126,
+            "count" : 1208,
+            "max" : [
+                0.028978072106838226,
+                0.0404164083302021,
+                0.04768303036689758
+            ],
+            "min" : [
+                -0.05837935954332352,
+                -0.04694101959466934,
+                -0.0650315135717392
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1208,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1208,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 5916,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1088,
+            "max" : [
+                0.057000014930963516,
+                0.027168158441781998,
+                0.07385195046663284
+            ],
+            "min" : [
+                -0.07836376875638962,
+                -0.03725060820579529,
+                -0.04442411661148071
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1088,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 1088,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 2886,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 20,
+            "max" : [
+                0.060809697955846786,
+                0.009011927992105484,
+                0.009417695924639702
+            ],
+            "min" : [
+                0.057000014930963516,
+                -0.01129385456442833,
+                -0.0014091767370700836
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 30,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 98,
+            "max" : [
+                0.02328341454267502,
+                0.00217713275924325,
+                0.04198836535215378
+            ],
+            "min" : [
+                -0.05268469452857971,
+                -0.04180287569761276,
+                -0.03397974371910095
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 98,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 98,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 282,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 2628,
+            "max" : [
+                0.040837422013282776,
+                0.026114780455827713,
+                0.04491199553012848
+            ],
+            "min" : [
+                -0.0718257799744606,
+                -0.03830398619174957,
+                -0.055712781846523285
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 2628,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 2628,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 9510,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 295,
+            "max" : [
+                0.011522410437464714,
+                0.02578144520521164,
+                0.028200211003422737
+            ],
+            "min" : [
+                -0.05282457172870636,
+                -0.03876093402504921,
+                -0.03614676743745804
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 295,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 295,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 948,
+            "type" : "SCALAR"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 20,
+            "max" : [
+                0.044544801115989685,
+                0.00795854814350605,
+                0.007295647636055946
+            ],
+            "min" : [
+                0.040837422013282776,
+                -0.012347234413027763,
+                -0.003531225025653839
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 98,
+            "max" : [
+                0.007176108658313751,
+                0.0002545011229813099,
+                0.023853963240981102
+            ],
+            "min" : [
+                -0.048478372395038605,
+                -0.03672654926776886,
+                -0.031800515949726105
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 98,
+            "type" : "VEC3"
+        },
+        {
+            "componentType" : 5126,
+            "count" : 98,
+            "type" : "VEC2"
+        },
+        {
+            "componentType" : 5123,
+            "count" : 282,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 6816,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 20934,
+            "byteOffset" : 6816
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4431,
+            "byteOffset" : 27752
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 303,
+            "byteOffset" : 32184
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 730,
+            "byteOffset" : 32488
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12751,
+            "byteOffset" : 33220
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2107,
+            "byteOffset" : 45972
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 302,
+            "byteOffset" : 48080
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 840,
+            "byteOffset" : 48384
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 49224,
+            "uri" : "data:application/octet-stream;base64,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c3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTAzLTE0VDE4OjQ0OjQxKzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIyLTAzLTE0VDE4OjQ0OjQxKzAxOjAwIj4gPGRjOnRpdGxlPiA8cmRmOkFsdD4gPHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij5tdWcyPC9yZGY6bGk+IDwvcmRmOkFsdD4gPC9kYzp0aXRsZT4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0icHJvZHVjZWQiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFmZmluaXR5IERlc2lnbmVyIDEuMTAuNCIgc3RFdnQ6d2hlbj0iMjAyMi0wMy0xNFQxODo0NDo0MSswMTowMCIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg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AoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgP//ZAABEUkFDTwICAQEAAADACMIHAsIHEwKnBgcWCQPaAt/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/3fd/37s26PN/3fd+7rsv3Pt/3Pt/7vOu6ruu6ruu6ruu6ruu6ruu6vuu6ruu6vOu6ruu6ruu6ruu6ruu6ruu6vuu6ruu6fF3X9eu6ruu6ruu6ruu6ruu6ruu6ruu6fF3XdV3XdV3Xr+u6ruu6ruu6ruu6ruu6fF3XdV3XdV3Xdf26ruu6ruu6ruu6ruu6vOu6ruu6ruu6rn2qqqqqqqqq67qu67qu67qu67qua5+qqqqqqqqqqvJ1Xdd1Xdd1Xdd1Xdd1Xdd1Xdd1/bqu6/Ku67qua5+qqqrquq7ruq7ruq7ruq7ruq7ruq59qqqqqqqqqqqqqqrK13Vd13Vd13Vd13Vd13Vd13Vdv67ruq7L13Vd13Vd13Vd13Vd13Vd13Vdv67ruq7L933f9wH/AodH/wPcY4L/A9xjggP/AAAAAAABAAABAAkDAAACAQEJAwABAwEDCQIAAgIBAQEBCaN9iUIDKBMMDBQMDDQ0iIgHKAMoPFeInAcUFBQUO1A8C2xsKCgHICCwvBQUIEgHUBsoKIh0PDwPFBQ8ICggUCAPKCBQSCgoFyAgDAwHSFBQSB9cXGBgB4hQUJyoYANgICAMDAc0DDQMA1BPUCADFCdgUDc8D1wHqGwLPEgbKAdQKBsgBwwjFAMgUAMMByAPKCgoKBecZAtkH0gHDAMoByhQKENcKEggCxQDZAeoZEsoKBQgUFAjnGwLYAsUKAMoICtgnANQXANcIDx0KCsgKAMoDygoAygUDAMUKDwUFA8oUANQFAMUAygUFEhQxwwDFAw3DAwDFBdcIHcUBwyvPDwUFJsM3wwoFyADPCBHDAwHFAtQUB8MByAnIDsU/wMMDFBQVzwgICMUFF8MFCdQUFcMAxQMJzRITwwfFBcgAzwgrygolzwgIHsgBwwXPCAgDP9HFIMgDA8UAwwM/xcgBwwgBww3FAwPFAMMDP///////78MDP8HIBQ3DP///4NkYP//ZxQ0FLcM////TwwDFCD/Ewz//xcMDP/nFDT//z/tAeUB7wz//zsgIP//////CxT//////+MM////////tygoKCj/DwwUZxRPDP//ewzXDBMUNP//NxQ3DLsM///bDAz/swz//5MUIP////////9fDP////8TFP/////zDP///////////////3MUDP////////+rFP///ysMAwz//y8gKP//dwzvDP/////vKCBXDP//ayD/////jxT//wcMUwwDFAz///8jFP/////XDP/////7DP//Twz/////NEj///+jIP/HDBcM//97FP//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BSDwH4BAbgCAEQAC/wMAAP8BAAAKAQEBAA0DASCZCSNpFgZKSaxmM4cAQDADgDBDAgAgzAAQzAhAMAeAMAsAIMwSAAAAAP8PAABNX+U+4PG/PZwF1T0MAERSQUNPAgIBAQAAAGJeAl4PACR//uTPn+TPn+RPnn1d13Vd13Vd13Vd13Vd13Vd13Vd16/rugD/ASL/AidH/wInRwP/AAAAAAABAAABAAkDAAACAQEJAwABAwEDCQIAAgIBAQEADwOdExP1AQPhBcELA4kG4QVpDCKurXKRyqCj7pyECqz2Xr0SXA5bx8snkiNOCDZ+RMJP9PyAgmd5HU4MUwDQ3WgTAOgv8gKAW66sAIA7TlYAgMZRJwDAj00HACCf1AkAAD+SMAIAhsH5AwDaxOUAIPK2YwCgrBxHACBZ6WMA0Al9EgAwHfpIAEAnIAYBAMJoNgFg/iQvAMDlyQoAtGNlBQBgHHMCAPa4dAAA9MmcAADYIwcjAIAYpD8AmM1bDgAkrzsGAMlqcQQAlJU+EgDICfhIACAn8GMA4Ik+xrzWCfwYAHICfgDAJuABgEhwBYCCAA4AOBQEgCvoBAAPAAAfOgEIAJsA9AEiAXgHCgKwFYAD+A2uAEgQ8ADkhB8AQAAAObEHAGviHQCGxFYAJIjfAH4jQQC2Qk4A7wAA9JETgACsCQAfGBIAeJAgAFz9tABAr8THlNc6wR4DQE5gDwDYxDsAEImtAFAQAAAAAP8/AADoy1e9fjkrvVguC70rlZs9DgADAQEEzgftMsOo/AuhASOhAUudAv///////6OoVP////dU//+nUQFL/CP8C1SoJUKO0vKQwmleF8gmpJOulES0KHg6NRf5Nc00i3eO/tQueEJGn07/AwAA/wEAAAoBAQEBBYAe8TFUVP///+/8nQIDVP///+9U////81RU7QP1Aaj////3VP////////9UqP//////////////////////////////////////////81T////3VCdQuZRoQP7hYfreUqSxuZMLukxhayGu74JjkXFuE8wJJI8Uqa3g34AAAAAA/w8AANg+BT28xuo+Bgo2PwwAAERSQUNPAgIBAQAAAMQU4hgC4hg4AscXBxMJA+MH3/d93/d93/d93/d93/d93/d93/d93/d93/d93/d93/d93/d93/d93/d93/d93/d93/f9aWtdHt/3veu6fN/3fd/3fd+7ruu6ruu6ruu6ruu6ruu6ruu7ruu6rsu7ruu6ruu6ruu6ruu6ruu6ruu7ruu6rsvXdV2/ruu6ruu6ruu6ruu6ruu6ruu6rsvXdV3XdV3Xdf26ruu6ruu6ruu6ruu6rsvXdV3XdV3XdV3Xr+u6ruu6ruu6ruu6rsu7ruu6ruu6ruvap6qqqqqqqrqu67qu67qu67qu67r2qaqqqqqqqqoqX9d1Xdd1Xdd1Xdd1Xdd1Xdd1Xdev67ou77qu67r2qaqqqq7ruq7ruq7ruq7ruq7ruq7r2qeqqqqqqqqqqqqqqnxd13Vd13Vd13Vd13Vd13Vd1/Xruq7runxd13Vd13Vd13Vd13Vd13Vd1/Xruq7runzf933f23Vd97xd13Xf13XdunZd163P23Vdt/3tui7f13XdunZd163b13Vd13Vd13Vd13Vd13XtU1VVVVVVVVVVVa1+TVVVVVVVVVVVVVWr+lRVVVVVVVVVVVVVq3xd13Vd13Vd13Vd13Vd13Vd+1RVVVVVVVVVVVVVfV3XdV3XdV3XdV3XdV3XPlVVVVVVVVVVVdXq11RVVVVVVVVVVVW1qk9VVVVVVVVVVVVVtcqfruu6ruu6ruu6ruu6ruu6rn2qqqqqqqqqqqqqyruu67qu67qu67qu67o+raqqqqqqqqqq6lOtqqqqqqqqqqqqPlWtqqqqqqqqqqqq2ruu67qu67qu67qu67qu69Oqqqqqqqqqqqqqveu6ruu6ruu6ruu6ruvTqqqqqqqqqqqqPtWqqqqqqqqqqqrqU9WqqqqqqqqqqqqqfV3XdV3XdV3XdV3XdV3Xp1VVVVVVVVVVVdXHu67ruq7ruq7ruq7ruj6tqqqqqqqqqqrqU62qqqqqqqqqqqo+Va2qqqqqqqqqqqrqU1Wtqqqqqqqqqqqqqj5VVa2qqqqqqqqqqqqq2ruu67qu67qu67qu67quT6uqqqqqqqqqqqpPtaqqqqqqqqqqqqpPVauqqqqqqqqqqqqqT1W1qqqqqqqqqqqqqmrvuq7ruq7ruq7ruq7ruq7run1d13Vd13Vd13Vd1z5VVVVVVVVV1epTVVVVVVVVVdWqPlVVVVVVVVVV1arq11RVVVVVVVVVVbWqqk9VVVVVVVVVVVW1qsrXdV3XdV3XdV3XdV37VFVVVVVVVVW1+lRVVVVVVVVVVav6NVVVVVVVVVVVVa2qPlVVVVVVVVVVVdWq8q/ruq7ruq7ruq7ruq7rugD/AuNJ/wXUS3xRg/8F1Et8UYMD/wAAAAAAAQAAAQAJAwAAAgEBCQMAAQMBAwkCAAICAQEBAQqtfx3P2QrZCvkItQgdBh0GCQQBBdEE5QPRBKEGLQYtBn0EtQMRBa0EMQMNBjUCEQVpAtkF+AEFqNUDqDkE+FEDLQFZAvihAV0BYQP4gQNUsQEwPQEQRDBkIDAgEEQwVGR0ZES42KiUqBAg+A0BlKiUZFR0VJQgC1Rk2MiohAMwEBBERJRkqFQDIAMQqHSolAMQAzAgRHR0AxB0lJSUIGQgMCAghMg9AQ0BlNiBAV0BHQENAajYRFRURBAwIGSUZBAwMCBEEBMQDw0B6EQwBxAQExCohA8QBxDBATBkqAcQA4SUlLgwA2R0ByADEANUZEREAxAQCzAQByATZDBEAyBEAxADEAe4lAcwMCDIPQHYEAMQCxAQMERkMFRUREQHREQHEBAQAxALIAPodERUuJQgEAcdAagDqAMQN7ioB0REE0TRAbgDqAsghDAQH6iEA4SURJTIlDAgRCNEMEQLhGQHEAMwIHREB0RERCBEA0RkB4SEKxAXEAcQEA8gExADECAXEDAQEAMQEBADMCAQEBAgEEQLEAeUME8gEBAQIBADIAMQEAcgHxATEBAQEDAgAxADEAMQEGQQEBADqKgDEBAQBzAwPxATEAcQEyCXEAcgEBuUMDcQEAcgA2RkICAXECADEB8wExAgEBADICBbIFRbEAcgIAcQMDAgdGQgO2QwMHcQEAMQEA9kZCAgRzAQHyAwMEQ/EBcgF5QwHxBEb0REf5QwZzAQF0QDVETnECsgazAQDzAQHxB/IEcwEBADIBA/IBAQExCbEBD/jxD/VxD//9MQFxD///8jRERkZP/XECtEVJsQ//+HENMQfxC/ECD//9sQPxD/O0EDMQP/BxD/NxD//////68QIDAQ/0sQ//+HEBALEP//NyBE//8XEP9LhIT/ixD/lyBU//+rEGMQFyAvEP//nxAg/88Q/////98Q//9LEP9nEP/vEP////8TEAcQIP9XEP97EDMQRxBPEP9bIFT//2cQ/2MQIBsQ////UxAQ/38Q////nzAwFxCfIP//+xCPEP//QxBfEKcQjxCfIBD////PEP8TEPMw////zyD/txBLMBD//6Mg4xD///8vEP////9zEP//0xD//////08w/5sQ//8TIP////8DEAMQ//+XIBAHMESTEP///////////3cwMBD/////JxBHEP///////////////////28QAxC3EP8bEP////9fEP//////////z4Rk////////////////yxCrEP/PEP///wcQ/////zdUlP//WxD////PhET///////////+zEP////////////83IP///////wcQSxD/HxD/uxAg7CktdAeSuWVbK/ltQVPraWPbzZL0C+yUvTbmT8opCNaQYE8RMwAg8CjHiaSh0krIdEPWVv/NTMsXsjfRFVs40B5C3lAjejIawf0OQyj1X8N9PIMuxJf5YThrr30g3f/srNLbwUdHIsfIiH77927v97TI4ODEYSs4WoDVR2SWThU5yh5m9eYxh+0YHEP0/ZD80nDbgoTmLqjrkHqcRGX1MYW1bD3FidzWinySE2HAQepXRr9nUZbCXeH+QRFLUeWnpDfgk0ePQbtVVjmeY5c40XdxHrxBESDW2waGqKaRUcEJFQHv1jUlEjKj0RZtduoY4QzLOzZ2Gq68rJFlKqJV/AEirDD2H0u5YtmCNF1Wu6NEj2Uo4DAh0qk0lje3uySz1YA9KfZdsobxSyn9Hf6NAQOK0mWY67s97WWiLsx8FuSrcsWoJlqKO+v1UcGHeAqvSDHjfESagCUYuLP/atlpDBYOdddt+nNlemwv/Mt89tY4hvAH6HvRGkFtx7Zh9ErSlT9uiXZSPCgSAqXYsE5PQ1L5v/qd3imEOocOBJisSnN+2v7Yj6PTQyb0qUVzQRbQrJ9f/IZgQDtLw+5x4Gy0eKXfWy4+F4pK5H3cEKf33pLa0U2KdsnMt1YTzAc4Fkxf+P44URKGhEXRgAR8+QUhC2gAgvloEpLXIIQdBlzrmG4TUpyx//AjOV3aR3sFMKHg4jB00b9s9mwYfq5ZCR/pN5ZhCN0LPnTaFUusJ1KBCZOVZ2o33KVvCadHna9W/Kr3bUFT60zsqdl9hlyPL2eFfILWO034zUzJLU2vU9QuT01ISXHpQGYUSU1UJVah/7LrZpr7qU3VwOuxTKlPUFD4tcrfnFhZDBLuEJ7Xo1v6bd/+GxhpNBpyQAwYdQ8v9W3TJ/sI/3v1Qks51mkwnbQ6oOL9JRp9S+Js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X9MBANAnAQAAoHFMVgAAx1G9AOBhIy8AwOVEEwD0ymEQACCMABgASiefBABMB8cRAAAAGkcAIFmBWABQr1sOACKvrwQARHMwAgCGwfQCAEggAQAAgHFEO+hVAaDFmFf7mJwAAD4eAQAupADM0waAWFkBiOMVAKS6AkBBOgAgVQUAlI8A1PEJAEhHAcDCEQCdwgJw4x0AgLgASNAFoDMugBH0AABpWABt5ABA1qMAXk0AgK4fAaT7BABV0wH4+BEAfL4CcDQnAHBsAyAsAADeRwB4mxOAXBIA5j4KgD1uAISNFQA5YAE4misAE6gD8DFVAD4BCSDdngB8hBTAqxsByEksgDbdAQCAC2BEXAA56QIgUQ8Aj4oF4CYOAGJFCgAWBQDkChKAOlAASFUdAJAgAbAnLABIdQLgRjcAxAIA8J0EALoAAAAA/z8AAEKRRr2Ubha9QkECvfT1Yz0OAAMBAQX+B7ErA1EBUQEHUQGfqKgHqAOoD6gHqCtUE1EB////////F1SfVP///////7+oE/wrqAeoD6gDqAeoqJ/xAQdRAVEBOxCAXMmVjvcMM4ab7khWjcPdPoEBc1B3q0Nha2zgmxllUEv/ew8tHm4iDyg0hnSOJiWSkehLMTYKa72B/wMAAP8BAAAKAQEBAQWZEwExoQGhAf///+9USQIDVFT////rVAdU////56EBqPECoQEDVP//////////////////////////////////T1RUKXDi/ILjgxjstAshMcDpIff/T8WLWEE1v/qyormvRGI/MpygRDuhzB2vAAAAAP8PAAB99265qMZMPvAOgD8M"
+        }
+    ]
+}

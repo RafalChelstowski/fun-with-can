@@ -1,7 +1,23 @@
 import { useEvent } from 'react-use';
 
-import { setState, useStore } from '../../store/store';
+import create from 'zustand';
+
+import { useStore } from '../../store/store';
 import { KeyboardKeys } from '../../types';
+
+export interface Controls {
+  controlsUp: boolean;
+  controlsDown: boolean;
+  controlsLeft: boolean;
+  controlsRight: boolean;
+}
+
+export const useControlsStore = create(() => ({
+  controlsUp: false,
+  controlsDown: false,
+  controlsLeft: false,
+  controlsRight: false,
+}));
 
 export function useControls(): void {
   const isLocked = useStore((state) => state.isLocked);
@@ -13,24 +29,16 @@ export function useControls(): void {
 
     switch (key.toLowerCase()) {
       case KeyboardKeys.W:
-        setState((state) => ({
-          controls: { ...state.controls, controlsUp: true },
-        }));
+        useControlsStore.setState({ controlsUp: true });
         break;
       case KeyboardKeys.S:
-        setState((state) => ({
-          controls: { ...state.controls, controlsDown: true },
-        }));
+        useControlsStore.setState({ controlsDown: true });
         break;
       case KeyboardKeys.A:
-        setState((state) => ({
-          controls: { ...state.controls, controlsLeft: true },
-        }));
+        useControlsStore.setState({ controlsLeft: true });
         break;
       case KeyboardKeys.D:
-        setState((state) => ({
-          controls: { ...state.controls, controlsRight: true },
-        }));
+        useControlsStore.setState({ controlsRight: true });
         break;
       default:
         break;
@@ -44,24 +52,16 @@ export function useControls(): void {
 
     switch (key.toLowerCase()) {
       case KeyboardKeys.W:
-        setState((state) => ({
-          controls: { ...state.controls, controlsUp: false },
-        }));
+        useControlsStore.setState({ controlsUp: false });
         break;
       case KeyboardKeys.S:
-        setState((state) => ({
-          controls: { ...state.controls, controlsDown: false },
-        }));
+        useControlsStore.setState({ controlsDown: false });
         break;
       case KeyboardKeys.A:
-        setState((state) => ({
-          controls: { ...state.controls, controlsLeft: false },
-        }));
+        useControlsStore.setState({ controlsLeft: false });
         break;
       case KeyboardKeys.D:
-        setState((state) => ({
-          controls: { ...state.controls, controlsRight: false },
-        }));
+        useControlsStore.setState({ controlsRight: false });
         break;
 
       default:

@@ -24,6 +24,7 @@ export enum AchievementName {
   DK = 'dk',
   NEON = 'neon',
   WINDOW = 'window',
+  COFFEE = 'coffee',
 }
 
 export interface AchievementDescription {
@@ -55,15 +56,14 @@ export interface InteractiveLetters {
   k?: boolean;
 }
 
-export interface Controls {
-  controlsUp: boolean;
-  controlsDown: boolean;
-  controlsLeft: boolean;
-  controlsRight: boolean;
-}
-
 export type State = {
-  controls: Controls;
+  coffeeState:
+    | 'grinded'
+    | 'tempered'
+    | 'cupReady'
+    | 'inProgress'
+    | 'ready'
+    | null;
   achievements: Achievements;
   letters: InteractiveLetters;
   setAchievement: (name: AchievementName, payload: AchievementPayload) => void;

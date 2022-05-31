@@ -30,7 +30,7 @@ export function Harnas(): JSX.Element {
 
   const [ref, api] = useCylinder<Mesh>(() => ({
     mass: 1,
-    args: [0.05, 0.05, 0.14, 12],
+    args: [0.06, 0.06, 0.14, 12],
     position: [0, 1, 0],
     rotation: [Math.random(), Math.random(), Math.random()],
     allowSleep: false,
@@ -47,7 +47,8 @@ export function Harnas(): JSX.Element {
 
   const [initialX, initialY, initialZ] = FRIDGE_POSITION;
 
-  useEvent('click', () => {
+  useEvent('click', (event: Event) => {
+    event.stopPropagation();
     const { playerStatus } = getState();
 
     if (playerStatus === null) {

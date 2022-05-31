@@ -1,5 +1,9 @@
 import * as THREE from 'three';
 
+export const testMaterial = new THREE.MeshStandardMaterial({
+  color: 'fuchsia',
+});
+
 export const glassMaterial = new THREE.MeshPhysicalMaterial({
   metalness: 0,
   roughness: 0.07,

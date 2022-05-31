@@ -7,8 +7,8 @@ import * as THREE from 'three';
 import { Mesh } from 'three';
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls';
 
-import { useControls } from '../../common/hooks/useControls';
-import { getState, useStore } from '../../store/store';
+import { useControls, useControlsStore } from '../../common/hooks/useControls';
+import { useStore } from '../../store/store';
 import { ControlsLock } from '../../types';
 
 extend({ PointerLockControls });
@@ -93,7 +93,7 @@ export function Player(): JSX.Element {
   );
   useFrame((state) => {
     const { controlsDown, controlsUp, controlsLeft, controlsRight } =
-      getState().controls;
+      useControlsStore.getState();
     const isMoving =
       controlsUp || controlsDown || controlsLeft || controlsRight;
 

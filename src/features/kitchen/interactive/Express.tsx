@@ -9,9 +9,14 @@ import { degToRad } from 'three/src/math/MathUtils';
 
 // import { Smoke } from '../../../common/components/Smoke';
 
+import { useAchievement } from '../../../api/hooks/useAchievement';
 import { glassMaterial } from '../../../common/materials/materials';
 import { getState, setState } from '../../../store/store';
-import { InteractiveObjectStatus, PlayerStatus } from '../../../types';
+import {
+  AchievementName,
+  InteractiveObjectStatus,
+  PlayerStatus,
+} from '../../../types';
 import { useKitchenGltf } from '../useKitchenGltf';
 
 const initialPosition: Triplet = [1.65, 1.08, -5.44];
@@ -27,16 +32,14 @@ const rotationDirection = new THREE.Vector3();
 
 export function Express(): JSX.Element {
   const { nodes, kitchenMaterial } = useKitchenGltf();
-
   const camera = useThree((state) => state.camera);
   const raycaster = useThree((state) => state.raycaster);
   const scene = useThree((state) => state.scene);
+  const { addAchievement } = useAchievement();
+
   const [animated, setAnimated] = useState<
-    'express' | 'grinder' | 'accessories' | null
+    'express' | 'grinder' | 'accessories' | 'coffee' | null
   >(null);
-  const [coffeeState, setCoffeeState] = useState<'grinded' | 'tempered' | null>(
-    null
-  );
 
   const gripStatus = useRef<InteractiveObjectStatus | undefined>(
     InteractiveObjectStatus.ATTACHED_EXPRESS
@@ -51,7 +54,6 @@ export function Express(): JSX.Element {
   }));
 
   const tamperRef = useRef<THREE.Group>(null);
-
   const gripPosRef = useRef([0, 0, 0]);
   const gripRotRef = useRef([0, 0, 0]);
 
@@ -113,8 +115,10 @@ export function Express(): JSX.Element {
 
           setAnimated(null);
           gripStatus.current = InteractiveObjectStatus.PICKED;
-          setState({ playerStatus: PlayerStatus.PICKED });
-          setCoffeeState('grinded');
+          setState({
+            playerStatus: PlayerStatus.PICKED,
+            coffeeState: 'grinded',
+          });
         }
       },
       from: {
@@ -177,8 +181,10 @@ export function Express(): JSX.Element {
 
         setAnimated(null);
         gripStatus.current = InteractiveObjectStatus.PICKED;
-        setState({ playerStatus: PlayerStatus.PICKED });
-        setCoffeeState('tempered');
+        setState({
+          playerStatus: PlayerStatus.PICKED,
+          coffeeState: 'tempered',
+        });
       }
     },
     from: {
@@ -189,27 +195,53 @@ export function Express(): JSX.Element {
     reset: true,
   });
 
-  useEvent('click', () => {
+  useEvent('click', (event: Event) => {
+    event.stopPropagation();
     const { playerStatus } = getState();
 
+    if (animated !== null) {
+      return;
+    }
+
     if (playerStatus === null) {
-      const x = raycaster.intersectObjects(
-        scene.getObjectByName('grip')?.children || []
-      );
+      const expressButtonObj = scene.getObjectByName('btn')?.children || [];
+      const gripObj = scene.getObjectByName('int-grip')?.children || [];
+      const x = raycaster.intersectObjects([...expressButtonObj, ...gripObj]);
 
       if (!x[0]) {
         return;
       }
 
-      if (x[0].distance < 2 && animated === null) {
+      if (
+        x[0].distance < 2 &&
+        x[0].object.name.includes('grip') &&
+        getState().coffeeState !== 'tempered'
+      ) {
         gripStatus.current = InteractiveObjectStatus.PICKED;
         setState({ playerStatus: PlayerStatus.PICKED });
+
+        return;
+      }
+
+      if (
+        x[0] &&
+        x[0].distance < 2 &&
+        x[0].object.name.includes('button') &&
+        getState().coffeeState === 'cupReady'
+      ) {
+        setState({ coffeeState: 'ready' });
+        addAchievement(AchievementName.COFFEE);
+
+        return;
       }
 
       return;
     }
 
-    if (playerStatus === PlayerStatus.PICKED) {
+    if (
+      playerStatus === PlayerStatus.PICKED &&
+      gripStatus.current === InteractiveObjectStatus.PICKED
+    ) {
       const expressSceneObj = scene.getObjectByName('express')?.children || [];
       const accSceneObj = scene.getObjectByName('accessories')?.children || [];
       const nonInteractiveSceneObj =
@@ -221,12 +253,7 @@ export function Express(): JSX.Element {
         ...nonInteractiveSceneObj,
       ]);
 
-      if (
-        x[0] &&
-        x[0].distance < 2 &&
-        x[0].object.name.includes('express') &&
-        gripStatus.current !== undefined
-      ) {
+      if (x[0] && x[0].distance < 2 && x[0].object.name.includes('express')) {
         gripStatus.current = InteractiveObjectStatus.ANIMATED_EXPRESS;
         setState({ playerStatus: null });
         setAnimated('express');
@@ -238,8 +265,7 @@ export function Express(): JSX.Element {
         x[0] &&
         x[0].distance < 2 &&
         x[0].object.name.includes('grinder') &&
-        coffeeState === null &&
-        gripStatus.current !== undefined
+        getState().coffeeState === null
       ) {
         gripStatus.current = InteractiveObjectStatus.ANIMATED_GRINDER;
         setState({ playerStatus: null });
@@ -252,8 +278,7 @@ export function Express(): JSX.Element {
         x[0] &&
         x[0].distance < 2 &&
         x[0].object.name.includes('accessories') &&
-        coffeeState === 'grinded' &&
-        gripStatus.current !== undefined
+        getState().coffeeState === 'grinded'
       ) {
         gripStatus.current = InteractiveObjectStatus.ANIMATED_ACCESSORIES;
         setState({ playerStatus: null });
@@ -262,12 +287,7 @@ export function Express(): JSX.Element {
         return;
       }
 
-      if (
-        gripStatus.current === InteractiveObjectStatus.PICKED &&
-        x[0] &&
-        x[0].distance < 2 &&
-        x[0].object.name.includes('area')
-      ) {
+      if (x[0] && x[0].distance < 2 && x[0].object.name.includes('area')) {
         const { point } = x[0];
         api.mass.set(3);
         api.position.set(point.x, point.y + 0.2, point.z);
@@ -281,6 +301,12 @@ export function Express(): JSX.Element {
     if (gripStatus.current === InteractiveObjectStatus.ANIMATED_EXPRESS) {
       api.rotation.set(...(gripExpressRotation.get() as Triplet));
       api.position.set(...(gripExpressPosition.get() as Triplet));
+      api.mass.set(0);
+    }
+
+    if (gripStatus.current === InteractiveObjectStatus.ATTACHED_EXPRESS) {
+      api.rotation.set(0, 0, 0);
+      api.velocity.set(0, 0, 0);
       api.mass.set(0);
     }
 
@@ -316,33 +342,23 @@ export function Express(): JSX.Element {
 
   return (
     <group dispose={null}>
-      <a.group name="grip" ref={ref}>
+      <a.group name="int-grip" ref={ref}>
         <mesh
+          name="grip-body"
           geometry={nodes.NurbsPath011.geometry}
           material={nodes.NurbsPath011.material}
         />
         <mesh
+          name="grip-metal"
           geometry={nodes.NurbsPath011_1.geometry}
           material={nodes.NurbsPath011_1.material}
         />
-        <mesh visible={false}>
+        <mesh name="grip-dummy" visible={false}>
           <meshStandardMaterial />
           <boxBufferGeometry args={[0.1, 0.15, 0.3]} />
         </mesh>
       </a.group>
       <group name="express">
-        <mesh
-          geometry={nodes.buttons.geometry}
-          material={nodes.buttons.material}
-          position={[1.64, 0.88, -5.5]}
-          name="express-buttons"
-        />
-        <mesh
-          geometry={nodes.buttons_pressable.geometry}
-          material={nodes.buttons_pressable.material}
-          position={[1.64, 0.88, -5.5]}
-          name="express-button-pressable"
-        />
         <mesh
           geometry={nodes.bake_express.geometry}
           position={[1.64, 0.88, -5.5]}
@@ -357,6 +373,19 @@ export function Express(): JSX.Element {
         >
           {kitchenMaterial}
         </mesh>
+      </group>
+      <group name="btn">
+        <mesh
+          geometry={nodes.buttons.geometry}
+          material={nodes.buttons.material}
+          position={[1.64, 0.88, -5.5]}
+        />
+        <mesh
+          name="button-make"
+          geometry={nodes.buttons_pressable.geometry}
+          material={nodes.buttons_pressable.material}
+          position={[1.64, 0.88, -5.5]}
+        />
       </group>
 
       <mesh

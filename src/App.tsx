@@ -26,6 +26,7 @@ import { Harnas } from './features/kitchen/interactive/Harnas';
 import { Letters } from './features/kitchen/interactive/Letters';
 import { Microwave } from './features/kitchen/interactive/Microvawe';
 import { Neon } from './features/kitchen/interactive/Neon';
+import { Transform } from './features/kitchen/interactive/Transform';
 import { InteractiveWindow } from './features/kitchen/interactive/Window';
 import { KitchenModel } from './features/kitchen/KitchenModel';
 import { Mugs } from './features/kitchen/Mugs';
@@ -94,6 +95,7 @@ export function App(): JSX.Element {
                   <Microwave />
                   <Harnas />
                   <Letters />
+                  <Transform />
                   <Preload all />
                 </Suspense>
               </group>
