@@ -201,8 +201,9 @@ export function Express(): JSX.Element {
     reset: true,
   });
 
-  useEvent('click', (event: Event) => {
+  useEvent('click', async (event: Event) => {
     event.stopPropagation();
+
     const { playerStatus } = getState();
 
     if (animated !== null) {
@@ -252,19 +253,20 @@ export function Express(): JSX.Element {
     ) {
       const expressSceneObj = scene.getObjectByName('express')?.children || [];
       const accSceneObj = scene.getObjectByName('accessories')?.children || [];
-      const nonInteractiveSceneObj =
-        scene.getObjectByName('nonInteractive')?.children || [];
-
       const x = raycaster.intersectObjects([
         ...expressSceneObj,
         ...accSceneObj,
-        ...nonInteractiveSceneObj,
       ]);
 
       if (x[0] && x[0].distance < 2 && x[0].object.name.includes('express')) {
         gripStatus.current = InteractiveObjectStatus.ANIMATED_EXPRESS;
-        setState({ playerStatus: null });
         setAnimated('express');
+
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+
+        setState({ playerStatus: null });
 
         return;
       }
@@ -276,8 +278,13 @@ export function Express(): JSX.Element {
         getState().coffeeState === null
       ) {
         gripStatus.current = InteractiveObjectStatus.ANIMATED_GRINDER;
-        setState({ playerStatus: null });
         setAnimated('grinder');
+
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+
+        setState({ playerStatus: null });
 
         return;
       }
@@ -289,17 +296,31 @@ export function Express(): JSX.Element {
         getState().coffeeState === 'grinded'
       ) {
         gripStatus.current = InteractiveObjectStatus.ANIMATED_ACCESSORIES;
-        setState({ playerStatus: null });
         setAnimated('accessories');
+
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+
+        setState({ playerStatus: null });
 
         return;
       }
 
-      if (x[0] && x[0].distance < 2 && x[0].object.name.includes('area')) {
-        const { point } = x[0];
+      const nonInteractiveSceneObj =
+        scene.getObjectByName('bounds')?.children || [];
+
+      const y = raycaster.intersectObjects([...nonInteractiveSceneObj]);
+
+      if (y[0] && y[0].distance < 2 && y[0].object.name.includes('static')) {
+        const { point } = y[0];
         api.mass.set(3);
         api.position.set(point.x, point.y + 0.2, point.z);
         gripStatus.current = undefined;
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+
         setState({ playerStatus: null });
       }
     }

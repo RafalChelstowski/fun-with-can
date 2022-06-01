@@ -79,29 +79,10 @@ export function Mugs({
     });
   }, [api, grid, initialPosition, itemsNumber, rowModifier]);
 
-  useEvent('click', () => {
+  useEvent('click', async (event: Event) => {
+    event.stopPropagation();
+
     const { playerStatus } = getState();
-
-    if (playerStatus === PlayerStatus.PICKED) {
-      const x = raycaster.intersectObjects(
-        scene.getObjectByName('nonInteractive')?.children || scene.children
-      );
-
-      if (!x[0]) {
-        return;
-      }
-
-      if (instanceId.current !== undefined && x[0].distance < 2) {
-        const { point } = x[0];
-        api
-          .at(instanceId.current)
-          .position.set(point.x, point.y + 0.2, point.z);
-        instanceId.current = undefined;
-        setState({ playerStatus: null });
-      }
-
-      return;
-    }
 
     if (playerStatus === null) {
       const y = scene.getObjectByName('mug');
@@ -114,6 +95,35 @@ export function Mugs({
       if (x[0].distance < 2) {
         instanceId.current = x[0].instanceId;
         setState({ playerStatus: PlayerStatus.PICKED });
+      }
+
+      return;
+    }
+
+    if (
+      playerStatus === PlayerStatus.PICKED &&
+      instanceId.current !== undefined
+    ) {
+      const x = raycaster.intersectObjects(
+        scene.getObjectByName('bounds')?.children || scene.children
+      );
+
+      if (!x[0]) {
+        return;
+      }
+      // console.log((x[0]);
+
+      if (x[0].distance < 2) {
+        const { point } = x[0];
+        api
+          .at(instanceId.current)
+          .position.set(point.x, point.y + 0.2, point.z);
+
+        instanceId.current = undefined;
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+        setState({ playerStatus: null });
       }
     }
   });
@@ -133,7 +143,7 @@ export function Mugs({
         if (targetMesh) {
           const distance = position.distanceTo(targetMesh.point);
           camera.getWorldDirection(target);
-          const { x, y, z } = target.multiplyScalar(Math.min(distance * 2, 15));
+          const { x, y, z } = target.multiplyScalar(Math.min(distance * 2, 10));
 
           api.at(instanceId.current).velocity.set(x, y, z);
           api
@@ -177,18 +187,6 @@ export function Mugs({
           itemsNumber,
         ]}
         name={`${objName}`}
-        // onClick={(e) => {
-        //   e.stopPropagation();
-
-        //   const { playerStatus } = getState();
-
-        //   if (playerStatus === PlayerStatus.PICKED) {
-        //     return;
-        //   }
-
-        //   instanceId.current = e.instanceId;
-        //   setState({ playerStatus: PlayerStatus.PICKED });
-        // }}
       />
     </group>
   );

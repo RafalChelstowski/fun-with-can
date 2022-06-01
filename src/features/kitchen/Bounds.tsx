@@ -31,7 +31,13 @@ function CubeBoundary({ mesh }: { mesh: THREE.Mesh }) {
   }));
 
   return (
-    <mesh ref={ref} geometry={geometry} material={material} scale={scale} />
+    <mesh
+      name="static-cube"
+      ref={ref}
+      geometry={geometry}
+      material={material}
+      scale={scale}
+    />
   );
 }
 
@@ -48,7 +54,13 @@ function CylinderBoundary({ mesh }: { mesh: THREE.Mesh }) {
   }));
 
   return (
-    <mesh ref={ref} geometry={geometry} material={material} scale={scale} />
+    <mesh
+      name="static-cylinder"
+      ref={ref}
+      geometry={geometry}
+      material={material}
+      scale={scale}
+    />
   );
 }
 
@@ -71,7 +83,7 @@ export function StaticBounds(): JSX.Element {
       return null;
     });
 
-  return <>{meshes}</>;
+  return <group name="bounds">{meshes}</group>;
 }
 
 useGLTF.preload('/bounds.gltf');

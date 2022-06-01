@@ -47,8 +47,9 @@ export function Harnas(): JSX.Element {
 
   const [initialX, initialY, initialZ] = FRIDGE_POSITION;
 
-  useEvent('click', (event: Event) => {
+  useEvent('click', async (event: Event) => {
     event.stopPropagation();
+
     const { playerStatus } = getState();
 
     if (playerStatus === null) {
@@ -68,23 +69,27 @@ export function Harnas(): JSX.Element {
       return;
     }
 
-    if (playerStatus === PlayerStatus.PICKED) {
+    if (
+      playerStatus === PlayerStatus.PICKED &&
+      harnasStatus.current === InteractiveObjectStatus.PICKED
+    ) {
       const x = raycaster.intersectObjects(
-        scene.getObjectByName('nonInteractive')?.children || scene.children
+        scene.getObjectByName('bounds')?.children || scene.children
       );
 
       if (!x[0]) {
         return;
       }
 
-      if (
-        x[0] &&
-        x[0].distance < 2 &&
-        harnasStatus.current === InteractiveObjectStatus.PICKED
-      ) {
+      if (x[0].distance < 2) {
         const { point } = x[0];
         api.position.set(point.x, point.y + 0.2, point.z);
         harnasStatus.current = undefined;
+
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+
         setState({ playerStatus: null });
       }
     }
