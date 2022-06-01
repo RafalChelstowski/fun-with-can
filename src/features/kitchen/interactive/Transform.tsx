@@ -48,8 +48,9 @@ export function Transform(): JSX.Element {
   const [transformed, setTransformed] = useState(false);
   const [animated, setAnimated] = useState(false);
 
-  useEvent('click', (event: Event) => {
+  useEvent('click', async (event: Event) => {
     event.stopPropagation();
+
     if (
       status.current === InteractiveObjectStatus.ANIMATED ||
       getState().coffeeState === 'cupReady' ||
@@ -82,17 +83,7 @@ export function Transform(): JSX.Element {
       status.current === InteractiveObjectStatus.PICKED
     ) {
       const expressSceneObj = scene.getObjectByName('express')?.children || [];
-      const nonInteractiveSceneObj =
-        scene.getObjectByName('nonInteractive')?.children || [];
-
-      const x = raycaster.intersectObjects([
-        ...expressSceneObj,
-        ...nonInteractiveSceneObj,
-      ]);
-
-      if (!x[0]) {
-        return;
-      }
+      const x = raycaster.intersectObjects([...expressSceneObj]);
 
       if (
         x[0] &&
@@ -101,23 +92,38 @@ export function Transform(): JSX.Element {
         getState().coffeeState === 'gripAttached'
       ) {
         status.current = InteractiveObjectStatus.ANIMATED;
-        setState({ playerStatus: null });
         setAnimated(true);
+
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+
+        setState({ playerStatus: null });
 
         return;
       }
 
+      const nonInteractiveSceneObj =
+        scene.getObjectByName('bounds')?.children || [];
+      const y = raycaster.intersectObjects([...nonInteractiveSceneObj]);
+
       if (
-        x[0] &&
-        x[0].distance < 2 &&
-        x[0].object.name.includes('area') &&
+        y[0] &&
+        y[0].distance < 2 &&
+        y[0].object.name.includes('static') &&
         status.current === InteractiveObjectStatus.PICKED
       ) {
-        const { point } = x[0];
+        const { point } = y[0];
         api.position.set(point.x, point.y + 0.2, point.z);
         status.current = undefined;
-        setState({ playerStatus: null });
+        // setState({ playerStatus: null });
         api.mass.set(1);
+
+        await new Promise((res) => {
+          setTimeout(res);
+        });
+
+        setState({ playerStatus: null });
       }
     }
   });
@@ -227,7 +233,7 @@ export function Transform(): JSX.Element {
         if (targetMesh) {
           const distance = position.distanceTo(targetMesh.point);
           camera.getWorldDirection(target);
-          const { x, y, z } = target.multiplyScalar(Math.min(distance * 2, 15));
+          const { x, y, z } = target.multiplyScalar(Math.min(distance * 2, 10));
 
           api.velocity.set(x, y, z);
           api.mass.set(1);
