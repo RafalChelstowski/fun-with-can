@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-import { Sky } from '@react-three/drei';
+import { Environment, Sky } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -18,6 +18,7 @@ export function Lights(): JSX.Element {
     <>
       <ambientLight />
       <directionalLight intensity={0.7} target={targetObject} />
+      <Environment files="touk.hdr" background={false} resolution={64} />
       <Sky />
     </>
   );

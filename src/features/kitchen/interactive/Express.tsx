@@ -3,6 +3,7 @@ import { useEvent } from 'react-use';
 
 import { a, config, useSpring } from '@react-spring/three';
 import { Triplet, useBox } from '@react-three/cannon';
+import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { degToRad } from 'three/src/math/MathUtils';
@@ -14,6 +15,7 @@ import { glassMaterial } from '../../../common/materials/materials';
 import { getState, setState } from '../../../store/store';
 import {
   AchievementName,
+  GLTFResult,
   InteractiveObjectStatus,
   PlayerStatus,
 } from '../../../types';
@@ -25,13 +27,18 @@ const expressRotation: Triplet = [0, degToRad(-60), 0];
 const grinderRotation: Triplet = [0, degToRad(-41), 0];
 
 const grinderTrayPosition: Triplet = [2.51, 0.91, -5.3];
-const tamperPosition: Triplet = [2.49, 0.91, -5.33];
+const tamperPosition: Triplet = [2.49, 0.93, -5.33];
 
 const zCamVec = new THREE.Vector3();
 const rotationDirection = new THREE.Vector3();
 
 export function Express(): JSX.Element {
   const { nodes, kitchenMaterial } = useKitchenGltf();
+
+  const { nodes: accNodes, materials: accMaterials } = useGLTF(
+    '/express_acc.gltf'
+  ) as unknown as GLTFResult;
+
   const camera = useThree((state) => state.camera);
   const raycaster = useThree((state) => state.raycaster);
   const scene = useThree((state) => state.scene);
@@ -56,6 +63,7 @@ export function Express(): JSX.Element {
   const tamperRef = useRef<THREE.Group>(null);
   const gripPosRef = useRef([0, 0, 0]);
   const gripRotRef = useRef([0, 0, 0]);
+  const coffeePortionRef = useRef<THREE.Mesh>(null);
 
   useEffect(() => {
     api.position.subscribe((p) => {
@@ -108,31 +116,41 @@ export function Express(): JSX.Element {
       reset: true,
     });
 
-  const { rotation: gripGrinderRotation, position: gripGrinderPosition } =
-    useSpring({
-      to: async (next) => {
-        const tempGripPos = structuredClone(gripPosRef.current);
-        if (animated === 'grinder') {
-          await next({ rotation: grinderRotation, position: grinderPosition });
-          await new Promise((res) => {
-            setTimeout(res, 2000);
-          });
-          await next({ position: tempGripPos });
+  const {
+    rotation: gripGrinderRotation,
+    position: gripGrinderPosition,
+    scale,
+  } = useSpring({
+    to: async (next) => {
+      const tempGripPos = structuredClone(gripPosRef.current);
+      if (animated === 'grinder') {
+        await next({ rotation: grinderRotation, position: grinderPosition });
 
-          setAnimated(null);
-          gripStatus.current = InteractiveObjectStatus.PICKED;
-          setState({
-            playerStatus: PlayerStatus.PICKED,
-            coffeeState: 'grinded',
-          });
-        }
-      },
-      from: {
-        rotation: gripRotRef.current,
-        position: gripPosRef.current,
-      },
-      reset: true,
-    });
+        await new Promise((res) => {
+          setTimeout(res, 1000);
+        });
+        await next({ scale: 1 });
+        await new Promise((res) => {
+          setTimeout(res, 1000);
+        });
+
+        await next({ position: tempGripPos });
+
+        setAnimated(null);
+        gripStatus.current = InteractiveObjectStatus.PICKED;
+        setState({
+          playerStatus: PlayerStatus.PICKED,
+          coffeeState: 'grinded',
+        });
+      }
+    },
+    from: {
+      rotation: gripRotRef.current,
+      position: gripPosRef.current,
+      scale: 0,
+    },
+    reset: true,
+  });
 
   const {
     rotation: accGrinderRotation,
@@ -345,6 +363,11 @@ export function Express(): JSX.Element {
       api.rotation.set(rX, rY, rZ);
       api.position.set(pX, pY, pZ);
       api.mass.set(0);
+      coffeePortionRef.current?.scale.set(
+        scale.get(),
+        scale.get(),
+        scale.get()
+      );
     }
 
     if (gripStatus.current === InteractiveObjectStatus.ANIMATED_ACCESSORIES) {
@@ -374,13 +397,14 @@ export function Express(): JSX.Element {
       <a.group name="int-grip" ref={ref}>
         <mesh
           name="grip-body"
-          geometry={nodes.NurbsPath011.geometry}
-          material={nodes.NurbsPath011.material}
+          geometry={accNodes.kolba.geometry}
+          material={accMaterials.coffeeAccMaterial}
         />
         <mesh
-          name="grip-metal"
-          geometry={nodes.NurbsPath011_1.geometry}
-          material={nodes.NurbsPath011_1.material}
+          scale={0}
+          ref={coffeePortionRef}
+          geometry={accNodes.coffeePortion.geometry}
+          material={accMaterials.coffeeAccMaterial}
         />
         <mesh name="grip-dummy" visible={false}>
           <meshStandardMaterial />
@@ -440,12 +464,8 @@ export function Express(): JSX.Element {
           position={tamperPosition}
         >
           <mesh
-            geometry={nodes.NurbsPath018.geometry}
-            material={nodes.NurbsPath018.material}
-          />
-          <mesh
-            geometry={nodes.NurbsPath018_1.geometry}
-            material={nodes.NurbsPath018_1.material}
+            geometry={accNodes.tamper.geometry}
+            material={accMaterials.coffeeAccMaterial}
           />
         </group>
       </group>
