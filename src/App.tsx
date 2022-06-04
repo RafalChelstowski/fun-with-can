@@ -62,6 +62,7 @@ export function App(): JSX.Element {
           physicallyCorrectLights: true,
         }}
         camera={{ fov: 50 }}
+        shadows
       >
         <ContextBridge>
           <Lights />

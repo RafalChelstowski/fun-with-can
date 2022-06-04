@@ -396,6 +396,7 @@ export function Express(): JSX.Element {
     <group dispose={null}>
       <a.group name="int-grip" ref={ref}>
         <mesh
+          castShadow
           name="grip-body"
           geometry={accNodes.kolba.geometry}
           material={accMaterials.coffeeAccMaterial}

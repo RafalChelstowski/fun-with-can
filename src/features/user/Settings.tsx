@@ -13,6 +13,12 @@ const MEDIUM_PRESET: GfxSettings = {
   glass: true,
 };
 
+const HIGH_PRESET: GfxSettings = {
+  surroundings: true,
+  lights: 3,
+  glass: true,
+};
+
 export function SettingsPage(): JSX.Element {
   const surroundings = useStore((state) => state.gfxSettings.surroundings);
   const lights = useStore((state) => state.gfxSettings.lights);
@@ -27,6 +33,12 @@ export function SettingsPage(): JSX.Element {
   const setMediumPreset = () => {
     setState({
       gfxSettings: MEDIUM_PRESET,
+    });
+  };
+
+  const setHighPreset = () => {
+    setState({
+      gfxSettings: HIGH_PRESET,
     });
   };
 
@@ -52,6 +64,16 @@ export function SettingsPage(): JSX.Element {
             onClick={setMediumPreset}
           >
             Medium
+          </button>
+        </div>
+        <div className="m-4">
+          <button
+            className="cta text-sm"
+            type="button"
+            name="medium preset"
+            onClick={setHighPreset}
+          >
+            High
           </button>
         </div>
       </div>
@@ -100,7 +122,7 @@ export function SettingsPage(): JSX.Element {
           >
             <option value={1}>low</option>
             <option value={2}>medium</option>
-            {/* <option value={3}>high</option> */}
+            <option value={3}>high</option>
           </select>
         </label>
       </div>
