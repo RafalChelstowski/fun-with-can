@@ -6,6 +6,11 @@ import shallow from 'zustand/shallow';
 import { State } from '../types';
 
 export const initialState = {
+  gfxSettings: {
+    surroundings: true,
+    lights: 2,
+    glass: true,
+  },
   coffeeState: null,
   letters: {},
   achievements: {},

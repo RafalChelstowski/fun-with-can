@@ -1,11 +1,18 @@
 import { useGLTF } from '@react-three/drei';
 
+import { useStore } from '../../store/store';
 import { GLTFResult } from '../../types';
 
-export function Surroundings(): JSX.Element {
+export function Surroundings(): JSX.Element | null {
   const { nodes, materials } = useGLTF(
     '/surroundings.gltf'
   ) as unknown as GLTFResult;
+
+  const surroundings = useStore((state) => state.gfxSettings.surroundings);
+
+  if (!surroundings) {
+    return null;
+  }
 
   return (
     <>

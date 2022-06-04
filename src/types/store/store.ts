@@ -56,6 +56,12 @@ export interface InteractiveLetters {
   k?: boolean;
 }
 
+export interface GfxSettings {
+  surroundings: boolean;
+  lights: number;
+  glass: boolean;
+}
+
 export type State = {
   coffeeState:
     | 'grinded'
@@ -66,6 +72,7 @@ export type State = {
     | 'ready'
     | null;
   achievements: Achievements;
+  gfxSettings: GfxSettings;
   letters: InteractiveLetters;
   setAchievement: (name: AchievementName, payload: AchievementPayload) => void;
   setAchievements: (obj: Achievements) => void;
