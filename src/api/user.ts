@@ -20,6 +20,11 @@ const doCreateUserWithEmailAndPassword = (
 ): Promise<UserCredential> =>
   auth.createUserWithEmailAndPassword(email, password);
 
+const updateUserDisplayName = (
+  displayName: string
+): Promise<void> | undefined =>
+  auth.currentUser?.updateProfile({ displayName });
+
 const doSignInWithEmailAndPassword = (
   email: string,
   password: string
@@ -40,6 +45,7 @@ const userApi = {
   auth,
   signInTestUser,
   doCreateUserWithEmailAndPassword,
+  updateUserDisplayName,
   doSignInWithEmailAndPassword,
   doSignOut,
   doPasswordReset,

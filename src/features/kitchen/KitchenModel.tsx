@@ -1,11 +1,13 @@
 import { useGLTF } from '@react-three/drei';
 
+import { useStore } from '../../store/store';
 import { GLTFResult } from '../../types';
 import { useKitchenGltf } from './useKitchenGltf';
 
 export function KitchenModel(): JSX.Element {
   const { nodes } = useGLTF('/kitchen.gltf') as unknown as GLTFResult;
   const { kitchenMaterial } = useKitchenGltf();
+  const lights = useStore((state) => state.gfxSettings.lights);
 
   return (
     <group name="nonInteractive">
@@ -19,15 +21,13 @@ export function KitchenModel(): JSX.Element {
 
           return (
             <mesh
+              receiveShadow={lights === 3}
               key={key}
               position={mesh.position}
               rotation={mesh.rotation}
               geometry={mesh.geometry}
               scale={mesh.scale}
               name={`area-${mesh.name}`}
-              // onClick={(e) => {
-              //   e.stopPropagation();
-              // }}
             >
               {kitchenMaterial}
             </mesh>

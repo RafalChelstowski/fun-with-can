@@ -95,11 +95,15 @@ export function Harnas(): JSX.Element {
     }
   });
 
-  const handleDummyHarnasClick = (event: ThreeEvent<MouseEvent>) => {
+  const handleDummyHarnasClick = async (event: ThreeEvent<MouseEvent>) => {
     event.stopPropagation();
 
     if (dummyRef.current) {
       dummyRef.current.position.set(0, 10, 0);
+
+      await new Promise((res) => {
+        setTimeout(res, 20);
+      });
 
       harnasStatus.current = InteractiveObjectStatus.PICKED;
       setState({ playerStatus: PlayerStatus.PICKED });
@@ -164,6 +168,7 @@ export function Harnas(): JSX.Element {
     <>
       <group name="harnas">
         <mesh
+          castShadow
           ref={ref}
           name="harnas_real"
           material={materials.harnasblue}
@@ -172,6 +177,7 @@ export function Harnas(): JSX.Element {
         />
       </group>
       <mesh
+        castShadow
         ref={dummyRef}
         name="harnas_dummy"
         rotation={[0, degToRad(222), 0]}

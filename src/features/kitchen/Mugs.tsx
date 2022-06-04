@@ -180,6 +180,7 @@ export function Mugs({
   return (
     <group name="mug">
       <instancedMesh
+        castShadow
         ref={ref}
         args={[
           nodes[geometryName].geometry,

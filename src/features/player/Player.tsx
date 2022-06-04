@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { useEffectOnce, useEvent } from 'react-use';
 
 import { Triplet, useBox } from '@react-three/cannon';
@@ -25,9 +25,8 @@ export function Player(): JSX.Element {
   const controlsRef = useRef<ControlsLock>(null);
   const velocityRef = useRef([0, 0, 0]);
 
-  const { toggleIsLocked, pointerSpeed } = useStore((state) => ({
+  const { toggleIsLocked } = useStore((state) => ({
     toggleIsLocked: state.toggleIsLocked,
-    pointerSpeed: state.pointerSpeed,
   }));
 
   const camera = useThree((state) => state.camera);
@@ -91,6 +90,7 @@ export function Player(): JSX.Element {
     },
     document
   );
+
   useFrame((state) => {
     const { controlsDown, controlsUp, controlsLeft, controlsRight } =
       useControlsStore.getState();
@@ -136,7 +136,7 @@ export function Player(): JSX.Element {
       <pointerLockControls
         args={[camera, gl.domElement]}
         ref={controlsRef}
-        pointerSpeed={pointerSpeed}
+        pointerSpeed={0.2}
       />
       <mesh ref={ref} />
     </>

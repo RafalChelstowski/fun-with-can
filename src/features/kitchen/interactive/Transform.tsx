@@ -128,11 +128,15 @@ export function Transform(): JSX.Element {
     }
   });
 
-  const handleDummyClick = (event: ThreeEvent<MouseEvent>) => {
+  const handleDummyClick = async (event: ThreeEvent<MouseEvent>) => {
     event.stopPropagation();
 
     if (dummyRef.current) {
       dummyRef.current.position.set(0, 10, 0);
+
+      await new Promise((res) => {
+        setTimeout(res, 20);
+      });
 
       status.current = InteractiveObjectStatus.PICKED;
       setState({ playerStatus: PlayerStatus.PICKED });
@@ -261,6 +265,7 @@ export function Transform(): JSX.Element {
           <mesh
             geometry={mugNodes.Cylinder003.geometry}
             material={mugMaterials.salmonToukCupMaterial}
+            castShadow
           />
           <mesh
             geometry={mugNodes.Cylinder003_1.geometry}
@@ -284,6 +289,7 @@ export function Transform(): JSX.Element {
           <mesh
             geometry={mugNodes.Cylinder009_1.geometry}
             material={mugMaterials.cupWhiteMaterial}
+            castShadow
           />
           <mesh
             geometry={mugNodes.Cylinder009_2.geometry}

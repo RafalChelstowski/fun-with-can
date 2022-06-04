@@ -1,10 +1,16 @@
 import { useGLTF } from '@react-three/drei';
 
 import { glassMaterial } from '../../common/materials/materials';
+import { useStore } from '../../store/store';
 import { GLTFResult } from '../../types';
 
-export function Glass(): JSX.Element {
+export function Glass(): JSX.Element | null {
   const { nodes } = useGLTF('/glass.gltf') as unknown as GLTFResult;
+  const glass = useStore((state) => state.gfxSettings.glass);
+
+  if (!glass) {
+    return null;
+  }
 
   return (
     <>

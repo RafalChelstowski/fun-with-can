@@ -4,7 +4,6 @@ import { Link } from 'wouter';
 
 import { userApi } from '../../api';
 import { useSet } from '../../api/hooks/useSet';
-// import { useSnapshot } from '../../api/hooks/useSnapshot';
 import { routes } from '../Nav';
 
 export interface SignUpFormData {
@@ -29,7 +28,6 @@ function SignUpForm(): JSX.Element {
   );
   const { username, email, passwordOne, passwordTwo, error } = formState;
   const { set } = useSet();
-  // const { data: initialUnit } = useSnapshot<Unit>(`units/initialUnit`);
 
   const isInvalid =
     passwordOne !== passwordTwo ||
@@ -45,15 +43,17 @@ function SignUpForm(): JSX.Element {
         passwordOne
       );
 
+      await userApi.updateUserDisplayName(username);
+
       await new Promise((resolve) => {
         if (!newUser.user) {
-          throw new Error('something went wrong while adding initial unit');
+          throw new Error('something went wrong while adding user');
         }
 
         set(
           {
             path: `users/${newUser.user.uid}`,
-            payload: { lol: 'lol' },
+            payload: { displayName: username },
           },
           {
             onSuccess: (res) => {
